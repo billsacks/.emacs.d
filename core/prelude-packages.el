@@ -61,6 +61,7 @@
     browse-kill-ring
     crux
     discover-my-major
+    diff-hl
     diminish
     easy-kill
     editorconfig
