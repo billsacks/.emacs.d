@@ -3,7 +3,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(blink-cursor-mode nil)
+ '(blink-cursor-blinks 2)
+ '(blink-cursor-mode t)
  '(column-number-mode t)
  '(cursor-type 'bar)
  '(global-nlinum-mode nil)
