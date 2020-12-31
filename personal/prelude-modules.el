@@ -57,7 +57,7 @@
 ;;; Org-mode (a legendary productivity tool that deserves its own category)
 ;;
 ;; Org-mode helps you keep TODO lists, notes and more.
-(require 'prelude-org)
+;; (require 'prelude-org)
 
 ;;; Programming languages support
 ;;
@@ -68,7 +68,7 @@
 ;; (require 'prelude-clojure)
 ;; (require 'prelude-coffee)
 ;; (require 'prelude-common-lisp)
-(require 'prelude-css)
+;; (require 'prelude-css)
 ;; (require 'prelude-dart)
 (require 'prelude-emacs-lisp)
 ;; (require 'prelude-erlang)
@@ -81,7 +81,7 @@
 (require 'prelude-lsp) ;; Base setup for the Language Server Protocol
 ;; (require 'prelude-ocaml)
 (require 'prelude-perl)
-;; (require 'prelude-python)
+(require 'prelude-python)
 ;; (require 'prelude-ruby)
 ;; (require 'prelude-rust)
 ;; (require 'prelude-scala)
@@ -94,7 +94,7 @@
 (require 'prelude-yaml)
 
 ;;; Misc
-(require 'prelude-erc) ;; A popular Emacs IRC client (useful if you're still into Freenode)
+;; (require 'prelude-erc) ;; A popular Emacs IRC client (useful if you're still into Freenode)
 
 (provide 'prelude-modules)
 ;;; prelude-modules.el ends here
