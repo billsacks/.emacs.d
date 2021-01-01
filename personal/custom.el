@@ -12,6 +12,7 @@
  '(frame-resize-pixelwise t)
  '(global-nlinum-mode nil)
  '(ivy-extra-directories nil)
+ '(ivy-use-virtual-buffers t)
  '(package-selected-packages
    '(projectile-ripgrep lsp-python-ms yaml-mode web-mode lsp-ui company-lsp json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
@@ -29,4 +30,5 @@
  '(cursor ((t (:background "#933141"))))
  '(flycheck-fringe-error ((t (:inherit error :height 0.8))))
  '(flycheck-fringe-info ((t (:inherit success :height 0.8))))
- '(flycheck-fringe-warning ((t (:inherit warning :height 0.8)))))
+ '(flycheck-fringe-warning ((t (:inherit warning :height 0.8))))
+ '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic)))))
