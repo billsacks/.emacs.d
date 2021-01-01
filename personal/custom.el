@@ -17,7 +17,8 @@
  '(prelude-guru nil)
  '(ripgrep-arguments '("--sort path"))
  '(size-indication-mode nil)
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(whitespace-style '(face trailing tabs empty)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
