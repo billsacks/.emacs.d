@@ -24,6 +24,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#f6f6f6" :foreground "#333333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
  '(cursor ((t (:background "#933141"))))
- '(flycheck-fringe-error ((t (:inherit error :background "yellow" :height 0.8))))
- '(flycheck-fringe-info ((t (:inherit success :background "yellow" :height 0.8))))
- '(flycheck-fringe-warning ((t (:inherit warning :background "yellow" :height 0.8)))))
+ '(flycheck-fringe-error ((t (:inherit error :height 0.8))))
+ '(flycheck-fringe-info ((t (:inherit success :height 0.8))))
+ '(flycheck-fringe-warning ((t (:inherit warning :height 0.8)))))
