@@ -1,5 +1,4 @@
 ;; needed to use emacsclient - which in turn is needed to use aquamacs as the git editor
-;; (from http://superuser.com/questions/180799/using-aquamacs-for-editor-in-subversion/180818#180818)
 (server-start)
 
 ;; recommended for LSP mode
