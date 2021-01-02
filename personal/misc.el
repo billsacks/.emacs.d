@@ -32,5 +32,7 @@
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
+(add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
+
 ;; For showing unbound keys
 (require 'unbound)

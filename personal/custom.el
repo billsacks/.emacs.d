@@ -9,6 +9,7 @@
  '(blink-cursor-mode t)
  '(column-number-mode t)
  '(cursor-type 'bar)
+ '(fill-column 72)
  '(flycheck-indication-mode 'left-margin)
  '(frame-resize-pixelwise t)
  '(global-nlinum-mode nil)
