@@ -31,4 +31,5 @@
  '(flycheck-fringe-error ((t (:inherit error :height 0.8))))
  '(flycheck-fringe-info ((t (:inherit success :height 0.8))))
  '(flycheck-fringe-warning ((t (:inherit warning :height 0.8))))
+ '(hl-line ((t (:inherit highlight :extend t :background "#e2eee2"))))
  '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic)))))
