@@ -30,3 +30,4 @@ var/
 .cache/
 .lsp-session*
 /vendor/flycheck
+/vendor/dropdown-list.el
