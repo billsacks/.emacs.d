@@ -36,3 +36,5 @@
 
 ;; For showing unbound keys
 (require 'unbound)
+
+(load-library "cime_tools")

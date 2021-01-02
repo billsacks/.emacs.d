@@ -1,3 +1,5 @@
+(require 'macros)
+
 ;; Swiper key-bindings
 (global-set-key (kbd "C-s") 'swiper-isearch)
 ;; The point of the backward search is two-fold:
@@ -13,3 +15,6 @@
 ;; Some other convenient shortcuts
 (global-set-key (kbd "<s-down>") (kbd "C-u 3 C-v"))
 (global-set-key (kbd "<s-up>") (kbd "C-u 3 M-v"))
+(global-set-key (kbd "C-c c") 'copy-current-line)
+(global-set-key (kbd "C-c f") 'auto-fill-mode)
+(global-set-key (kbd "C-c t") 'indent-relative)

@@ -29,6 +29,8 @@ transient/
 var/
 .cache/
 .lsp-session*
-/vendor/flycheck
+
+/vendor/cime-emacs-tools
 /vendor/dropdown-list.el
+/vendor/flycheck
 /vendor/unbound.el
