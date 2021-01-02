@@ -31,3 +31,4 @@ var/
 .lsp-session*
 /vendor/flycheck
 /vendor/dropdown-list.el
+/vendor/unbound.el
