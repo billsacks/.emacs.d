@@ -1,5 +1,11 @@
 (require 'macros)
 
+;; This allows the end key to be a sticky modifier, which is helpful since option isn't a
+;; very ergonomic modifier
+(define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
+;; I kind of want to define home to be something, too, but I'm not sure what would be most
+;; useful
+
 ;; Swiper key-bindings
 (global-set-key (kbd "C-s") 'swiper-isearch)
 ;; The point of the backward search is two-fold:
