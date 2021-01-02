@@ -11,5 +11,5 @@
 (global-set-key (kbd "M-g l") 'avy-goto-line)
 
 ;; Some other convenient shortcuts
-(global-set-key (kbd "<s-down>") (kbd "C-u 10 C-v"))
-(global-set-key (kbd "<s-up>") (kbd "C-u 10 M-v"))
+(global-set-key (kbd "<s-down>") (kbd "C-u 3 C-v"))
+(global-set-key (kbd "<s-up>") (kbd "C-u 3 M-v"))
