@@ -5,3 +5,8 @@
 
 ;; I don't like the aggressive saving of buffers
 (super-save-mode 0)
+
+;; Undo the definition of this function (otherwise auto-fill only
+;; happens in comments; I don't want that behavior)
+(defun prelude-local-comment-auto-fill ()
+  )

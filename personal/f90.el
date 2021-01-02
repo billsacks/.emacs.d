@@ -52,7 +52,8 @@
 
 (defun prelude-f90-mode-defaults ()
   "Defaults for Fortran programming"
-  ;; currently doesn't do anything
+  (auto-fill-mode 1)
+  (set-fill-column 90)
   )
 
 (setq prelude-f90-mode-hook 'prelude-f90-mode-defaults)

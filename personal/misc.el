@@ -30,5 +30,7 @@
 ;; This allows diff-hl to show diffs even in unsaved buffers
 (diff-hl-flydiff-mode)
 
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
 ;; For showing unbound keys
 (require 'unbound)
