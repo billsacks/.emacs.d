@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Assert array upper bounds
+# key: ass-ub
+# --
+SHR_ASSERT_ALL_FL((ubound(${1:VARNAME}) == [${2:EXPECTED UPPER BOUNDS}]), sourcefile, __LINE__)
+$0

@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: Water-related argument to subroutine call: bulk
+# key: wargb
+#
+# This results in a completed line like:
+#     forc_rain = b_wateratm2lnd_inst%forc_rain_col(begc:endc), &
+#
+# The "b_wateratm2lnd_inst%" assumes that we have done an associate like:
+#     associate(b_wateratm2lnd_inst => water_inst%wateratm2lndbulk_inst
+# (Its main purpose is to give the same number of characters as the
+# tracer version, which has w%wateratm2lnd_inst.)
+#
+# The inclusion of "_" before patch/col in the choice list, rather than
+# having it appear immediately following the $1, improves
+# auto-completion behavior (with both auto-complete and company modes),
+# by not presenting an option that looks like VARNAME_.
+#
+# SEE ALSO: wargt: wargb and wargt should remain nearly identical
+# --
+${1:VARNAME} = b_water${2:flux}_inst%$1${3:$$(yas-auto-next (yas-choose-value '("_patch" "_col")))}(beg${3:$(ignore-errors (substring yas-text 1 2))}:end${3:$(ignore-errors (substring yas-text 1 2))}), &
+$0

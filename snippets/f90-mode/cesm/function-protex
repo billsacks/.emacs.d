@@ -1,0 +1,19 @@
+# -*- mode: f90 -*-
+# name: CESM function with protex header
+# key: function-protex
+# --
+!-----------------------------------------------------------------------
+function ${1:FUNCNAME}($0) result(${2:RESULT_VAR})
+  !
+  ! !DESCRIPTION:
+  !
+  !
+  ! !ARGUMENTS:
+  ${3:RESULT_TYPE} :: $2  ! function result
+  !
+  ! !LOCAL VARIABLES:
+
+  character(len=*), parameter :: subname = '$1'
+  !-----------------------------------------------------------------------
+
+end function $1

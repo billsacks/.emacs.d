@@ -1,0 +1,5 @@
+# -*- mode: f90 -*-
+# name: Add 'note' note
+# key: note
+# --
+! NOTE(wjs, `(format-time-string "%Y-%m-%d")`) $0

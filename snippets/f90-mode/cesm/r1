@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: Declare real 1-d subroutine argument, plus assertion
+# key: r1
+#
+# If you do this multiple times in a row, the assertions will be in
+# reverse order. Reverse them with M-x reverse-region.
+# --
+real(r8), intent(${1:in}) :: ${2:VARNAME}( bounds%beg${3:c}: )
+$0
+SHR_ASSERT_FL((ubound($2, 1) == bounds%end$3), sourcefile, __LINE__)

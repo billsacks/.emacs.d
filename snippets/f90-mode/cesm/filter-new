@@ -1,0 +1,8 @@
+# -*- mode: f90 -*-
+# name: CLM new-style filter loop
+# key: filter-new
+# --
+do f${1:p} = 1, ${2:FILTER}%num
+   $1 = $2%indices(f$1)
+   $0
+end do

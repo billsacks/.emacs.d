@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: Add xml test
+# key: new-test
+#
+# Note that testmods and the comment test option are optional. When you reach
+# these items, type C-d to delete them, or type tab again to fill in a value.
+# --
+<test name="$1" grid="$2" compset="$3"${4: testmods="$5"}>
+  <machines>
+
+    <machine name="${6:yellowstone}" compiler="${7:intel}" category="$8">
+      <options>
+        <option name="wallclock">${9:0:30}</option>
+${10:        <option name="comment">$11</option>
+}      </options>
+    </machine>
+
+  </machines>
+</test>$0

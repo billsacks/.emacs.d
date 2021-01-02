@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: CLM endrun call
+# key: endrun
+# --
+call endrun(decomp_index=${1:GLCP}, clmlevel=name$1, msg=errMsg(sourcefile, __LINE__))$0

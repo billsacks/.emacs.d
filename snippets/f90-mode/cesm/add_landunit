@@ -1,0 +1,6 @@
+# -*- mode: f90 -*-
+# name: Add CLM landunit, for unit testing
+# key: add_landunit
+# --
+call unittest_add_landunit(my_gi=${1:gi}, ltype=$2, wtgcell=$3)
+$0

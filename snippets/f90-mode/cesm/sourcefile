@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Sourcefile constant
+# key: sourcefile
+# --
+character(len=*), parameter, private :: sourcefile = &
+     __FILE__$0

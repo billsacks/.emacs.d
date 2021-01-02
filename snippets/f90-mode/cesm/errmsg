@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Error message
+# key: errmsg
+# --
+errMsg(sourcefile, __LINE__)$0

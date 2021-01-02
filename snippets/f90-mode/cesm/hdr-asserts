@@ -1,0 +1,6 @@
+# -*- mode: f90 -*-
+# name: Header for assertions
+# key: hdr-asserts
+# --
+! Enforce expected array sizes
+$0

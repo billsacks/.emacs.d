@@ -1,0 +1,18 @@
+# -*- mode: f90 -*-
+# name: CESM subroutine with protex header
+# key: subroutine-protex
+# --
+!-----------------------------------------------------------------------
+subroutine ${1:SUBNAME}$0
+  !
+  ! !DESCRIPTION:
+  !
+  !
+  ! !ARGUMENTS:
+  !
+  ! !LOCAL VARIABLES:
+
+  character(len=*), parameter :: subname = '$1'
+  !-----------------------------------------------------------------------
+
+end subroutine $1

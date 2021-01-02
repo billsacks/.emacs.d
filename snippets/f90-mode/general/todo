@@ -1,0 +1,5 @@
+# -*- mode: f90 -*-
+# name: Add 'todo' note
+# key: todo
+# --
+! TODO(wjs, `(format-time-string "%Y-%m-%d")`) $0

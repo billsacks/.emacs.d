@@ -1,0 +1,6 @@
+# -*- mode: f90 -*-
+# name: Allocate array and initialize to NaN
+# key: init-allocate
+# --
+allocate(this%${1:VARNAME}(beg${2:c}:end$2)) ; this%$1(:) = nan
+$0

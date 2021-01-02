@@ -1,0 +1,6 @@
+# -*- mode: f90 -*-
+# name: Add CLM column, for unit testing
+# key: add_column
+# --
+call unittest_add_column(my_li=${1:li}, ctype=$2, wtlunit=$3)
+$0

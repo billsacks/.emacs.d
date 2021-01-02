@@ -1,0 +1,8 @@
+# -*- mode: f90 -*-
+# name: CLM filter loop
+# key: filter
+# --
+do f${1:p} = 1, num_${2:FILTER}
+   $1 = filter_$2(f$1)
+   $0
+end do

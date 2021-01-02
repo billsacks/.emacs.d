@@ -1,0 +1,5 @@
+# name: declare filter argument
+# key: filter-arg
+# --
+integer, intent(in) :: num_${1:FILTER}        ! number of ${2:column} points in filter_$1
+integer, intent(in) :: filter_$1(:)  ! $2 filter for ${3:DESCRIPTION}

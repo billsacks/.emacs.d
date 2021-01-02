@@ -1,0 +1,5 @@
+# -*- mode: f90 -*-
+# name: Add 'backwards compatibility' note
+# key: backcompat
+# --
+! BACKWARDS_COMPATIBILITY(wjs, `(format-time-string "%Y-%m-%d")`) $0

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Assert array upper bounds: new-style, for 1-d array
+# key: ub1
+# --
+SHR_ASSERT_FL((ubound(${1:VARNAME}, 1) == bounds%end${2:p}), sourcefile, __LINE__)
+$0

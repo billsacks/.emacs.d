@@ -1,0 +1,131 @@
+# -*- mode: snippet -*-
+# name: CLM science class module
+# key: clm-class
+# --
+module ${1:MODNAME}
+
+  !-----------------------------------------------------------------------
+  ! !DESCRIPTION:
+  ! $0
+  !
+  ! !USES:
+#include "shr_assert.h"
+  use shr_kind_mod , only : r8 => shr_kind_r8
+  use shr_log_mod  , only : errMsg => shr_log_errMsg
+  use decompMod    , only : bounds_type
+  use abortutils   , only : endrun
+  use clm_varctl   , only : iulog
+  use clm_varcon   , only : spval
+
+  implicit none
+  save
+  private
+
+  ! !PUBLIC TYPES:
+
+  type, public :: ${2:TYPENAME}
+     private
+   contains
+     ! Public routines
+     procedure, public :: Init
+
+     ! Private routines
+     procedure, private :: InitAllocate
+     procedure, private :: InitHistory
+     procedure, private :: InitCold
+  end type $2
+
+  ! !PRIVATE DATA MEMBERS:
+
+  character(len=*), parameter, private :: sourcefile = &
+       __FILE__
+  
+contains
+
+  ! ========================================================================
+  ! Infrastructure routines
+  ! ========================================================================
+
+  !-----------------------------------------------------------------------
+  subroutine Init(this, bounds)
+    !
+    ! !DESCRIPTION:
+    ! Initialize this $2 object
+    !
+    ! !ARGUMENTS:
+    class($2), intent(inout) :: this
+    type(bounds_type), intent(in) :: bounds
+    !
+    ! !LOCAL VARIABLES:
+
+    character(len=*), parameter :: subname = 'Init'
+    !-----------------------------------------------------------------------
+
+    call this%InitAllocate(bounds)
+    call this%InitHistory(bounds)
+    call this%InitCold(bounds)
+
+  end subroutine Init
+
+  !-----------------------------------------------------------------------
+  subroutine InitAllocate(this, bounds)
+    !
+    ! !DESCRIPTION:
+    ! Allocate memory for this $2 object
+    !
+    ! !USES:
+    use shr_infnan_mod , only : nan => shr_infnan_nan, assignment(=)
+    !
+    ! !ARGUMENTS:
+    class($2), intent(inout) :: this
+    type(bounds_type), intent(in) :: bounds
+    !
+    ! !LOCAL VARIABLES:
+
+    character(len=*), parameter :: subname = 'InitAllocate'
+    !-----------------------------------------------------------------------
+
+  end subroutine InitAllocate
+
+  !-----------------------------------------------------------------------
+  subroutine InitHistory(this, bounds)
+    !
+    ! !DESCRIPTION:
+    ! Initialize $2 history variables
+    !
+    ! !USES:
+    use histFileMod , only : hist_addfld1d
+    !
+    ! !ARGUMENTS:
+    class($2), intent(inout) :: this
+    type(bounds_type), intent(in) :: bounds
+    !
+    ! !LOCAL VARIABLES:
+
+    character(len=*), parameter :: subname = 'InitHistory'
+    !-----------------------------------------------------------------------
+
+  end subroutine InitHistory
+
+  !-----------------------------------------------------------------------
+  subroutine InitCold(this, bounds)
+    !
+    ! !DESCRIPTION:
+    ! Perform cold-start initialization for $2
+    !
+    ! !ARGUMENTS:
+    class($2), intent(inout) :: this
+    type(bounds_type), intent(in) :: bounds
+    !
+    ! !LOCAL VARIABLES:
+
+    character(len=*), parameter :: subname = 'InitCold'
+    !-----------------------------------------------------------------------
+
+  end subroutine InitCold
+
+  ! ========================================================================
+  ! Science routines
+  ! ========================================================================
+
+end module $1

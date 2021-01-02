@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Assert array shape
+# key: ass-shape
+# --
+SHR_ASSERT_ALL_FL((shape(${1:VARNAME}) == [${2:EXPECTED SHAPE}]), sourcefile, __LINE__)
+$0

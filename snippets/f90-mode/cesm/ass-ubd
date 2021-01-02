@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Assert array upper bounds for one dimension
+# key: ass-ubd
+# --
+SHR_ASSERT_FL((ubound(${1:VARNAME}, ${2:1}) == ${3:EXPECTED UPPER BOUNDS}), sourcefile, __LINE__)
+$0

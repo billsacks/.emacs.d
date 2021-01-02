@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Add 'bug' note
+# key: bug
+# --
+# BUG(wjs, `(format-time-string "%Y-%m-%d")`, ${1:ORG}/${2:repo}#${3:issue}) $0
