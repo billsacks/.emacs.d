@@ -37,4 +37,5 @@
  '(cursor ((t (:background "#933141"))))
  '(font-lock-keyword-face ((t (:foreground "#932092"))))
  '(hl-line ((t (:inherit highlight :extend t :background "#e2eee2"))))
- '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic)))))
+ '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic))))
+ '(mode-line ((t (:inherit variable-pitch :background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.9)))))
