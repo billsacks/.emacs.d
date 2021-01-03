@@ -15,6 +15,7 @@
  '(cperl-indent-level 3)
  '(cperl-label-offset -3)
  '(cursor-type 'bar)
+ '(ediff-split-window-function 'split-window-horizontally)
  '(f90-associate-indent 0)
  '(f90-beginning-ampersand nil)
  '(f90-break-before-delimiters nil)
@@ -69,6 +70,7 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#f6f6f6" :foreground "#333333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
  '(cursor ((t (:background "#933141"))))
+ '(ediff-fine-diff-C ((t (:background "#f0f055"))))
  '(font-lock-builtin-face ((t (:foreground "#6052a3"))))
  '(font-lock-keyword-face ((t (:foreground "#932092"))))
  '(hl-line ((t (:inherit highlight :extend t :background "#e2eee2"))))
