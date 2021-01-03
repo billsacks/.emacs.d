@@ -77,9 +77,9 @@
       (define-key map (kbd "s-k") 'crux-kill-whole-line)
       (define-key map (kbd "s-o") 'crux-smart-open-line-above)
       ;; magit
-      (define-key map (kbd "s-m m") 'magit-status)
-      (define-key map (kbd "s-m j") 'magit-dispatch)
-      (define-key map (kbd "s-m k") 'magit-file-dispatch)
+      (define-key map (kbd "s-m s") 'magit-status)
+      (define-key map (kbd "s-m d") 'magit-dispatch)
+      (define-key map (kbd "s-m f") 'magit-file-dispatch)
       (define-key map (kbd "s-m l") 'magit-log-buffer-file)
       (define-key map (kbd "s-m b") 'magit-blame)
       ;; misc
