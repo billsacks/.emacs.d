@@ -24,6 +24,7 @@
  '(f90-program-indent 2)
  '(fill-column 72)
  '(find-grep-options "-q -i")
+ '(flycheck-check-syntax-automatically '(save new-line mode-enabled))
  '(flycheck-indication-mode 'left-margin)
  '(flycheck-mode-line-prefix "FC")
  '(fortran-do-indent 2)
