@@ -49,12 +49,6 @@
 
 (diminish 'ivy-mode)
 
-;;; Swiper
-;;
-;; swiper provides enhanced buffer search
-
-(global-set-key "\C-s" 'swiper)
-
 ;;; Counsel
 ;;
 ;; counsel supercharges a lot of commands with some ivy magic
