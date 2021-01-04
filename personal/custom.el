@@ -71,6 +71,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :extend nil :stipple nil :background "#f6f6f6" :foreground "#333333" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Hack"))))
+ '(anzu-mode-line ((t (:foreground "royal blue" :weight bold))))
  '(cursor ((t (:background "#933141"))))
  '(ediff-fine-diff-C ((t (:background "#f0f055"))))
  '(font-lock-builtin-face ((t (:foreground "#6052a3"))))
