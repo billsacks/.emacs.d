@@ -33,4 +33,3 @@ var/
 /vendor/cime-emacs-tools
 /vendor/dropdown-list.el
 /vendor/flycheck
-/vendor/unbound.el

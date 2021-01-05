@@ -34,7 +34,4 @@
 
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
 
-;; For showing unbound keys
-(require 'unbound)
-
 (load-library "cime_tools")
