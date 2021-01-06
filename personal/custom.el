@@ -33,7 +33,6 @@
  '(fortran-structure-indent 2)
  '(frame-resize-pixelwise t)
  '(global-nlinum-mode nil)
- '(grep-highlight-matches t)
  '(hl-todo-keyword-faces
    '(("TODO" . "Firebrick")
      ("KLUDGE" . "Firebrick")
