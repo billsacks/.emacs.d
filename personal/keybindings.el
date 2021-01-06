@@ -14,6 +14,7 @@
 ;; Note that you can use this for goto-line by entering numbers, so it's safe to override
 ;; the built-in M-g g for goto-line
 (global-set-key (kbd "M-g g") 'avy-goto-line)
+(global-set-key (kbd "M-g M-g") 'avy-goto-line)
 
 ;; Some other convenient shortcuts
 (global-set-key (kbd "<s-down>") (kbd "C-u 3 C-v"))
