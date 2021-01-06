@@ -15,14 +15,6 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
-;; Add imenu to menu bar whenever font-lock-mode is enabled
-;; Note that font lock mode is enabled for any major mode,
-;; so this means try to add imenu for every major mode
-;; (from http://www.emacswiki.org/cgi-bin/wiki/ImenuMode)
-(defun try-to-add-imenu ()
-  (condition-case nil (imenu-add-to-menubar "imenu") (error nil)))
-(add-hook 'font-lock-mode-hook 'try-to-add-imenu)
-
 ;; For diff-hl
 ;; This is needed according to https://github.com/dgutov/diff-hl; note
 ;; that the post-commit hook is already defined in prelude
