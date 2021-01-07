@@ -7,7 +7,8 @@
 ;; useful
 
 ;; Swiper key-bindings
-(global-set-key (kbd "s-s") 'swiper)
+(global-set-key (kbd "C-S-s") 'swiper)
+(global-set-key (kbd "C-S-r") 'swiper-backward)
 
 ;; Avy key-bindings
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
