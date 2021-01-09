@@ -54,7 +54,8 @@
 
 (defun prelude-f90-mode-defaults ()
   "Defaults for Fortran programming"
-  (auto-fill-mode 1))
+  (auto-fill-mode 1)
+  (setq flycheck-checker 'fortran-gfortran))
 
 (setq prelude-f90-mode-hook 'prelude-f90-mode-defaults)
 
