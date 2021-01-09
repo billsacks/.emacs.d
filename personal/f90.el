@@ -1,4 +1,6 @@
 (require 'prelude-programming)
+(require 'lsp-mode)
+(add-hook 'f90-mode-hook #'lsp)
 
 ;; Define a function to align all commas on a line
 ;; adapted from http://www.emacswiki.org/emacs/AlignCommands
