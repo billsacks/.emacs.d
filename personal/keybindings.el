@@ -1,8 +1,10 @@
 (require 'macros)
 
 ;; With command acting as meta, escape is more useful as super rather than meta (since
-;; option isn't a very ergonomic modifier)
+;; option isn't a very ergonomic modifier). Also make "home" give super because home isn't
+;; very useful in emacs, and this gives symmetry.
 (define-key key-translation-map (kbd "ESC") #'event-apply-super-modifier)
+(define-key key-translation-map (kbd "<home>") #'event-apply-super-modifier)
 
 ;; Swiper key-bindings
 (global-set-key (kbd "C-S-s") 'swiper)
