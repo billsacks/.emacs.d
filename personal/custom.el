@@ -86,4 +86,4 @@
  '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic))))
  '(mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.8 :family "Lucida Grande"))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
- '(whitespace-trailing ((t (:background "tan1" :foreground "yellow" :weight bold)))))
+ '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold)))))
