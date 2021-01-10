@@ -33,6 +33,7 @@
  '(fortran-structure-indent 2)
  '(frame-resize-pixelwise t)
  '(global-nlinum-mode nil)
+ '(global-tab-line-mode t)
  '(hl-todo-keyword-faces
    '(("TODO" . "Firebrick")
      ("KLUDGE" . "Firebrick")
