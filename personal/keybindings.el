@@ -2,9 +2,11 @@
 
 ;; With command acting as meta, escape is more useful as super rather than meta (since
 ;; option isn't a very ergonomic modifier). Also make "home" give super because home isn't
-;; very useful in emacs, and this gives symmetry.
+;; very useful in emacs, and this gives symmetry. Make "end" give hyper because otherwise
+;; we don't have a way to give hyper (though I'm not sure if we'll use it for anything).
 (define-key key-translation-map (kbd "ESC") #'event-apply-super-modifier)
 (define-key key-translation-map (kbd "<home>") #'event-apply-super-modifier)
+(define-key key-translation-map (kbd "<end>") #'event-apply-hyper-modifier)
 
 ;; Swiper key-bindings
 (global-set-key (kbd "C-S-s") 'swiper)
