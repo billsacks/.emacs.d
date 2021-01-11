@@ -27,3 +27,5 @@
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
 
 (load-library "cime_tools")
+
+(require 'org-protocol)
