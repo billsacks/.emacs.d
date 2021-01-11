@@ -57,7 +57,7 @@
 ;;; Org-mode (a legendary productivity tool that deserves its own category)
 ;;
 ;; Org-mode helps you keep TODO lists, notes and more.
-;; (require 'prelude-org)
+(require 'prelude-org)
 
 ;;; Programming languages support
 ;;
