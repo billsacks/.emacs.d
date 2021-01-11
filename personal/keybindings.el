@@ -20,8 +20,17 @@
 (global-set-key (kbd "M-g M-g") 'avy-goto-line)
 
 ;; Some other convenient shortcuts
+
+;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
+;; without completely killing the buffer
+(global-set-key (kbd "C-x w") 'bury-buffer)
+;; these are convenient ways to cycle through tabs in the tab line
+(global-set-key (kbd "<M-S-left>") 'previous-buffer)
+(global-set-key (kbd "<M-S-right>") 'next-buffer)
+
 (global-set-key (kbd "<s-down>") (kbd "C-u 3 C-v"))
 (global-set-key (kbd "<s-up>") (kbd "C-u 3 M-v"))
+
 (global-set-key (kbd "C-c c") 'copy-current-line)
 (define-key prelude-mode-map (kbd "C-c f") nil)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
