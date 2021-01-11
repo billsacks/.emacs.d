@@ -19,8 +19,6 @@
  '(f90-associate-indent 0)
  '(f90-beginning-ampersand nil)
  '(f90-break-before-delimiters nil)
- '(f90-do-indent 2)
- '(f90-if-indent 2)
  '(f90-program-indent 2)
  '(fill-column 72)
  '(find-grep-options "-q -i")
