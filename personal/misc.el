@@ -25,6 +25,9 @@
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
+(add-hook 'org-mode-hook '(lambda() (set-fill-column 110)))
+
+(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
 
 (load-library "cime_tools")
 
