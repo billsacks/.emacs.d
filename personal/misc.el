@@ -32,3 +32,5 @@
 (load-library "cime_tools")
 
 (require 'org-protocol)
+(require 'rg)
+(rg-enable-default-bindings)
