@@ -32,14 +32,7 @@
   (message "Line copied"))
 
 ;; My original plan was to write a function to make a window 2/3 the total width of the
-;; frame, but the following works at least as well
-(defun fit-window-with-max ()
-  "Call fit-window-to-buffer with a max width"
+;; frame, but the following is easier and works well enough for now (on my LG monitor)
+(defun enlarge-window-50 ()
   (interactive)
-  (let ((fit-window-to-buffer-horizontally 'only))
-  (fit-window-to-buffer
-   ;; the 4th argument is max-width; this is tuned to my LG external monitor
-   nil nil nil 170)
-  ;; it seems like fit-window-to-buffer makes things a bit too small: maybe it doesn't
-  ;; account for margin, fringe and scroll bar? fix that here:
-  (enlarge-window-horizontally 10)))
+  (enlarge-window-horizontally 50))
