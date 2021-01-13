@@ -70,6 +70,7 @@
  '(ripgrep-arguments '("--sort path"))
  '(size-indication-mode nil)
  '(tool-bar-mode nil)
+ '(vc-git-grep-template "git --no-pager grep --show-function -n <C> -e <R> -- <F>")
  '(whitespace-style '(face trailing tabs empty))
  '(yas-also-auto-indent-first-line t))
 (custom-set-faces
