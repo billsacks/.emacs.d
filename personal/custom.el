@@ -64,13 +64,15 @@
  '(prelude-clean-whitespace-on-save nil)
  '(prelude-guru nil)
  '(projectile-mode-line-prefix " P")
+ '(projectile-use-git-grep t)
  '(python-shell-interpreter "ipython")
  '(rg-command-line-flags '("--sort path"))
  '(rg-keymap-prefix [8388723])
  '(ripgrep-arguments '("--sort path"))
  '(size-indication-mode nil)
  '(tool-bar-mode nil)
- '(vc-git-grep-template "git --no-pager grep --show-function -n <C> -e <R> -- <F>")
+ '(vc-git-grep-template
+   "git --no-pager grep --show-function --color -n <C> -e <R> -- <F>")
  '(whitespace-style '(face trailing tabs empty))
  '(yas-also-auto-indent-first-line t))
 (custom-set-faces
