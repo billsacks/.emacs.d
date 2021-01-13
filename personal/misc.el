@@ -40,3 +40,6 @@
 ;; In general, I don't want emacs splitting my window for me: I want to be in control of
 ;; that.
 (setq split-width-threshold nil)
+
+(setq grep-context-face 'compilation-info-face)
+(setq grep-match-face 'compilation-warning-face)
