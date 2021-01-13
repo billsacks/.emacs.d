@@ -34,3 +34,9 @@
 (require 'org-protocol)
 (require 'rg)
 (rg-enable-default-bindings)
+
+(require 'popwin)
+(popwin-mode 1)
+(global-set-key (kbd "C-z") popwin:keymap)
+
+(setq split-width-threshold nil)
