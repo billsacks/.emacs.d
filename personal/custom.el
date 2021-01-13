@@ -22,6 +22,7 @@
  '(f90-program-indent 2)
  '(fill-column 72)
  '(find-grep-options "-q -i")
+ '(fit-window-to-buffer-horizontally t)
  '(flycheck-idle-change-delay 5)
  '(flycheck-indication-mode 'left-margin)
  '(flycheck-mode-line-prefix "FC")

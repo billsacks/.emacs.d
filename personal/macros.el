@@ -30,3 +30,10 @@
   (kill-ring-save (line-beginning-position)
                   (line-beginning-position 2))
   (message "Line copied"))
+
+(defun fit-window-with-max ()
+  "Call fit-window-to-buffer with a max width"
+  (interactive)
+  (fit-window-to-buffer
+   ;; the 4th argument is max-width; this is tuned to my LG external monitor
+   nil nil nil 180))
