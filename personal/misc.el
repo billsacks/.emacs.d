@@ -35,8 +35,8 @@
 (require 'rg)
 (rg-enable-default-bindings)
 
-(require 'popwin)
-(popwin-mode 1)
-(global-set-key (kbd "C-z") popwin:keymap)
-
+;; This is useful when I have grep results (or similar) displayed in a window that is
+;; taking up much of the screen: it prevents the grep results from being split left-right.
+;; In general, I don't want emacs splitting my window for me: I want to be in control of
+;; that.
 (setq split-width-threshold nil)

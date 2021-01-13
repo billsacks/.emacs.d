@@ -36,3 +36,10 @@
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
 (define-key prelude-mode-map (kbd "C-c t") nil)
 (global-set-key (kbd "C-c t") 'indent-relative)
+
+;; s-w is originally set to the same thing as C-x o: ace-window
+(global-unset-key (kbd "s-w"))
+(global-set-key (kbd "s-w x") 'maximize-window)
+(global-set-key (kbd "s-w n") 'minimize-window)
+;; mnemonic for the following: "equal"
+(global-set-key (kbd "s-w e") 'balance-windows)
