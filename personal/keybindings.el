@@ -43,4 +43,5 @@
 (global-set-key (kbd "s-w n") 'minimize-window)
 ;; mnemonic for the following: "equal"
 (global-set-key (kbd "s-w e") 'balance-windows)
-(global-set-key (kbd "s-w 5") 'enlarge-window-50)
+;; mnemonic for the following: wider
+(global-set-key (kbd "s-w w") 'enlarge-window-50)
