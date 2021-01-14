@@ -19,6 +19,9 @@
 (global-set-key (kbd "M-g g") 'avy-goto-line)
 (global-set-key (kbd "M-g M-g") 'avy-goto-line)
 
+;; Shortcuts to some Projectile things
+(global-set-key (kbd "s-g") 'projectile-grep)
+
 ;; Some other convenient shortcuts
 
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
