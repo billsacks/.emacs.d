@@ -1,4 +1,14 @@
 (require 'grep)
+(require 'compile)
+
+;; I can't seem to access the command argument to compilation-start from within
+;; grep-changes, even though it's called from within compilation-start. I'm dealing with
+;; that by adding advice around compilation-start to make that argument available. It
+;; really feels like this shouldn't be necessary.
+(defun wrap-compilation-start (orig-fun command &rest args)
+  (let ((res (apply orig-fun command args)))
+    res))
+(advice-add 'compilation-start :around 'wrap-compilation-start)
 
 (defun grep-changes()
   (defface my-grep-context-face
@@ -14,7 +24,7 @@
        ))
     "My face for grep match"
     :group 'my-grep-faces)
-  (defface my-grep-hit-face
+  (defface my-tiny-grep-hit-face
     '((t
        :inherit compilation-info-face
        ;; Super tiny: I do a git grep with --show-function, which gives the file name and
@@ -27,7 +37,7 @@
     :group 'my-grep-faces)
   (set (make-local-variable 'grep-context-face) 'my-grep-context-face)
   (set (make-local-variable 'grep-match-face) 'my-grep-match-face)
-  (set (make-local-variable 'compilation-error-face) 'my-grep-hit-face)
+  (if (string-match-p (regexp-quote "--show-function") command)
+      (set (make-local-variable 'compilation-error-face) 'my-tiny-grep-hit-face))
   )
-
 (add-hook 'grep-setup-hook 'grep-changes)
