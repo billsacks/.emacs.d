@@ -57,3 +57,5 @@
 (global-set-key (kbd "s-w e") 'balance-windows)
 ;; mnemonic for the following: wider
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
+(global-set-key (kbd "s-w <left>") 'winner-undo)
+(global-set-key (kbd "s-w <right>") 'winner-redo)
