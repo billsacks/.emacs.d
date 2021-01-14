@@ -41,5 +41,5 @@
 ;; that.
 (setq split-width-threshold nil)
 
-(setq grep-context-face 'compilation-info-face)
-(setq grep-match-face 'compilation-warning-face)
+(setq grep-context-face font-lock-builtin-face)
+(setq grep-match-face font-lock-comment-face)
