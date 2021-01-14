@@ -8,9 +8,14 @@
 (define-key key-translation-map (kbd "<home>") #'event-apply-super-modifier)
 (define-key key-translation-map (kbd "<end>") #'event-apply-hyper-modifier)
 
-;; Swiper key-bindings
+;; ivy/swiper key-bindings
 (global-set-key (kbd "C-S-s") 'swiper)
 (global-set-key (kbd "C-S-r") 'swiper-backward)
+;; this is useful when you don't want to use the completion candidate, but just want to
+;; use the current input, such as inputting file name patterns and directories for rgrep;
+;; it is bound to C-M-j by default, but C-Return is easier
+(require 'ivy)
+(define-key ivy-minibuffer-map (kbd "<C-return>") 'ivy-immediate-done)
 
 ;; Avy key-bindings
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
@@ -20,9 +25,11 @@
 (global-set-key (kbd "M-g M-g") 'avy-goto-line)
 
 ;; Shortcuts to some Projectile things
-(global-set-key (kbd "s-g") 'projectile-grep)
+(global-set-key (kbd "A-g") 'projectile-grep)
 
 ;; Some other convenient shortcuts
+
+(global-set-key (kbd "A-G") 'vc-git-grep)
 
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
 ;; without completely killing the buffer
@@ -39,6 +46,8 @@
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
 (define-key prelude-mode-map (kbd "C-c t") nil)
 (global-set-key (kbd "C-c t") 'indent-relative)
+
+(global-set-key (kbd "s-f") 'select-frame-by-name)
 
 ;; s-w is originally set to the same thing as C-x o: ace-window
 (global-unset-key (kbd "s-w"))
