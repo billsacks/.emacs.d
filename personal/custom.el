@@ -87,7 +87,7 @@
  '(ediff-fine-diff-C ((t (:background "#f0f055"))))
  '(font-lock-builtin-face ((t (:foreground "#6052a3"))))
  '(font-lock-keyword-face ((t (:foreground "#932092"))))
- '(hl-line ((t (:inherit highlight :extend t :background "#e2eee2"))))
+ '(hl-line ((t (:inherit highlight :extend t :background "#e9f2e9"))))
  '(hl-todo ((t (:inherit font-lock-comment-face :weight bold))))
  '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic))))
  '(magit-section-highlight ((t (:extend t :background "grey92"))))
