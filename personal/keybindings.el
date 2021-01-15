@@ -34,9 +34,15 @@
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
 ;; without completely killing the buffer
 (global-set-key (kbd "C-x w") 'bury-buffer)
+
 ;; these are convenient ways to cycle through tabs in the tab line
 (global-set-key (kbd "<M-S-left>") 'previous-buffer)
 (global-set-key (kbd "<M-S-right>") 'next-buffer)
+;; but I need to then redefine them in org mode
+(define-key org-mode-map (kbd "<M-S-left>") nil)
+(define-key org-mode-map (kbd "<M-S-right>") nil)
+(define-key org-mode-map (kbd "<A-left>") 'org-shiftmetaleft)
+(define-key org-mode-map (kbd "<A-right>") 'org-shiftmetaright)
 
 (global-set-key (kbd "<A-down>") (kbd "C-u 3 C-v"))
 (global-set-key (kbd "<A-up>") (kbd "C-u 3 M-v"))
