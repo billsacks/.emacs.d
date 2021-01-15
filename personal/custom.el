@@ -38,6 +38,7 @@
      ("HACK" . "Firebrick")
      ("TEMP" . "Firebrick")
      ("FIXME" . "Firebrick")))
+ '(ivy-count-format "(%d/%d) ")
  '(ivy-extra-directories nil)
  '(ivy-height 16)
  '(ivy-use-virtual-buffers t)
