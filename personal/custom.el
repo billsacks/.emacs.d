@@ -53,7 +53,6 @@
    '("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position smartrep-mode-line-string "  " mode-line-modes mode-line-misc-info
      (vc-mode vc-mode)
      mode-line-end-spaces))
- '(next-error-recenter '(4))
  '(ns-alternate-modifier 'alt)
  '(ns-command-modifier 'meta)
  '(nxml-attribute-indent 0)
