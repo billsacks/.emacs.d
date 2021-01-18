@@ -13,8 +13,7 @@
 (defun grep-changes()
   (defface my-grep-context-face
     '((t
-       :inherit font-lock-builtin-face
-       :weight bold
+       :inherit font-lock-function-name-face
        ))
     "My face for grep context"
     :group 'my-grep-faces)
