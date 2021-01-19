@@ -28,6 +28,7 @@
 (add-hook 'org-mode-hook '(lambda() (set-fill-column 110)))
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
+(add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
 
 (load-library "cime_tools")
 
