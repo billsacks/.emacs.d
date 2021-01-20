@@ -65,3 +65,5 @@
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
 (global-set-key (kbd "s-w <left>") 'winner-undo)
 (global-set-key (kbd "s-w <right>") 'winner-redo)
+;; move buffer to other window
+(global-set-key (kbd "s-w m") 'move-buffer-to-other-window)

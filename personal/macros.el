@@ -36,3 +36,16 @@
 (defun enlarge-window-50 ()
   (interactive)
   (enlarge-window-horizontally 50))
+
+;; adapted from https://gist.github.com/danmayer/1009137
+(defun move-buffer-to-other-window ()
+  "Move the buffer from the selected window in next window"
+  (interactive)
+  (let* ((this (selected-window))
+         (other (next-window))
+         (this-buffer (window-buffer this)))
+    (set-window-buffer other this-buffer)
+    (bury-buffer)
+    (other-window 1) ;;swap cursor to new buffer
+    )
+  )
