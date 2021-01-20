@@ -73,7 +73,7 @@
  '(size-indication-mode nil)
  '(tool-bar-mode nil)
  '(vc-git-grep-template
-   "git --no-pager grep --show-function --color -n <C> -e <R> -- <F>")
+   "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
  '(whitespace-style '(face trailing tabs empty))
  '(yas-also-auto-indent-first-line t))
 (custom-set-faces
