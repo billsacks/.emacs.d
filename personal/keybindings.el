@@ -35,6 +35,9 @@
 ;; without completely killing the buffer
 (global-set-key (kbd "C-x w") 'bury-buffer)
 
+;; rename-uniquely is especially helpful in grep buffers
+(global-set-key (kbd "A-u") 'rename-uniquely)
+
 ;; these are convenient ways to cycle through tabs in the tab line
 (global-set-key (kbd "<M-S-left>") 'previous-buffer)
 (global-set-key (kbd "<M-S-right>") 'next-buffer)
