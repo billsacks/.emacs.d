@@ -51,8 +51,6 @@
     (define-key newmap (kbd "C-a") 'org-beginning-of-line)
     (make-local-variable 'minor-mode-overriding-map-alist)
     (push `(prelude-mode . ,newmap) minor-mode-overriding-map-alist))
-  (auto-fill-mode -1)
-  (visual-line-mode +1)
 )
 
 (setq prelude-org-mode-hook 'prelude-org-mode-defaults)

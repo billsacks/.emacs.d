@@ -60,6 +60,7 @@
  '(nxml-outline-child-indent 3)
  '(org-agenda-files '("~/notes"))
  '(org-agenda-window-setup 'current-window)
+ '(org-export-backends '(ascii html icalendar latex md odt))
  '(package-selected-packages
    '(ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet lsp-python-ms cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui company-lsp json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
