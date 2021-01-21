@@ -118,4 +118,5 @@
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
  '(rg-match-face ((t (:foreground "darkred" :weight bold))))
  '(secondary-selection ((t (:extend t :background "lemon chiffon"))))
+ '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
  '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold)))))
