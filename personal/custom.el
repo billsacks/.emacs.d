@@ -49,6 +49,7 @@
  '(lsp-ui-doc-position 'at-point)
  '(magit-ediff-dwim-show-on-hunks t)
  '(major-mode 'text-mode)
+ '(markdown-asymmetric-header t)
  '(markdown-code-lang-modes
    '(("ocaml" . tuareg-mode)
      ("elisp" . emacs-lisp-mode)
