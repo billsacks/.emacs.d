@@ -86,6 +86,7 @@
  '(prelude-clean-whitespace-on-save nil)
  '(prelude-guru nil)
  '(projectile-mode-line-prefix " P")
+ '(projectile-switch-project-action 'projectile-commander)
  '(projectile-use-git-grep t)
  '(python-shell-interpreter "ipython")
  '(rainbow-delimiters-max-face-count 5)
