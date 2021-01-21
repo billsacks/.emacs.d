@@ -36,6 +36,12 @@
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
 (add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
+;; I think the following would normally be done by default, but crux's C-a shadows it (C-e
+;; works fine already, giving end-of-visual-line)
+(add-hook 'visual-line-mode-hook
+          (lambda ()
+            (local-unset-key (kbd "C-a"))
+            (local-set-key (kbd "C-a") 'beginning-of-visual-line)))
 
 (load-library "cime_tools")
 
