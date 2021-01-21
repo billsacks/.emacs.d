@@ -61,6 +61,7 @@
 (global-set-key (kbd "C-c t") 'indent-relative)
 
 (global-set-key (kbd "A-i") 'counsel-imenu)
+(global-set-key (kbd "A-I") 'lsp-ui-imenu)
 (global-set-key (kbd "A-f") 'select-frame-by-name)
 
 (global-set-key (kbd "A-m") 'move-buffer-to-other-window)

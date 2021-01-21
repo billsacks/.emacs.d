@@ -43,6 +43,12 @@
             (local-unset-key (kbd "C-a"))
             (local-set-key (kbd "C-a") 'beginning-of-visual-line)))
 
+;; Workaround: wrapped lines in lsp-ui-imenu break the ability to move from line to line
+;; with the arrow keys; so while that continues to be a problem, prevent wrapping
+(add-hook 'lsp-ui-imenu-mode-hook
+          (lambda ()
+            (setq-local truncate-lines 1)))
+
 (load-library "cime_tools")
 
 (require 'org-protocol)
