@@ -121,7 +121,7 @@
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "red1" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "SlateBlue"))))
- '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "DarkOrange3"))))
+ '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "DarkOrange4"))))
  '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "RoyalBlue2"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "purple3"))))
  '(rainbow-delimiters-depth-5-face ((t (:inherit rainbow-delimiters-base-face :foreground "green4"))))
