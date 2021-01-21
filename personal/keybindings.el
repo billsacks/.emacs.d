@@ -56,7 +56,8 @@
 (define-key prelude-mode-map (kbd "C-c t") nil)
 (global-set-key (kbd "C-c t") 'indent-relative)
 
-(global-set-key (kbd "s-f") 'select-frame-by-name)
+(global-set-key (kbd "A-i") 'counsel-imenu)
+(global-set-key (kbd "A-f") 'select-frame-by-name)
 
 ;; s-w is originally set to the same thing as C-x o: ace-window
 (global-unset-key (kbd "s-w"))
