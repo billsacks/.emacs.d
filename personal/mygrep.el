@@ -30,7 +30,7 @@
        ;; function in a header. So the file name on each line is unnecessary and just makes
        ;; the lines long. I wanted to get rid of it entirely, e.g., by making it invisible,
        ;; but I can't figure out how to do that. So do this kludge of setting it to tiny.
-       :height 5
+       :height 6
        ))
     "My face for grep hit"
     :group 'my-grep-faces)
