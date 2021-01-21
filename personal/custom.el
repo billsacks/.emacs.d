@@ -68,7 +68,7 @@
      ("fortran" . f90-mode)))
  '(markdown-fontify-code-blocks-natively t)
  '(markdown-header-scaling t)
- '(markdown-header-scaling-values '(1.7 1.5 1.3 1.1 1.0 1.0))
+ '(markdown-header-scaling-values '(1.5 1.3 1.2 1.1 1.0 1.0))
  '(mode-line-format
    '("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position smartrep-mode-line-string "  " mode-line-modes mode-line-misc-info
      (vc-mode vc-mode)
@@ -120,4 +120,5 @@
  '(rg-match-face ((t (:foreground "darkred" :weight bold))))
  '(secondary-selection ((t (:extend t :background "lemon chiffon"))))
  '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
+ '(whitespace-empty ((t (:background "LightYellow" :foreground "firebrick"))))
  '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold)))))
