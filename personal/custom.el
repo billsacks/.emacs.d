@@ -47,6 +47,7 @@
  '(lsp-headerline-breadcrumb-enable nil)
  '(lsp-imenu-sort-methods '(kind position))
  '(lsp-ui-doc-position 'at-point)
+ '(mac-option-modifier 'alt)
  '(magit-ediff-dwim-show-on-hunks t)
  '(major-mode 'text-mode)
  '(markdown-asymmetric-header t)
