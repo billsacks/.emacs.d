@@ -59,6 +59,8 @@
 (global-set-key (kbd "A-i") 'counsel-imenu)
 (global-set-key (kbd "A-f") 'select-frame-by-name)
 
+(global-set-key (kbd "A-m") 'move-buffer-to-other-window)
+
 ;; s-w is originally set to the same thing as C-x o: ace-window
 (global-unset-key (kbd "s-w"))
 (global-set-key (kbd "s-w x") 'maximize-window)
@@ -69,5 +71,3 @@
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
 (global-set-key (kbd "s-w <left>") 'winner-undo)
 (global-set-key (kbd "s-w <right>") 'winner-redo)
-;; move buffer to other window
-(global-set-key (kbd "s-w m") 'move-buffer-to-other-window)
