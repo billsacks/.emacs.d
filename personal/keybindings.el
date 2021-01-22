@@ -63,8 +63,13 @@
 ;; but I need to then redefine them in org mode
 (define-key org-mode-map (kbd "<M-S-left>") nil)
 (define-key org-mode-map (kbd "<M-S-right>") nil)
-(define-key org-mode-map (kbd "<A-left>") 'org-shiftmetaleft)
-(define-key org-mode-map (kbd "<A-right>") 'org-shiftmetaright)
+(define-key org-mode-map (kbd "<M-A-left>") 'org-shiftmetaleft)
+(define-key org-mode-map (kbd "<M-A-right>") 'org-shiftmetaright)
+;; these bindings are shadowed by windmove mode
+(define-key org-mode-map (kbd "<A-left>") 'org-shiftleft)
+(define-key org-mode-map (kbd "<A-right>") 'org-shiftright)
+(define-key org-mode-map (kbd "<A-up>") 'org-shiftup)
+(define-key org-mode-map (kbd "<A-down>") 'org-shiftdown)
 
 (global-set-key (kbd "<A-down>") (kbd "C-u 3 C-v"))
 (global-set-key (kbd "<A-up>") (kbd "C-u 3 M-v"))
