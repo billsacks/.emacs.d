@@ -1,3 +1,18 @@
+;; General keybinding notes:
+;;
+;; I'm using A-* keybindings (where I have bound the option key to A) for things where I
+;; want a simple, one-key binding. These are mainly commands that are more complex than
+;; just editing.
+;;
+;; I'm also defining some C-x * keybindings (particularly things that are similar to other
+;; C-x keybindings) as well as C-c * keybindings (especially for things that feel like
+;; "editing").
+;;
+;; I also have some super (s-*) keybindings. These are generally used to group together
+;; similar commands. For example, s-w groups together some window-related commands.
+;;
+;; In the future I could see adding C-return as a prefix for some commands.
+
 (require 'macros)
 
 ;; With command acting as meta, escape is more useful as super rather than meta (since
