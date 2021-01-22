@@ -67,7 +67,7 @@
      ("bash" . sh-mode)
      ("fortran" . f90-mode)))
  '(markdown-fontify-code-blocks-natively t)
- '(markdown-header-scaling t)
+ '(markdown-header-scaling nil)
  '(markdown-header-scaling-values '(1.5 1.3 1.2 1.1 1.0 1.0))
  '(mode-line-format
    '("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position smartrep-mode-line-string "  " mode-line-modes mode-line-misc-info
@@ -116,6 +116,12 @@
  '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic))))
  '(magit-section-highlight ((t (:extend t :background "grey92"))))
  '(markdown-code-face ((t (:inherit fixed-pitch :background "#efefef"))))
+ '(markdown-header-face-1 ((t (:inherit outline-1 :weight bold :height 1.0))))
+ '(markdown-header-face-2 ((t (:inherit outline-2 :weight bold :height 1.0))))
+ '(markdown-header-face-3 ((t (:inherit outline-3 :weight bold :height 1.0))))
+ '(markdown-header-face-4 ((t (:inherit outline-4 :weight bold :height 1.0))))
+ '(markdown-header-face-5 ((t (:inherit outline-5 :weight bold :height 1.0))))
+ '(markdown-header-face-6 ((t (:inherit outline-6 :weight bold :height 1.0))))
  '(match ((t (:background "gold1"))))
  '(mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.8 :family "Lucida Grande"))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
