@@ -51,9 +51,12 @@
 
 (global-set-key (kbd "A-G") 'vc-git-grep)
 
+;; the following will turn on hi-lock mode; to unhighlight, use C-x w r
+(global-set-key (kbd "A-h") 'highlight-symbol-at-point)
+
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
 ;; without completely killing the buffer
-(global-set-key (kbd "C-x w") 'bury-buffer)
+(global-set-key (kbd "A-w") 'bury-buffer)
 
 ;; rename-uniquely is especially helpful in grep buffers
 (global-set-key (kbd "A-u") 'rename-uniquely)
