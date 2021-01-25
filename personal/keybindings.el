@@ -61,12 +61,16 @@
 ;; rename-uniquely is especially helpful in grep buffers
 (global-set-key (kbd "A-u") 'rename-uniquely)
 
-;; these are convenient ways to cycle through tabs in the tab line
-(global-set-key (kbd "<M-S-left>") 'previous-buffer)
-(global-set-key (kbd "<M-S-right>") 'next-buffer)
+;; these are convenient ways to cycle through tabs in the tab line (by default, M-left and
+;; M-right do the same thing as C-left and C-right, so it seems okay to rebind them; these
+;; M-left and M-right bindings are consistent with iterm2, if cmd sends meta)
+(global-set-key (kbd "<M-left>") 'previous-buffer)
+(global-set-key (kbd "<M-right>") 'next-buffer)
 ;; but I need to then redefine them in org mode
-(define-key org-mode-map (kbd "<M-S-left>") nil)
-(define-key org-mode-map (kbd "<M-S-right>") nil)
+(define-key org-mode-map (kbd "<M-left>") nil)
+(define-key org-mode-map (kbd "<M-right>") nil)
+(define-key org-mode-map (kbd "<M-S-left>") 'org-metaleft)
+(define-key org-mode-map (kbd "<M-S-right>") 'org-metaright)
 (define-key org-mode-map (kbd "<M-A-left>") 'org-shiftmetaleft)
 (define-key org-mode-map (kbd "<M-A-right>") 'org-shiftmetaright)
 ;; these bindings are shadowed by windmove mode
