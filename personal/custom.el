@@ -108,6 +108,8 @@
  '(cursor ((t (:background "#933141"))))
  '(ediff-fine-diff-C ((t (:background "#f0f055"))))
  '(fixed-pitch ((t (:family "Hack"))))
+ '(flyspell-duplicate ((t (:underline (:color "LightSlateBlue" :style wave)))))
+ '(flyspell-incorrect ((t (:underline (:color "DarkSlateBlue" :style wave)))))
  '(font-lock-builtin-face ((t (:foreground "#6052a3"))))
  '(font-lock-keyword-face ((t (:foreground "#932092"))))
  '(hl-line ((t (:inherit highlight :extend t :background "#e9f2e9"))))

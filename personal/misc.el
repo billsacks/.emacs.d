@@ -49,6 +49,17 @@
           (lambda ()
             (setq-local truncate-lines 1)))
 
+;; I don't like how flyspell highlights words based on where your mouse happens to be
+;; (because usually my mouse cursor is not positioned intentionally); this fixes it
+;; from https://emacs.stackexchange.com/questions/36899/disable-clickable-links-for-misspelled-words-flyspell
+(with-eval-after-load "flyspell"
+  (defun make-flyspell-overlay-return-mouse-stuff (overlay)
+    (overlay-put overlay 'help-echo nil)
+    (overlay-put overlay 'keymap nil)
+    (overlay-put overlay 'mouse-face nil))
+  (advice-add 'make-flyspell-overlay :filter-return #'make-flyspell-overlay-return-mouse-stuff)
+  )
+
 (load-library "cime_tools")
 
 (require 'org-protocol)
