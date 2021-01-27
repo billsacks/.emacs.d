@@ -46,6 +46,7 @@
  '(lsp-enable-imenu nil)
  '(lsp-headerline-breadcrumb-enable nil)
  '(lsp-imenu-sort-methods '(kind position))
+ '(lsp-modeline-diagnostics-enable nil)
  '(lsp-ui-doc-position 'at-point)
  '(mac-option-modifier 'alt)
  '(magit-ediff-dwim-show-on-hunks t)
