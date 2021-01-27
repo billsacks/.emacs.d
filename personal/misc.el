@@ -5,7 +5,13 @@
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
 ;; For flycheck to display in the margins
-(setq-default left-margin-width 1)
+;; Just using a setq-default on left-margin-width isn't always enough: sometimes, when
+;; splitting a window, the margins disappear. The following ensures that the margins get
+;; set appropriately all the time (from
+;; https://stackoverflow.com/questions/7251784/how-do-i-adjust-the-left-margin-in-emacs-nox)
+(add-hook 'window-configuration-change-hook
+          (lambda ()
+            (set-window-margins (car (get-buffer-window-list (current-buffer) nil t)) 1 0)))
 
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
