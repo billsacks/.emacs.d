@@ -48,6 +48,7 @@
  '(lsp-imenu-sort-methods '(kind position))
  '(lsp-modeline-diagnostics-enable t)
  '(lsp-modeline-diagnostics-scope :file)
+ '(lsp-pyright-extra-paths ["./python" "./cime/scripts/lib" "./scripts/lib"])
  '(lsp-ui-doc-position 'at-point)
  '(mac-option-modifier 'alt)
  '(magit-ediff-dwim-show-on-hunks t)
