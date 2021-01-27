@@ -1,3 +1,6 @@
+(eval-when-compile
+  (require 'use-package))
+
 (setq winner-dont-bind-my-keys t)
 
 ;; this needs to be set before the (require 'tramp) done in prelude

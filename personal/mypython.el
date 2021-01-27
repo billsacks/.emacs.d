@@ -1,7 +1,6 @@
 (require 'electric)
 (require 'prelude-programming)
 (require 'lsp-mode)
-(add-hook 'python-mode-hook #'lsp)
 
 ;; from prelude-python.el
 (when (fboundp 'exec-path-from-shell-copy-env)
@@ -39,3 +38,9 @@
 (defun python-flycheck-setup()
   (flycheck-select-checker 'python-pylint))
 (add-hook 'lsp-pyls-after-open-hook #'python-flycheck-setup)
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp))))
