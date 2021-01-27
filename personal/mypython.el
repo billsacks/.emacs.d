@@ -39,8 +39,9 @@
   (flycheck-select-checker 'python-pylint))
 (add-hook 'lsp-pyls-after-open-hook #'python-flycheck-setup)
 
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp))))
+(require 'lsp-pyright)
+
+;; this is needed in order to pick up settings from dir-locals that impact lsp - in
+;; particular, lsp-pyright-extra-paths (from https://emacs-lsp.github.io/lsp-mode/page/faq/)
+(add-hook 'hack-local-variables-hook
+          (lambda () (when (derived-mode-p 'python-mode) (lsp))))
