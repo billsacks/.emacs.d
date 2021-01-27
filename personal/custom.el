@@ -23,7 +23,6 @@
  '(fill-column 72)
  '(find-grep-options "-q -i")
  '(flycheck-check-syntax-automatically '(save mode-enabled))
- '(flycheck-indication-mode 'left-margin)
  '(flycheck-mode-line-prefix "FC")
  '(fortran-do-indent 2)
  '(fortran-if-indent 2)
