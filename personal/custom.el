@@ -22,7 +22,7 @@
  '(f90-program-indent 2)
  '(fill-column 72)
  '(find-grep-options "-q -i")
- '(flycheck-idle-change-delay 5)
+ '(flycheck-check-syntax-automatically '(save mode-enabled))
  '(flycheck-indication-mode 'left-margin)
  '(flycheck-mode-line-prefix "FC")
  '(fortran-do-indent 2)

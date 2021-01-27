@@ -29,3 +29,7 @@
 
 (add-hook 'python-mode-hook (lambda ()
                               (run-hooks 'my-python-mode-hook)))
+
+(defun python-flycheck-setup()
+  (flycheck-select-checker 'python-pylint))
+(add-hook 'lsp-pyls-after-open-hook #'python-flycheck-setup)
