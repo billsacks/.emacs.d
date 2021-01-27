@@ -23,13 +23,19 @@
     (setq-local imenu-create-index-function
                 #'python-imenu-create-flat-index))
   (add-hook 'post-self-insert-hook
-            #'electric-layout-post-self-insert-function nil 'local))
+            #'electric-layout-post-self-insert-function nil 'local)
+
+  ;; here is some stuff I'm adding
+  (flycheck-select-checker 'python-pylint)
+  )
 
 (setq my-python-mode-hook 'my-python-mode-defaults)
 
 (add-hook 'python-mode-hook (lambda ()
                               (run-hooks 'my-python-mode-hook)))
 
+;; the selection of flycheck checker above seems to get overridden by LSP; the following
+;; fixes the issue (though I'm not sure if this is the right way to do so)
 (defun python-flycheck-setup()
   (flycheck-select-checker 'python-pylint))
 (add-hook 'lsp-pyls-after-open-hook #'python-flycheck-setup)
