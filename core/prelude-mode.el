@@ -32,6 +32,7 @@
 (require 'easymenu)
 (require 'imenu-anywhere)
 (require 'crux)
+(require 'browse-at-remote)
 
 (defvar prelude-mode-map
   (let ((map (make-sparse-keymap)))
@@ -80,6 +81,7 @@
       (define-key map (kbd "s-m f") 'magit-file-dispatch)
       (define-key map (kbd "s-m l") 'magit-log-buffer-file)
       (define-key map (kbd "s-m b") 'magit-blame)
+      (define-key map (kbd "s-m r") 'browse-at-remote)
       ;; misc
       (define-key map (kbd "s-/") 'hippie-expand))
     (easy-menu-define prelude-mode-menu map

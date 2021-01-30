@@ -104,6 +104,3 @@
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
 (global-set-key (kbd "s-w <left>") 'winner-undo)
 (global-set-key (kbd "s-w <right>") 'winner-redo)
-
-(require 'browse-at-remote)
-(global-set-key (kbd "s-m r") 'browse-at-remote)
