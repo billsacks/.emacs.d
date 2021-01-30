@@ -62,3 +62,14 @@
 (require 'org-protocol)
 (require 'rg)
 (rg-enable-default-bindings)
+
+;; I came across these settings while looking up information on how to improve performance
+;; with long lines in emacs, wondering if long lines in visual-line-mode was contributing
+;; to typing lags when editing markdown files. It sounds like these are unlikely to make
+;; much difference with the only moderately-long lines in my files, but it also sounds
+;; like this won't hurt. (See
+;; https://200ok.ch/posts/2020-09-29_comprehensive_guide_on_handling_long_lines_in_emacs.html
+;; and
+;; https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow)
+(setq-default bidi-paragraph-direction 'left-to-right)
+(setq bidi-inhibit-bpa t)
