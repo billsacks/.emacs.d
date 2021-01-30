@@ -156,9 +156,6 @@
       (setq mode (car mode)))
     (with-current-buffer buffer (if mode (funcall mode)))))
 
-;; highlight the current line
-(global-hl-line-mode +1)
-
 (require 'volatile-highlights)
 (volatile-highlights-mode t)
 (diminish 'volatile-highlights-mode)
