@@ -48,7 +48,6 @@
  '(lsp-modeline-diagnostics-scope :file)
  '(lsp-pyright-extra-paths ["./python" "./cime/scripts/lib" "./scripts/lib"])
  '(lsp-ui-doc-position 'at-point)
- '(mac-option-modifier 'alt)
  '(magit-ediff-dwim-show-on-hunks t)
  '(magit-git-executable "/usr/local/bin/git")
  '(major-mode 'text-mode)
@@ -75,6 +74,8 @@
    '("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position smartrep-mode-line-string "  " mode-line-modes mode-line-misc-info
      (vc-mode vc-mode)
      mode-line-end-spaces))
+ '(ns-alternate-modifier 'alt)
+ '(ns-command-modifier 'meta)
  '(nxml-attribute-indent 0)
  '(nxml-child-indent 2)
  '(nxml-outline-child-indent 3)
