@@ -50,6 +50,7 @@
  '(lsp-ui-doc-position 'at-point)
  '(mac-option-modifier 'alt)
  '(magit-ediff-dwim-show-on-hunks t)
+ '(magit-git-executable "/usr/local/bin/git")
  '(major-mode 'text-mode)
  '(markdown-asymmetric-header t)
  '(markdown-code-lang-modes
