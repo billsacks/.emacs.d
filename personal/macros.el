@@ -49,3 +49,9 @@
     (other-window 1) ;;swap cursor to new buffer
     )
   )
+
+;; workaround for scroll bars disappearing when resizing a frame
+(defun fix-scroll-bars ()
+  (interactive)
+  (toggle-scroll-bar -1)
+  (toggle-scroll-bar +1))

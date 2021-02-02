@@ -104,3 +104,12 @@
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
 (global-set-key (kbd "s-w <left>") 'winner-undo)
 (global-set-key (kbd "s-w <right>") 'winner-redo)
+
+;; Some workarounds for issues (at least with emacsformacosx)
+
+;; Sometimes the screen goes mostly blank and needs redrawing
+(global-set-key (kbd "A-d") 'redraw-display)
+
+;; Sometimes scroll bars disappear when resizing a frame; this function fixes them; note
+;; that we use the same modifiers as for Divvy, since this happens after using Divvy
+(global-set-key (kbd "A-C-M-s") 'fix-scroll-bars)
