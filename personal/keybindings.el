@@ -46,6 +46,7 @@
 
 ;; Shortcuts to some Projectile things
 (global-set-key (kbd "A-g") 'projectile-grep)
+(global-set-key (kbd "C-x M-f") 'projectile-find-file)
 
 ;; Some other convenient shortcuts
 

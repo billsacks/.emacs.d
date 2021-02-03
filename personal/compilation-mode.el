@@ -9,5 +9,6 @@
            (inhibit-same-window . nil))))
     (call-interactively #'compile-goto-error)))
 (defun my-compilation-mode-hook ()
-  (local-set-key (kbd "o") #'my-compile-goto-error-same-window))
+  (local-set-key (kbd "o") #'my-compile-goto-error-same-window)
+  (hl-line-mode +1))
 (add-hook 'compilation-mode-hook #'my-compilation-mode-hook)
