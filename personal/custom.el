@@ -136,7 +136,7 @@
  '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "ForestGreen"))))
  '(rg-match-face ((t (:foreground "darkred" :weight bold))))
  '(secondary-selection ((t (:extend t :background "lemon chiffon"))))
- '(show-paren-match ((t (:background "LightGoldenrod1"))))
+ '(show-paren-match ((t (:background "LightBlue1"))))
  '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
  '(whitespace-empty ((t (:background "LightYellow" :foreground "firebrick"))))
  '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold)))))
