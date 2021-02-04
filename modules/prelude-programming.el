@@ -69,6 +69,7 @@
     (diminish 'guru-mode))
   (rainbow-delimiters-mode +1)
   (smartparens-mode +1)
+  (show-smartparens-mode +1)
   (prelude-enable-whitespace)
   (prelude-local-comment-auto-fill))
 
