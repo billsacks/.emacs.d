@@ -94,6 +94,7 @@
 (global-set-key (kbd "A-f") 'select-frame-by-name)
 
 (global-set-key (kbd "A-m") 'move-buffer-to-other-window)
+(global-set-key (kbd "A-M-m") 'copy-buffer-to-other-window)
 
 ;; s-w is originally set to the same thing as C-x o: ace-window
 (global-unset-key (kbd "s-w"))

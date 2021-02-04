@@ -38,16 +38,20 @@
   (enlarge-window-horizontally 50))
 
 ;; adapted from https://gist.github.com/danmayer/1009137
-(defun move-buffer-to-other-window ()
-  "Move the buffer from the selected window in next window"
+(defun copy-buffer-to-other-window ()
+  "Copy the buffer from the selected window to the next window"
   (interactive)
   (let* ((this (selected-window))
          (other (next-window))
          (this-buffer (window-buffer this)))
-    (set-window-buffer other this-buffer)
-    (bury-buffer)
-    (other-window 1) ;;swap cursor to new buffer
-    )
+    (set-window-buffer other this-buffer)))
+
+(defun move-buffer-to-other-window ()
+  "Move the buffer from the selected window in next window"
+  (interactive)
+  (copy-buffer-to-other-window)
+  (bury-buffer)
+  (other-window 1) ;;swap cursor to new buffer
   )
 
 ;; workaround for scroll bars disappearing when resizing a frame
