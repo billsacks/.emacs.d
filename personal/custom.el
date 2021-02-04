@@ -41,6 +41,7 @@
  '(ivy-height 16)
  '(ivy-use-virtual-buffers t)
  '(ivy-virtual-abbreviate 'abbreviate)
+ '(lsp-eldoc-enable-hover nil)
  '(lsp-enable-imenu nil)
  '(lsp-headerline-breadcrumb-enable nil)
  '(lsp-imenu-sort-methods '(kind position))

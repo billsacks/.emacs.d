@@ -51,6 +51,8 @@
 ;; Some other convenient shortcuts
 
 (global-set-key (kbd "A-G") 'vc-git-grep)
+(global-set-key (kbd "A-d") 'lsp-describe-thing-in-window-below)
+(global-set-key (kbd "A-v") 'delete-other-windows-vertically)
 
 ;; the following will turn on hi-lock mode; to unhighlight, use C-x w r
 (global-set-key (kbd "A-h") 'highlight-symbol-at-point)
@@ -110,7 +112,7 @@
 ;; Some workarounds for issues (at least with emacsformacosx)
 
 ;; Sometimes the screen goes mostly blank and needs redrawing
-(global-set-key (kbd "A-d") 'redraw-display)
+(global-set-key (kbd "A-r") 'redraw-display)
 
 ;; Sometimes scroll bars disappear when resizing a frame; this function fixes them; note
 ;; that we use the same modifiers as for Divvy, since this happens after using Divvy
