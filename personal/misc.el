@@ -21,6 +21,10 @@
 
 (add-hook 'text-mode-hook 'turn-on-auto-fill)
 
+;; clean whitespace (https://github.com/lewang/ws-butler)
+(require 'ws-butler)
+(add-hook 'prog-mode-hook #'ws-butler-mode)
+
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
 (add-hook 'org-mode-hook '(lambda()
                             (auto-fill-mode -1)
