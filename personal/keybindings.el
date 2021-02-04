@@ -38,11 +38,13 @@
 (define-key ivy-minibuffer-map (kbd "<C-return>") 'ivy-immediate-done)
 
 ;; Avy key-bindings
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
 ;; Note that you can use this for goto-line by entering numbers, so it's safe to override
 ;; the built-in M-g g for goto-line
 (global-set-key (kbd "M-g g") 'avy-goto-line)
 (global-set-key (kbd "M-g M-g") 'avy-goto-line)
+;; 'f' isn't mnemonic here, but it is easy to press after M-g
+(global-set-key (kbd "M-g f") 'avy-goto-word-1)
+(global-set-key (kbd "M-g M-f") 'avy-goto-word-1)
 
 ;; Shortcuts to some Projectile things
 (global-set-key (kbd "A-g") 'projectile-grep)
