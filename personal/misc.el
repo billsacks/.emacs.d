@@ -73,3 +73,10 @@
 ;; https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow)
 (setq-default bidi-paragraph-direction 'left-to-right)
 (setq bidi-inhibit-bpa t)
+
+;; Fix for A-m sometimes making a Greek mu rather than A-m (from
+;; https://emacs.stackexchange.com/questions/17508/how-can-i-prevent-override-key-translation-behavior-such-as-%C2%B5-translated-from)
+(with-eval-after-load 'iso-transl
+  (let ((vec (vconcat "m")))
+    (aset vec 0 (logior (aref vec 0) ?\A-\^@))
+    (define-key key-translation-map vec nil)))
