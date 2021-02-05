@@ -52,6 +52,8 @@
 
 ;; Some other convenient shortcuts
 
+(global-set-key (kbd "A-M-o") 'crux-smart-open-line-above)
+
 (global-set-key (kbd "A-G") 'vc-git-grep)
 (global-set-key (kbd "A-d") 'lsp-describe-thing-in-window-below)
 (global-set-key (kbd "A-v") 'delete-other-windows-vertically)
