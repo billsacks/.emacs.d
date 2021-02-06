@@ -9,6 +9,7 @@
   ;; I don't know how to do that
   ;; Also: I would like to set the major mode of the lsp-help buffer to the current major
   ;; mode, but I can't figure out how to do that
+  ;; TODO: make the new window a dedicated window so other buffers don't get opened there
   (save-selected-window
     (pop-to-buffer "*lsp-help*")
     (tab-line-mode -1)
