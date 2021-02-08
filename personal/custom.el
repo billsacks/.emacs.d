@@ -124,6 +124,7 @@
  '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic))))
  '(magit-section-highlight ((t (:extend t :background "grey92"))))
  '(markdown-code-face ((t (:inherit fixed-pitch :background "#efefef"))))
+ '(markdown-gfm-checkbox-face ((t (:inherit font-lock-function-name-face :weight bold))))
  '(markdown-header-face-1 ((t (:inherit outline-1 :weight bold :height 1.0))))
  '(markdown-header-face-2 ((t (:inherit outline-2 :weight bold :height 1.0))))
  '(markdown-header-face-3 ((t (:inherit outline-3 :weight bold :height 1.0))))
