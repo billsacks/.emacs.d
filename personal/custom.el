@@ -102,6 +102,7 @@
  '(rg-keymap-prefix [8388723])
  '(ripgrep-arguments '("--sort path"))
  '(size-indication-mode nil)
+ '(sp-base-key-bindings nil)
  '(tool-bar-mode nil)
  '(vc-git-grep-template
    "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
