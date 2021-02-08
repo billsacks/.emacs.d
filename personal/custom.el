@@ -45,6 +45,7 @@
  '(lsp-clients-fortls-args '("--lowercase_intrinsics"))
  '(lsp-eldoc-enable-hover nil)
  '(lsp-enable-imenu nil)
+ '(lsp-enable-symbol-highlighting nil)
  '(lsp-headerline-breadcrumb-enable nil)
  '(lsp-imenu-sort-methods '(kind position))
  '(lsp-modeline-diagnostics-enable nil)
