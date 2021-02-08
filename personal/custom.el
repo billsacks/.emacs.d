@@ -50,6 +50,7 @@
  '(lsp-modeline-diagnostics-enable nil)
  '(lsp-modeline-diagnostics-scope :file)
  '(lsp-pyright-extra-paths ["./python" "./cime/scripts/lib" "./scripts/lib"])
+ '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position 'at-point)
  '(magit-ediff-dwim-show-on-hunks t)
  '(magit-git-executable "/usr/local/bin/git")
