@@ -58,8 +58,9 @@
 (global-set-key (kbd "A-d") 'lsp-describe-thing-in-window-below)
 (global-set-key (kbd "A-v") 'delete-other-windows-vertically)
 
-;; the following will turn on hi-lock mode; to unhighlight, use C-x w r
+;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
 (global-set-key (kbd "A-h") 'highlight-symbol-at-point)
+(global-set-key (kbd "A-H") 'unhighlight-all-in-buffer)
 
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
 ;; without completely killing the buffer

@@ -59,3 +59,11 @@
   (interactive)
   (toggle-scroll-bar -1)
   (toggle-scroll-bar +1))
+
+;; From https://emacs.stackexchange.com/questions/19861/how-to-unhighlight-symbol-highlighted-with-highlight-symbol-at-point
+(require 'hi-lock)
+(defun unhighlight-all-in-buffer ()
+  "Remove all highlights made by `hi-lock' from the current buffer.
+The same result can also be be achieved by \\[universal-argument] \\[unhighlight-regexp]."
+  (interactive)
+  (unhighlight-regexp t))
