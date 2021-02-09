@@ -4,6 +4,10 @@
 ;; recommended for LSP mode
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
+;; make scratch buffer be markdown-mode
+(setq initial-major-mode 'gfm-mode)
+(setq initial-scratch-message nil)
+
 ;; more useful frame title, that show either a file or a
 ;; buffer name (if the buffer isn't visiting a file)
 ;; this is copied from prelude-ui.el, but without the "Emacs Prelude" piece
