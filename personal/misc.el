@@ -31,10 +31,12 @@
 
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
 (add-hook 'org-mode-hook '(lambda()
+                            (variable-pitch-mode)
                             (auto-fill-mode -1)
                             (visual-line-mode +1)
                             (set-fill-column 110)))
 (add-hook 'markdown-mode-hook '(lambda()
+                                 (variable-pitch-mode)
                                  (auto-fill-mode -1)
                                  (visual-line-mode +1)
                                  (set-fill-column 110)))
