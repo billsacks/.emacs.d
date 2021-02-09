@@ -64,6 +64,7 @@
 (load-library "cime_tools")
 
 (require 'org-protocol)
+(require 'org-inlinetask)
 (require 'rg)
 (rg-enable-default-bindings)
 

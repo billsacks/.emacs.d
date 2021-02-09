@@ -88,6 +88,7 @@
  '(org-agenda-window-setup 'current-window)
  '(org-ellipsis " ▾")
  '(org-export-backends '(ascii html icalendar latex md odt))
+ '(org-inlinetask-default-state "TODO")
  '(package-selected-packages
    '(flycheck-status-emoji ws-butler use-package lsp-pyright browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet lsp-python-ms cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui company-lsp json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
@@ -137,6 +138,7 @@
  '(match ((t (:background "gold1"))))
  '(mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.8 :family "Lucida Grande"))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
+ '(org-inlinetask ((t (:inherit font-lock-function-name-face))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "red1" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "#6052a3"))))
  '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "sienna"))))
