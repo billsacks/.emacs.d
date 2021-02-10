@@ -30,16 +30,18 @@
 (add-hook 'prog-mode-hook #'ws-butler-mode)
 
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
-(add-hook 'org-mode-hook '(lambda()
-                            (variable-pitch-mode)
-                            (auto-fill-mode -1)
-                            (visual-line-mode +1)
-                            (set-fill-column 110)))
-(add-hook 'markdown-mode-hook '(lambda()
-                                 (variable-pitch-mode)
-                                 (auto-fill-mode -1)
-                                 (visual-line-mode +1)
-                                 (set-fill-column 110)))
+
+(defun my-document-mode-changes()
+  (variable-pitch-mode)
+  (auto-fill-mode -1)
+  (visual-line-mode +1)
+  (set-fill-column 110))
+;; for general text mode, we keep auto-fill-mode (this is used for git commit messages,
+;; among other things)
+(add-hook 'text-mode-hook 'variable-pitch-mode)
+(add-hook 'markdown-mode-hook 'my-document-mode-changes)
+(add-hook 'org-mode-hook 'my-document-mode-changes)
+(add-hook 'rst-mode-hook 'my-document-mode-changes)
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
 (add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
