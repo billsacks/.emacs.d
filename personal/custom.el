@@ -147,7 +147,7 @@
  '(rg-match-face ((t (:foreground "darkred" :weight bold))))
  '(secondary-selection ((t (:extend t :background "lemon chiffon"))))
  '(show-paren-match ((t (:background "LightBlue1"))))
- '(tab-line ((t (:inherit variable-pitch :background "grey85" :foreground "black" :height 0.72))))
+ '(tab-line ((t (:background "grey85" :foreground "black" :height 0.8 :family "Lucida Grande"))))
  '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
  '(variable-pitch ((t (:height 1.25 :family "Charter"))))
  '(whitespace-empty ((t (:background "LightYellow" :foreground "firebrick"))))
