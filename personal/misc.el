@@ -36,9 +36,6 @@
   (auto-fill-mode -1)
   (visual-line-mode +1)
   (set-fill-column 110))
-;; for general text mode, we keep auto-fill-mode (this is used for git commit messages,
-;; among other things)
-(add-hook 'text-mode-hook 'variable-pitch-mode)
 (add-hook 'markdown-mode-hook 'my-document-mode-changes)
 (add-hook 'org-mode-hook 'my-document-mode-changes)
 (add-hook 'rst-mode-hook 'my-document-mode-changes)
