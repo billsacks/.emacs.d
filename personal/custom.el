@@ -102,6 +102,7 @@
  '(rg-command-line-flags '("--sort path"))
  '(rg-keymap-prefix [8388723])
  '(ripgrep-arguments '("--sort path"))
+ '(sentence-end-double-space nil)
  '(size-indication-mode nil)
  '(sp-base-key-bindings nil)
  '(tool-bar-mode nil)
