@@ -79,7 +79,7 @@
    '("%e" mode-line-front-space mode-line-mule-info mode-line-client mode-line-modified mode-line-remote mode-line-frame-identification mode-line-buffer-identification "   " mode-line-position smartrep-mode-line-string "  " mode-line-modes mode-line-misc-info
      (vc-mode vc-mode)
      mode-line-end-spaces))
- '(mouse-wheel-progressive-speed t)
+ '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((meta)) ((control) . text-scale)))
  '(ns-alternate-modifier 'alt)
  '(ns-command-modifier 'meta)
