@@ -82,10 +82,10 @@
 (define-key org-mode-map (kbd "<M-A-left>") 'org-shiftmetaleft)
 (define-key org-mode-map (kbd "<M-A-right>") 'org-shiftmetaright)
 ;; these bindings are shadowed by windmove mode
-(define-key org-mode-map (kbd "<A-left>") 'org-shiftleft)
-(define-key org-mode-map (kbd "<A-right>") 'org-shiftright)
-(define-key org-mode-map (kbd "<A-up>") 'org-shiftup)
-(define-key org-mode-map (kbd "<A-down>") 'org-shiftdown)
+(define-key org-mode-map (kbd "<A-S-left>") 'org-shiftleft)
+(define-key org-mode-map (kbd "<A-S-right>") 'org-shiftright)
+(define-key org-mode-map (kbd "<A-S-up>") 'org-shiftup)
+(define-key org-mode-map (kbd "<A-S-down>") 'org-shiftdown)
 
 (global-set-key (kbd "<A-down>") 'scroll-up-by-3)
 (global-set-key (kbd "<A-up>") 'scroll-down-by-3)
