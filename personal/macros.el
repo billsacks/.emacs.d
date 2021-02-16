@@ -67,3 +67,23 @@
 The same result can also be be achieved by \\[universal-argument] \\[unhighlight-regexp]."
   (interactive)
   (unhighlight-regexp t))
+
+(defun scroll-up-by-3 ()
+  (interactive)
+  (scroll-up-command 3))
+(put 'scroll-up-by-3 'isearch-scroll t)
+
+(defun scroll-down-by-3 ()
+  (interactive)
+  (scroll-down-command 3))
+(put 'scroll-down-by-3 'isearch-scroll t)
+
+(defun scroll-up-by-20 ()
+  (interactive)
+  (scroll-up-command 20))
+(put 'scroll-up-by-20 'isearch-scroll t)
+
+(defun scroll-down-by-20 ()
+  (interactive)
+  (scroll-down-command 20))
+(put 'scroll-down-by-20 'isearch-scroll t)

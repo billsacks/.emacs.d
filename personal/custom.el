@@ -37,6 +37,7 @@
      ("HACK" . "Firebrick")
      ("TEMP" . "Firebrick")
      ("FIXME" . "Firebrick")))
+ '(isearch-allow-scroll 'unlimited)
  '(ivy-count-format "(%d/%d) ")
  '(ivy-extra-directories nil)
  '(ivy-height 16)

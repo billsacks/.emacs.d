@@ -87,8 +87,10 @@
 (define-key org-mode-map (kbd "<A-up>") 'org-shiftup)
 (define-key org-mode-map (kbd "<A-down>") 'org-shiftdown)
 
-(global-set-key (kbd "<A-down>") (kbd "C-u 3 C-v"))
-(global-set-key (kbd "<A-up>") (kbd "C-u 3 M-v"))
+(global-set-key (kbd "<A-down>") 'scroll-up-by-3)
+(global-set-key (kbd "<A-up>") 'scroll-down-by-3)
+(global-set-key (kbd "<A-M-down>") 'scroll-up-by-20)
+(global-set-key (kbd "<A-M-up>") 'scroll-down-by-20)
 
 (global-set-key (kbd "C-c c") 'copy-current-line)
 (define-key prelude-mode-map (kbd "C-c f") nil)
