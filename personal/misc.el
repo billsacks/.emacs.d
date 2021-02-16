@@ -85,8 +85,11 @@
 (setq bidi-inhibit-bpa t)
 
 ;; Fix for A-m sometimes making a Greek mu rather than A-m (from
-;; https://emacs.stackexchange.com/questions/17508/how-can-i-prevent-override-key-translation-behavior-such-as-%C2%B5-translated-from)
+;; https://emacs.stackexchange.com/questions/17508/how-can-i-prevent-override-key-translation-behavior-such-as-%C2%B5-translated-from), and similarly for A-u
 (with-eval-after-load 'iso-transl
   (let ((vec (vconcat "m")))
+    (aset vec 0 (logior (aref vec 0) ?\A-\^@))
+    (define-key key-translation-map vec nil))
+  (let ((vec (vconcat "u")))
     (aset vec 0 (logior (aref vec 0) ?\A-\^@))
     (define-key key-translation-map vec nil)))
