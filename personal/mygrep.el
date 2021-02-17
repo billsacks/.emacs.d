@@ -10,6 +10,14 @@
     res))
 (advice-add 'compilation-start :around 'wrap-compilation-start)
 
+;; Do an occur search for header lines in the git grep output (when running git grep
+;; --show-function); this gives something roughly equivalent to git grep
+;; --files-with-matches, though with a separate entry for each function rather than just
+;; one per file
+(defun git-grep-header-occur ()
+  (interactive)
+  (occur "=[0-9]+="))
+
 (defun grep-changes()
   (defface my-grep-context-face
     '((t
@@ -38,5 +46,7 @@
   (set (make-local-variable 'grep-match-face) 'my-grep-match-face)
   (if (string-match-p (regexp-quote "--show-function") command)
       (set (make-local-variable 'compilation-error-face) 'my-tiny-grep-hit-face))
+  ;; In the following, 'f' stands for 'files' (as in 'files-with-matches')
+  (local-set-key (kbd "f") #'git-grep-header-occur)
   )
 (add-hook 'grep-setup-hook 'grep-changes)
