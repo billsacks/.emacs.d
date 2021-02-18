@@ -25,8 +25,6 @@
 (define-key key-translation-map (kbd "<home>") #'event-apply-super-modifier)
 (define-key key-translation-map (kbd "<end>") #'event-apply-hyper-modifier)
 
-(global-set-key (kbd "S-<backspace>") 'backward-kill-word)
-
 ;; ivy/swiper key-bindings
 (global-set-key (kbd "C-S-s") 'swiper)
 (global-set-key (kbd "C-S-r") 'swiper-backward)
