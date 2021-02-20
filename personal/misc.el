@@ -67,6 +67,15 @@
 (require 'rg)
 (rg-enable-default-bindings)
 
+;; This is useful when I have grep results (or similar) displayed in a window that is
+;; taking up much of the screen: it prevents the grep results from being split left-right.
+;; This is also useful to avoid having the ediff control window be split horizontally, and
+;; in getting my lsp-describe-thing-in-window-below function to work well when I have a
+;; single window on the frame. I could probably figure out other solutions to those
+;; specific problems, but in general, I don't want emacs splitting my window left-right
+;; for me: I want to be in control of that.
+(setq split-width-threshold nil)
+
 ;; I came across these settings while looking up information on how to improve performance
 ;; with long lines in emacs, wondering if long lines in visual-line-mode was contributing
 ;; to typing lags when editing markdown files. It sounds like these are unlikely to make
