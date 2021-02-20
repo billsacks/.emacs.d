@@ -158,7 +158,7 @@
  '(rainbow-delimiters-depth-3-face ((t (:inherit rainbow-delimiters-base-face :foreground "ForestGreen"))))
  '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "VioletRed4"))))
  '(rg-match-face ((t (:foreground "darkred" :weight bold))))
- '(secondary-selection ((t (:extend t :background "lemon chiffon"))))
+ '(secondary-selection ((t (:extend t :background "#fff9d6"))))
  '(show-paren-match ((t (:background "LightBlue1"))))
  '(tab-line ((t (:background "grey85" :foreground "black" :height 0.85 :family "Lucida Grande"))))
  '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
