@@ -81,6 +81,7 @@
       (define-key map (kbd "s-m f") 'magit-file-dispatch)
       (define-key map (kbd "s-m l") 'magit-log-buffer-file)
       (define-key map (kbd "s-m b") 'magit-blame)
+      (define-key map (kbd "s-m B") 'my-magit-show-local-refs)
       (define-key map (kbd "s-m r") 'browse-at-remote)
       ;; misc
       (define-key map (kbd "s-/") 'hippie-expand))
