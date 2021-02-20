@@ -13,3 +13,12 @@
     ;; magit-show-refs: this is what happens by default when you run magit-show-refs ('y'
     ;; from the magit status buffer)
     (magit-refs-setup-buffer "HEAD" (magit-show-refs-arguments))))
+
+;; The following is useful for doing a git diff between the working tree and the
+;; merge-base of HEAD and some branch
+(defun my-magit-get-merge-base ()
+  "Copy the merge-base of HEAD and the given branch to the kill-ring"
+  (interactive)
+  (kill-new (magit-git-string "merge-base" "HEAD"
+                              ;; in the following, note that we default to the name of the main branch
+                              (magit-read-branch-or-commit "Get merge base of HEAD and commit" (magit-main-branch)))))
