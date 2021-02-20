@@ -56,6 +56,13 @@
  '(lsp-ui-doc-position 'at-point)
  '(magit-ediff-dwim-show-on-hunks t)
  '(magit-git-executable "/usr/local/bin/git")
+ '(magit-refs-margin '(t age-abbreviated magit-log-margin-width t 10))
+ '(magit-section-initial-visibility-alist
+   '((stashes . hide)
+     ([remote branchbuf]
+      . hide)
+     ([tags branchbuf]
+      . hide)))
  '(major-mode 'text-mode)
  '(markdown-asymmetric-header t)
  '(markdown-code-lang-modes
