@@ -16,6 +16,8 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; For diff-hl
 ;; This is needed according to https://github.com/dgutov/diff-hl; note
 ;; that the post-commit hook is already defined in prelude
