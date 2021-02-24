@@ -117,6 +117,7 @@
  '(sentence-end-double-space nil)
  '(size-indication-mode nil)
  '(sp-base-key-bindings nil)
+ '(tab-line-exclude-modes '(completion-list-mode ediff-mode))
  '(tool-bar-mode nil)
  '(vc-git-grep-template
    "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
