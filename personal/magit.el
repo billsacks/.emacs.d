@@ -9,7 +9,6 @@
 (defun my-magit-status-magit-frame ()
   (interactive)
   (make-or-switch-to-frame "magit-frame")
-  (split-window-right)
   (magit-status-setup-buffer))
 
 ;; Do something like magit-show-refs ('y' from the magit status buffer), but only showing

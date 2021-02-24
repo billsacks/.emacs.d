@@ -9,6 +9,8 @@
         (error t))
       ;; if an error was returned, then make a new frame and give it the specified name
       (progn (select-frame (make-frame))
-             (set-frame-parameter nil 'name frame-name))
+             ;; it should be possible to set the name in the make-frame call, but I can't get that to work
+             (set-frame-parameter nil 'name frame-name)
+             (split-window-right))
     )
   )
