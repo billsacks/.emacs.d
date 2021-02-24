@@ -160,6 +160,7 @@
  '(match ((t (:background "gold1"))))
  '(mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.8 :family "Lucida Grande"))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
+ '(org-code ((t (:inherit fixed-pitch :background "#efefef" :foreground "#333333" :height 120))))
  '(org-inlinetask ((t (:inherit font-lock-function-name-face))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "red1" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "#6052a3"))))
