@@ -49,6 +49,9 @@
 
 ;; Some other convenient shortcuts
 
+;; override magit's standard C-x g with my function that puts magit in a dedicated frame
+(global-set-key (kbd "C-x g") 'my-magit-status-magit-frame)
+
 (global-set-key (kbd "A-M-o") 'crux-smart-open-line-above)
 
 ;; some shortcuts related to ediff

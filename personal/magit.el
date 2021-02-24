@@ -1,5 +1,17 @@
 (require 'magit)
 
+;; Use a dedicated frame ("magit-frame") for magit operations: Even though magit makes an
+;; attempt to clean up after itself, I still find that it messes with my window setup, and
+;; particularly my tab-line ordering. In addition, I often invoke ediff from magit, and
+;; that really messes with my window setup - again, particularly my tab-line ordering, but
+;; possibly other stuff, too. Note that I'm using a single frame for all magit operations,
+;; and the idea for now is that I'll have ediff and magit stuff all appear in that frame.
+(defun my-magit-status-magit-frame ()
+  (interactive)
+  (make-or-switch-to-frame "magit-frame")
+  (split-window-right)
+  (magit-status-setup-buffer))
+
 ;; Do something like magit-show-refs ('y' from the magit status buffer), but only showing
 ;; local branches, not remote branches or tags (this is achieved by removing
 ;; magit-insert-remote-branches and magit-insert-tags from magit-refs-sections-hook). The
