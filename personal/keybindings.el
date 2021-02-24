@@ -51,8 +51,12 @@
 
 (global-set-key (kbd "A-M-o") 'crux-smart-open-line-above)
 
+;; some shortcuts related to ediff
+(global-set-key (kbd "A-D") 'eregistry)
+
 (global-set-key (kbd "A-G") 'vc-git-grep)
-(global-set-key (kbd "A-d") 'lsp-describe-thing-in-window-below)
+;; mnemonic for 'a' in the following: 'arguments' (but I may replace A-a with something like s-l d)
+(global-set-key (kbd "A-a") 'lsp-describe-thing-in-window-below)
 (global-set-key (kbd "A-v") 'delete-other-windows-vertically)
 
 ;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
