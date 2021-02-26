@@ -117,6 +117,7 @@
  '(sentence-end-double-space nil)
  '(size-indication-mode nil)
  '(sp-base-key-bindings nil)
+ '(sp-highlight-pair-overlay nil)
  '(tab-line-exclude-modes '(completion-list-mode ediff-mode))
  '(tool-bar-mode nil)
  '(vc-git-grep-template
