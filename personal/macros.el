@@ -21,16 +21,6 @@
   (let ((fill-column (point-max)))
     (fill-region beg end)))
 
-;; function to copy a line
-;; from http://emacs.wordpress.com/2007/01/22/killing-yanking-and-copying-lines/
-;; see also http://curiousprogrammer.wordpress.com/2009/02/11/simple-emacs-shortcut/
-(defun copy-current-line ()
-  "Copy current line into the kill ring"
-  (interactive)
-  (kill-ring-save (line-beginning-position)
-                  (line-beginning-position 2))
-  (message "Line copied"))
-
 ;; My original plan was to write a function to make a window 2/3 the total width of the
 ;; frame, but the following is easier and works well enough for now (on my LG monitor)
 (defun enlarge-window-50 ()

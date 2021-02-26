@@ -122,7 +122,6 @@
 (global-set-key (kbd "<A-M-down>") 'scroll-up-by-20)
 (global-set-key (kbd "<A-M-up>") 'scroll-down-by-20)
 
-(global-set-key (kbd "A-c") 'copy-current-line)
 (global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)
 (define-key prelude-mode-map (kbd "C-c f") nil)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
