@@ -81,6 +81,8 @@
 (global-set-key (kbd "H-a") 'lsp-describe-thing-in-window-below)
 (global-set-key (kbd "H-v") 'delete-other-windows-vertically)
 
+(global-set-key (kbd "H-c") 'flycheck-buffer)
+
 ;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
 (global-set-key (kbd "H-h") 'highlight-symbol-at-point)
 (global-set-key (kbd "H-H") 'unhighlight-all-in-buffer)
