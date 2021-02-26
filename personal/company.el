@@ -1,3 +1,8 @@
+(require 'company)
+
+;; Allow starting company completion manually
+(global-set-key (kbd "C-<tab>") 'company-complete)
+
 ;; Sometimes I just want to insert a newline, not have company pick the
 ;; current selection. Having return bound to company-complete-selection
 ;; is especially problematic when the top candidate is (currently typed
