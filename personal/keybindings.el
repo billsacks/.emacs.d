@@ -1,8 +1,13 @@
 ;; General keybinding notes:
 ;;
-;; I'm using A-* keybindings (where I have bound the option key to A) for things where I
-;; want a simple, one-key binding. These are mainly commands that are more complex than
-;; just editing.
+;; I'm using A-* keybindings (where I have bound the option key to A) for:
+;; - editing (inserting unicode characters, the sort of things that ctrl and meta are
+;;   often used for, etc.)
+;; - things that I might want to do multiple times in succession (because it's more
+;;   convenient to do that with a modifier key than with a prefix key)
+;;
+;; I'm using H-* keybindings (where I have bound the home and ESC keys to H) for commands
+;; where I want a simple, one-key binding (grep, switching frames, etc.).
 ;;
 ;; I'm also defining some C-x * keybindings (particularly things that are similar to other
 ;; C-x keybindings) as well as C-c * keybindings (especially for things that feel like
@@ -11,19 +16,29 @@
 ;; I also have some super (s-*) keybindings. These are generally used to group together
 ;; similar commands. For example, s-w groups together some window-related commands.
 ;;
-;; In the future I could see adding C-return as a prefix for some commands.
+;; In the future I could see adding C-return or M-return as a prefix for some commands
+;; (though note that these conflict with default key bindings in org mode).
 
 (require 'macros)
 
-;; With command acting as meta, escape is more useful as super rather than meta (since
-;; option isn't a very ergonomic modifier). But keep ability to get escape with
-;; shift-escape if I really need it. Also make "home" give super because home isn't very
-;; useful in emacs, and this gives symmetry. Make "end" give hyper because otherwise we
-;; don't have a way to give hyper (though I'm not sure if we'll use it for anything).
-(define-key key-translation-map (kbd "ESC") #'event-apply-super-modifier)
+;; With command acting as meta, escape is more useful as hyper rather than meta. But keep
+;; ability to get escape with shift-escape if I really need it. Also bind "home" and "end"
+;; to modifiers because home and end aren't very useful in emacs. Note that esc and home
+;; are symmetrical, which is why I have bound them both to hyper. It would probably be
+;; okay to just have one hyper, but I think there is more benefit than harm in assigning
+;; both of these keys to hyper.
+;;
+;; Note about my choice of having hyper be the symmetrical one rather than super: With
+;; super being mainly used for things where I'll hit a few keys in a row, I've found it
+;; doesn't feel intuitive to have it on both sides of the keyboard: my brain thinks about
+;; the two or three letters I want to type for the command, and so then it isn't automatic
+;; which side to use for the super key. So I'm putting hyper in the place that is slightly
+;; harder to reach but symmetrical, and super in the place that is slightly easier to
+;; reach and asymmetrical.
+(define-key key-translation-map (kbd "ESC") #'event-apply-hyper-modifier)
 (define-key key-translation-map (kbd "S-<escape>") (kbd "ESC"))
-(define-key key-translation-map (kbd "<home>") #'event-apply-super-modifier)
-(define-key key-translation-map (kbd "<end>") #'event-apply-hyper-modifier)
+(define-key key-translation-map (kbd "<home>") #'event-apply-hyper-modifier)
+(define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
 
 ;; ivy/swiper key-bindings
 (global-set-key (kbd "C-S-s") 'swiper)
@@ -44,8 +59,12 @@
 (global-set-key (kbd "M-g M-f") 'avy-goto-word-1)
 
 ;; Shortcuts to some Projectile things
-(global-set-key (kbd "A-g") 'projectile-grep)
+(global-set-key (kbd "H-g") 'projectile-grep)
 (global-set-key (kbd "C-x M-f") 'projectile-find-file)
+
+;; Unicode
+;; en-dash (using the standard Mac key binding for this, since opt is A)
+(define-key key-translation-map (kbd "A--") (kbd "–"))
 
 ;; Some other convenient shortcuts
 
@@ -55,23 +74,28 @@
 (global-set-key (kbd "A-M-o") 'crux-smart-open-line-above)
 
 ;; some shortcuts related to ediff
-(global-set-key (kbd "A-D") 'eregistry)
+(global-set-key (kbd "H-d") 'eregistry)
 
-(global-set-key (kbd "A-G") 'vc-git-grep)
-;; mnemonic for 'a' in the following: 'arguments' (but I may replace A-a with something like s-l d)
-(global-set-key (kbd "A-a") 'lsp-describe-thing-in-window-below)
-(global-set-key (kbd "A-v") 'delete-other-windows-vertically)
+(global-set-key (kbd "H-G") 'vc-git-grep)
+;; mnemonic for 'a' in the following: 'arguments' (but I may replace H-a with something like s-l d)
+(global-set-key (kbd "H-a") 'lsp-describe-thing-in-window-below)
+(global-set-key (kbd "H-v") 'delete-other-windows-vertically)
 
 ;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
-(global-set-key (kbd "A-h") 'highlight-symbol-at-point)
-(global-set-key (kbd "A-H") 'unhighlight-all-in-buffer)
+(global-set-key (kbd "H-h") 'highlight-symbol-at-point)
+(global-set-key (kbd "H-H") 'unhighlight-all-in-buffer)
 
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
 ;; without completely killing the buffer
-(global-set-key (kbd "A-w") 'bury-buffer)
+(global-set-key (kbd "H-w") 'bury-buffer)
+
+;; use A for winner because I may want to do it a few times in a row, and it's easier to
+;; do this with a modifier than with a prefix key
+(global-set-key (kbd "A-w") 'winner-undo)
+(global-set-key (kbd "A-W") 'winner-redo)
 
 ;; rename-uniquely is especially helpful in grep buffers
-(global-set-key (kbd "A-u") 'rename-uniquely)
+(global-set-key (kbd "H-u") 'rename-uniquely)
 
 ;; these are convenient ways to cycle through tabs in the tab line (by default, M-left and
 ;; M-right do the same thing as C-left and C-right, so it seems okay to rebind them; these
@@ -96,18 +120,19 @@
 (global-set-key (kbd "<A-M-down>") 'scroll-up-by-20)
 (global-set-key (kbd "<A-M-up>") 'scroll-down-by-20)
 
-(global-set-key (kbd "C-c c") 'copy-current-line)
+(global-set-key (kbd "A-c") 'copy-current-line)
+(global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)
 (define-key prelude-mode-map (kbd "C-c f") nil)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
 (define-key prelude-mode-map (kbd "C-c t") nil)
-(global-set-key (kbd "C-c t") 'indent-relative)
+(global-set-key (kbd "A-t") 'indent-relative)
 
-(global-set-key (kbd "A-i") 'counsel-imenu)
-(global-set-key (kbd "A-I") 'lsp-ui-imenu)
-(global-set-key (kbd "A-f") 'select-frame-by-name)
+(global-set-key (kbd "H-i") 'counsel-imenu)
+(global-set-key (kbd "H-I") 'lsp-ui-imenu)
+(global-set-key (kbd "H-f") 'select-frame-by-name)
 
-(global-set-key (kbd "A-m") 'move-buffer-to-other-window)
-(global-set-key (kbd "A-M-m") 'copy-buffer-to-other-window)
+(global-set-key (kbd "H-m") 'move-buffer-to-other-window)
+(global-set-key (kbd "H-M-m") 'copy-buffer-to-other-window)
 
 ;; s-w is originally set to the same thing as C-x o: ace-window
 (global-unset-key (kbd "s-w"))
@@ -117,13 +142,11 @@
 (global-set-key (kbd "s-w e") 'balance-windows)
 ;; mnemonic for the following: wider
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
-(global-set-key (kbd "s-w <left>") 'winner-undo)
-(global-set-key (kbd "s-w <right>") 'winner-redo)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
 ;; Sometimes the screen goes mostly blank and needs redrawing
-(global-set-key (kbd "A-r") 'redraw-display)
+(global-set-key (kbd "H-r") 'redraw-display)
 
 ;; Sometimes scroll bars disappear when resizing a frame; this function fixes them; note
 ;; that we use the same modifiers as for Divvy, since this happens after using Divvy
