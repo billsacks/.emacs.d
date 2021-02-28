@@ -123,13 +123,18 @@
 (global-set-key (kbd "<A-M-up>") 'scroll-down-by-20)
 
 (global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)
+(global-set-key (kbd "A-t") 'indent-relative)
+
+;; Some C-c key bindings. So far I'm using these to enable / disable certain modes.
 (define-key prelude-mode-map (kbd "C-c f") nil)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
-(define-key prelude-mode-map (kbd "C-c t") nil)
-(global-set-key (kbd "A-t") 'indent-relative)
+;; Prelude binds C-c i to imenu-anywhere. I'm going to rebind it to H-M-i (see below)
+(define-key prelude-mode-map (kbd "C-c i") nil)
+(global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
 
 (global-set-key (kbd "H-i") 'counsel-imenu)
 (global-set-key (kbd "H-I") 'lsp-ui-imenu)
+(global-set-key (kbd "H-M-i") 'imenu-anywhere)
 (global-set-key (kbd "H-f") 'select-frame-by-name)
 
 (global-set-key (kbd "H-m") 'move-buffer-to-other-window)
