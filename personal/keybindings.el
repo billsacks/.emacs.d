@@ -55,8 +55,8 @@
 (global-set-key (kbd "M-g g") 'avy-goto-line)
 (global-set-key (kbd "M-g M-g") 'avy-goto-line)
 ;; 'f' isn't mnemonic here, but it is easy to press after M-g
-(global-set-key (kbd "M-g f") 'avy-goto-word-1)
-(global-set-key (kbd "M-g M-f") 'avy-goto-word-1)
+(global-set-key (kbd "M-g f") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "M-g M-f") 'avy-goto-word-or-subword-1)
 
 ;; Shortcuts to some Projectile things
 (global-set-key (kbd "H-g") 'projectile-grep)
@@ -124,6 +124,7 @@
 
 (global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "A-t") 'indent-relative)
+(global-set-key (kbd "A-SPC") 'cycle-spacing)
 
 ;; Some C-c key bindings. So far I'm using these to enable / disable certain modes.
 (define-key prelude-mode-map (kbd "C-c f") nil)
@@ -131,6 +132,7 @@
 ;; Prelude binds C-c i to imenu-anywhere. I'm going to rebind it to H-M-i (see below)
 (define-key prelude-mode-map (kbd "C-c i") nil)
 (global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
+(global-set-key (kbd "C-c v") 'view-mode)
 
 (global-set-key (kbd "H-i") 'counsel-imenu)
 (global-set-key (kbd "H-I") 'lsp-ui-imenu)
