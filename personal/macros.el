@@ -1,5 +1,15 @@
 ;; general-purpose macros
 
+;; From https://emacs.stackexchange.com/questions/18049/how-to-skip-forward-to-first-whitespace-character
+(defun skip-to-next-whitespace ()
+  "Move point to the next whitespace character"
+  (interactive)
+  (skip-syntax-forward "^\s"))
+(defun skip-to-previous-whitespace ()
+  "Move point to the previous whitespace character"
+  (interactive)
+  (skip-syntax-backward "^\s"))
+
 ;; swap two strings (from http://stackoverflow.com/questions/768243/interactive-emacs-lisp-function-to-swap-two-words-with-each-other)
 (defun swap-words (a b)
   "Replace all occurrences of a with b and vice versa"

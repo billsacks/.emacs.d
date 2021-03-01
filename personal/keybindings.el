@@ -117,6 +117,9 @@
 (define-key org-mode-map (kbd "<A-S-up>") 'org-shiftup)
 (define-key org-mode-map (kbd "<A-S-down>") 'org-shiftdown)
 
+(global-set-key (kbd "A-f") 'skip-to-next-whitespace)
+(global-set-key (kbd "A-b") 'skip-to-previous-whitespace)
+
 ;; helpful when a line is wrapped
 (global-set-key (kbd "A-n") 'next-logical-line)
 (global-set-key (kbd "A-p") 'previous-logical-line)
