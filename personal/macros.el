@@ -44,6 +44,12 @@
   (other-window 1) ;;swap cursor to new buffer
   )
 
+;; I often want to make a new frame but don't want the current buffer appearing there
+(defun new-frame-with-scratch-buffer ()
+  "Open a new frame with the scratch buffer"
+  (interactive)
+  (switch-to-buffer-other-frame "*scratch*"))
+
 ;; workaround for scroll bars disappearing when resizing a frame
 (defun fix-scroll-bars ()
   (interactive)

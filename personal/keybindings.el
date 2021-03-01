@@ -138,6 +138,7 @@
 (global-set-key (kbd "H-I") 'lsp-ui-imenu)
 (global-set-key (kbd "H-M-i") 'imenu-anywhere)
 (global-set-key (kbd "H-f") 'select-frame-by-name)
+(global-set-key (kbd "H-F") 'new-frame-with-scratch-buffer)
 
 (global-set-key (kbd "H-m") 'move-buffer-to-other-window)
 (global-set-key (kbd "H-M-m") 'copy-buffer-to-other-window)
