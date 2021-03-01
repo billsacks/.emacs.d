@@ -46,6 +46,7 @@
  '(ivy-virtual-abbreviate 'abbreviate)
  '(lsp-clients-fortls-args '("--lowercase_intrinsics"))
  '(lsp-eldoc-enable-hover nil)
+ '(lsp-enable-file-watchers nil)
  '(lsp-enable-imenu nil)
  '(lsp-enable-symbol-highlighting nil)
  '(lsp-headerline-breadcrumb-enable nil)
