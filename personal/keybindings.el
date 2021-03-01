@@ -117,6 +117,10 @@
 (define-key org-mode-map (kbd "<A-S-up>") 'org-shiftup)
 (define-key org-mode-map (kbd "<A-S-down>") 'org-shiftdown)
 
+;; helpful when a line is wrapped
+(global-set-key (kbd "A-n") 'next-logical-line)
+(global-set-key (kbd "A-p") 'previous-logical-line)
+
 (global-set-key (kbd "<A-down>") 'scroll-up-by-3)
 (global-set-key (kbd "<A-up>") 'scroll-down-by-3)
 (global-set-key (kbd "<A-M-down>") 'scroll-up-by-20)
