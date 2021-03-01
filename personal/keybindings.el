@@ -146,6 +146,8 @@
 (global-set-key (kbd "H-M-i") 'imenu-anywhere)
 (global-set-key (kbd "H-f") 'select-frame-by-name)
 (global-set-key (kbd "H-F") 'new-frame-with-scratch-buffer)
+;; the following should probably just be enabled in ediff mode
+(global-set-key (kbd "H-M-f") 'my-ediff-unhighlight-and-switch-frames)
 
 (global-set-key (kbd "H-m") 'move-buffer-to-other-window)
 (global-set-key (kbd "H-M-m") 'copy-buffer-to-other-window)

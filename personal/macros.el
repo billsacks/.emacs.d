@@ -93,3 +93,20 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (interactive)
   (scroll-down-command 20))
 (put 'scroll-down-by-20 'isearch-scroll t)
+
+;; This is useful when I have multiple ediff sessions with the same buffer: In this case,
+;; the highlighting of the different ediff sessions is shown in all sessions. I often am
+;; using multiple frames in this case (one frame for each ediff session). So for now I'm
+;; dealing with this by: Instead of simply switching frames, I'm first undoing the
+;; highlighting of the current ediff session then switching frames. Then, when I get into
+;; an ediff session where I had already undone highlighting like this, I can reapply
+;; highlighting by typing 'h' once. (I could probably make it so that, when it gets to the
+;; new frame, if the buffer is in ediff mode, then it toggles highlighting once... I'm not
+;; sure if I'd want that in general.)
+(defun my-ediff-unhighlight-and-switch-frames ()
+  (interactive)
+  ;; toggle highlighting 3 times to get from standard highlighting to no highlighting
+  (ediff-toggle-hilit)
+  (ediff-toggle-hilit)
+  (ediff-toggle-hilit)
+  (call-interactively 'select-frame-by-name))
