@@ -1,5 +1,6 @@
 ;; needed to use emacsclient - which in turn is needed to use aquamacs as the git editor
-(server-start)
+(require 'server)
+(unless (server-running-p) (server-start))
 
 ;; recommended for LSP mode
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
