@@ -65,6 +65,7 @@
       . hide)
      ([tags branchbuf]
       . hide)))
+ '(magit-status-margin '(nil "%Y-%m-%d %H:%M " magit-log-margin-width t 10))
  '(major-mode 'text-mode)
  '(markdown-asymmetric-header t)
  '(markdown-code-lang-modes
