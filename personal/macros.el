@@ -105,7 +105,10 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
 ;; sure if I'd want that in general.)
 (defun my-ediff-unhighlight-and-switch-frames ()
   (interactive)
-  ;; toggle highlighting 3 times to get from standard highlighting to no highlighting
+  ;; Toggle highlighting 3 times to get from standard highlighting to no highlighting.
+  ;; I should probably change this to use a function that does ediff-toggle-hilit in a
+  ;; loop, so it could keep doing it until the highlighting value is the desired value;
+  ;; then call that function if the mode of the current buffer is ediff mode.
   (ediff-toggle-hilit)
   (ediff-toggle-hilit)
   (ediff-toggle-hilit)
