@@ -147,7 +147,10 @@
 (global-set-key (kbd "H-M-i") 'imenu-anywhere)
 (global-set-key (kbd "H-f") 'select-frame-by-name)
 (global-set-key (kbd "H-F") 'new-frame-with-scratch-buffer)
-;; the following should probably just be enabled in ediff mode
+;; The following should probably just be enabled in ediff mode; its purpose is for
+;; avoiding the highlighting of an ediff session contaminating my view elsewhere -
+;; particularly if I have the same buffer open in two ediff sessions (in two different
+;; frames).
 (global-set-key (kbd "H-M-f") 'my-ediff-unhighlight-and-switch-frames)
 
 (global-set-key (kbd "H-m") 'move-buffer-to-other-window)
