@@ -181,7 +181,7 @@
  '(region ((t (:extend t :background "#f6e696" :distant-foreground "#333333"))))
  '(rg-match-face ((t (:foreground "darkred" :weight bold))))
  '(secondary-selection ((t (:extend t :background "#fff9d6"))))
- '(show-paren-match ((t (:background "#a6d1ff"))))
+ '(show-paren-match ((t (:background "#d4bfff"))))
  '(tab-line ((t (:background "grey85" :foreground "black" :height 0.85 :family "Lucida Grande"))))
  '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
  '(variable-pitch ((t (:height 1.25 :family "Charter"))))
