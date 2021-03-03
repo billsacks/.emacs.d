@@ -139,6 +139,7 @@
 ;; Prelude binds C-c i to imenu-anywhere. I'm going to rebind it to H-M-i (see below)
 (define-key prelude-mode-map (kbd "C-c i") nil)
 (global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
+(global-set-key (kbd "C-c s") 'scroll-lock-mode)
 (global-set-key (kbd "C-c v") 'view-mode)
 
 (global-set-key (kbd "H-i") 'counsel-imenu)
@@ -151,6 +152,7 @@
 
 (global-set-key (kbd "H-m") 'move-buffer-to-other-window)
 (global-set-key (kbd "H-M-m") 'copy-buffer-to-other-window)
+(global-set-key (kbd "H-M") 'crux-swap-windows)
 
 ;; s-w is originally set to the same thing as C-x o: ace-window
 (global-unset-key (kbd "s-w"))
