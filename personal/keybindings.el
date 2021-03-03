@@ -141,6 +141,9 @@
 (global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
 (global-set-key (kbd "C-c s") 'scroll-lock-mode)
 (global-set-key (kbd "C-c v") 'view-mode)
+;; This is helpful with files that magit opens from a different revision:
+;; which-function-mode doesn't get enabled properly in these files.
+(global-set-key (kbd "C-c w") 'my-enable-which-function-mode)
 
 (global-set-key (kbd "H-i") 'counsel-imenu)
 (global-set-key (kbd "H-I") 'lsp-ui-imenu)

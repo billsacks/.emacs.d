@@ -113,3 +113,9 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (ediff-toggle-hilit)
   (ediff-toggle-hilit)
   (call-interactively 'select-frame-by-name))
+
+;; This is useful when a buffer doesn't start which-function-mode by default. This happens
+;; with buffers created by magit with a version at the end
+(defun my-enable-which-function-mode ()
+  (interactive)
+  (which-function-mode 1))
