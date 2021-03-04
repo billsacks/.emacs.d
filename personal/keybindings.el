@@ -61,6 +61,7 @@
 ;; Shortcuts to some Projectile things
 (global-set-key (kbd "H-g") 'projectile-grep)
 (global-set-key (kbd "C-x M-f") 'projectile-find-file)
+(global-set-key (kbd "C-x M-b") 'projectile-switch-to-buffer)
 
 ;; Unicode
 ;; en-dash (using the standard Mac key binding for this, since opt is A)
