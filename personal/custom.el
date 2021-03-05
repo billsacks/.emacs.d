@@ -173,6 +173,7 @@
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
  '(org-code ((t (:inherit fixed-pitch :background "#efefef" :foreground "#333333" :height 120))))
  '(org-inlinetask ((t (:inherit font-lock-function-name-face))))
+ '(org-table ((t (:inherit fixed-pitch :foreground "Blue1" :height 120))))
  '(rainbow-delimiters-base-error-face ((t (:inherit rainbow-delimiters-base-face :foreground "red1" :weight bold))))
  '(rainbow-delimiters-depth-1-face ((t (:inherit rainbow-delimiters-base-face :foreground "#6052a3"))))
  '(rainbow-delimiters-depth-2-face ((t (:inherit rainbow-delimiters-base-face :foreground "sienna"))))
