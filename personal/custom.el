@@ -8,6 +8,7 @@
  '(blink-cursor-blinks 2)
  '(blink-cursor-mode t)
  '(column-number-mode t)
+ '(company-abort-manual-when-too-short t)
  '(company-minimum-prefix-length 4)
  '(cperl-continued-statement-offset 3)
  '(cperl-indent-level 3)
