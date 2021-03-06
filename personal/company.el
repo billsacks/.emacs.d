@@ -20,7 +20,11 @@
 ;; Also note that I am leaving nothing bound to company-complete-common: this is bound to
 ;; tab by default, but that is asymmetric with my new use of M-SPC bindings for
 ;; completion; it doesn't feel necessary to have a special binding for
-;; company-complete-common since company-complete does that the first time it's run.
+;; company-complete-common since company-complete does that the first time it's run. (But
+;; I may decide that it's better to bind M-SPC to company-complete-common to avoid
+;; accidentally completing the current selection if I press it twice in a row; I'll have
+;; to see if it's a positive or negative to be able to do that keybinding twice to get the
+;; current selection.)
 (with-eval-after-load 'company
   (define-key company-active-map (kbd "<return>") nil)
   (define-key company-active-map (kbd "RET") nil)
