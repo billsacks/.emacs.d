@@ -6,6 +6,19 @@
 ;; completion, and my thumb will already be there.
 (global-set-key (kbd "M-SPC") 'company-complete)
 
+;; When LSP is enabled, completion is done via the language server. This is often nice,
+;; but sometimes I just want to be able to do dumb completion using available symbols. So
+;; here's a function that will allow that when it would be helpful.
+(defun my-company-complete-with-dabbrev ()
+  (interactive)
+  ;; I also wanted to use a different company-tooltip face for this (e.g., background
+  ;; azure), to make it more visually obvious that I am doing something different, but I
+  ;; can't see an easy way to accomplish that: it sounds like you can't let-bind a face.
+  (let ((company-backends '(company-dabbrev-code)))
+    (company-complete))
+  )
+(global-set-key (kbd "A-M-SPC") 'my-company-complete-with-dabbrev)
+
 ;; Sometimes I just want to insert a newline, not have company pick the
 ;; current selection. Having return bound to company-complete-selection
 ;; is especially problematic when the top candidate is (currently typed
