@@ -14,7 +14,7 @@
   ;; I also wanted to use a different company-tooltip face for this (e.g., background
   ;; azure), to make it more visually obvious that I am doing something different, but I
   ;; can't see an easy way to accomplish that: it sounds like you can't let-bind a face.
-  (let ((company-backends '(company-dabbrev-code)))
+  (let ((company-backends '(company-dabbrev-code company-dabbrev)))
     (company-complete))
   )
 (global-set-key (kbd "A-M-SPC") 'my-company-complete-with-dabbrev)
@@ -44,8 +44,4 @@
   (define-key company-active-map (kbd "<tab>") nil)
   (define-key company-active-map (kbd "TAB") nil)
   (define-key company-active-map (kbd "A-M-SPC") 'company-complete-selection)
-
-  ;; Do not try to auto-complete comments or plain text
-  ;; need to customize company-backends this way rather than via standard customization so
-  ;; that we avoid overriding backends added by prelude (e.g., anaconda)
-  (setq company-backends (remove 'company-dabbrev company-backends)))
+  )
