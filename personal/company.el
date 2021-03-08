@@ -52,4 +52,9 @@
   (define-key company-active-map (kbd "<tab>") nil)
   (define-key company-active-map (kbd "TAB") nil)
   (define-key company-active-map (kbd "A-M-SPC") 'company-complete-selection)
+
+  ;; Do not try to auto-complete comments or plain text
+  ;; need to customize company-backends this way rather than via standard customization so
+  ;; that we avoid overriding backends added by prelude (e.g., anaconda)
+  (setq company-backends (remove 'company-dabbrev company-backends))
   )
