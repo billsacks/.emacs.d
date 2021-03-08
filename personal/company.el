@@ -19,6 +19,14 @@
   )
 (global-set-key (kbd "A-M-SPC") 'my-company-complete-with-dabbrev)
 
+;; This is useful for turning off the company idle delay in buffers where this causes a slowdown (e.g., case.py)
+(defun my-toggle-company-idle-delay ()
+  (interactive)
+  (if (eq company-idle-delay 0)
+      (setq-local company-idle-delay nil)
+    (setq-local company-idle-delay 0))
+  (message "company-idle-delay set to %s" company-idle-delay))
+
 ;; Sometimes I just want to insert a newline, not have company pick the
 ;; current selection. Having return bound to company-complete-selection
 ;; is especially problematic when the top candidate is (currently typed
