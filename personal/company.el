@@ -53,6 +53,8 @@
   (define-key company-active-map (kbd "TAB") nil)
   (define-key company-active-map (kbd "M-SPC") 'company-complete-selection)
   (define-key company-active-map (kbd "A-M-SPC") 'company-complete-common)
+  ;; C-g will quit, but it could be helpful to have an alternative way to cancel the completion, too
+  (define-key company-active-map (kbd "S-SPC") 'company-abort)
 
   ;; Do not try to auto-complete comments or plain text
   ;; need to customize company-backends this way rather than via standard customization so
