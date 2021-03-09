@@ -29,5 +29,3 @@ transient/history.el
 var/
 .cache/
 .lsp-session*
-
-/vendor/cime-emacs-tools
