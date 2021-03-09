@@ -57,6 +57,7 @@
 ;; 'f' isn't mnemonic here, but it is easy to press after M-g
 (global-set-key (kbd "M-g f") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "M-g M-f") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "A-s") 'avy-goto-word-or-subword-1)
 
 ;; Shortcuts to some Projectile things
 (global-set-key (kbd "H-g") 'projectile-grep)
@@ -68,6 +69,9 @@
 (define-key key-translation-map (kbd "A--") (kbd "–"))
 
 ;; Some other convenient shortcuts
+
+;; Override standard M-y with counsel-yank-pop
+(global-set-key (kbd "M-y") 'counsel-yank-pop)
 
 ;; override magit's standard C-x g with my function that puts magit in a dedicated frame
 (global-set-key (kbd "C-x g") 'my-magit-status-magit-frame)
