@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
 # name: Assert array size
-# key: ass-size
+# key: as-size
 # --
 SHR_ASSERT_FL((size(${1:VARNAME}) ${2:==} ${3:EXPECTED SIZE}), sourcefile, __LINE__)
 $0
