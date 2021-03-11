@@ -10,7 +10,7 @@
  '(column-number-mode t)
  '(company-abort-manual-when-too-short t)
  '(company-idle-delay 0.15)
- '(company-minimum-prefix-length 4)
+ '(company-minimum-prefix-length 1)
  '(cperl-continued-statement-offset 3)
  '(cperl-indent-level 3)
  '(cperl-label-offset -3)
