@@ -59,6 +59,7 @@
  '(lsp-ui-doc-position 'at-point)
  '(magit-ediff-dwim-show-on-hunks t)
  '(magit-git-executable "/usr/local/bin/git")
+ '(magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 10))
  '(magit-refs-margin '(t age-abbreviated magit-log-margin-width t 10))
  '(magit-section-initial-visibility-alist
    '((stashes . hide)
