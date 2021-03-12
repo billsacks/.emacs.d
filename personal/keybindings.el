@@ -68,6 +68,12 @@
 ;; en-dash (using the standard Mac key binding for this, since opt is A)
 (define-key key-translation-map (kbd "A--") (kbd "–"))
 
+;; smerge-mode
+(eval-after-load 'smerge-mode
+  (lambda ()
+    (define-key smerge-mode-map (kbd "s-r") smerge-basic-map)
+    (define-key smerge-mode-map (kbd "A-r") 'smerge-refine)))
+
 ;; Some other convenient shortcuts
 
 ;; Override standard M-y with counsel-yank-pop

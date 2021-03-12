@@ -68,7 +68,6 @@
     ;; make some use of the Super key
     (when prelude-super-keybindings
       ;; crux
-      (define-key map (kbd "s-r") 'crux-recentf-find-file)
       (define-key map (kbd "s-j") 'crux-top-join-line)
       (define-key map (kbd "s-k") 'crux-kill-whole-line)
       ;; magit

@@ -73,7 +73,6 @@ PROMPT sets the `read-string prompt."
 (defvar prelude-tips
   '("Press <C-c o> to open a file with external program."
     "Press <C-c p f> to navigate a project's files."
-    "Press <s-r> to open a recently visited file."
     "Press <C-c p s g> to run grep on a project."
     "Press <C-c p p> to switch between projects."
     "Press <C-=> to expand the selected region."
