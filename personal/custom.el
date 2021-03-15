@@ -57,6 +57,7 @@
  '(lsp-pyright-extra-paths ["./python" "./cime/scripts/lib" "./scripts/lib"])
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position 'at-point)
+ '(magit-diff-refine-hunk 'all)
  '(magit-ediff-dwim-show-on-hunks t)
  '(magit-git-executable "/usr/local/bin/git")
  '(magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 10))
