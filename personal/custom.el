@@ -9,6 +9,8 @@
  '(blink-cursor-mode t)
  '(column-number-mode t)
  '(company-abort-manual-when-too-short t)
+ '(company-dabbrev-downcase nil)
+ '(company-dabbrev-ignore-case nil)
  '(company-idle-delay 0.15)
  '(company-minimum-prefix-length 1)
  '(cperl-continued-statement-offset 3)
