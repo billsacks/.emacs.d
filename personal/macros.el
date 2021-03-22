@@ -84,15 +84,15 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (scroll-down-command 3))
 (put 'scroll-down-by-3 'isearch-scroll t)
 
-(defun scroll-up-by-20 ()
+(defun scroll-up-by-10 ()
   (interactive)
-  (scroll-up-command 20))
-(put 'scroll-up-by-20 'isearch-scroll t)
+  (scroll-up-command 10))
+(put 'scroll-up-by-10 'isearch-scroll t)
 
-(defun scroll-down-by-20 ()
+(defun scroll-down-by-10 ()
   (interactive)
-  (scroll-down-command 20))
-(put 'scroll-down-by-20 'isearch-scroll t)
+  (scroll-down-command 10))
+(put 'scroll-down-by-10 'isearch-scroll t)
 
 ;; This is useful when I have multiple ediff sessions with the same buffer: In this case,
 ;; the highlighting of the different ediff sessions is shown in all sessions. I often am
