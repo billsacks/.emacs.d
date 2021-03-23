@@ -1,6 +1,6 @@
 (require 'org)
 (setq org-todo-keywords '(
-                          (sequence "TODO" "|" "DONE" "CANCELED")
+                          (sequence "TODO(t)" "|" "DONE(d)" "CANCELED(c)")
                           ))
 
 (setq org-todo-keyword-faces
