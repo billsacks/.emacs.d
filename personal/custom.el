@@ -104,7 +104,6 @@
  '(nxml-outline-child-indent 3)
  '(org-agenda-files '("~/notes"))
  '(org-agenda-window-setup 'current-window)
- '(org-cycle-separator-lines 1)
  '(org-ellipsis "...")
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-export-with-sub-superscripts '{})
