@@ -71,7 +71,7 @@
       (define-key map (kbd "s-j") 'crux-top-join-line)
       (define-key map (kbd "s-k") 'crux-kill-whole-line)
       ;; magit
-      (define-key map (kbd "s-m s") 'magit-status)
+      (define-key map (kbd "s-m s") 'my-magit-status-magit-frame)
       (define-key map (kbd "s-m d") 'magit-dispatch)
       (define-key map (kbd "s-m e") 'my-magit-ediff-no-whitespace)
       (define-key map (kbd "s-m f") 'magit-file-dispatch)

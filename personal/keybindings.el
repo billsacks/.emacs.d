@@ -83,9 +83,6 @@
 ;; M-W is nice because I often want to do M-w immediately afterwards, and this is easy (just release shift and type 'w' again)
 (global-set-key (kbd "M-W") 'easy-mark)
 
-;; override magit's standard C-x g with my function that puts magit in a dedicated frame
-(global-set-key (kbd "C-x g") 'my-magit-status-magit-frame)
-
 (global-set-key (kbd "A-M-o") 'crux-smart-open-line-above)
 
 ;; some shortcuts related to ediff
