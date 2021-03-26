@@ -33,6 +33,7 @@
 (add-hook 'prog-mode-hook #'ws-butler-mode)
 
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
+(add-hook 'deft-mode-hook '(lambda() (set-fill-column 130)))
 
 (defun my-document-mode-changes()
   (variable-pitch-mode)
