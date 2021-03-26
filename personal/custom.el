@@ -17,6 +17,7 @@
  '(cperl-indent-level 3)
  '(cperl-label-offset -3)
  '(cursor-type 'bar)
+ '(deft-auto-save-interval 300.0)
  '(deft-directory "/Users/sacks/notes")
  '(deft-extensions '("org"))
  '(deft-file-naming-rules '((noslash . "-") (nospace . "-") (case-fn . downcase)))

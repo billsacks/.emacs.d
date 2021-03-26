@@ -9,3 +9,4 @@
         ("CANCELED" . "blue")))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
+(define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
