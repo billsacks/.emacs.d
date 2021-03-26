@@ -129,6 +129,9 @@
 (define-key org-mode-map (kbd "<A-S-up>") 'org-shiftup)
 (define-key org-mode-map (kbd "<A-S-down>") 'org-shiftdown)
 
+;; mnemonic: o for "outline" (this is similar to org-get-outline-path)
+(define-key org-mode-map (kbd "H-o") 'my-org-show-position-in-text)
+
 (global-set-key (kbd "A-f") 'skip-to-next-whitespace)
 (global-set-key (kbd "A-b") 'skip-to-previous-whitespace)
 
