@@ -93,6 +93,7 @@
 (global-set-key (kbd "H-v") 'delete-other-windows-vertically)
 
 (global-set-key (kbd "H-c") 'flycheck-buffer)
+(global-set-key (kbd "H-C") 'flycheck-clear)
 
 ;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
 (global-set-key (kbd "H-h") 'highlight-symbol-at-point)
@@ -152,7 +153,6 @@
 (global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
 (global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
-(global-set-key (kbd "C-c k") 'flycheck-mode)
 (global-set-key (kbd "C-c s") 'scroll-lock-mode)
 (global-set-key (kbd "C-c v") 'view-mode)
 ;; This is helpful with files that magit opens from a different revision:
