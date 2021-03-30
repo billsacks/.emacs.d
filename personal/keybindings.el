@@ -10,8 +10,7 @@
 ;; where I want a simple, one-key binding (grep, switching frames, etc.).
 ;;
 ;; I'm also defining some C-x * keybindings (particularly things that are similar to other
-;; C-x keybindings) as well as C-c * keybindings (especially for things that feel like
-;; "editing").
+;; C-x keybindings) as well as C-c * keybindings (so far for enabling/disabling modes).
 ;;
 ;; I also have some super (s-*) keybindings. These are generally used to group together
 ;; similar commands. For example, s-w groups together some window-related commands.
@@ -153,6 +152,7 @@
 (global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
 (global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
+(global-set-key (kbd "C-c k") 'flycheck-mode)
 (global-set-key (kbd "C-c s") 'scroll-lock-mode)
 (global-set-key (kbd "C-c v") 'view-mode)
 ;; This is helpful with files that magit opens from a different revision:
