@@ -148,13 +148,10 @@
 (global-set-key (kbd "A-t") 'indent-relative)
 (global-set-key (kbd "A-SPC") 'cycle-spacing)
 
+;; Some C-c key bindings. So far I'm using these to enable / disable certain modes.
 ;; This is useful to disable auto-triggering of company in buffers where that causes a big slowdown (e.g., case.py)
 (global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
-;; Some C-c key bindings. So far I'm using these to enable / disable certain modes.
-(define-key prelude-mode-map (kbd "C-c f") nil)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
-;; Prelude binds C-c i to imenu-anywhere. I'm going to rebind it to H-M-i (see below)
-(define-key prelude-mode-map (kbd "C-c i") nil)
 (global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
 (global-set-key (kbd "C-c s") 'scroll-lock-mode)
 (global-set-key (kbd "C-c v") 'view-mode)
