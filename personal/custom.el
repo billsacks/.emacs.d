@@ -111,6 +111,8 @@
  '(org-agenda-files '("~/notes"))
  '(org-agenda-window-setup 'current-window)
  '(org-ellipsis "...")
+ '(org-enforce-todo-checkbox-dependencies t)
+ '(org-enforce-todo-dependencies t)
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-export-with-sub-superscripts '{})
  '(org-inlinetask-default-state "TODO")
