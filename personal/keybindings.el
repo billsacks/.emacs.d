@@ -148,6 +148,8 @@
 (global-set-key (kbd "A-t") 'indent-relative)
 (global-set-key (kbd "A-SPC") 'cycle-spacing)
 
+;; This is useful to disable auto-triggering of company in buffers where that causes a big slowdown (e.g., case.py)
+(global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
 ;; Some C-c key bindings. So far I'm using these to enable / disable certain modes.
 (define-key prelude-mode-map (kbd "C-c f") nil)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
@@ -159,8 +161,6 @@
 ;; This is helpful with files that magit opens from a different revision:
 ;; which-function-mode doesn't get enabled properly in these files.
 (global-set-key (kbd "C-c w") 'my-enable-which-function-mode)
-;; This is useful to disable auto-triggering of company in buffers where that causes a big slowdown (e.g., case.py)
-(global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
 
 (global-set-key (kbd "H-i") 'counsel-imenu)
 (global-set-key (kbd "H-I") 'lsp-ui-imenu)
