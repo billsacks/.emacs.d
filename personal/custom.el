@@ -117,6 +117,7 @@
  '(org-export-with-sub-superscripts '{})
  '(org-inlinetask-default-state "TODO")
  '(org-list-indent-offset 2)
+ '(org-src-window-setup 'current-window)
  '(org-startup-folded nil)
  '(org-tag-alist '(("cesm_general") ("ctsm")))
  '(org-use-sub-superscripts '{})
