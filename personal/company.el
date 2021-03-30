@@ -31,9 +31,9 @@
 ;; This is useful for turning off the company idle delay in buffers where this causes a slowdown (e.g., case.py)
 (defun my-toggle-company-idle-delay ()
   (interactive)
-  (if (eq company-idle-delay 0)
-      (setq-local company-idle-delay nil)
-    (setq-local company-idle-delay 0))
+  (if (null company-idle-delay)
+      (setq-local company-idle-delay 0.15)
+    (setq-local company-idle-delay nil))
   (message "company-idle-delay set to %s" company-idle-delay))
 
 ;; Sometimes I just want to insert a newline, not have company pick the
