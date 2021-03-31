@@ -1,3 +1,5 @@
+;;; This has changes for both org itself and deft
+
 (require 'org)
 (require 'deft)
 (setq org-todo-keywords '(
@@ -17,3 +19,7 @@
   ;; first argument nil says do not prepend file name; second argument t says do append
   ;; current heading
   (org-display-outline-path nil t))
+
+(defun my-deft-mode-hook ()
+  (hl-line-mode +1))
+(add-hook 'deft-mode-hook #'my-deft-mode-hook)
