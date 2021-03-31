@@ -110,6 +110,7 @@
  '(nxml-outline-child-indent 3)
  '(org-agenda-files '("~/notes"))
  '(org-agenda-window-setup 'current-window)
+ '(org-edit-src-content-indentation 0)
  '(org-ellipsis "...")
  '(org-enforce-todo-checkbox-dependencies t)
  '(org-enforce-todo-dependencies t)
