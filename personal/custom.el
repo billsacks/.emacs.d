@@ -120,7 +120,11 @@
  '(org-list-indent-offset 2)
  '(org-src-window-setup 'current-window)
  '(org-startup-folded nil)
- '(org-tag-alist '(("cesm_general") ("ctsm")))
+ '(org-tag-alist
+   '(("cesm_general")
+     ("cism")
+     ("cism_multiple_icesheets")
+     ("ctsm")))
  '(org-use-sub-superscripts '{})
  '(package-selected-packages
    '(deft lsp-treemacs highlight-indent-guides helm-projectile helm flycheck-status-emoji ws-butler use-package lsp-pyright browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui company-lsp json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
