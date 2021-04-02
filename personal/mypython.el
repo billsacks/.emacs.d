@@ -25,7 +25,7 @@
             #'electric-layout-post-self-insert-function nil 'local)
 
   ;; here is some stuff I'm adding
-  (flycheck-select-checker 'python-pylint)
+  (lsp)
   )
 
 (setq my-python-mode-hook 'my-python-mode-defaults)
@@ -37,10 +37,11 @@
 ;; fixes the issue (though I'm not sure if this is the right way to do so)
 (defun python-flycheck-setup()
   (flycheck-select-checker 'python-pylint))
-(add-hook 'lsp-pyls-after-open-hook #'python-flycheck-setup)
+(add-hook 'lsp-jedi-after-open-hook #'python-flycheck-setup)
 
-(use-package lsp-pyright
+(use-package lsp-jedi
   :ensure t
-  :hook (python-mode . (lambda ()
-                         (require 'lsp-pyright)
-                         (lsp))))
+  :config
+  (with-eval-after-load "lsp-mode"
+    (add-to-list 'lsp-disabled-clients 'pyls)
+    (add-to-list 'lsp-enabled-clients 'jedi)))
