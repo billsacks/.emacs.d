@@ -6,3 +6,4 @@
 (diminish 'smartparens-mode)
 (diminish 'prelude-mode)
 (diminish 'which-key-mode)
+(diminish 'buffer-face-mode)
