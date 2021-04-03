@@ -53,6 +53,7 @@
  '(ivy-height 16)
  '(ivy-use-virtual-buffers t)
  '(ivy-virtual-abbreviate 'abbreviate)
+ '(lsp-auto-execute-action nil)
  '(lsp-clients-fortls-args '("--lowercase_intrinsics"))
  '(lsp-eldoc-enable-hover nil)
  '(lsp-enable-file-watchers nil)
