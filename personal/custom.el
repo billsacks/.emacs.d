@@ -109,6 +109,7 @@
  '(nxml-attribute-indent 0)
  '(nxml-child-indent 2)
  '(nxml-outline-child-indent 3)
+ '(org-adapt-indentation nil)
  '(org-agenda-files '("~/notes"))
  '(org-agenda-window-setup 'current-window)
  '(org-edit-src-content-indentation 0)
