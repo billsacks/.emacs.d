@@ -11,7 +11,7 @@
  '(company-abort-manual-when-too-short t)
  '(company-dabbrev-downcase nil)
  '(company-dabbrev-ignore-case nil)
- '(company-idle-delay 0.15)
+ '(company-idle-delay nil)
  '(company-minimum-prefix-length 1)
  '(cperl-continued-statement-offset 3)
  '(cperl-indent-level 3)
