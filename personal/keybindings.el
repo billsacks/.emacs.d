@@ -65,7 +65,7 @@
 
 ;; Unicode
 ;; en-dash (using the standard Mac key binding for this, since opt is A)
-(define-key key-translation-map (kbd "A--") (kbd "–"))
+(global-set-key (kbd "A--") (kbd "C-x 8 _ n"))
 
 ;; smerge-mode
 (eval-after-load 'smerge-mode
