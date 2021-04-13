@@ -64,6 +64,16 @@
   (advice-add 'make-flyspell-overlay :filter-return #'make-flyspell-overlay-return-mouse-stuff)
   )
 
+;; Suppress undo tree's messages when you save a buffer. These messages were annoying
+;; because the file name was long, resulting in the minibuffer momentarily expanding to
+;; two lines, which was distracting. From
+;; https://emacs.stackexchange.com/questions/59942/is-it-possible-suppress-save-message-for-undo-tree.
+(defun my-undo-tree-save-history (undo-tree-save-history &rest args)
+  (let ((message-log-max nil)
+        (inhibit-message t))
+    (apply undo-tree-save-history args)))
+(advice-add 'undo-tree-save-history :around 'my-undo-tree-save-history)
+
 (load-library "cime_tools")
 
 (require 'org-protocol)
