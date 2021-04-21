@@ -23,3 +23,7 @@
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
+
+;; Allow exporting as Github-flavored markdown
+(eval-after-load "org"
+  '(require 'ox-gfm nil t))
