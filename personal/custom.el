@@ -119,6 +119,7 @@
  '(org-enforce-todo-dependencies t)
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-export-with-sub-superscripts '{})
+ '(org-hide-emphasis-markers t)
  '(org-inlinetask-default-state "TODO")
  '(org-list-indent-offset 2)
  '(org-src-window-setup 'current-window)
