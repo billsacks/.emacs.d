@@ -40,6 +40,7 @@
  '(fortran-structure-indent 2)
  '(frame-resize-pixelwise t)
  '(global-tab-line-mode t)
+ '(gnutls-algorithm-priority "normal:-vers-tls1.3")
  '(highlight-indent-guides-method 'bitmap)
  '(highlight-indent-guides-responsive 'top)
  '(hl-todo-keyword-faces
