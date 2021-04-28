@@ -155,6 +155,7 @@
  '(tool-bar-mode nil)
  '(vc-git-grep-template
    "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
+ '(visual-fill-column-fringes-outside-margins nil)
  '(whitespace-style '(face trailing tabs empty))
  '(yas-also-auto-indent-first-line t))
 (custom-set-faces
