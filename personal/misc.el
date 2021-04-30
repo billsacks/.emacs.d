@@ -19,6 +19,12 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; use arrow keys for next & prev results in isearch
+(define-key isearch-mode-map [down]
+  'isearch-repeat-forward)
+(define-key isearch-mode-map [up]
+  'isearch-repeat-backward)
+
 ;; For diff-hl
 ;; This is needed according to https://github.com/dgutov/diff-hl; note
 ;; that the post-commit hook is already defined in prelude
