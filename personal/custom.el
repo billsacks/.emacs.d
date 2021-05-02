@@ -132,7 +132,8 @@
    '(("cesm_general")
      ("cism")
      ("cism_multiple_icesheets")
-     ("ctsm")))
+     ("ctsm")
+     ("ncar")))
  '(org-use-fast-todo-selection 'expert)
  '(org-use-sub-superscripts '{})
  '(package-selected-packages
