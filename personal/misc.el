@@ -19,20 +19,6 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; use arrow keys for next & prev results in isearch
-(define-key isearch-mode-map [down]
-  'isearch-repeat-forward)
-(define-key isearch-mode-map [up]
-  'isearch-repeat-backward)
-;; I often want to recenter during isearch. When using up & down to scroll through
-;; results, it's awkward to hit C-l. This Shift-Return binding is easier. (S-SPC is even
-;; easier. However, I'm going to try also having this available in the global key map, and
-;; S-SPC is something I too often type by accident while typing a space after a capital
-;; letter.) (Note: I does *not* seem sufficient to define this in the global
-;; key map: it seems I need to add it to isearch-mode-map as well.)
-(define-key isearch-mode-map (kbd "<S-return>")
-  'recenter-top-bottom)
-
 ;; For diff-hl
 ;; This is needed according to https://github.com/dgutov/diff-hl; note
 ;; that the post-commit hook is already defined in prelude
