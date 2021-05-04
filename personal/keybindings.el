@@ -46,6 +46,7 @@
 ;; isearch mode map. However, I think I'll try just doing it globally: it might be nice in
 ;; other contexts, too.
 (global-set-key (kbd "<S-return>") 'recenter-top-bottom)
+(define-key org-mode-map (kbd "<S-return>") nil)
 
 ;; use arrow keys for next & prev results in isearch
 (define-key isearch-mode-map [down]
