@@ -39,6 +39,14 @@
 (define-key key-translation-map (kbd "<home>") #'event-apply-hyper-modifier)
 (define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
 
+;; The main motivation for this key binding is to have an easier way to recenter during
+;; isearch, which is something I frequently want to do. This shift-return keybinding works
+;; well when I'm going through isearch with the arrow keys (which I have customized to go
+;; through the isearch results). So I initially thought I'd just do this binding in the
+;; isearch mode map. However, I think I'll try just doing it globally: it might be nice in
+;; other contexts, too.
+(global-set-key (kbd "<S-return>") 'recenter-top-bottom)
+
 ;; ivy/swiper key-bindings
 (global-set-key (kbd "C-S-s") 'swiper)
 (global-set-key (kbd "C-S-r") 'swiper-backward)

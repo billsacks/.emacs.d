@@ -41,7 +41,6 @@
     (define-key map (kbd "C-c C-/ h") 'prelude-github)
     (define-key map (kbd "C-c C-/ y") 'prelude-youtube)
     (define-key map (kbd "C-c C-/ d") 'prelude-duckduckgo)
-    (define-key map [(shift return)] 'crux-smart-open-line)
     (define-key map (kbd "M-o") 'crux-smart-open-line)
     (define-key map [(control shift return)] 'crux-smart-open-line-above)
     (define-key map [(control shift up)]  'move-text-up)
