@@ -67,6 +67,7 @@
  '(lsp-modeline-diagnostics-enable nil)
  '(lsp-modeline-diagnostics-scope :file)
  '(lsp-progress-function 'ignore)
+ '(lsp-pyright-auto-import-completions nil)
  '(lsp-pyright-extra-paths ["./python" "./cime/scripts/lib" "./scripts/lib"])
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position 'at-point)
