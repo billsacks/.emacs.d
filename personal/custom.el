@@ -9,6 +9,7 @@
  '(blink-cursor-mode t)
  '(column-number-mode t)
  '(company-abort-manual-when-too-short t)
+ '(company-dabbrev-char-regexp "[[:word:]_]")
  '(company-dabbrev-downcase nil)
  '(company-dabbrev-ignore-case nil)
  '(company-idle-delay nil)
