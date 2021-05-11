@@ -64,6 +64,7 @@
  '(lsp-enable-symbol-highlighting nil)
  '(lsp-headerline-breadcrumb-enable nil)
  '(lsp-imenu-sort-methods '(kind position))
+ '(lsp-modeline-code-actions-enable nil)
  '(lsp-modeline-code-actions-segments '(count))
  '(lsp-modeline-diagnostics-enable nil)
  '(lsp-modeline-diagnostics-scope :file)
