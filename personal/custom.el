@@ -19,7 +19,7 @@
  '(cperl-label-offset -3)
  '(cursor-type 'bar)
  '(custom-safe-themes
-   '("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))
+   '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))
  '(deft-auto-save-interval 300.0)
  '(deft-directory "/Users/sacks/notes")
  '(deft-extensions '("org"))
@@ -35,6 +35,7 @@
  '(fill-column 72)
  '(find-grep-options "-q -i")
  '(flycheck-check-syntax-automatically '(save mode-enabled))
+ '(flycheck-color-mode-line-face-to-color 'sml/minor-modes)
  '(flycheck-mode-line-prefix "FC")
  '(fortran-do-indent 2)
  '(fortran-if-indent 2)
@@ -142,7 +143,7 @@
  '(org-use-fast-todo-selection 'expert)
  '(org-use-sub-superscripts '{})
  '(package-selected-packages
-   '(smart-mode-line lsp-jedi realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
+   '(flycheck-color-mode-line smart-mode-line lsp-jedi realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
  '(prelude-guru nil)
  '(prelude-whitespace nil)
@@ -196,6 +197,7 @@
  '(ediff-odd-diff-B ((t (:extend t :background "#e3e6e4"))))
  '(ediff-odd-diff-C ((t (:extend t :background "#e3e6e4"))))
  '(fixed-pitch ((t (:family "Hack"))))
+ '(flycheck-color-mode-line-warning-face ((t (:inherit flycheck-fringe-warning :foreground "DarkOrange4"))))
  '(flyspell-duplicate ((t (:underline (:color "DarkSlateBlue" :style wave)))))
  '(flyspell-incorrect ((t (:underline (:color "LightSlateBlue" :style wave)))))
  '(font-lock-builtin-face ((t (:foreground "#6052a3"))))
