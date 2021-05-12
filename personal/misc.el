@@ -2,6 +2,9 @@
 (require 'server)
 (unless (server-running-p) (server-start))
 
+(require 'smart-mode-line)
+(sml/setup)
+
 ;; recommended for LSP mode
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
