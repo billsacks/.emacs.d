@@ -7,3 +7,4 @@
 (diminish 'prelude-mode)
 (diminish 'which-key-mode)
 (diminish 'buffer-face-mode)
+(diminish 'projectile-mode)
