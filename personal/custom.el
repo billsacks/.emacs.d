@@ -37,6 +37,7 @@
  '(flycheck-check-syntax-automatically '(save mode-enabled))
  '(flycheck-color-mode-line-face-to-color 'sml/modes)
  '(flycheck-color-mode-line-show-running nil)
+ '(flycheck-mode-line '(:eval (my-flycheck-mode-line-status-text)))
  '(flycheck-mode-line-prefix "FC")
  '(fortran-do-indent 2)
  '(fortran-if-indent 2)
