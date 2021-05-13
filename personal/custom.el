@@ -202,6 +202,7 @@
  '(fixed-pitch ((t (:family "Hack"))))
  '(flycheck-color-mode-line-error-face ((t (:foreground "DarkRed"))))
  '(flycheck-color-mode-line-info-face ((t (:foreground "DarkGreen"))))
+ '(flycheck-color-mode-line-success-face ((t (:foreground "gray50"))))
  '(flycheck-color-mode-line-warning-face ((t (:foreground "DarkOrange4"))))
  '(flyspell-duplicate ((t (:underline (:color "DarkSlateBlue" :style wave)))))
  '(flyspell-incorrect ((t (:underline (:color "LightSlateBlue" :style wave)))))
