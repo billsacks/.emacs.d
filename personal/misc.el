@@ -22,11 +22,6 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
-;; For flycheck
-(require 'flycheck-color-mode-line)
-(eval-after-load "flycheck"
-  '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
-
 ;; For diff-hl
 ;; This is needed according to https://github.com/dgutov/diff-hl; note
 ;; that the post-commit hook is already defined in prelude
