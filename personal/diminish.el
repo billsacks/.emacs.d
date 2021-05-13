@@ -8,3 +8,4 @@
 (diminish 'which-key-mode)
 (diminish 'buffer-face-mode)
 (diminish 'projectile-mode)
+(diminish 'lsp-mode)
