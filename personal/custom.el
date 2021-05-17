@@ -28,7 +28,7 @@
  '(deft-use-filter-string-for-filename t)
  '(diff-hl-flydiff-delay 2)
  '(ediff-split-window-function 'split-window-horizontally)
- '(edit-server-new-frame nil)
+ '(edit-server-new-frame t)
  '(edit-server-url-major-mode-alist '(("github\\.com" . gfm-mode)))
  '(f90-associate-indent 0)
  '(f90-beginning-ampersand nil)
