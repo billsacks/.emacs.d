@@ -42,7 +42,8 @@
 (add-hook 'deft-mode-hook '(lambda() (set-fill-column 130)))
 
 (defun my-document-mode-changes()
-  (variable-pitch-mode)
+  (interactive)
+  (variable-pitch-mode +1)
   (auto-fill-mode -1)
   (visual-line-mode +1)
   (set-fill-column 110))

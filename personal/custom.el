@@ -29,6 +29,7 @@
  '(diff-hl-flydiff-delay 2)
  '(ediff-split-window-function 'split-window-horizontally)
  '(edit-server-new-frame t)
+ '(edit-server-start-hook '(my-document-mode-changes))
  '(edit-server-url-major-mode-alist '(("github\\.com" . gfm-mode)))
  '(f90-associate-indent 0)
  '(f90-beginning-ampersand nil)
