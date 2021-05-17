@@ -2,6 +2,9 @@
 (require 'server)
 (unless (server-running-p) (server-start))
 
+;; For editing Chrome text boxes in emacs
+(edit-server-start)
+
 (require 'smart-mode-line)
 (sml/setup)
 

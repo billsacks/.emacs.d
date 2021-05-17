@@ -28,6 +28,8 @@
  '(deft-use-filter-string-for-filename t)
  '(diff-hl-flydiff-delay 2)
  '(ediff-split-window-function 'split-window-horizontally)
+ '(edit-server-new-frame nil)
+ '(edit-server-url-major-mode-alist '(("github\\.com" . gfm-mode)))
  '(f90-associate-indent 0)
  '(f90-beginning-ampersand nil)
  '(f90-break-before-delimiters nil)
@@ -144,7 +146,7 @@
  '(org-use-fast-todo-selection 'expert)
  '(org-use-sub-superscripts '{})
  '(package-selected-packages
-   '(flycheck-color-mode-line smart-mode-line lsp-jedi realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
+   '(edit-server flycheck-color-mode-line smart-mode-line lsp-jedi realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
  '(prelude-guru nil)
  '(prelude-whitespace nil)
