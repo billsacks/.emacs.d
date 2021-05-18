@@ -26,6 +26,7 @@
 
   ;; here is some stuff I'm adding
   (lsp)
+  (flycheck-select-checker 'python-pylint)
   )
 
 (setq my-python-mode-hook 'my-python-mode-defaults)
@@ -37,9 +38,9 @@
 ;; fixes the issue (though I'm not sure if this is the right way to do so)
 (defun python-flycheck-setup()
   (flycheck-select-checker 'python-pylint))
-(add-hook 'lsp-jedi-after-open-hook #'python-flycheck-setup)
+(add-hook 'lsp-pyright-after-open-hook #'python-flycheck-setup)
 
-(use-package lsp-jedi
+(use-package lsp-pyright
   :ensure t
   :config
   (with-eval-after-load "lsp-mode"
