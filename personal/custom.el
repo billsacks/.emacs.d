@@ -64,6 +64,9 @@
  '(ivy-virtual-abbreviate 'abbreviate)
  '(lsp-auto-execute-action nil)
  '(lsp-clients-fortls-args '("--lowercase_intrinsics"))
+ '(lsp-diagnostics-attributes
+   '((unnecessary :foreground "gray50")
+     (deprecated :strike-through t)))
  '(lsp-eldoc-enable-hover nil)
  '(lsp-enable-file-watchers nil)
  '(lsp-enable-imenu nil)
