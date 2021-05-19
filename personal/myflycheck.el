@@ -50,6 +50,13 @@ nil."
                 (`suspicious "?"))))
     (concat " " flycheck-mode-line-prefix text)))
 
+;; This is useful given that I have set the default flycheck display errors function to
+;; "ignore": this function lets us manually display errors at point
+(defun my-flycheck-display-error-at-point ()
+  (interactive)
+  (let ((flycheck-display-errors-function #'flycheck-display-error-messages))
+    (flycheck-display-error-at-point)))
+
 (require 'flycheck-color-mode-line)
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))

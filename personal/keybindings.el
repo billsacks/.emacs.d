@@ -115,8 +115,13 @@
 (global-set-key (kbd "H-a") 'lsp-describe-thing-in-window-below)
 (global-set-key (kbd "H-v") 'delete-other-windows-vertically)
 
+(require 'flycheck)
 (global-set-key (kbd "H-c") 'flycheck-buffer)
 (global-set-key (kbd "H-C") 'flycheck-clear)
+(global-set-key (kbd "A-c") 'flycheck-next-error)
+(global-set-key (kbd "A-C") 'flycheck-previous-error)
+(global-set-key (kbd "H-M-c") 'my-flycheck-display-error-at-point)
+(global-set-key (kbd "H-M-C") 'flycheck-list-errors)
 
 ;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
 (global-set-key (kbd "H-h") 'highlight-symbol-at-point)
