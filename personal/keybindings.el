@@ -172,6 +172,10 @@
 (global-set-key (kbd "A-SPC") 'cycle-spacing)
 
 ;; Some C-c key bindings. So far I'm using these to enable / disable certain modes.
+;; (2021-05-18) I have noticed that C-c bindings are sometimes used for mode-specific
+;; bindings (e.g., for org-mode and python-mode). So I'm thinking about keeping with that
+;; idea, and changing these bindings that enable / disable modes to something like s-x.
+;;
 ;; This is useful to disable auto-triggering of company in buffers where that causes a big slowdown (e.g., case.py)
 (global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
