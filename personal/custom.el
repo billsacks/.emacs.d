@@ -50,7 +50,7 @@
  '(global-tab-line-mode t)
  '(gnutls-algorithm-priority "normal:-vers-tls1.3")
  '(highlight-indent-guides-method 'bitmap)
- '(highlight-indent-guides-responsive 'top)
+ '(highlight-indent-guides-responsive nil)
  '(hl-todo-keyword-faces
    '(("TODO" . "Firebrick")
      ("KLUDGE" . "Firebrick")

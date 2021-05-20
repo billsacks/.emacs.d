@@ -185,6 +185,7 @@
 (global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
 (global-set-key (kbd "C-c f") 'auto-fill-mode)
 (global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
+(global-set-key (kbd "C-c I") 'my-toggle-highlight-indent-guides-responsive)
 (global-set-key (kbd "C-c s") 'scroll-lock-mode)
 (global-set-key (kbd "C-c v") 'view-mode)
 ;; This is helpful with files that magit opens from a different revision:

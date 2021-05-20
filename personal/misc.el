@@ -88,6 +88,15 @@
 (require 'rg)
 (rg-enable-default-bindings)
 
+(require 'highlight-indent-guides)
+;; It works to toggle this on while highlight-indent-guides is active, but to toggle it
+;; off, you need to restart highlight-indent-guides.
+(defun my-toggle-highlight-indent-guides-responsive ()
+  (interactive)
+  (if highlight-indent-guides-responsive
+      (setq highlight-indent-guides-responsive nil)
+    (setq highlight-indent-guides-responsive 'top)))
+
 ;; This is useful when I have grep results (or similar) displayed in a window that is
 ;; taking up much of the screen: it prevents the grep results from being split left-right.
 ;; This is also useful to avoid having the ediff control window be split horizontally, and

@@ -55,7 +55,6 @@
     (define-key map (kbd "C-c r") 'crux-rename-buffer-and-file)
     (define-key map (kbd "C-c t") 'crux-visit-term-buffer)
     (define-key map (kbd "C-c TAB") 'crux-indent-rigidly-and-copy-to-clipboard)
-    (define-key map (kbd "C-c I") 'crux-find-user-init-file)
     (define-key map (kbd "C-c S") 'crux-find-shell-init-file)
     ;; extra prefix for projectile
     (when prelude-super-keybindings
