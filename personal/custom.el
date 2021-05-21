@@ -134,6 +134,7 @@
  '(org-enforce-todo-checkbox-dependencies t)
  '(org-enforce-todo-dependencies t)
  '(org-export-backends '(ascii html icalendar latex md odt))
+ '(org-export-with-section-numbers nil)
  '(org-export-with-sub-superscripts '{})
  '(org-fontify-quote-and-verse-blocks t)
  '(org-hide-emphasis-markers t)
