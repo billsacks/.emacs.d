@@ -7,7 +7,7 @@
 ;;   convenient to do that with a modifier key than with a prefix key)
 ;;   - Update: but for these commands that I want to do multiple times in succession, I
 ;;     can also use the 'repeat' command (which I'm binding to A-g), so I can do it the
-;;     first time using some other command that's hard to repeat, then repeat it with A-g.
+;;     first time using some other command that's hard to repeat, then repeat it with A-h.
 ;;
 ;; I'm using H-* keybindings (where I have bound the home and ESC keys to H) for commands
 ;; where I want a simple, one-key binding (grep, switching frames, etc.).
@@ -42,7 +42,8 @@
 (define-key key-translation-map (kbd "<home>") #'event-apply-hyper-modifier)
 (define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
 
-(global-set-key (kbd "A-g") 'repeat)
+;; This isn't mnemonic, but it's easy to press repeatedly.
+(global-set-key (kbd "A-h") 'repeat)
 
 ;; The main motivation for this key binding is to have an easier way to recenter during
 ;; isearch, which is something I frequently want to do. This shift-return keybinding works
