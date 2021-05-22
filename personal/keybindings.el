@@ -5,6 +5,9 @@
 ;;   often used for, etc.)
 ;; - things that I might want to do multiple times in succession (because it's more
 ;;   convenient to do that with a modifier key than with a prefix key)
+;;   - Update: but for these commands that I want to do multiple times in succession, I
+;;     can also use the 'repeat' command (which I'm binding to A-g), so I can do it the
+;;     first time using some other command that's hard to repeat, then repeat it with A-g.
 ;;
 ;; I'm using H-* keybindings (where I have bound the home and ESC keys to H) for commands
 ;; where I want a simple, one-key binding (grep, switching frames, etc.).
@@ -38,6 +41,8 @@
 (define-key key-translation-map (kbd "S-<escape>") (kbd "ESC"))
 (define-key key-translation-map (kbd "<home>") #'event-apply-hyper-modifier)
 (define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
+
+(global-set-key (kbd "A-g") 'repeat)
 
 ;; The main motivation for this key binding is to have an easier way to recenter during
 ;; isearch, which is something I frequently want to do. This shift-return keybinding works
@@ -116,12 +121,13 @@
 (global-set-key (kbd "H-v") 'delete-other-windows-vertically)
 
 (require 'flycheck)
-(global-set-key (kbd "H-c") 'flycheck-buffer)
-(global-set-key (kbd "H-C") 'flycheck-clear)
-(global-set-key (kbd "A-c") 'flycheck-next-error)
-(global-set-key (kbd "A-C") 'flycheck-previous-error)
-(global-set-key (kbd "H-M-c") 'my-flycheck-display-error-at-point)
-(global-set-key (kbd "H-M-C") 'flycheck-list-errors)
+(global-unset-key (kbd "s-c"))
+(global-set-key (kbd "s-c c") 'flycheck-buffer)
+(global-set-key (kbd "s-c C") 'flycheck-clear)
+(global-set-key (kbd "s-c n") 'flycheck-next-error)
+(global-set-key (kbd "s-c p") 'flycheck-previous-error)
+(global-set-key (kbd "s-c l") 'flycheck-list-errors)
+(global-set-key (kbd "s-c h") 'my-flycheck-display-error-at-point)
 
 ;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
 (global-set-key (kbd "H-h") 'highlight-symbol-at-point)
@@ -130,11 +136,6 @@
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
 ;; without completely killing the buffer
 (global-set-key (kbd "H-w") 'bury-buffer)
-
-;; use A for winner because I may want to do it a few times in a row, and it's easier to
-;; do this with a modifier than with a prefix key
-(global-set-key (kbd "A-w") 'winner-undo)
-(global-set-key (kbd "A-W") 'winner-redo)
 
 ;; rename-uniquely is especially helpful in grep buffers
 (global-set-key (kbd "H-u") 'rename-uniquely)
@@ -215,6 +216,8 @@
 (global-set-key (kbd "s-w e") 'balance-windows)
 ;; mnemonic for the following: wider
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
+(global-set-key (kbd "s-w <left>") 'winner-undo)
+(global-set-key (kbd "s-w <right>") 'winner-redo)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
