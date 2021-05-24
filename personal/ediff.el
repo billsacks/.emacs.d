@@ -8,7 +8,7 @@
                    (concat
                     (ediff-get-region-contents ediff-current-difference 'A ediff-control-buffer)
                     (ediff-get-region-contents ediff-current-difference 'B ediff-control-buffer))))
-(defun add-d-to-ediff-mode-map () (define-key ediff-mode-map "d" 'ediff-copy-A-and-B-to-C))
+(defun add-d-to-ediff-mode-map () (define-key ediff-mode-map (kbd "C-c d") 'ediff-copy-A-and-B-to-C))
 (add-hook 'ediff-keymap-setup-hook 'add-d-to-ediff-mode-map)
 
 (defun ediff-copy-B-and-A-to-C ()
@@ -17,7 +17,7 @@
                    (concat
                     (ediff-get-region-contents ediff-current-difference 'B ediff-control-buffer)
                     (ediff-get-region-contents ediff-current-difference 'A ediff-control-buffer))))
-(defun add-upperd-to-ediff-mode-map () (define-key ediff-mode-map "D" 'ediff-copy-B-and-A-to-C))
+(defun add-upperd-to-ediff-mode-map () (define-key ediff-mode-map (kbd "C-c D") 'ediff-copy-B-and-A-to-C))
 (add-hook 'ediff-keymap-setup-hook 'add-upperd-to-ediff-mode-map)
 
 ;; This can be useful to give simplified diffs when there are whitespace changes I want to
@@ -36,3 +36,13 @@
   (let ((ediff-diff-options (concat ediff-diff-options " -w"))
         (ediff-actual-diff-options (concat ediff-actual-diff-options " -w")))
     (magit-ediff-dwim)))
+
+;; similar to the above, but for comparing regions within ediff
+(defun my-ediff-compare-regions-no-whitespace ()
+  "Invoke ediff-inferior-compare-regions, but ignoring whitespace"
+  (interactive)
+  (let ((ediff-diff-options (concat ediff-diff-options " -w"))
+        (ediff-actual-diff-options (concat ediff-actual-diff-options " -w")))
+    (ediff-inferior-compare-regions)))
+(defun my-add-equals-to-ediff-mode-map () (define-key ediff-mode-map (kbd "C-c =") 'my-ediff-compare-regions-no-whitespace))
+(add-hook 'ediff-keymap-setup-hook 'my-add-equals-to-ediff-mode-map)
