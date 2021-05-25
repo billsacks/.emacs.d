@@ -25,6 +25,11 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; normally this would take three applications of M-r
+(defun my-move-cursor-to-bottom()
+  (interactive)
+  (move-to-window-line -1))
+
 ;; For diff-hl
 ;; This is needed according to https://github.com/dgutov/diff-hl; note
 ;; that the post-commit hook is already defined in prelude
