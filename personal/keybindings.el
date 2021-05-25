@@ -54,6 +54,11 @@
 (global-set-key (kbd "<S-return>") 'recenter-top-bottom)
 (define-key org-mode-map (kbd "<S-return>") nil)
 
+;; handy keybindings for one-handed scrolling through code (similar to the built-in C-up
+;; and C-down, but by defun)
+(global-set-key (kbd "<C-S-up>") 'beginning-of-defun)
+(global-set-key (kbd "<C-S-down>") 'end-of-defun)
+
 ;; use arrow keys for next & prev results in isearch
 (define-key isearch-mode-map [down]
   'isearch-repeat-forward)
