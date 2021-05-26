@@ -128,6 +128,7 @@
      mode-line-end-spaces))
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((meta)) ((control) . text-scale)))
+ '(next-screen-context-lines 3)
  '(ns-alternate-modifier 'alt)
  '(ns-command-modifier 'meta)
  '(nxml-attribute-indent 0)
