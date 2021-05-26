@@ -176,10 +176,10 @@
 (global-set-key (kbd "A-n") 'next-logical-line)
 (global-set-key (kbd "A-p") 'previous-logical-line)
 
-(global-set-key (kbd "<A-down>") 'scroll-up-by-3)
-(global-set-key (kbd "<A-up>") 'scroll-down-by-3)
-(global-set-key (kbd "<A-M-down>") 'scroll-up-by-10)
-(global-set-key (kbd "<A-M-up>") 'scroll-down-by-10)
+(global-set-key (kbd "<M-next>") 'scroll-up-by-3)
+(global-set-key (kbd "<M-prior>") 'scroll-down-by-3)
+(global-set-key (kbd "<A-M-next>") 'scroll-up-by-10)
+(global-set-key (kbd "<A-M-prior>") 'scroll-down-by-10)
 
 (global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "A-t") 'indent-relative)
