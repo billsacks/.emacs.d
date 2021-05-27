@@ -1,14 +1,23 @@
 ;; general-purpose macros
 
-;; From https://emacs.stackexchange.com/questions/18049/how-to-skip-forward-to-first-whitespace-character
-(defun skip-to-next-whitespace ()
-  "Move point to the next whitespace character"
+(defun my-backward-symbol ()
   (interactive)
-  (skip-syntax-forward "^\s"))
-(defun skip-to-previous-whitespace ()
-  "Move point to the previous whitespace character"
+  (forward-symbol -1))
+
+;; like forward-symbol and backward-symbol, but all the way to next whitespace; however,
+;; this doesn't handle newlines the way I would like
+(defun my-forward-to-whitespace ()
   (interactive)
-  (skip-syntax-backward "^\s"))
+  ;; first skip to first non-whitespace; this allows the function to be called repeatedly
+  (skip-syntax-forward "-")
+  ;; now skip to first whitespace
+  (skip-syntax-forward "^-"))
+(defun my-backward-to-whitespace ()
+  (interactive)
+  ;; first skip to first non-whitespace; this allows the function to be called repeatedly
+  (skip-syntax-backward "-")
+  ;; now skip to first whitespace
+  (skip-syntax-backward "^-"))
 
 ;; swap two strings (from http://stackoverflow.com/questions/768243/interactive-emacs-lisp-function-to-swap-two-words-with-each-other)
 (defun swap-words (a b)
