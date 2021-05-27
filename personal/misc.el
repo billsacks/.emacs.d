@@ -56,6 +56,8 @@
 (add-hook 'org-mode-hook 'my-document-mode-changes)
 (add-hook 'rst-mode-hook 'my-document-mode-changes)
 
+(add-hook 'org-mode-hook 'org-appear-mode)
+
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
 (add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
 
