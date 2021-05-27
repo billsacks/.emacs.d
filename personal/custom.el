@@ -70,6 +70,7 @@
  '(ivy-height 16)
  '(ivy-use-virtual-buffers t)
  '(ivy-virtual-abbreviate 'abbreviate)
+ '(line-move-visual nil)
  '(lsp-auto-execute-action nil)
  '(lsp-clients-fortls-args '("--lowercase_intrinsics"))
  '(lsp-diagnostics-attributes

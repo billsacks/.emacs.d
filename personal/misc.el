@@ -46,18 +46,44 @@
 (add-hook 'prog-mode-hook '(lambda() (set-fill-column 90)))
 (add-hook 'deft-mode-hook '(lambda() (set-fill-column 130)))
 
+;; (2021-05-26) I'm having problems with the combination of visual-line-mode and org-mode
+;; (at least when there are some hidden sections; I'm not sure if there are problems if
+;; there are no hidden sections): line movement commands (up and down arrows, C-a)
+;; sometimes cause the cursor to jump to some far-away line. Setting line-move-visual to
+;; nil (undoing its setting to t by visual-line-mode) seems to solve the up/down arrow key
+;; issue, but not the C-a issue. (Oddly, running org-beginning-of-line (which is what C-a
+;; is bound to) doesn't exhibit this problem, but I can't figure out how to solve the
+;; problem for C-a.) So for now, I'm working around this issue by avoiding
+;; visual-line-mode, and instead turning on some individual pieces of it. Arguably,
+;; line-move-visual would be a good thing when using visual-line-mode (or my variant on
+;; it); but I'm going to try having it off in order to avoid this issue in org mode; this
+;; means that line movement will happen by logical lines rather than visual lines. And
+;; actually, arguably that is actually a better behavior anyway.
+(defun my-visual-line-mode ()
+  (interactive)
+  ;; This is the key part of getting word wrapping:
+  (setq truncate-lines nil)
+  (setq word-wrap t)
+
+  ;; This is copied from visual-line-mode:
+  (setq fringe-indicator-alist
+        (cons (cons 'continuation visual-line-fringe-indicators)
+	      fringe-indicator-alist))
+
+  ;; Helpful additional minor modes
+  (visual-fill-column-mode +1)
+  (adaptive-wrap-prefix-mode +1)
+  )
+
 (defun my-document-mode-changes()
   (interactive)
   (variable-pitch-mode +1)
   (auto-fill-mode -1)
-  (visual-line-mode +1)
+  (my-visual-line-mode)
   (set-fill-column 110))
 (add-hook 'markdown-mode-hook 'my-document-mode-changes)
 (add-hook 'org-mode-hook 'my-document-mode-changes)
 (add-hook 'rst-mode-hook 'my-document-mode-changes)
-
-(add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
-(add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
 
 ;; Workaround: wrapped lines in lsp-ui-imenu break the ability to move from line to line
 ;; with the arrow keys; so while that continues to be a problem, prevent wrapping
