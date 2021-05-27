@@ -166,6 +166,8 @@
 (define-key org-mode-map (kbd "<A-S-up>") 'org-shiftup)
 (define-key org-mode-map (kbd "<A-S-down>") 'org-shiftdown)
 
+(define-key org-mode-map (kbd "C-c c") 'my-org-select-inline-code)
+
 ;; mnemonic: o for "outline" (this is similar to org-get-outline-path)
 (define-key org-mode-map (kbd "H-o") 'my-org-show-position-in-text)
 

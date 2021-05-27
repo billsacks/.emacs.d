@@ -20,6 +20,15 @@
   ;; current heading
   (org-display-outline-path nil t))
 
+;; select the inline code block under cursor
+(defun my-org-select-inline-code ()
+  (interactive)
+  (search-backward "~")
+  (forward-char 1)
+  (set-mark (point))
+  (search-forward "~")
+  (backward-char 1))
+
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
