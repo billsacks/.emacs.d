@@ -36,3 +36,7 @@
 ;; Allow exporting as Github-flavored markdown
 (eval-after-load "org"
   '(require 'ox-gfm nil t))
+
+;; This is available as C-c C-t, but I often do C-c t by accident, and since this is a
+;; common thing I want to do, I'll make it a key binding
+(define-key org-mode-map (kbd "C-c t") 'org-todo)
