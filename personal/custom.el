@@ -175,6 +175,7 @@
  '(rg-command-line-flags '("--sort path"))
  '(rg-keymap-prefix [8388723])
  '(ripgrep-arguments '("--sort path"))
+ '(save-interprogram-paste-before-kill t)
  '(sentence-end-double-space nil)
  '(size-indication-mode nil)
  '(sml/col-number-format "%3c")
