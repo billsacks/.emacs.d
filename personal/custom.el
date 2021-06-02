@@ -269,6 +269,7 @@
  '(rainbow-delimiters-depth-4-face ((t (:inherit rainbow-delimiters-base-face :foreground "VioletRed4"))))
  '(region ((t (:extend t :background "#f6e696" :distant-foreground "#333333"))))
  '(rg-match-face ((t (:foreground "darkred" :weight bold))))
+ '(rst-literal ((t (:inherit (fixed-pitch font-lock-constant-face) :background "#efefef" :height 120))))
  '(secondary-selection ((t (:extend t :background "#fff9d6"))))
  '(show-paren-match ((t (:background "#d4bfff"))))
  '(sml/col-number ((t (:inherit sml/global :height 1.1 :family "Hack"))))
