@@ -128,3 +128,8 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
 (defun my-enable-which-function-mode ()
   (interactive)
   (which-function-mode 1))
+
+;; This is useful so I can cycle frames both forwards and backwards
+(defun my-other-frame-reverse ()
+  (interactive)
+  (other-frame -1))

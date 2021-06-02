@@ -42,6 +42,16 @@
 (define-key key-translation-map (kbd "<home>") #'event-apply-hyper-modifier)
 (define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
 
+;; These default key bindings aren't very useful, and it would be more useful to use the
+;; Mac's built-in keybindings to cycle windows
+;;
+;; by default, M-` is tmm-menubar
+(global-unset-key (kbd "M-`"))
+(global-set-key (kbd "M-`") 'other-frame)
+;; by default, M-~ is not-modified
+(global-unset-key (kbd "M-~"))
+(global-set-key (kbd "M-~") 'my-other-frame-reverse)
+
 ;; This isn't mnemonic, but it's easy to press repeatedly.
 (global-set-key (kbd "A-h") 'repeat)
 
