@@ -103,6 +103,19 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (scroll-down-command 10))
 (put 'scroll-down-by-10 'isearch-scroll t)
 
+(defun my-scroll-other-window-up-by-3 ()
+  (interactive)
+  (scroll-other-window 3))
+(defun my-scroll-other-window-down-by-3 ()
+  (interactive)
+  (scroll-other-window-down 3))
+(defun my-scroll-other-window-up-by-10 ()
+  (interactive)
+  (scroll-other-window 10))
+(defun my-scroll-other-window-down-by-10 ()
+  (interactive)
+  (scroll-other-window-down 10))
+
 ;; This is useful when I have multiple ediff sessions with the same buffer: In this case,
 ;; the highlighting of the different ediff sessions is shown in all sessions. I often am
 ;; using multiple frames in this case (one frame for each ediff session). So for now I'm
