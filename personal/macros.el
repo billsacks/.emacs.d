@@ -146,3 +146,16 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
 (defun my-other-frame-reverse ()
   (interactive)
   (other-frame -1))
+
+(require 'edit-server)
+(defun my-edit-server-save ()
+  (interactive)
+  ;; Emacs sometimes hangs when doing edit-server-save, in flyspell-post-command-hook (the
+  ;; problem arises if the cursor is just after a word I just typed; I can work around it
+  ;; with C-g, but that gets annoying). Turning off flyspell-mode before calling
+  ;; edit-server-save seems to solve the problem. Since the buffer is killed and then
+  ;; recreated, we don't need to explicitly re-enable flyspell-mode (and in fact, trying
+  ;; to re-enable it after edit-server-save brings the problem back).
+  (flyspell-mode -1)
+  (edit-server-save))
+(define-key edit-server-edit-mode-map (kbd "C-x C-s") 'my-edit-server-save)
