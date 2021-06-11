@@ -222,9 +222,11 @@
 ;; which-function-mode doesn't get enabled properly in these files.
 (global-set-key (kbd "C-c w") 'my-enable-which-function-mode)
 
-(global-set-key (kbd "H-i") 'counsel-imenu)
-(global-set-key (kbd "H-I") 'lsp-ui-imenu)
-(global-set-key (kbd "H-M-i") 'imenu-anywhere)
+(global-set-key (kbd "H-i") 'my-counsel-imenu-current-pos)
+(global-set-key (kbd "H-I") 'counsel-imenu)
+(global-set-key (kbd "H-M-i") 'lsp-ui-imenu)
+(global-set-key (kbd "H-A-i") 'imenu-anywhere)
+
 (global-set-key (kbd "H-f") 'select-frame-by-name)
 (global-set-key (kbd "H-F") 'new-frame-with-scratch-buffer)
 ;; The following should probably just be enabled in ediff mode; its purpose is for
