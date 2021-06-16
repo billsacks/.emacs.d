@@ -52,6 +52,13 @@
 ;; scroll-down-command; I like that this makes it easier to apply various variants (see
 ;; below).
 
+;; Use dwim versions of upcase and downcase
+(global-set-key [remap upcase-word] 'upcase-dwim)
+(global-set-key [remap downcase-word] 'downcase-dwim)
+;; Above, I rebound M-c to easy-kill. By default, M-c is bound to capitalize-word; I'll
+;; instead use M-U (similar to M-u, upcase-word, which I now use for upcase-dwim).
+(global-set-key (kbd "M-U") 'capitalize-dwim)
+
 ;; These default key bindings aren't very useful, and it would be more useful to use the
 ;; Mac's built-in keybindings to cycle windows
 ;;
