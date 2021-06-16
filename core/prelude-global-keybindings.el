@@ -96,6 +96,7 @@
 (global-set-key (kbd "C-c g") 'magit-file-dispatch)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "C-+") 'er/contract-region)
 
 ;; improved window navigation with ace-window
 (global-set-key (kbd "s-w") 'ace-window)
