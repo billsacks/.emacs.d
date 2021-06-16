@@ -251,6 +251,7 @@
 (global-set-key (kbd "s-w <right>") 'winner-redo)
 (global-set-key (kbd "s-w -") 'text-scale-decrease)
 (global-set-key (kbd "s-w +") 'text-scale-increase)
+(global-set-key (kbd "s-w z") 'text-scale-adjust)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
