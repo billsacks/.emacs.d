@@ -249,6 +249,8 @@
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
 (global-set-key (kbd "s-w <left>") 'winner-undo)
 (global-set-key (kbd "s-w <right>") 'winner-redo)
+(global-set-key (kbd "s-w -") 'text-scale-decrease)
+(global-set-key (kbd "s-w +") 'text-scale-increase)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
