@@ -42,6 +42,16 @@
 (define-key key-translation-map (kbd "<home>") #'event-apply-hyper-modifier)
 (define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
 
+;; Allow use of standard Mac keybindings to copy & paste. This makes it easier to copy
+;; text back and forth between emacs and other applications.
+(global-unset-key (kbd "M-c"))
+(global-set-key (kbd "M-c") 'easy-kill)
+(global-unset-key (kbd "M-v"))
+(global-set-key (kbd "M-v") 'yank)
+;; Now that I have rebound M-v, I'll just use PageUp (i.e., <prior>) for
+;; scroll-down-command; I like that this makes it easier to apply various variants (see
+;; below).
+
 ;; These default key bindings aren't very useful, and it would be more useful to use the
 ;; Mac's built-in keybindings to cycle windows
 ;;
