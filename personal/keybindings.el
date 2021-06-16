@@ -180,18 +180,27 @@
 ;; M-left and M-right bindings are consistent with iterm2, if cmd sends meta)
 (global-set-key (kbd "<M-left>") 'previous-buffer)
 (global-set-key (kbd "<M-right>") 'next-buffer)
+;; and these are good keybindings for move-text (these are the defaults if you use
+;; move-text-default-bindings, but I'll set them explicitly for clarity here)
+(require 'move-text)
+(global-set-key (kbd "<M-up>") 'move-text-up)
+(global-set-key (kbd "<M-down>") 'move-text-down)
 ;; but I need to then redefine them in org mode
 (define-key org-mode-map (kbd "<M-left>") nil)
 (define-key org-mode-map (kbd "<M-right>") nil)
-(define-key org-mode-map (kbd "<M-S-left>") 'org-metaleft)
-(define-key org-mode-map (kbd "<M-S-right>") 'org-metaright)
-(define-key org-mode-map (kbd "<M-A-left>") 'org-shiftmetaleft)
-(define-key org-mode-map (kbd "<M-A-right>") 'org-shiftmetaright)
-;; these bindings are shadowed by windmove mode
-(define-key org-mode-map (kbd "<A-S-left>") 'org-shiftleft)
-(define-key org-mode-map (kbd "<A-S-right>") 'org-shiftright)
-(define-key org-mode-map (kbd "<A-S-up>") 'org-shiftup)
-(define-key org-mode-map (kbd "<A-S-down>") 'org-shiftdown)
+(define-key org-mode-map (kbd "<M-up>") nil)
+(define-key org-mode-map (kbd "<M-down>") nil)
+;; Use M-A in place of M for org arrows (M-S would be approximately equally ergonomic, but
+;; then we would need to change the bindings for org-shiftmeta*)
+(define-key org-mode-map (kbd "<M-A-left>") 'org-metaleft)
+(define-key org-mode-map (kbd "<M-A-right>") 'org-metaright)
+(define-key org-mode-map (kbd "<M-A-up>") 'org-metaup)
+(define-key org-mode-map (kbd "<M-A-down>") 'org-metadown)
+;; Use A in place of S for org arrows (S is used by windmove)
+(define-key org-mode-map (kbd "<A-left>") 'org-shiftleft)
+(define-key org-mode-map (kbd "<A-right>") 'org-shiftright)
+(define-key org-mode-map (kbd "<A-up>") 'org-shiftup)
+(define-key org-mode-map (kbd "<A-down>") 'org-shiftdown)
 
 (define-key org-mode-map (kbd "C-c c") 'my-org-select-inline-code)
 
