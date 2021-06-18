@@ -207,10 +207,10 @@
 ;; mnemonic: o for "outline" (this is similar to org-get-outline-path)
 (define-key org-mode-map (kbd "H-o") 'my-org-show-position-in-text)
 
-(global-set-key (kbd "A-f") 'forward-symbol)
-(global-set-key (kbd "A-b") 'my-backward-symbol)
-(global-set-key (kbd "M-A-f") 'my-forward-to-whitespace)
-(global-set-key (kbd "M-A-b") 'my-backward-to-whitespace)
+(global-set-key (kbd "M-A-f") 'forward-symbol)
+(global-set-key (kbd "M-A-b") 'my-backward-symbol)
+(global-set-key (kbd "A-f") 'my-forward-to-whitespace)
+(global-set-key (kbd "A-b") 'my-backward-to-whitespace)
 
 ;; helpful when a line is wrapped
 (global-set-key (kbd "A-n") 'next-logical-line)
