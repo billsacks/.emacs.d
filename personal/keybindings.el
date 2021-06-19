@@ -216,6 +216,11 @@
 (global-set-key (kbd "A-n") 'next-logical-line)
 (global-set-key (kbd "A-p") 'previous-logical-line)
 
+;; I have rebound M-v to paste. For the most part I'll use page up / page down, but in
+;; case I want to use 'v' for paging (which is sometimes more convenient), I'm adding this
+;; key binding:
+(global-set-key (kbd "C-S-v") 'scroll-down-command)
+
 (global-set-key (kbd "<M-next>") 'scroll-up-by-3)
 (global-set-key (kbd "<M-prior>") 'scroll-down-by-3)
 (global-set-key (kbd "<A-M-next>") 'scroll-up-by-10)
