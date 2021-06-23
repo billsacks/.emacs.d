@@ -46,6 +46,13 @@
   (interactive)
   (enlarge-window-horizontally 50))
 
+;; Toggle line spacing between single spacing (default: nil) and double spacing
+(defun my-toggle-line-spacing ()
+  (interactive)
+  (if (eq 12 line-spacing)
+      (setq line-spacing nil)
+    (setq line-spacing 12)))
+
 ;; adapted from https://gist.github.com/danmayer/1009137
 (defun copy-buffer-to-other-window ()
   "Copy the buffer from the selected window to the next window"

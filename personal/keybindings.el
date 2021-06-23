@@ -175,6 +175,8 @@
 ;; rename-uniquely is especially helpful in grep buffers
 (global-set-key (kbd "H-u") 'rename-uniquely)
 
+(global-set-key (kbd "H-2") 'my-toggle-line-spacing)
+
 ;; these are convenient ways to cycle through tabs in the tab line (by default, M-left and
 ;; M-right do the same thing as C-left and C-right, so it seems okay to rebind them; these
 ;; M-left and M-right bindings are consistent with iterm2, if cmd sends meta)
