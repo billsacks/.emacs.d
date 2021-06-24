@@ -140,6 +140,7 @@
  '(org-adapt-indentation nil)
  '(org-agenda-files '("~/notes"))
  '(org-agenda-window-setup 'current-window)
+ '(org-cycle-separator-lines 1)
  '(org-edit-src-content-indentation 0)
  '(org-ellipsis "...")
  '(org-enforce-todo-checkbox-dependencies t)
