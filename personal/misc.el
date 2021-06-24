@@ -51,6 +51,7 @@
   (variable-pitch-mode +1)
   (auto-fill-mode -1)
   (visual-line-mode +1)
+  (adaptive-wrap-prefix-mode +1)
   (set-fill-column 110))
 (add-hook 'markdown-mode-hook 'my-document-mode-changes)
 (add-hook 'rst-mode-hook 'my-document-mode-changes)
