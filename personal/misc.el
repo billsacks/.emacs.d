@@ -53,9 +53,18 @@
   (visual-line-mode +1)
   (set-fill-column 110))
 (add-hook 'markdown-mode-hook 'my-document-mode-changes)
-(add-hook 'org-mode-hook 'my-document-mode-changes)
 (add-hook 'rst-mode-hook 'my-document-mode-changes)
-
+;; like my-document-mode-changes, but with some tweaks for org mode
+(defun my-org-mode-changes()
+  (interactive)
+  ;; no variable-pitch-mode: we'll use org-variable-pitch-minor-mode instead
+  (auto-fill-mode -1)
+  (visual-line-mode +1)
+  (set-fill-column 110))
+(add-hook 'org-mode-hook 'my-org-mode-changes)
+;; See https://github.com/cadadr/elisp/blob/stable/org-variable-pitch.el
+(require 'org-variable-pitch)
+(add-hook 'after-init-hook #'org-variable-pitch-setup)
 (add-hook 'org-mode-hook 'org-appear-mode)
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
