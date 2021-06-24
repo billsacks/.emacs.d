@@ -154,6 +154,7 @@
  '(org-list-indent-offset 2)
  '(org-src-window-setup 'current-window)
  '(org-startup-folded nil)
+ '(org-startup-indented t)
  '(org-tag-alist
    '(("cesm_general")
      ("cism")
@@ -260,6 +261,7 @@
  '(org-block ((t (:inherit fixed-pitch :foreground "#333333" :height 0.8))))
  '(org-code ((t (:inherit (fixed-pitch font-lock-constant-face) :background "#efefef" :height 120))))
  '(org-ellipsis ((t (:background "LightYellow2" :foreground "DarkGoldenrod" :underline t))))
+ '(org-hide ((t (:inherit fixed-pitch :foreground "#f6f6f6"))))
  '(org-inlinetask ((t (:inherit font-lock-function-name-face))))
  '(org-quote ((t (:inherit default :foreground "dark blue"))))
  '(org-table ((t (:inherit fixed-pitch :foreground "Blue1" :height 120))))

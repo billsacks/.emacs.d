@@ -59,7 +59,6 @@
 (add-hook 'org-mode-hook 'org-appear-mode)
 
 (add-hook 'visual-line-mode-hook #'visual-fill-column-mode)
-(add-hook 'visual-line-mode-hook #'adaptive-wrap-prefix-mode)
 
 ;; Workaround: wrapped lines in lsp-ui-imenu break the ability to move from line to line
 ;; with the arrow keys; so while that continues to be a problem, prevent wrapping
