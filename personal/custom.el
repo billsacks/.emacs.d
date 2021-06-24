@@ -258,6 +258,7 @@
  '(match ((t (:background "gold1"))))
  '(mode-line ((t (:background "grey75" :foreground "black" :box (:line-width -1 :style released-button) :height 0.8 :family "Lucida Grande"))))
  '(mode-line-inactive ((t (:inherit mode-line :background "grey90" :foreground "grey20" :box (:line-width -1 :color "grey75")))))
+ '(org-code ((t (:inherit font-lock-constant-face))))
  '(org-ellipsis ((t (:background "LightYellow2" :foreground "DarkGoldenrod" :underline t))))
  '(org-inlinetask ((t (:inherit font-lock-function-name-face))))
  '(org-quote ((t (:inherit default :foreground "dark blue"))))
