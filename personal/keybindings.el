@@ -265,8 +265,8 @@
 ;; which-function-mode doesn't get enabled properly in these files.
 (global-set-key (kbd "C-c w") 'my-enable-which-function-mode)
 
-(global-set-key (kbd "H-i") 'my-counsel-imenu-current-pos)
-(global-set-key (kbd "H-I") 'counsel-imenu)
+(global-set-key (kbd "H-i") 'counsel-imenu)
+(global-set-key (kbd "H-I") 'my-counsel-imenu-current-pos)
 (global-set-key (kbd "H-M-i") 'lsp-ui-imenu)
 (global-set-key (kbd "H-A-i") 'imenu-anywhere)
 
