@@ -97,6 +97,13 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
 (defun my-previous-line-3 ()
   (interactive)
   (forward-line -3))
+(require 'scroll-lock)
+(defun my-scroll-lock-next-line-3 ()
+  (interactive)
+  (scroll-lock-next-line 3))
+(defun my-scroll-lock-previous-line-3 ()
+  (interactive)
+  (scroll-lock-previous-line 3))
 
 (defun scroll-up-by-3 ()
   (interactive)

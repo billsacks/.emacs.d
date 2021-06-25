@@ -188,6 +188,9 @@
 ;; it might be helpful to have a way to move up and down faster
 (global-set-key (kbd "<A-up>") 'my-previous-line-3)
 (global-set-key (kbd "<A-down>") 'my-next-line-3)
+(require 'scroll-lock)
+(define-key scroll-lock-mode-map (kbd "<A-up>") 'my-scroll-lock-previous-line-3)
+(define-key scroll-lock-mode-map (kbd "<A-down>") 'my-scroll-lock-next-line-3)
 ;; and these are good keybindings for move-text
 (require 'move-text)
 (global-set-key (kbd "<C-up>") 'move-text-up)
