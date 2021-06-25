@@ -90,6 +90,14 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (interactive)
   (unhighlight-regexp t))
 
+;; Move cursor up/down faster
+(defun my-next-line-3 ()
+  (interactive)
+  (forward-line 3))
+(defun my-previous-line-3 ()
+  (interactive)
+  (forward-line -3))
+
 (defun scroll-up-by-3 ()
   (interactive)
   (scroll-up-command 3))

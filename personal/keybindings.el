@@ -182,11 +182,16 @@
 ;; M-left and M-right bindings are consistent with iterm2, if cmd sends meta)
 (global-set-key (kbd "<M-left>") 'previous-buffer)
 (global-set-key (kbd "<M-right>") 'next-buffer)
-;; and these are good keybindings for move-text (these are the defaults if you use
-;; move-text-default-bindings, but I'll set them explicitly for clarity here)
+;; these are more ergonomic key bindings for the frequently-used forward-paragraph and backward-paragraph
+(global-set-key (kbd "<M-up>") 'backward-paragraph)
+(global-set-key (kbd "<M-down>") 'forward-paragraph)
+;; it might be helpful to have a way to move up and down faster
+(global-set-key (kbd "<A-up>") 'my-previous-line-3)
+(global-set-key (kbd "<A-down>") 'my-next-line-3)
+;; and these are good keybindings for move-text
 (require 'move-text)
-(global-set-key (kbd "<M-up>") 'move-text-up)
-(global-set-key (kbd "<M-down>") 'move-text-down)
+(global-set-key (kbd "<C-up>") 'move-text-up)
+(global-set-key (kbd "<C-down>") 'move-text-down)
 ;; but I need to then redefine them in org mode
 (define-key org-mode-map (kbd "<M-left>") nil)
 (define-key org-mode-map (kbd "<M-right>") nil)
