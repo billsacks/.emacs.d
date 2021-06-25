@@ -61,7 +61,16 @@
   ;; no variable-pitch-mode: we'll use org-variable-pitch-minor-mode instead
   (auto-fill-mode -1)
   (visual-line-mode +1)
-  (set-fill-column 110))
+  (set-fill-column 110)
+
+  ;; show-paren-mode has issues with org-indent-mode: lines sometimes jump to the left
+  ;; margin when parentheses are being matched. show-paren-mode is apparently a global
+  ;; mode; it isn't enabled initially in org-mode, but if a programming-mode buffer has
+  ;; already been opened that enables it, then it gets enabled globally, including in the
+  ;; org mode buffers. So disable show-paren-mode in org mode to work around this issue.
+  (make-local-variable 'show-paren-mode)
+  (setq show-paren-mode nil)
+  )
 (add-hook 'org-mode-hook 'my-org-mode-changes)
 ;; See https://github.com/cadadr/elisp/blob/stable/org-variable-pitch.el
 (require 'org-variable-pitch)
