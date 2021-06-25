@@ -198,11 +198,16 @@
 (define-key org-mode-map (kbd "<M-A-right>") 'org-metaright)
 (define-key org-mode-map (kbd "<M-A-up>") 'org-metaup)
 (define-key org-mode-map (kbd "<M-A-down>") 'org-metadown)
-;; Use A in place of S for org arrows (S is used by windmove)
-(define-key org-mode-map (kbd "<A-left>") 'org-shiftleft)
-(define-key org-mode-map (kbd "<A-right>") 'org-shiftright)
-(define-key org-mode-map (kbd "<A-up>") 'org-shiftup)
-(define-key org-mode-map (kbd "<A-down>") 'org-shiftdown)
+;; Use M-S in place of S for org arrows (S is used by windmove)
+(define-key org-mode-map (kbd "<M-S-left>") 'org-shiftleft)
+(define-key org-mode-map (kbd "<M-S-right>") 'org-shiftright)
+(define-key org-mode-map (kbd "<M-S-up>") 'org-shiftup)
+(define-key org-mode-map (kbd "<M-S-down>") 'org-shiftdown)
+;; And use M-A-S in place of M-S for org arrows
+(define-key org-mode-map (kbd "<M-A-S-left>") 'org-shiftmetaleft)
+(define-key org-mode-map (kbd "<M-A-S-right>") 'org-shiftmetaright)
+(define-key org-mode-map (kbd "<M-A-S-up>") 'org-shiftmetaup)
+(define-key org-mode-map (kbd "<M-A-S-down>") 'org-shiftmetadown)
 
 (define-key org-mode-map (kbd "C-c c") 'my-org-select-inline-code)
 
