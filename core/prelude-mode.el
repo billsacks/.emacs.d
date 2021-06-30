@@ -42,7 +42,6 @@
     (define-key map (kbd "C-c C-/ y") 'prelude-youtube)
     (define-key map (kbd "C-c C-/ d") 'prelude-duckduckgo)
     (define-key map (kbd "M-o") 'crux-smart-open-line)
-    (define-key map [(control shift return)] 'crux-smart-open-line-above)
     (define-key map (kbd "C-c n") 'crux-cleanup-buffer-or-region)
     (define-key map (kbd "C-M-z") 'crux-indent-defun)
     (define-key map (kbd "C-c u") 'crux-view-url)
