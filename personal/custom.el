@@ -140,6 +140,7 @@
  '(org-adapt-indentation nil)
  '(org-agenda-files '("~/notes"))
  '(org-agenda-window-setup 'current-window)
+ '(org-babel-load-languages '((emacs-lisp . t) (python . t)))
  '(org-edit-src-content-indentation 0)
  '(org-ellipsis "...")
  '(org-enforce-todo-checkbox-dependencies t)
