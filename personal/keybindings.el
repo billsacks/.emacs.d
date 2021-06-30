@@ -189,12 +189,10 @@
 ;; paragraph, for when I'm browsing through code and don't want to bother having my left
 ;; hand on the keyboard; I'm using C-f and C-b for these because of their nice placement
 ;; in the Dvorak layout and because I use arrow keys rather than C-f and C-b for movement.
-;; Note that the assignments here are based on keyboard position (f is on top, b on
-;; bottom), *not* based on the first letter of the commands.
-(global-unset-key (kbd "C-f"))
 (global-unset-key (kbd "C-b"))
-(global-set-key (kbd "C-f") 'backward-paragraph)
-(global-set-key (kbd "C-b") 'forward-paragraph)
+(global-unset-key (kbd "C-f"))
+(global-set-key (kbd "C-b") 'backward-paragraph)
+(global-set-key (kbd "C-f") 'forward-paragraph)
 ;; it might be helpful to have a way to move up and down faster
 (global-set-key (kbd "<A-up>") 'my-previous-line-3)
 (global-set-key (kbd "<A-down>") 'my-next-line-3)
