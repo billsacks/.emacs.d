@@ -224,6 +224,14 @@
 (define-key org-mode-map (kbd "<M-A-S-right>") 'org-shiftmetaright)
 (define-key org-mode-map (kbd "<M-A-S-up>") 'org-shiftmetaup)
 (define-key org-mode-map (kbd "<M-A-S-down>") 'org-shiftmetadown)
+;; I think it will help if the org mode keybindings for return mimic those for arrows, so
+;; change them accordingly. (For example, this makes it easier to insert a heading then
+;; immediately promote / demote it.)
+(define-key org-mode-map (kbd "<M-return>") nil)
+(define-key org-mode-map (kbd "M-RET") nil)
+(define-key org-mode-map (kbd "<M-A-return>") 'org-meta-return)
+(define-key org-mode-map (kbd "<M-S-return>") nil)
+(define-key org-mode-map (kbd "<M-A-S-return>") 'org-insert-todo-heading)
 
 (define-key org-mode-map (kbd "C-c c") 'my-org-select-inline-code)
 
