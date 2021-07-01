@@ -26,7 +26,6 @@
  '(deft-file-naming-rules '((noslash . "-") (nospace . "-") (case-fn . downcase)))
  '(deft-org-mode-title-prefix nil)
  '(deft-use-filter-string-for-filename t)
- '(diff-hl-flydiff-delay 2)
  '(ediff-split-window-function 'split-window-horizontally)
  '(edit-server-new-frame nil)
  '(edit-server-new-frame-alist
