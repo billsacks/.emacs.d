@@ -88,6 +88,7 @@
  '(lsp-progress-function 'ignore)
  '(lsp-pyright-auto-import-completions nil)
  '(lsp-pyright-extra-paths ["./python" "./cime/scripts/lib" "./scripts/lib"])
+ '(lsp-pyright-typechecking-mode "off")
  '(lsp-signature-auto-activate '(:on-server-request))
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position 'at-point)
