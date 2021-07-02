@@ -29,6 +29,20 @@
   (search-forward "~")
   (backward-char 1))
 
+;; go to next visible todo
+(defun my-org-next-visible-todo ()
+  (interactive)
+  (org-next-visible-heading 1)
+  (while (and (not (org-entry-is-todo-p)) (not (eobp)))
+    (org-next-visible-heading 1)))
+(define-key org-mode-map (kbd "C-c C-S-n") 'my-org-next-visible-todo)
+(defun my-org-forward-todo-same-level ()
+  (interactive)
+  (org-forward-heading-same-level 1)
+  (while (and (not (org-entry-is-todo-p)) (not (eobp)))
+    (org-forward-heading-same-level 1)))
+(define-key org-mode-map (kbd "C-c C-S-f") 'my-org-forward-todo-same-level)
+
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
