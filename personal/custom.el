@@ -146,6 +146,7 @@
      (search . " %i %-12:c%l%l")))
  '(org-agenda-window-setup 'current-window)
  '(org-babel-load-languages '((emacs-lisp . t) (python . t)))
+ '(org-blank-before-new-entry '((heading) (plain-list-item . auto)))
  '(org-edit-src-content-indentation 0)
  '(org-ellipsis "...")
  '(org-enforce-todo-checkbox-dependencies t)

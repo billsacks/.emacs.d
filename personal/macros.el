@@ -19,6 +19,15 @@
   ;; now skip to first whitespace
   (skip-syntax-backward "^-"))
 
+;; crux has smart-open-line-above, but I want a version that doesn't end up with your cursor on that line
+;; from https://emacs.stackexchange.com/questions/32958/insert-line-above-below
+(defun my-insert-line-above ()
+  "Insert an empty line above the current line"
+  (interactive)
+  (save-excursion
+    (end-of-line 0)
+    (open-line 1)))
+
 ;; swap two strings (from http://stackoverflow.com/questions/768243/interactive-emacs-lisp-function-to-swap-two-words-with-each-other)
 (defun swap-words (a b)
   "Replace all occurrences of a with b and vice versa"

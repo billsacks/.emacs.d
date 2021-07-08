@@ -145,7 +145,12 @@
 ;; M-W is nice because I often want to do M-w immediately afterwards, and this is easy (just release shift and type 'w' again)
 (global-set-key (kbd "M-W") 'easy-mark)
 
-(global-set-key (kbd "A-M-o") 'crux-smart-open-line-above)
+;; The following two are similar, but the crux version puts the cursor on the new line
+;; (above), whereas my version does not. I am using A-M for my version because I plan to
+;; use it a lot in org mode after creating a heading, where I would already have been
+;; using A-M to create the new heading.
+(global-set-key (kbd "A-o") 'crux-smart-open-line-above)
+(global-set-key (kbd "A-M-o") 'my-insert-line-above)
 
 ;; some shortcuts related to ediff
 (global-set-key (kbd "H-d") 'eregistry)
