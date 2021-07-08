@@ -3,12 +3,12 @@
 (require 'org)
 (require 'deft)
 (setq org-todo-keywords '(
-                          (sequence "TODO(t)" "PROG(p)" "|" "DONE(d)" "CANCELED(c)")
+                          (sequence "TODO(t)" "PROG(p)" "|" "DONE(d)" "CANC(c)")
                           ))
 
 (setq org-todo-keyword-faces
       '(("TODO" . "blue") ("PROG" . "red") ("DONE" . "ForestGreen")
-        ("CANCELED" . "tan1")))
+        ("CANC" . "tan1")))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
