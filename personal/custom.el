@@ -139,6 +139,11 @@
  '(nxml-outline-child-indent 3)
  '(org-adapt-indentation nil)
  '(org-agenda-files '("~/notes"))
+ '(org-agenda-prefix-format
+   '((agenda . " %i %-12:c%?-12t% s")
+     (todo . " %i %-12:c%l%l")
+     (tags . " %i %-12:c%l%l")
+     (search . " %i %-12:c%l%l")))
  '(org-agenda-window-setup 'current-window)
  '(org-babel-load-languages '((emacs-lisp . t) (python . t)))
  '(org-edit-src-content-indentation 0)
