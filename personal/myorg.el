@@ -43,6 +43,20 @@
     (org-forward-heading-same-level 1)))
 (define-key org-mode-map (kbd "C-c C-S-f") 'my-org-forward-todo-same-level)
 
+(defun my-org-after-todo-state-change-hook ()
+  "Function to run after todo state change"
+  ;; When completing or canceling a todo, hide the entry.
+  ;;
+  ;; This is convenient so I don't need to go back up to the heading and hit tab.
+  ;;
+  ;; Instead of checking org-last-todo-state-is-todo, could check: (string= org-state
+  ;; "DONE") and similarly for "CANC". But I like org-last-todo-state-is-todo (as long as
+  ;; it works reliably) because I don't need to explicitly list all done states.
+  (if (not org-last-todo-state-is-todo)
+      (org-hide-entry))
+  )
+(add-hook 'org-after-todo-state-change-hook #'my-org-after-todo-state-change-hook)
+
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
