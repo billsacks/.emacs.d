@@ -53,7 +53,7 @@
   ;; "DONE") and similarly for "CANC". But I like org-last-todo-state-is-todo (as long as
   ;; it works reliably) because I don't need to explicitly list all done states.
   (if (not org-last-todo-state-is-todo)
-      (org-hide-entry))
+      (outline-hide-subtree))
   )
 (add-hook 'org-after-todo-state-change-hook #'my-org-after-todo-state-change-hook)
 
