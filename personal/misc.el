@@ -11,6 +11,8 @@
 ;; recommended for LSP mode
 (setq read-process-output-max (* 1024 1024)) ;; 1mb
 
+(setq-default left-margin-width 1)
+
 ;; make scratch buffer be org-mode
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message nil)

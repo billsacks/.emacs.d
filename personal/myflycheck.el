@@ -1,5 +1,17 @@
 (require 'flycheck)
 
+;; Redefine this flycheck function: This is a workaround for issues with the continuation
+;; character in the margin:
+;; - The default character is too tall, leading to lines shifting around when it's shown
+;; - The continuation character appears next to the regular one, so you can't see the regular one
+;;
+;; This workaround leads to not showing a continuation character at all. This feels okay,
+;; because I don't think there's a lot of value in showing all of these continuation lines
+;; of an error. An alternative would be to hard-code some other continuation character
+;; here, such as using the normal margin character.
+(defun flycheck-error-level-margin-continuation-spec (level)
+  (flycheck-make-margin-spec "" 'default))
+
 (defun my-flycheck-dash-for-zero (val)
   "Return value unless it's 0, in which case we return dash"
   (if (eq 0 val)
