@@ -180,6 +180,16 @@
 ;; rename-uniquely is especially helpful in grep buffers
 (global-set-key (kbd "H-u") 'rename-uniquely)
 
+;; I'm thinking I'll try to use jump-to-register more for going to some important place in
+;; a buffer. But "C-x r j" is a lot to type, especially followed by one more character for
+;; the register name. So I'm going to try an easier key binding to encourage myself to use
+;; this easily. (I also thought about using something like M-g j, but I'd really like to
+;; keep the number of keys to a minimum to make it easier to then press the register's
+;; named key: I find it hard to type a bunch of random letters in a row.)
+(global-set-key (kbd "H-j") 'jump-to-register)
+;; and I guess I'll use H-J for its complement
+(global-set-key (kbd "H-J") 'point-to-register)
+
 (global-set-key (kbd "H-2") 'my-toggle-line-spacing)
 
 ;; these are convenient ways to cycle through tabs in the tab line (by default, M-left and
