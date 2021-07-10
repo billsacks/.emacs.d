@@ -248,11 +248,6 @@
 (define-key org-mode-map (kbd "<M-S-return>") nil)
 (define-key org-mode-map (kbd "<M-A-S-return>") 'my-org-insert-todo-heading)
 
-(define-key org-mode-map (kbd "C-c c") 'my-org-select-inline-code)
-
-;; mnemonic: o for "outline" (this is similar to org-get-outline-path)
-(define-key org-mode-map (kbd "H-o") 'my-org-show-position-in-text)
-
 (global-set-key (kbd "M-A-f") 'forward-symbol)
 (global-set-key (kbd "M-A-b") 'my-backward-symbol)
 (global-set-key (kbd "A-f") 'my-forward-to-whitespace)

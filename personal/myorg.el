@@ -21,15 +21,18 @@
   ;; first argument nil says do not prepend file name; second argument t says do append
   ;; current heading
   (org-display-outline-path nil t))
+;; mnemonic: o for "outline" (this is similar to org-get-outline-path)
+(define-key org-mode-map (kbd "C-c o") 'my-org-show-position-in-text)
 
-;; select the inline code block under cursor
-(defun my-org-select-inline-code ()
+;; highlight the inline code block under cursor
+(defun my-org-highlight-inline-code ()
   (interactive)
   (search-backward "~")
   (forward-char 1)
   (set-mark (point))
   (search-forward "~")
   (backward-char 1))
+(define-key org-mode-map (kbd "C-c h") 'my-org-highlight-inline-code)
 
 ;; go to next visible todo
 (defun my-org-next-visible-todo ()
@@ -59,6 +62,30 @@ Note: the force-heading piece of this is untested."
   (if (equal arg '(4))
       (org-insert-todo-heading '(16) force-heading)
     (org-insert-todo-heading '(4) force-heading)))
+
+;; Quick ways to mark todos as done or canceled, possibly with archiving
+(defun my-org-done ()
+  "Change current heading's state to DONE"
+  (interactive)
+  (org-todo "DONE"))
+(define-key org-mode-map (kbd "C-c d") 'my-org-done)
+(defun my-org-done-and-archive ()
+  "Change current heading's state to DONE and archive it"
+  (interactive)
+  (org-todo "DONE")
+  (org-archive-to-archive-sibling))
+(define-key org-mode-map (kbd "C-c D") 'my-org-done-and-archive)
+(defun my-org-canceled ()
+  "Change current heading's state to CANC"
+  (interactive)
+  (org-todo "CANC"))
+(define-key org-mode-map (kbd "C-c c") 'my-org-canceled)
+(defun my-org-canceled-and-archive ()
+  "Change current heading's state to CANC and archive it"
+  (interactive)
+  (org-todo "CANC")
+  (org-archive-to-archive-sibling))
+(define-key org-mode-map (kbd "C-c C") 'my-org-canceled-and-archive)
 
 (defun my-org-after-todo-state-change-hook ()
   "Function to run after todo state change"
@@ -98,5 +125,5 @@ Note: the force-heading piece of this is untested."
 
 ;; Hide / show body text. If there is a lot of body text before subheadings (children) it
 ;; can be helpful sometimes to hide the body text of an entry.
-(define-key org-mode-map (kbd "C-c h") 'org-hide-entry)
-(define-key org-mode-map (kbd "C-c H") 'org-show-entry)
+(define-key org-mode-map (kbd "C-c b") 'org-hide-entry)
+(define-key org-mode-map (kbd "C-c B") 'org-show-entry)
