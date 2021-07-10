@@ -67,7 +67,7 @@
       (while t (org-move-subtree-down))
     (error nil))
   (org-shiftmetaleft))
-(define-key org-mode-map (kbd "C-c p") 'my-org-move-subtree-down-and-promote)
+(define-key org-mode-map (kbd "C-c <left>") 'my-org-move-subtree-down-and-promote)
 
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
@@ -80,3 +80,8 @@
 ;; This is available as C-c C-t, but I often do C-c t by accident, and since this is a
 ;; common thing I want to do, I'll make it a key binding
 (define-key org-mode-map (kbd "C-c t") 'org-todo)
+
+;; Hide / show body text. If there is a lot of body text before subheadings (children) it
+;; can be helpful sometimes to hide the body text of an entry.
+(define-key org-mode-map (kbd "C-c h") 'org-hide-entry)
+(define-key org-mode-map (kbd "C-c H") 'org-show-entry)
