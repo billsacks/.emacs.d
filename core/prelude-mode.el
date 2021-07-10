@@ -52,7 +52,6 @@
     ;; extra prefix for projectile
     (when prelude-super-keybindings
      (define-key map (kbd "s-p") 'projectile-command-map))
-    (define-key map (kbd "C-c p") 'projectile-command-map)
     ;; make some use of the Super key
     (when prelude-super-keybindings
       ;; crux

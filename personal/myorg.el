@@ -57,6 +57,16 @@
   )
 (add-hook 'org-after-todo-state-change-hook #'my-org-after-todo-state-change-hook)
 
+;; adapted from https://emacs.stackexchange.com/questions/38537/move-org-mode-child-to-be-sibling-of-parent/38554
+(defun my-org-move-subtree-down-and-promote ()
+  "Move the current subtree to be a sibling of its parent, appearing below its parent"
+  (interactive)
+  (condition-case nil
+      (while t (org-move-subtree-down))
+    (error nil))
+  (org-shiftmetaleft))
+(define-key org-mode-map (kbd "C-c p") 'my-org-move-subtree-down-and-promote)
+
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
