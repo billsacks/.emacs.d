@@ -45,6 +45,21 @@
     (org-forward-heading-same-level 1)))
 (define-key org-mode-map (kbd "C-c C-S-f") 'my-org-forward-todo-same-level)
 
+(defun my-org-insert-todo-heading (arg &optional force-heading)
+  "Like org-insert-todo-heading but use the first state.
+
+With no prefix args, this operates like org-insert-todo-heading
+with one prefix arg.
+
+With one prefix arg, force inserting at the end of the parent subtree
+(like org-insert-todo-heading with two prefix args).
+
+Note: the force-heading piece of this is untested."
+  (interactive "P")
+  (if (equal arg '(4))
+      (org-insert-todo-heading '(16) force-heading)
+    (org-insert-todo-heading '(4) force-heading)))
+
 (defun my-org-after-todo-state-change-hook ()
   "Function to run after todo state change"
   ;; When completing or canceling a todo, hide the entry.
