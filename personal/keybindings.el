@@ -164,8 +164,8 @@
 (global-unset-key (kbd "s-c"))
 (global-set-key (kbd "s-c c") 'flycheck-buffer)
 (global-set-key (kbd "s-c C") 'flycheck-clear)
-(global-set-key (kbd "s-c n") 'flycheck-next-error)
-(global-set-key (kbd "s-c p") 'flycheck-previous-error)
+(global-set-key (kbd "s-c n") 'my-flycheck-next-error)
+(global-set-key (kbd "s-c p") 'my-flycheck-previous-error)
 (global-set-key (kbd "s-c l") 'flycheck-list-errors)
 (global-set-key (kbd "s-c h") 'my-flycheck-display-error-at-point)
 

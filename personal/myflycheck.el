@@ -62,12 +62,23 @@ nil."
                 (`suspicious "?"))))
     (concat " " flycheck-mode-line-prefix text)))
 
-;; This is useful given that I have set the default flycheck display errors function to
-;; "ignore": this function lets us manually display errors at point
+;; The following functions are useful given that I have set the default flycheck display
+;; errors function to "ignore": this function lets us manually display errors at point
 (defun my-flycheck-display-error-at-point ()
+  "Display current flycheck error in the minibuffer"
   (interactive)
   (let ((flycheck-display-errors-function #'flycheck-display-error-messages))
     (flycheck-display-error-at-point)))
+(defun my-flycheck-next-error ()
+  "Go to next flycheck error and display it in the minibuffer"
+  (interactive)
+  (flycheck-next-error)
+  (my-flycheck-display-error-at-point))
+(defun my-flycheck-previous-error ()
+  "Go to previous flycheck error and display it in the minibuffer"
+  (interactive)
+  (flycheck-previous-error)
+  (my-flycheck-display-error-at-point))
 
 (require 'flycheck-color-mode-line)
 (eval-after-load "flycheck"
