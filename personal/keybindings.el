@@ -164,10 +164,12 @@
 (global-unset-key (kbd "s-c"))
 (global-set-key (kbd "s-c c") 'flycheck-buffer)
 (global-set-key (kbd "s-c C") 'flycheck-clear)
+(global-set-key (kbd "s-c e") 'my-flycheck-display-error-at-point)
+(global-set-key (kbd "s-c h") 'my-flycheck-enable-highlighting)
+(global-set-key (kbd "s-c H") 'my-flycheck-disable-highlighting)
+(global-set-key (kbd "s-c l") 'flycheck-list-errors)
 (global-set-key (kbd "s-c n") 'my-flycheck-next-error)
 (global-set-key (kbd "s-c p") 'my-flycheck-previous-error)
-(global-set-key (kbd "s-c l") 'flycheck-list-errors)
-(global-set-key (kbd "s-c h") 'my-flycheck-display-error-at-point)
 
 ;; the following will turn on hi-lock mode; to unhighlight just one, use C-x w r or M-s h u
 (global-set-key (kbd "H-h") 'highlight-symbol-at-point)

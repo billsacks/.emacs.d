@@ -80,6 +80,19 @@ nil."
   (flycheck-previous-error)
   (my-flycheck-display-error-at-point))
 
+(defun my-flycheck-enable-highlighting ()
+  "Set flycheck highlighting mode to symbols in current buffer"
+  (interactive)
+  (setq-local flycheck-highlighting-mode 'symbols)
+  ;; need to rerun flycheck for change to take effect
+  (flycheck-buffer))
+(defun my-flycheck-disable-highlighting ()
+  "Turn off flycheck inline highlighting in current buffer"
+  (interactive)
+  (setq-local flycheck-highlighting-mode nil)
+  ;; need to rerun flycheck for change to take effect
+  (flycheck-buffer))
+
 (require 'flycheck-color-mode-line)
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
