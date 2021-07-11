@@ -192,7 +192,10 @@
 ;; and I guess I'll use H-J for its complement
 (global-set-key (kbd "H-J") 'point-to-register)
 
-(global-set-key (kbd "H-2") 'my-toggle-line-spacing)
+(global-set-key (kbd "s-2 1") 'my-line-spacing-single)
+(global-set-key (kbd "s-2 2") 'my-line-spacing-one-point-two-five)
+(global-set-key (kbd "s-2 3") 'my-line-spacing-one-point-five)
+(global-set-key (kbd "s-2 4") 'my-line-spacing-double)
 
 ;; these are convenient ways to cycle through tabs in the tab line (by default, M-left and
 ;; M-right do the same thing as C-left and C-right, so it seems okay to rebind them; these

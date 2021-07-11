@@ -55,12 +55,23 @@
   (interactive)
   (enlarge-window-horizontally 50))
 
-;; Toggle line spacing between single spacing (default: nil) and double spacing
-(defun my-toggle-line-spacing ()
+;; Different line spacings
+(defun my-line-spacing-single ()
+  "Set line spacing to single spacing (the default)"
   (interactive)
-  (if (eq 12 line-spacing)
-      (setq line-spacing nil)
-    (setq line-spacing 12)))
+  (setq line-spacing nil))
+(defun my-line-spacing-one-point-two-five ()
+  "Set line spacing to 1.25"
+  (interactive)
+  (setq line-spacing 3))
+(defun my-line-spacing-one-point-five ()
+  "Set line spacing to 1.5"
+  (interactive)
+  (setq line-spacing 6))
+(defun my-line-spacing-double ()
+  "Set line spacing to double"
+  (interactive)
+  (setq line-spacing 12))
 
 ;; adapted from https://gist.github.com/danmayer/1009137
 (defun copy-buffer-to-other-window ()
