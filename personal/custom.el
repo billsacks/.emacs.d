@@ -149,6 +149,7 @@
  '(org-agenda-window-setup 'current-window)
  '(org-babel-load-languages '((emacs-lisp . t) (python . t)))
  '(org-blank-before-new-entry '((heading) (plain-list-item . auto)))
+ '(org-cycle-emulate-tab nil)
  '(org-edit-src-content-indentation 0)
  '(org-ellipsis "...")
  '(org-enforce-todo-checkbox-dependencies t)
