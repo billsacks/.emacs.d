@@ -51,8 +51,14 @@
   (define-key company-active-map (kbd "RET") nil)
   (define-key company-active-map (kbd "<tab>") nil)
   (define-key company-active-map (kbd "TAB") nil)
+  ;; Make both M-SPC and A-M-SPC run company-complete-selection. This feels easiest
+  ;; because I sometimes trigger company with M-SPC and sometimes with A-M-SPC (the latter
+  ;; for completing with dabbrev); when triggering with the latter, I naturally want to
+  ;; press the same thing to complete with the current selection because my fingers are
+  ;; already there.
   (define-key company-active-map (kbd "M-SPC") 'company-complete-selection)
-  (define-key company-active-map (kbd "A-M-SPC") 'company-complete-common)
+  (define-key company-active-map (kbd "A-M-SPC") 'company-complete-selection)
+  (define-key company-active-map (kbd "A-SPC") 'company-complete-common)
   ;; C-g will quit, but it could be helpful to have an alternative way to cancel the completion, too
   (define-key company-active-map (kbd "S-SPC") 'company-abort)
 
