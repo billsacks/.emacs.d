@@ -14,6 +14,7 @@
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
 
 (define-key org-mode-map (kbd "C-c a") 'org-archive-to-archive-sibling)
+(define-key org-mode-map (kbd "C-c A") 'org-toggle-archive-tag)
 
 ;; org-display-outline-text doesn't show the last level; fix that with this function
 (defun my-org-show-position-in-text () ;; display outline path of hierarchical headings
