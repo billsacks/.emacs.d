@@ -46,6 +46,7 @@
  '(flycheck-color-mode-line-face-to-color 'sml/modes)
  '(flycheck-color-mode-line-show-running nil)
  '(flycheck-display-errors-function 'ignore)
+ '(flycheck-gfortran-language-standard "f2008")
  '(flycheck-highlighting-mode nil)
  '(flycheck-indication-mode 'left-margin)
  '(flycheck-mode-line '(:eval (my-flycheck-mode-line-status-text)))
