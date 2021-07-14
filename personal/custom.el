@@ -78,6 +78,7 @@
  '(lsp-diagnostics-attributes
    '((unnecessary :foreground "gray40")
      (deprecated :strike-through t)))
+ '(lsp-diagnostics-disabled-modes '(f90-mode))
  '(lsp-eldoc-enable-hover nil)
  '(lsp-enable-file-watchers nil)
  '(lsp-enable-imenu nil)

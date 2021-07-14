@@ -54,13 +54,8 @@
 
 (defun prelude-f90-mode-defaults ()
   "Defaults for Fortran programming"
-  (auto-fill-mode 1))
+  (auto-fill-mode 1)
+  (flycheck-mode -1))
 (setq prelude-f90-mode-hook 'prelude-f90-mode-defaults)
 (add-hook 'f90-mode-hook (lambda ()
                            (run-hooks 'prelude-f90-mode-hook)))
-
-;; the selection of flycheck checker above seems to get overridden by LSP; the following
-;; fixes the issue (though I'm not sure if this is the right way to do so)
-(defun f90-flycheck-setup()
-  (flycheck-select-checker 'fortran-gfortran))
-(add-hook 'lsp-fortls-after-open-hook #'f90-flycheck-setup)
