@@ -3,11 +3,11 @@
 (require 'org)
 (require 'deft)
 (setq org-todo-keywords '(
-                          (sequence "TODO(t)" "PROG(p)" "HOLD(h)" "|" "DONE(d)" "CANC(c)")
+                          (sequence "TODO(t)" "PROG(p)" "HOLD(h)" "WAIT(w)" "|" "DONE(d)" "CANC(c)")
                           ))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . "blue") ("PROG" . "red") ("HOLD" . "IndianRed1")
+      '(("TODO" . "blue") ("PROG" . "red") ("HOLD" . "IndianRed1") ("WAIT" . "IndianRed1")
         ("DONE" . "ForestGreen") ("CANC" . "tan1")))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
