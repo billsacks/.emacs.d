@@ -13,8 +13,8 @@
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
 
-(define-key org-mode-map (kbd "C-c a") 'org-archive-to-archive-sibling)
-(define-key org-mode-map (kbd "C-c A") 'org-toggle-archive-tag)
+(define-key org-mode-map (kbd "C-c a") 'org-toggle-archive-tag)
+(define-key org-mode-map (kbd "C-c A") 'org-archive-to-archive-sibling)
 
 ;; org-display-outline-text doesn't show the last level; fix that with this function
 (defun my-org-show-position-in-text () ;; display outline path of hierarchical headings
