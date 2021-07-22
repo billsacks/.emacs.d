@@ -148,6 +148,7 @@
      (todo . " %i %-12:c%l%l")
      (tags . " %i %-12:c%l%l")
      (search . " %i %-12:c%l%l")))
+ '(org-agenda-todo-list-sublevels nil)
  '(org-agenda-window-setup 'current-window)
  '(org-babel-load-languages '((emacs-lisp . t) (python . t)))
  '(org-blank-before-new-entry '((heading) (plain-list-item . auto)))
