@@ -162,6 +162,7 @@
  '(org-export-with-sub-superscripts '{})
  '(org-fontify-quote-and-verse-blocks t)
  '(org-hide-emphasis-markers t)
+ '(org-hierarchical-todo-statistics nil)
  '(org-imenu-depth 3)
  '(org-inlinetask-default-state "TODO")
  '(org-list-indent-offset 2)
