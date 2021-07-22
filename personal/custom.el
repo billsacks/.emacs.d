@@ -264,6 +264,7 @@
  '(hi-yellow ((t (:background "gold1"))))
  '(hl-line ((t (:inherit highlight :extend t :background "#e9f2e9"))))
  '(hl-todo ((t (:inherit font-lock-comment-face :weight bold))))
+ '(ivy-org ((t (:inherit font-lock-comment-face))))
  '(ivy-virtual ((t (:inherit font-lock-builtin-face :slant italic))))
  '(magit-diff-added ((t (:extend t :background "#ddffdd" :foreground "#333333"))))
  '(magit-diff-added-highlight ((t (:extend t :background "#cceecc" :foreground "#333333"))))
