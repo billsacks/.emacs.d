@@ -185,6 +185,7 @@
  '(prelude-guru nil)
  '(prelude-whitespace nil)
  '(projectile-dynamic-mode-line nil)
+ '(projectile-kill-buffers-filter 'kill-only-files)
  '(projectile-mode-line-prefix " P")
  '(projectile-switch-project-action 'projectile-commander)
  '(projectile-use-git-grep t)
