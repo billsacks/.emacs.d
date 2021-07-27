@@ -36,10 +36,10 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
 ;; a few useful global keybindings for org-mode
-(global-unset-key (kbd "s-o"))
-(global-set-key (kbd "s-o a") 'org-agenda)
-(global-set-key (kbd "s-o b") 'org-switchb)
-(global-set-key (kbd "s-o l") 'org-store-link)
+(global-unset-key (kbd "s-g"))
+(global-set-key (kbd "s-g a") 'org-agenda)
+(global-set-key (kbd "s-g b") 'org-switchb)
+(global-set-key (kbd "s-g l") 'org-store-link)
 
 (setq org-log-done t)
 
