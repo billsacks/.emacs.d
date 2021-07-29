@@ -166,6 +166,7 @@
  '(org-imenu-depth 3)
  '(org-inlinetask-default-state "TODO")
  '(org-list-indent-offset 2)
+ '(org-refile-targets '((nil :maxlevel . 8)))
  '(org-src-window-setup 'current-window)
  '(org-startup-folded 'content)
  '(org-startup-indented t)
