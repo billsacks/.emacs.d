@@ -196,7 +196,9 @@
  '(rg-keymap-prefix [8388723])
  '(ripgrep-arguments '("--sort path"))
  '(safe-local-variable-values
-   '((eval setq line-spacing 3)
+   '((eval text-scale-set 1)
+     (eval setq line-spacing 6)
+     (eval setq line-spacing 3)
      (eval face-remap-add-relative 'org-level-8 :family "Hack")
      (eval face-remap-add-relative 'org-level-7 :family "Hack")
      (eval face-remap-add-relative 'org-level-6 :family "Hack")
