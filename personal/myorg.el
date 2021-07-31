@@ -8,7 +8,7 @@
 
 (setq org-todo-keyword-faces
       '(("TODO" . "blue") ("PROG" . "red") ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
-        ("DONE" . "tan1") ("CANC" . "tan1")))
+        ("DONE" . "RosyBrown") ("CANC" . "RosyBrown")))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
