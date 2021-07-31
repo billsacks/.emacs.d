@@ -7,7 +7,7 @@
                           ))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . "blue") ("PROG" . "red") ("HOLD" . "IndianRed1") ("WAIT" . "IndianRed1") ("DPND" . "IndianRed1")
+      '(("TODO" . "blue") ("PROG" . "red") ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . "ForestGreen") ("CANC" . "tan1")))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
