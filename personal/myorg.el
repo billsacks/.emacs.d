@@ -112,6 +112,30 @@ Note: the force-heading piece of this is untested."
   (org-shiftmetaleft))
 (define-key org-mode-map (kbd "C-c <left>") 'my-org-move-subtree-down-and-promote)
 
+;; adapted from https://emacs.stackexchange.com/questions/43651/moving-a-subtree-to-the-top-or-bottom-of-its-parent
+(defun my-org-move-subtree-to-top ()
+  "Move the current subtree to the top of its parent"
+  (interactive)
+  (condition-case err
+      (while t
+        (org-move-subtree-up))
+    (user-error
+     (let ((err-msg (cadr err)))
+       (unless (string-match "Cannot move past superior level or buffer limit" err-msg)
+         (signal 'user-error (list err-msg)))))))
+(defun my-org-move-subtree-to-bottom ()
+  "Move the current subtree to the bottom of its parent"
+  (interactive)
+  (condition-case err
+      (while t
+        (org-move-subtree-down))
+    (user-error
+     (let ((err-msg (cadr err)))
+       (unless (string-match "Cannot move past superior level or buffer limit" err-msg)
+         (signal 'user-error (list err-msg)))))))
+(define-key org-mode-map (kbd "C-c <up>") 'my-org-move-subtree-to-top)
+(define-key org-mode-map (kbd "C-c <down>") 'my-org-move-subtree-to-bottom)
+
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
