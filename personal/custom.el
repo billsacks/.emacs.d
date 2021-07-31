@@ -310,6 +310,7 @@
  '(org-level-6 ((t (:inherit outline-6 :extend nil :family "CharterSpacedAbove"))))
  '(org-level-7 ((t (:inherit outline-7 :extend nil :family "CharterSpacedAbove"))))
  '(org-level-8 ((t (:inherit outline-8 :extend nil :family "CharterSpacedAbove"))))
+ '(org-priority ((t (:weight bold))))
  '(org-quote ((t (:inherit default :foreground "dark blue"))))
  '(org-special-keyword ((t (:inherit shadow))))
  '(org-variable-pitch-fixed-face ((t (:height 0.8 :family "Hack"))))

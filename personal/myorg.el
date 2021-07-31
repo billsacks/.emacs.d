@@ -65,26 +65,35 @@ Note: the force-heading piece of this is untested."
     (org-insert-todo-heading '(4) force-heading)))
 
 ;; Quick ways to mark todos as done or canceled, possibly with archiving
+(defun my-org-clear-priority ()
+  "Clear the priority on the current todo, if there is one"
+  (interactive)
+  ;; adapted from https://www.reddit.com/r/orgmode/comments/8ih7md/delete_priority_on_task_repeat/
+  (if (string-match org-priority-regexp (org-get-heading t t nil))
+      (org-priority ?\ ))
+  )
 (defun my-org-done ()
   "Change current heading's state to DONE"
   (interactive)
-  (org-todo "DONE"))
+  (org-todo "DONE")
+  (my-org-clear-priority))
 (define-key org-mode-map (kbd "C-c d") 'my-org-done)
 (defun my-org-done-and-archive ()
   "Change current heading's state to DONE and archive it"
   (interactive)
-  (org-todo "DONE")
+  (my-org-done)
   (org-archive-to-archive-sibling))
 (define-key org-mode-map (kbd "C-c D") 'my-org-done-and-archive)
 (defun my-org-canceled ()
   "Change current heading's state to CANC"
   (interactive)
-  (org-todo "CANC"))
+  (org-todo "CANC")
+  (my-org-clear-priority))
 (define-key org-mode-map (kbd "C-c c") 'my-org-canceled)
 (defun my-org-canceled-and-archive ()
   "Change current heading's state to CANC and archive it"
   (interactive)
-  (org-todo "CANC")
+  (my-org-canceled)
   (org-archive-to-archive-sibling))
 (define-key org-mode-map (kbd "C-c C") 'my-org-canceled-and-archive)
 
