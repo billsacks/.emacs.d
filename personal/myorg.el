@@ -67,6 +67,15 @@ Note: the force-heading piece of this is untested."
       (org-insert-todo-heading '(16) force-heading)
     (org-insert-todo-heading '(4) force-heading)))
 
+;; The following is useful for marking a bunch of things soon in quick succession: do this
+;; once then do the key binding to repeat the last command as often as wanted
+(defun my-org-soon-and-forward ()
+  "Mark the current todo as soon, then go forward to the next todo at the same level"
+  (interactive)
+  (org-todo "SOON")
+  (my-org-forward-todo-same-level))
+(define-key org-mode-map (kbd "C-c s") 'my-org-soon-and-forward)
+
 ;; Quick ways to mark todos as done or canceled, possibly with archiving
 (defun my-org-clear-priority ()
   "Clear the priority on the current todo, if there is one"
