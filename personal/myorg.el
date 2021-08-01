@@ -2,12 +2,15 @@
 
 (require 'org)
 (require 'deft)
-(setq org-todo-keywords '(
-                          (sequence "TODO(t)" "PROG(p)" "NEXT(n)" "SOON(s)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|" "DONE(d)" "CANC(c)")
-                          ))
+;; in org-todo-keywords, the first line gives a typical progression of states; following
+;; lines give less common states
+(setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
+                          (sequence "|" "CANC(c)")
+                          (sequence "HOLD(h)" "WAIT(w)" "DPND(e)")))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . "blue") ("PROG" . "red") ("NEXT" . "red") ("SOON" . "IndianRed1") ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
+      '(("TODO" . "blue") ("SOON" . "IndianRed1") ("NEXT" . "red") ("PROG" . "red")
+        ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . "RosyBrown") ("CANC" . "RosyBrown")))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
