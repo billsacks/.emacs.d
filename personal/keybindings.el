@@ -13,7 +13,8 @@
 ;; where I want a simple, one-key binding (grep, switching frames, etc.).
 ;;
 ;; I'm also defining some C-x * keybindings (particularly things that are similar to other
-;; C-x keybindings) as well as C-c * keybindings (so far for enabling/disabling modes).
+;; C-x keybindings) as well as C-c * keybindings (so far for mode-specific things, defined
+;; elsewhere).
 ;;
 ;; I also have some super (s-*) keybindings. These are generally used to group together
 ;; similar commands. For example, s-w groups together some window-related commands.
@@ -283,21 +284,18 @@
 (global-set-key (kbd "A-t") 'indent-relative)
 (global-set-key (kbd "A-SPC") 'cycle-spacing)
 
-;; Some C-c key bindings. So far I'm using these to enable / disable certain modes.
-;; (2021-05-18) I have noticed that C-c bindings are sometimes used for mode-specific
-;; bindings (e.g., for org-mode and python-mode). So I'm thinking about keeping with that
-;; idea, and changing these bindings that enable / disable modes to something like s-x.
-;;
+;; I'm using s-x for enabling / disabling modes
+(global-unset-key (kbd "s-x"))
 ;; This is useful to disable auto-triggering of company in buffers where that causes a big slowdown (e.g., case.py)
-(global-set-key (kbd "C-c c") 'my-toggle-company-idle-delay)
-(global-set-key (kbd "C-c f") 'auto-fill-mode)
-(global-set-key (kbd "C-c i") 'highlight-indent-guides-mode)
-(global-set-key (kbd "C-c I") 'my-toggle-highlight-indent-guides-responsive)
-(global-set-key (kbd "C-c s") 'scroll-lock-mode)
-(global-set-key (kbd "C-c v") 'view-mode)
+(global-set-key (kbd "s-x c") 'my-toggle-company-idle-delay)
+(global-set-key (kbd "s-x f") 'auto-fill-mode)
+(global-set-key (kbd "s-x i") 'highlight-indent-guides-mode)
+(global-set-key (kbd "s-x I") 'my-toggle-highlight-indent-guides-responsive)
+(global-set-key (kbd "s-x s") 'scroll-lock-mode)
+(global-set-key (kbd "s-x v") 'view-mode)
 ;; This is helpful with files that magit opens from a different revision:
 ;; which-function-mode doesn't get enabled properly in these files.
-(global-set-key (kbd "C-c w") 'my-enable-which-function-mode)
+(global-set-key (kbd "s-x w") 'my-enable-which-function-mode)
 
 (global-set-key (kbd "H-i") 'counsel-imenu)
 (global-set-key (kbd "H-I") 'my-counsel-imenu-current-pos)
