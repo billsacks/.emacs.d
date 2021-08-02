@@ -29,6 +29,19 @@
         ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "LightBlue"))
         ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "LightBlue"))))
 
+;; It seems that customizing the face for an org-tag like this loses the feature that a
+;; tag is colored according to its heading level - so these tags end up with the color of
+;; the default face. Oh well: in some ways that actually seems good.
+(setq org-tag-faces
+      '(
+        ;; I use the tag "large" in _projects.org and at the top of org files for large
+        ;; projects to denote that this is a large project, with subprojects; I want this
+        ;; tag to stand out.
+        ("large" . (:inherit org-tag :underline t))
+        ))
+
+(setq org-tags-exclude-from-inheritance '("large"))
+
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
 
