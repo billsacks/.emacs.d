@@ -24,10 +24,10 @@
         ;; I should pay attention to this week. For the other three, I am using DarkBlue
         ;; for 2, LightBlue3 for 4, and an intermediate color (from
         ;; https://meyerweb.com/eric/tools/color-blend) for 3.
-        ("PR-1" . (:inherit org-todo :foreground "DarkRed" :background "selectedTextBackgroundColor"))
-        ("PR-2" . (:inherit org-todo :foreground "DarkBlue" :background "selectedTextBackgroundColor"))
-        ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "selectedTextBackgroundColor"))
-        ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "selectedTextBackgroundColor"))))
+        ("PR-1" . (:inherit org-todo :foreground "DarkRed" :background "#d1eaff"))
+        ("PR-2" . (:inherit org-todo :foreground "DarkBlue" :background "#d1eaff"))
+        ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "#d1eaff"))
+        ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "#d1eaff"))))
 
 ;; It seems that customizing the face for an org-tag like this loses the feature that a
 ;; tag is colored according to its heading level - so these tags end up with the color of
