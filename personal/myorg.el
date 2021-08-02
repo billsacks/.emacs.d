@@ -211,7 +211,7 @@ Note: the force-heading piece of this is untested."
 (defun my-org-open-projects ()
   "Open my _projects.org file"
   (interactive)
-  (find-file "~/notes/_projects.org"))
+  (find-file "~/org/todo/_projects.org"))
 (defun my-org-show-agenda ()
   "Show the existing *Org Agenda* buffer"
   (interactive)

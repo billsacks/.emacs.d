@@ -21,7 +21,7 @@
  '(custom-safe-themes
    '("b9e9ba5aeedcc5ba8be99f1cc9301f6679912910ff92fdf7980929c2fc83ab4d" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default))
  '(deft-auto-save-interval 300.0)
- '(deft-directory "/Users/sacks/notes")
+ '(deft-directory "/Users/sacks/org/notes")
  '(deft-extensions '("org"))
  '(deft-file-naming-rules '((noslash . "-") (nospace . "-") (case-fn . downcase)))
  '(deft-org-mode-title-prefix nil)
@@ -142,7 +142,7 @@
  '(nxml-child-indent 2)
  '(nxml-outline-child-indent 3)
  '(org-adapt-indentation nil)
- '(org-agenda-files '("~/notes"))
+ '(org-agenda-files '("~/org/todo"))
  '(org-agenda-prefix-format
    '((agenda . " %i %-12:c%?-12t% s")
      (todo . " %i %-12:c%l%l")
