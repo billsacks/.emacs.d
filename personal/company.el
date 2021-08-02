@@ -59,6 +59,13 @@
   (define-key company-active-map (kbd "M-SPC") 'company-complete-selection)
   (define-key company-active-map (kbd "A-M-SPC") 'company-complete-selection)
   (define-key company-active-map (kbd "A-SPC") 'company-complete-common)
+
+  ;; Also allow A-M-# for completing a given candidate - as above, because I often have my
+  ;; thumb on A-M already. This code is copied from the company code that sets the
+  ;; keybindings for M-#.
+  (dotimes (i 10)
+    (define-key company-active-map (read-kbd-macro (format "A-M-%d" i)) 'company-complete-tooltip-row))
+
   ;; C-g will quit, but it could be helpful to have an alternative way to cancel the completion, too
   (define-key company-active-map (kbd "S-SPC") 'company-abort)
 
