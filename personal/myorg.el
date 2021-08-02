@@ -24,7 +24,10 @@
         ;; I should pay attention to this week. For the other three, I am using DarkBlue
         ;; for 2, LightBlue3 for 4, and an intermediate color (from
         ;; https://meyerweb.com/eric/tools/color-blend) for 3.
-        ("PR-1" . "DarkRed") ("PR-2" . "DarkBlue") ("PR-3" . "#4D60AC") ("PR-4" . "LightBlue3")))
+        ("PR-1" . (:inherit org-todo :foreground "DarkRed" :background "LightBlue"))
+        ("PR-2" . (:inherit org-todo :foreground "DarkBlue" :background "LightBlue"))
+        ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "LightBlue"))
+        ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "LightBlue"))))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
