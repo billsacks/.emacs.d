@@ -212,10 +212,15 @@ Note: the force-heading piece of this is untested."
   "Open my _projects.org file"
   (interactive)
   (find-file "~/notes/_projects.org"))
+(defun my-org-show-agenda ()
+  "Show the existing *Org Agenda* buffer"
+  (interactive)
+  (switch-to-buffer "*Org Agenda*"))
 
 ;; s-g keybindings: Org-related commands that can be run from anywhere (not just an org-mode buffer)
 (global-unset-key (kbd "s-g"))
-(global-set-key (kbd "s-g a") 'org-agenda)
+(global-set-key (kbd "s-g a") 'my-org-show-agenda)
+(global-set-key (kbd "s-g A") 'org-agenda)
 (global-set-key (kbd "s-g b") 'org-switchb)
 (global-set-key (kbd "s-g l") 'org-store-link)
 (global-set-key (kbd "s-g p") 'my-org-open-projects)
