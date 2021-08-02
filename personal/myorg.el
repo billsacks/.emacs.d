@@ -2,6 +2,7 @@
 
 (require 'org)
 (require 'deft)
+
 ;; in org-todo-keywords, the first line gives a typical progression of states; following
 ;; lines give less common states
 (setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
@@ -44,6 +45,10 @@
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
+
+(define-key org-mode-map (kbd "C-c k") 'org-cut-special)
+(define-key org-mode-map (kbd "C-c w") 'org-copy-special)
+(define-key org-mode-map (kbd "C-c y") 'org-paste-special)
 
 (define-key org-mode-map (kbd "C-c a") 'org-toggle-archive-tag)
 (define-key org-mode-map (kbd "C-c A") 'org-archive-to-archive-sibling)
@@ -202,3 +207,15 @@ Note: the force-heading piece of this is untested."
 ;; can be helpful sometimes to hide the body text of an entry.
 (define-key org-mode-map (kbd "C-c b") 'org-hide-entry)
 (define-key org-mode-map (kbd "C-c B") 'org-show-entry)
+
+(defun my-org-open-projects ()
+  "Open my _projects.org file"
+  (interactive)
+  (find-file "~/notes/_projects.org"))
+
+;; s-g keybindings: Org-related commands that can be run from anywhere (not just an org-mode buffer)
+(global-unset-key (kbd "s-g"))
+(global-set-key (kbd "s-g a") 'org-agenda)
+(global-set-key (kbd "s-g b") 'org-switchb)
+(global-set-key (kbd "s-g l") 'org-store-link)
+(global-set-key (kbd "s-g p") 'my-org-open-projects)
