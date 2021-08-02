@@ -6,12 +6,25 @@
 ;; lines give less common states
 (setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
                           (sequence "|" "CANC(c)")
-                          (sequence "HOLD(h)" "WAIT(w)" "DPND(e)")))
+                          (sequence "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
+                          ;; the following are for projects, both in my top-level projects
+                          ;; file and in files for individual projects that are big enough
+                          ;; that they are broken down into relatively large subprojects:
+                          ;; - PR-1 is for ones I'm working on now (this week)
+                          ;; - PR-2 is for relatively high priority, but not quite yet
+                          ;; - PR-3 is normal priority
+                          ;; - PR-4 is sometime in the more distant future
+                          (sequence "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|")))
 
 (setq org-todo-keyword-faces
       '(("TODO" . "blue") ("SOON" . "IndianRed1") ("NEXT" . "red") ("PROG" . "red")
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
-        ("DONE" . "RosyBrown") ("CANC" . "RosyBrown")))
+        ("DONE" . "RosyBrown") ("CANC" . "RosyBrown")
+        ;; For the PR-# states: I want a distinct color for PR-1, since that is the stuff
+        ;; I should pay attention to this week. For the other three, I am using DarkBlue
+        ;; for 2, LightBlue3 for 4, and an intermediate color (from
+        ;; https://meyerweb.com/eric/tools/color-blend) for 3.
+        ("PR-1" . "DarkRed") ("PR-2" . "DarkBlue") ("PR-3" . "#4D60AC") ("PR-4" . "LightBlue3")))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
