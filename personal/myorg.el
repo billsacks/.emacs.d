@@ -217,6 +217,22 @@ Note: the force-heading piece of this is untested."
   (interactive)
   (switch-to-buffer "*Org Agenda*"))
 
+(defun my-org-move-to-archive ()
+  "Move the current buffer's file to the archive directory"
+  (interactive)
+  (my-move-buffer-file "~/org/todo/archive"))
+(defun my-org-move-to-todo ()
+  "Move the current buffer's file to the todo directory"
+  (interactive)
+  (my-move-buffer-file "~/org/todo"))
+(defun my-org-move-to-notes ()
+  "Move the current buffer's file to the notes directory"
+  (interactive)
+  (my-move-buffer-file "~/org/notes"))
+(define-key org-mode-map (kbd "C-c m a") 'my-org-move-to-archive)
+(define-key org-mode-map (kbd "C-c m t") 'my-org-move-to-todo)
+(define-key org-mode-map (kbd "C-c m n") 'my-org-move-to-notes)
+
 ;; s-g keybindings: Org-related commands that can be run from anywhere (not just an org-mode buffer)
 (global-unset-key (kbd "s-g"))
 (global-set-key (kbd "s-g a") 'my-org-show-agenda)

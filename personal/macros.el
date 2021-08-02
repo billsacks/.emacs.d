@@ -201,3 +201,23 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (flyspell-mode -1)
   (edit-server-save))
 (define-key edit-server-edit-mode-map (kbd "C-x C-s") 'my-edit-server-save)
+
+;; From https://sites.google.com/site/steveyegge2/my-dot-emacs-file (found from
+;; https://stackoverflow.com/questions/384284/how-do-i-rename-an-open-file-in-emacs)
+(defun my-move-buffer-file (dir)
+  "Moves both current buffer and file it's visiting to DIR."
+  (interactive "DNew directory: ")
+  (let* ((name (buffer-name))
+         (filename (buffer-file-name))
+         (dir
+          (if (string-match dir "\\(?:/\\|\\\\)$")
+              (substring dir 0 -1) dir))
+         (newname (concat dir "/" name)))
+    (if (not filename)
+        (message "Buffer '%s' is not visiting a file!" name)
+      (progn
+        (copy-file filename newname 1)
+        (delete-file filename)
+        (set-visited-file-name newname)
+        (set-buffer-modified-p nil)
+        t))))
