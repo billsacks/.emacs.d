@@ -216,6 +216,7 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
     (if (not filename)
         (message "Buffer '%s' is not visiting a file!" name)
       (progn
+        (save-buffer)
         (copy-file filename newname 1)
         (delete-file filename)
         (set-visited-file-name newname)
