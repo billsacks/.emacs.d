@@ -311,6 +311,7 @@
  '(org-level-6 ((t (:inherit outline-6 :extend nil :family "CharterSpacedAbove"))))
  '(org-level-7 ((t (:inherit outline-7 :extend nil :family "CharterSpacedAbove"))))
  '(org-level-8 ((t (:inherit outline-8 :extend nil :family "CharterSpacedAbove"))))
+ '(org-link ((t (:inherit link :foreground "blue4"))))
  '(org-priority ((t (:weight bold))))
  '(org-quote ((t (:inherit default :foreground "dark blue"))))
  '(org-special-keyword ((t (:inherit shadow))))
