@@ -315,7 +315,7 @@
  '(org-quote ((t (:inherit default :foreground "dark blue"))))
  '(org-special-keyword ((t (:inherit shadow))))
  '(org-variable-pitch-fixed-face ((t (:height 0.8 :family "Hack"))))
- '(outline-1 ((t (:foreground "#006000"))))
+ '(outline-1 ((t (:foreground "#005000"))))
  '(outline-2 ((t (:foreground "blue4"))))
  '(outline-3 ((t (:foreground "firebrick4"))))
  '(outline-4 ((t (:foreground "purple4"))))
