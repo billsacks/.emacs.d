@@ -217,26 +217,56 @@ Note: the force-heading piece of this is untested."
   (interactive)
   (switch-to-buffer "*Org Agenda*"))
 
+;; Functions to help with moving files between my org directories
 (defun my-org-move-to-archive ()
   "Move the current buffer's file to the archive directory"
   (interactive)
   (my-move-buffer-file "~/org/todo/archive"))
-(defun my-org-move-to-todo ()
-  "Move the current buffer's file to the todo directory"
-  (interactive)
-  (my-move-buffer-file "~/org/todo"))
 (defun my-org-move-to-notes ()
   "Move the current buffer's file to the notes directory"
   (interactive)
   (my-move-buffer-file "~/org/notes"))
+(defun my-org-move-to-todo ()
+  "Move the current buffer's file to the todo directory"
+  (interactive)
+  (my-move-buffer-file "~/org/todo"))
 (define-key org-mode-map (kbd "C-c m a") 'my-org-move-to-archive)
-(define-key org-mode-map (kbd "C-c m t") 'my-org-move-to-todo)
 (define-key org-mode-map (kbd "C-c m n") 'my-org-move-to-notes)
+(define-key org-mode-map (kbd "C-c m t") 'my-org-move-to-todo)
+
+;; Allow using Deft for all of these different directories
+;;
+;; Based on https://www.emacswiki.org/emacs/DeftMode and
+;; http://pragmaticemacs.com/emacs/deft-as-a-file-search-tool/
+(defun my-deft-in-dir (dir)
+  "Run deft in directory DIR"
+  (let ((temp deft-directory))
+    (setq deft-directory dir)
+    (switch-to-buffer "*Deft*")
+    (kill-this-buffer)
+    (deft)
+    (setq deft-directory temp)
+    ))
+(defun my-deft-in-archive ()
+  "Run deft in the notes directory"
+  (interactive)
+  (my-deft-in-dir "~/org/todo/archive"))
+(defun my-deft-in-notes ()
+  "Run deft in the notes directory"
+  (interactive)
+  (my-deft-in-dir "~/org/notes"))
+(defun my-deft-in-todo ()
+  "Run deft in the notes directory"
+  (interactive)
+  (my-deft-in-dir "~/org/todo"))
 
 ;; s-g keybindings: Org-related commands that can be run from anywhere (not just an org-mode buffer)
 (global-unset-key (kbd "s-g"))
 (global-set-key (kbd "s-g a") 'my-org-show-agenda)
 (global-set-key (kbd "s-g A") 'org-agenda)
 (global-set-key (kbd "s-g b") 'org-switchb)
+(global-set-key (kbd "s-g d a") 'my-deft-in-archive)
+(global-set-key (kbd "s-g d n") 'my-deft-in-notes)
+(global-set-key (kbd "s-g d t") 'my-deft-in-todo)
 (global-set-key (kbd "s-g l") 'org-store-link)
 (global-set-key (kbd "s-g p") 'my-org-open-projects)
