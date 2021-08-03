@@ -226,12 +226,17 @@ Note: the force-heading piece of this is untested."
   "Move the current buffer's file to the notes directory"
   (interactive)
   (my-move-buffer-file "~/org/notes"))
+(defun my-org-move-to-someday ()
+  "Move the current buffer's file to the someday directory"
+  (interactive)
+  (my-move-buffer-file "~/org/todo/someday"))
 (defun my-org-move-to-todo ()
   "Move the current buffer's file to the todo directory"
   (interactive)
   (my-move-buffer-file "~/org/todo"))
 (define-key org-mode-map (kbd "C-c m a") 'my-org-move-to-archive)
 (define-key org-mode-map (kbd "C-c m n") 'my-org-move-to-notes)
+(define-key org-mode-map (kbd "C-c m s") 'my-org-move-to-someday)
 (define-key org-mode-map (kbd "C-c m t") 'my-org-move-to-todo)
 
 ;; Allow using Deft for all of these different directories
@@ -248,15 +253,19 @@ Note: the force-heading piece of this is untested."
     (setq deft-directory temp)
     ))
 (defun my-deft-in-archive ()
-  "Run deft in the notes directory"
+  "Run deft in the archive directory"
   (interactive)
   (my-deft-in-dir "~/org/todo/archive"))
 (defun my-deft-in-notes ()
   "Run deft in the notes directory"
   (interactive)
   (my-deft-in-dir "~/org/notes"))
+(defun my-deft-in-someday ()
+  "Run deft in the someday directory"
+  (interactive)
+  (my-deft-in-dir "~/org/todo/someday"))
 (defun my-deft-in-todo ()
-  "Run deft in the notes directory"
+  "Run deft in the todo directory"
   (interactive)
   (my-deft-in-dir "~/org/todo"))
 
@@ -267,6 +276,7 @@ Note: the force-heading piece of this is untested."
 (global-set-key (kbd "s-g b") 'org-switchb)
 (global-set-key (kbd "s-g d a") 'my-deft-in-archive)
 (global-set-key (kbd "s-g d n") 'my-deft-in-notes)
+(global-set-key (kbd "s-g d s") 'my-deft-in-someday)
 (global-set-key (kbd "s-g d t") 'my-deft-in-todo)
 (global-set-key (kbd "s-g l") 'org-store-link)
 (global-set-key (kbd "s-g p") 'my-org-open-projects)
