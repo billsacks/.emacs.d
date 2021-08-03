@@ -43,6 +43,22 @@
 
 (setq org-tags-exclude-from-inheritance '("large"))
 
+;; I initially set this via the customization interface, then moved it from custom.el to
+;; here. The "n" entry was present initially, so I'm leaving it as is; the others are my
+;; additions. I couldn't get todo-tree to work with multiple states, so I'm using
+;; tags-tree instead.
+(setq org-agenda-custom-commands
+      '(("n" "Agenda and all TODOs"
+         ((agenda "" nil)
+          (alltodo "" nil))
+         nil)
+        ("x" "SOON" todo "SOON|NEXT|PROG" nil)
+        ("X" "SOON tree" tags-tree "TODO=\"SOON\"|TODO=\"NEXT\"|TODO=\"PROG\"" nil)
+        ("y" "NEXT" todo "NEXT|PROG" nil)
+        ("Y" "NEXT tree" tags-tree "TODO=\"NEXT\"|TODO=\"PROG\"" nil)
+        ("z" "PROG" todo "PROG" nil)
+        ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)))
+
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
 
