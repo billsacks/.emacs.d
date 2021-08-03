@@ -18,8 +18,12 @@
                           (sequence "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|")))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . "blue") ("SOON" . "IndianRed1") ("NEXT" . "red") ("PROG" . "red")
-        ("MAYB" . "SteelBlue3") ("COND" . "SteelBlue3") ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
+      '(("TODO" . "blue")
+        ("SOON" . "red")
+        ("NEXT" . (:inherit org-todo :foreground "red" :background "#d1eaff"))
+        ("PROG" . (:inherit org-todo :foreground "red" :background "#d1eaff"))
+        ("MAYB" . "SteelBlue3") ("COND" . "SteelBlue3")
+        ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . "RosyBrown") ("CANC" . "RosyBrown")
         ;; For the PR-# states: I want a distinct color for PR-1, since that is the stuff
         ;; I should pay attention to this week. For the other three, I am using DarkBlue
