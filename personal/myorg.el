@@ -7,7 +7,7 @@
 ;; lines give less common states
 (setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
                           (sequence "|" "CANC(c)")
-                          (sequence "MAYB(m)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
+                          (sequence "MAYB(m)" "COND(?)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
                           ;; the following are for projects, both in my top-level projects
                           ;; file and in files for individual projects that are big enough
                           ;; that they are broken down into relatively large subprojects:
@@ -19,7 +19,7 @@
 
 (setq org-todo-keyword-faces
       '(("TODO" . "blue") ("SOON" . "IndianRed1") ("NEXT" . "red") ("PROG" . "red")
-        ("MAYB" . "SteelBlue3") ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
+        ("MAYB" . "SteelBlue3") ("COND" . "SteelBlue3") ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . "RosyBrown") ("CANC" . "RosyBrown")
         ;; For the PR-# states: I want a distinct color for PR-1, since that is the stuff
         ;; I should pay attention to this week. For the other three, I am using DarkBlue
