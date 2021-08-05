@@ -2,6 +2,9 @@
 
 (require 'org)
 (require 'deft)
+(require 'org-super-agenda)
+
+(org-super-agenda-mode +1)
 
 ;; in org-todo-keywords, the first line gives a typical progression of states; following
 ;; lines give less common states
@@ -63,6 +66,9 @@
         ("Y" "NEXT tree" tags-tree "TODO=\"NEXT\"|TODO=\"PROG\"" nil)
         ("z" "PROG" todo "PROG" nil)
         ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)))
+
+(setq org-super-agenda-groups
+      '((:auto-category t)))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
