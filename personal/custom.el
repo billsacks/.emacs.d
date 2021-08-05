@@ -315,6 +315,7 @@
  '(org-priority ((t (:weight bold))))
  '(org-quote ((t (:inherit default :foreground "dark blue"))))
  '(org-special-keyword ((t (:inherit shadow))))
+ '(org-todo ((t (:foreground "Red1" :underline "gray75" :weight bold))))
  '(org-variable-pitch-fixed-face ((t (:height 0.8 :family "Hack"))))
  '(outline-1 ((t (:foreground "#005000"))))
  '(outline-2 ((t (:foreground "blue4"))))

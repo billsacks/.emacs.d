@@ -24,7 +24,8 @@
         ("PROG" . "magenta2")
         ("MAYB" . "SteelBlue3") ("COND" . "SteelBlue3")
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
-        ("DONE" . "RosyBrown") ("CANC" . "RosyBrown")
+        ("DONE" . (:inherit org-done :foreground "RosyBrown"))
+        ("CANC" . (:inherit org-done :foreground "RosyBrown" :strike-through t))
         ;; For the PR-# states: I want a distinct color for PR-1, since that is the stuff
         ;; I should pay attention to this week. For the other three, I am using DarkBlue
         ;; for 2, LightBlue3 for 4, and an intermediate color (from
