@@ -24,7 +24,7 @@
       '(("TODO" . "blue")
         ("SOON" . "red")
         ("NEXT" . "magenta2")
-        ("PROG" . "magenta2")
+        ("PROG" . (:inherit org-todo :foreground "magenta2" :slant italic))
         ("MAYB" . "SteelBlue3") ("COND" . "SteelBlue3")
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . (:inherit org-done :foreground "RosyBrown"))
