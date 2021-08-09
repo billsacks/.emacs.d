@@ -22,9 +22,9 @@
 
 (setq org-todo-keyword-faces
       '(("TODO" . "blue")
-        ("SOON" . "red")
-        ("NEXT" . "magenta2")
-        ("PROG" . (:inherit org-todo :foreground "magenta2" :slant italic))
+        ("SOON" . "magenta2")
+        ("NEXT" . "red")
+        ("PROG" . (:inherit org-todo :foreground "red" :slant italic))
         ("MAYB" . "SteelBlue3") ("COND" . "SteelBlue3")
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . (:inherit org-done :foreground "RosyBrown"))
