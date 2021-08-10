@@ -320,13 +320,10 @@ Note: the force-heading piece of this is untested."
 ;; http://pragmaticemacs.com/emacs/deft-as-a-file-search-tool/
 (defun my-deft-in-dir (dir)
   "Run deft in directory DIR"
-  (let ((temp deft-directory))
-    (setq deft-directory dir)
-    (switch-to-buffer "*Deft*")
-    (kill-this-buffer)
-    (deft)
-    (setq deft-directory temp)
-    ))
+  (setq deft-directory dir)
+  (switch-to-buffer "*Deft*")
+  (kill-this-buffer)
+  (deft))
 (defun my-deft-in-archive ()
   "Run deft in the archive directory"
   (interactive)
