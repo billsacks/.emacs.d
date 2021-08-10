@@ -60,11 +60,23 @@
          ((agenda "" nil)
           (alltodo "" nil))
          nil)
-        ("x" "SOON" todo "SOON|NEXT|PROG" nil)
+
+        ("x" "SOON"
+         ((todo "SOON|NEXT|PROG" nil)
+          (agenda "" nil))
+         nil)
         ("X" "SOON tree" tags-tree "TODO=\"SOON\"|TODO=\"NEXT\"|TODO=\"PROG\"" nil)
-        ("y" "NEXT" todo "NEXT|PROG" nil)
+
+        ("y" "NEXT"
+         ((todo "NEXT|PROG" nil)
+          (agenda "" nil))
+         nil)
         ("Y" "NEXT tree" tags-tree "TODO=\"NEXT\"|TODO=\"PROG\"" nil)
-        ("z" "PROG" todo "PROG" nil)
+
+        ("z" "PROG"
+         ((todo "PROG" nil)
+          (agenda "" nil))
+         nil)
         ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)))
 
 ;; the following is modified from the built-in outline-path: the first line is the same,
