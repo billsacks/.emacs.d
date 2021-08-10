@@ -235,6 +235,7 @@ Note: the force-heading piece of this is untested."
     (switch-to-buffer mybuffer)
     (org-agenda-switch-to)
     (kill-buffer mybuffer)))
+(define-key org-mode-map (kbd "C-c p p") 'my-org-goto-project-planner)
 
 (defun my-org-archive-project ()
   "Archive the current project: both the project's org file and its reference in _projects.org"
@@ -250,6 +251,7 @@ Note: the force-heading piece of this is untested."
     ;; we had to wait a bit to kill the project buffer - at least until after calling
     ;; my-org-goto-project-planner; but now we're done with it so we can kill it
     (kill-buffer project-buffer)))
+(define-key org-mode-map (kbd "C-c p a") 'my-org-archive-project)
 
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
