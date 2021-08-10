@@ -21,11 +21,11 @@
                           (sequence "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|")))
 
 (setq org-todo-keyword-faces
-      '(("TODO" . "blue")
-        ("SOON" . "magenta2")
+      '(("TODO" . "SteelBlue3")
+        ("SOON" . "blue")
         ("NEXT" . "red")
         ("PROG" . (:inherit org-todo :foreground "red" :slant italic))
-        ("MAYB" . "SteelBlue3") ("COND" . "SteelBlue3")
+        ("MAYB" . "LightSteelBlue3") ("COND" . "LightSteelBlue3")
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . (:inherit org-done :foreground "RosyBrown"))
         ("CANC" . (:inherit org-done :foreground "RosyBrown" :strike-through t))
