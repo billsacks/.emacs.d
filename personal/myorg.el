@@ -241,6 +241,10 @@ Note: the force-heading piece of this is untested."
     ;; the query twice, one time specifying an action that stores results in a list, if
     ;; there is no better way???), then: if there is just one result, switch to it,
     ;; otherwise keep the buffer open so I can decide what to do.
+    ;;
+    ;; how to do this:
+    ;; - (count-lines (point-min) (point-max)) -- make sure this is 1, otherwise abort
+    ;; - check if current line is empty, using (looking-at-p "[[:space:]]*$") [from https://emacs.stackexchange.com/questions/16792/easiest-way-to-check-if-current-line-is-empty-ignoring-whitespace]; if so, abort
     (switch-to-buffer mybuffer)
     (org-agenda-switch-to)
     (kill-buffer mybuffer)))
