@@ -228,6 +228,7 @@
 (global-set-key (kbd "<C-up>") 'move-text-up)
 (global-set-key (kbd "<C-down>") 'move-text-down)
 ;; but I need to then redefine them in org mode
+;; Note: I could probably use org-disputed-keys for the following
 (define-key org-mode-map (kbd "<M-left>") nil)
 (define-key org-mode-map (kbd "<M-right>") nil)
 (define-key org-mode-map (kbd "<M-up>") nil)
@@ -238,12 +239,8 @@
 (define-key org-mode-map (kbd "<M-A-right>") 'org-metaright)
 (define-key org-mode-map (kbd "<M-A-up>") 'org-metaup)
 (define-key org-mode-map (kbd "<M-A-down>") 'org-metadown)
-;; Use M-S in place of S for org arrows (S is used by windmove)
-(define-key org-mode-map (kbd "<M-S-left>") 'org-shiftleft)
-(define-key org-mode-map (kbd "<M-S-right>") 'org-shiftright)
-(define-key org-mode-map (kbd "<M-S-up>") 'org-shiftup)
-(define-key org-mode-map (kbd "<M-S-down>") 'org-shiftdown)
-;; And use M-A-S in place of M-S for org arrows
+;; And use M-A-S in place of M-S for org arrows (we could just use M-S, but it seems
+;; helpful to have symmetry: always replace M with M-A)
 (define-key org-mode-map (kbd "<M-A-S-left>") 'org-shiftmetaleft)
 (define-key org-mode-map (kbd "<M-A-S-right>") 'org-shiftmetaright)
 (define-key org-mode-map (kbd "<M-A-S-up>") 'org-shiftmetaup)

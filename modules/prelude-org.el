@@ -30,7 +30,6 @@
 
 ;;; Code:
 
-(setq org-replace-disputed-keys t)
 (require 'org)
 
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
