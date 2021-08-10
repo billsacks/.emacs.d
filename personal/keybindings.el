@@ -288,6 +288,7 @@
 (global-set-key (kbd "A-SPC") 'cycle-spacing)
 
 ;; I'm using s-x for enabling / disabling modes
+;; (2021-08-10) Maybe change this to some symbol key, or maybe s-SPC or s-RET
 (global-unset-key (kbd "s-x"))
 ;; This is useful to disable auto-triggering of company in buffers where that causes a big slowdown (e.g., case.py)
 (global-set-key (kbd "s-x c") 'my-toggle-company-idle-delay)
