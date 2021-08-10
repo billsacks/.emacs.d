@@ -227,32 +227,6 @@
 (require 'move-text)
 (global-set-key (kbd "<C-up>") 'move-text-up)
 (global-set-key (kbd "<C-down>") 'move-text-down)
-;; but I need to then redefine them in org mode
-;; Note: I could probably use org-disputed-keys for the following
-(define-key org-mode-map (kbd "<M-left>") nil)
-(define-key org-mode-map (kbd "<M-right>") nil)
-(define-key org-mode-map (kbd "<M-up>") nil)
-(define-key org-mode-map (kbd "<M-down>") nil)
-;; Use M-A in place of M for org arrows (M-S would be approximately equally ergonomic, but
-;; then we would need to change the bindings for org-shiftmeta*)
-(define-key org-mode-map (kbd "<M-A-left>") 'org-metaleft)
-(define-key org-mode-map (kbd "<M-A-right>") 'org-metaright)
-(define-key org-mode-map (kbd "<M-A-up>") 'org-metaup)
-(define-key org-mode-map (kbd "<M-A-down>") 'org-metadown)
-;; And use M-A-S in place of M-S for org arrows (we could just use M-S, but it seems
-;; helpful to have symmetry: always replace M with M-A)
-(define-key org-mode-map (kbd "<M-A-S-left>") 'org-shiftmetaleft)
-(define-key org-mode-map (kbd "<M-A-S-right>") 'org-shiftmetaright)
-(define-key org-mode-map (kbd "<M-A-S-up>") 'org-shiftmetaup)
-(define-key org-mode-map (kbd "<M-A-S-down>") 'org-shiftmetadown)
-;; I think it will help if the org mode keybindings for return mimic those for arrows, so
-;; change them accordingly. (For example, this makes it easier to insert a heading then
-;; immediately promote / demote it.)
-(define-key org-mode-map (kbd "<M-return>") nil)
-(define-key org-mode-map (kbd "M-RET") nil)
-(define-key org-mode-map (kbd "<M-A-return>") 'org-meta-return)
-(define-key org-mode-map (kbd "<M-S-return>") nil)
-(define-key org-mode-map (kbd "<M-A-S-return>") 'my-org-insert-todo-heading)
 
 (global-set-key (kbd "M-A-f") 'forward-symbol)
 (global-set-key (kbd "M-A-b") 'my-backward-symbol)
