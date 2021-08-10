@@ -67,8 +67,17 @@
         ("z" "PROG" todo "PROG" nil)
         ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)))
 
+;; the following is modified from the built-in outline-path: the first line is the same,
+;; but I have replaced the s-join expression with one that only uses the first 2 levels,
+;; and am using a different separator for the 2 elements of the path (" | ")
+(org-super-agenda--def-auto-group outline-path-2 "their outline paths, first 2 levels"
+  :key-form (org-super-agenda--when-with-marker-buffer (org-super-agenda--get-marker item)
+              (let ((outline-path (org-get-outline-path)))
+                (s-join " | " (butlast outline-path (- (length outline-path) 2))))
+              ))
+
 (setq org-super-agenda-groups
-      '((:auto-category t)))
+      '((:auto-outline-path-2 t)))
 
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
