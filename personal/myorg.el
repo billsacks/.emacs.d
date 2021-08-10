@@ -218,6 +218,39 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c <up>") 'my-org-move-subtree-to-top)
 (define-key org-mode-map (kbd "C-c <down>") 'my-org-move-subtree-to-bottom)
 
+(defun my-org-goto-project-planner ()
+  "Go to the entry in the project planning doc corresponding to the current file"
+  (interactive)
+  (let ((mybuffer "my-org-goto-project-planner-buffer"))
+    (org-ql-search "~/org/_projects.org"
+      `(link :target ,(concat "todo/" (file-name-nondirectory (buffer-file-name))))
+      :buffer mybuffer
+      )
+
+    ;; The following assumes that there is only one result; if we wanted this to be more
+    ;; robust, we could first determine the number of results somehow (maybe by running
+    ;; the query twice, one time specifying an action that stores results in a list, if
+    ;; there is no better way???), then: if there is just one result, switch to it,
+    ;; otherwise keep the buffer open so I can decide what to do.
+    (switch-to-buffer mybuffer)
+    (org-agenda-switch-to)
+    (kill-buffer mybuffer)))
+
+(defun my-org-archive-project ()
+  "Archive the current project: both the project's org file and its reference in _projects.org"
+  (interactive)
+  (my-org-move-to-archive)
+
+  (let ((project-buffer (current-buffer)))
+    ;; remove this line from _projects.org
+    (my-org-goto-project-planner)
+    (org-archive-subtree)
+    (save-buffer)
+
+    ;; we had to wait a bit to kill the project buffer - at least until after calling
+    ;; my-org-goto-project-planner; but now we're done with it so we can kill it
+    (kill-buffer project-buffer)))
+
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
