@@ -300,7 +300,7 @@
  '(org-block ((t (:extend t :foreground "#333333"))))
  '(org-checkbox-statistics-todo ((t (:inherit org-todo :foreground "gray50"))))
  '(org-code ((t (:inherit font-lock-constant-face))))
- '(org-date ((t (:inherit shadow))))
+ '(org-date ((t (:inherit shadow :height 0.8))))
  '(org-done ((t (:foreground "ForestGreen"))))
  '(org-drawer ((t (:inherit shadow :height 0.8))))
  '(org-inlinetask ((t (:inherit font-lock-function-name-face))))
