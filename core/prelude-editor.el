@@ -129,9 +129,14 @@
 
 (recentf-mode +1)
 
-;; use hyper + arrow keys to switch between visible buffers
+;; use ctrl + arrow keys to switch between visible buffers
+;;
+;; ctrl-left/right is kind of useful for backward/forward word, but that does essentially
+;; the same thing as M-b/M-f, and it doesn't seem necessary to have two different bindings
+;; (that are approximately equally ergonomic) for essentially the same thing; ctrl-up/down
+;; is duplicated with M-up/down, and I always use the latter.
 (require 'windmove)
-(windmove-default-keybindings 'hyper)
+(windmove-default-keybindings 'ctrl)
 
 ;; automatically save buffers associated with files on buffer switch
 ;; and on windows switch

@@ -225,10 +225,13 @@
 (require 'scroll-lock)
 (define-key scroll-lock-mode-map (kbd "<A-up>") 'my-scroll-lock-previous-line-3)
 (define-key scroll-lock-mode-map (kbd "<A-down>") 'my-scroll-lock-next-line-3)
-;; and these are good keybindings for move-text
+;; And these are good keybindings for move-text; note that these bindings are shadowed in
+;; org mode, but I feel that's actually a good thing: I generally don't want to move
+;; single lines in org mode, and the effect is similar: in org mode, these bindings move a
+;; subtree up / down.
 (require 'move-text)
-(global-set-key (kbd "<C-up>") 'move-text-up)
-(global-set-key (kbd "<C-down>") 'move-text-down)
+(global-set-key (kbd "<M-A-up>") 'move-text-up)
+(global-set-key (kbd "<M-A-down>") 'move-text-down)
 
 (global-set-key (kbd "M-A-f") 'forward-symbol)
 (global-set-key (kbd "M-A-b") 'my-backward-symbol)
