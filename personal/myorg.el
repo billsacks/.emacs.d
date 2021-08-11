@@ -10,7 +10,8 @@
 ;; lines give less common states
 (setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
                           (sequence "|" "CANC(c)")
-                          (sequence "MAYB(m)" "COND(o)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
+                          ;; MBCN = maybe canceled
+                          (sequence "MBCN(b)" "MAYB(m)" "COND(o)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
                           ;; the following are for projects, both in my top-level projects
                           ;; file and in files for individual projects that are big enough
                           ;; that they are broken down into relatively large subprojects:
@@ -25,6 +26,7 @@
         ("SOON" . "blue")
         ("NEXT" . "red")
         ("PROG" . (:inherit org-todo :foreground "red" :slant italic))
+        ("MBCN" . (:inherit org-todo :foreground "LightSteelBlue3" :strike-through t))
         ("MAYB" . "LightSteelBlue3") ("COND" . "LightSteelBlue3")
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . (:inherit org-done :foreground "RosyBrown"))
