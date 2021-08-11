@@ -122,19 +122,44 @@
   (backward-char 1))
 (define-key org-mode-map (kbd "C-c h") 'my-org-highlight-inline-code)
 
-;; go to next visible todo
+;; allow navigation to next / previous todos
 (defun my-org-next-visible-todo ()
   (interactive)
   (org-next-visible-heading 1)
   (while (and (not (org-entry-is-todo-p)) (not (eobp)))
     (org-next-visible-heading 1)))
-(define-key org-mode-map (kbd "C-c C-S-n") 'my-org-next-visible-todo)
+(defun my-org-previous-visible-todo ()
+  (interactive)
+  (org-previous-visible-heading 1)
+  (while (and (not (org-entry-is-todo-p)) (not (bobp)))
+    (org-previous-visible-heading 1)))
 (defun my-org-forward-todo-same-level ()
   (interactive)
   (org-forward-heading-same-level 1)
   (while (and (not (org-entry-is-todo-p)) (not (eobp)))
     (org-forward-heading-same-level 1)))
+(defun my-org-backward-todo-same-level ()
+  (interactive)
+  (org-backward-heading-same-level 1)
+  (while (and (not (org-entry-is-todo-p)) (not (bobp)))
+    (org-backward-heading-same-level 1)))
+(define-key org-mode-map (kbd "C-c C-S-n") 'my-org-next-visible-todo)
+(define-key org-mode-map (kbd "C-c C-S-p") 'my-org-previous-visible-todo)
 (define-key org-mode-map (kbd "C-c C-S-f") 'my-org-forward-todo-same-level)
+(define-key org-mode-map (kbd "C-c C-S-b") 'my-org-backward-todo-same-level)
+
+;; Allow modified arrow keys for navigation between headings, too
+(define-key org-mode-map (kbd "C-M-<up>") 'org-previous-visible-heading)
+(define-key org-mode-map (kbd "C-M-<down>") 'org-next-visible-heading)
+(define-key org-mode-map (kbd "C-M-<left>") 'org-backward-heading-same-level)
+(define-key org-mode-map (kbd "C-M-<right>") 'org-forward-heading-same-level)
+(define-key org-mode-map (kbd "C-M-S-<up>") 'my-org-previous-visible-todo)
+(define-key org-mode-map (kbd "C-M-S-<down>") 'my-org-next-visible-todo)
+(define-key org-mode-map (kbd "C-M-S-<left>") 'my-org-backward-todo-same-level)
+(define-key org-mode-map (kbd "C-M-S-<right>") 'my-org-forward-todo-same-level)
+;; C-A-up feels a bit more intuitive for outline-up-heading, but C-A-left is a bit easier
+;; on my hands
+(define-key org-mode-map (kbd "C-A-<left>") 'outline-up-heading)
 
 (defun my-org-insert-todo-heading (arg &optional force-heading)
   "Like org-insert-todo-heading but use the first state.
