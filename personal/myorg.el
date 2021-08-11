@@ -365,3 +365,12 @@ Note: the force-heading piece of this is untested."
 (global-set-key (kbd "s-g d t") 'my-deft-in-todo)
 (global-set-key (kbd "s-g l") 'org-store-link)
 (global-set-key (kbd "s-g p") 'my-org-open-projects)
+
+;; (2021-08-10) I commonly need to type a tilde in org mode; it's a bit difficult, and my
+;; left pinky has been hurting recently, so I'm adding this alternative (mnemonic: c for
+;; code).
+(defun my-org-insert-tilde ()
+  "Insert a tilde"
+  (interactive)
+  (insert "~"))
+(define-key org-mode-map (kbd "A-c") 'my-org-insert-tilde)
