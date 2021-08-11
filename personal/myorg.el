@@ -10,7 +10,7 @@
 ;; lines give less common states
 (setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
                           (sequence "|" "CANC(c)")
-                          (sequence "MAYB(m)" "COND(?)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
+                          (sequence "MAYB(m)" "COND(o)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
                           ;; the following are for projects, both in my top-level projects
                           ;; file and in files for individual projects that are big enough
                           ;; that they are broken down into relatively large subprojects:
