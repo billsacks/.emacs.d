@@ -294,9 +294,10 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c t") 'org-todo)
 
 ;; Hide / show body text. If there is a lot of body text before subheadings (children) it
-;; can be helpful sometimes to hide the body text of an entry.
-(define-key org-mode-map (kbd "C-c b") 'org-hide-entry)
-(define-key org-mode-map (kbd "C-c B") 'org-show-entry)
+;; can be helpful sometimes to hide the body text of an entry. Conversely, body text often
+;; starts out hidden, so it can be helpful to show it.
+(define-key org-mode-map (kbd "C-c b") 'org-show-entry)
+(define-key org-mode-map (kbd "C-c B") 'org-hide-entry)
 
 (defun my-org-open-projects ()
   "Open my _projects.org file"
