@@ -30,45 +30,6 @@
 
 ;;; Code:
 
-(setq org-replace-disputed-keys t)
-(setq org-disputed-keys
-      '(([(meta up)]
-         .
-         [(meta alt up)])
-        ([(meta down)]
-         .
-         [(meta alt down)])
-        ([(meta left)]
-         .
-         [(meta alt left)])
-        ([(meta right)]
-         .
-         [(meta alt right)])
-        ([(meta shift up)]
-         .
-         [(meta alt shift up)])
-        ([(meta shift down)]
-         .
-         [(meta alt shift down)])
-        ([(meta shift left)]
-         .
-         [(meta alt shift left)])
-        ([(meta shift right)]
-         .
-         [(meta alt shift right)])
-        ([(meta return)]
-         .
-         [(meta alt return)])
-        ([(meta RET)]
-         .
-         [(meta alt RET)])
-        ([(meta shift return)]
-         .
-         [(meta alt shift return)])
-        ([(meta shift RET)]
-         .
-         [(meta alt shift RET)])
-        ))
 (require 'org)
 
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))

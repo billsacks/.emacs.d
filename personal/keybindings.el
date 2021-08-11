@@ -152,11 +152,9 @@
 (global-set-key (kbd "M-W") 'easy-mark)
 
 ;; The following two are similar, but the crux version puts the cursor on the new line
-;; (above), whereas my version does not. I am using A-M for my version because I plan to
-;; use it a lot in org mode after creating a heading, where I would already have been
-;; using A-M to create the new heading.
-(global-set-key (kbd "A-o") 'crux-smart-open-line-above)
-(global-set-key (kbd "A-M-o") 'my-insert-line-above)
+;; (above), whereas my version does not.
+(global-set-key (kbd "A-M-o") 'crux-smart-open-line-above)
+(global-set-key (kbd "A-o") 'my-insert-line-above)
 
 ;; some shortcuts related to ediff
 (global-set-key (kbd "H-d") 'eregistry)
@@ -203,14 +201,12 @@
 (global-set-key (kbd "s-2 3") 'my-line-spacing-one-point-five)
 (global-set-key (kbd "s-2 4") 'my-line-spacing-double)
 
-;; these are convenient ways to cycle through tabs in the tab line (by default, M-left and
-;; M-right do the same thing as C-left and C-right, so it seems okay to rebind them; these
-;; M-left and M-right bindings are consistent with iterm2, if cmd sends meta)
-(global-set-key (kbd "<M-left>") 'previous-buffer)
-(global-set-key (kbd "<M-right>") 'next-buffer)
-;; these are more ergonomic key bindings for the frequently-used forward-paragraph and backward-paragraph
-(global-set-key (kbd "<M-up>") 'backward-paragraph)
-(global-set-key (kbd "<M-down>") 'forward-paragraph)
+;; these are convenient ways to cycle through tabs in the tab line
+(global-set-key (kbd "<M-A-left>") 'previous-buffer)
+(global-set-key (kbd "<M-A-right>") 'next-buffer)
+;; these are slightly more ergonomic key bindings for the frequently-used forward-paragraph and backward-paragraph
+(global-set-key (kbd "<M-A-up>") 'backward-paragraph)
+(global-set-key (kbd "<M-A-down>") 'forward-paragraph)
 ;; But it's also helpful to have a right-hand-only key binding for forward and backward
 ;; paragraph, for when I'm browsing through code and don't want to bother having my left
 ;; hand on the keyboard; I'm using C-f and C-b for these because of their nice placement
@@ -230,8 +226,8 @@
 ;; single lines in org mode, and the effect is similar: in org mode, these bindings move a
 ;; subtree up / down.
 (require 'move-text)
-(global-set-key (kbd "<M-A-up>") 'move-text-up)
-(global-set-key (kbd "<M-A-down>") 'move-text-down)
+(global-set-key (kbd "<M-up>") 'move-text-up)
+(global-set-key (kbd "<M-down>") 'move-text-down)
 
 (global-set-key (kbd "M-A-f") 'forward-symbol)
 (global-set-key (kbd "M-A-b") 'my-backward-symbol)
