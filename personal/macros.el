@@ -1,5 +1,10 @@
 ;; general-purpose macros
 
+(defun my-pop-local-mark-ring ()
+    "Move cursor to last mark position of current buffer"
+  (interactive)
+  (set-mark-command t))
+
 (defun my-backward-symbol ()
   (interactive)
   (forward-symbol -1))

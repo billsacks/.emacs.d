@@ -6,7 +6,7 @@
 ;; - things that I might want to do multiple times in succession (because it's more
 ;;   convenient to do that with a modifier key than with a prefix key)
 ;;   - Update: but for these commands that I want to do multiple times in succession, I
-;;     can also use the 'repeat' command (which I'm binding to A-g), so I can do it the
+;;     can also use the 'repeat' command (which I'm binding to A-h), so I can do it the
 ;;     first time using some other command that's hard to repeat, then repeat it with A-h.
 ;;
 ;; I'm using H-* keybindings (where I have bound the home and ESC keys to H) for commands
@@ -72,6 +72,8 @@
 
 ;; This isn't mnemonic, but it's easy to press repeatedly.
 (global-set-key (kbd "A-h") 'repeat)
+
+(global-set-key (kbd "A-<left>") 'my-pop-local-mark-ring)
 
 ;; The main motivation for this key binding is to have an easier way to recenter during
 ;; isearch, which is something I frequently want to do. This shift-return keybinding works
