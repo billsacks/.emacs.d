@@ -304,6 +304,7 @@
  '(org-date ((t (:inherit font-lock-keyword-face :height 0.8))))
  '(org-done ((t (:foreground "ForestGreen"))))
  '(org-drawer ((t (:inherit shadow :height 0.8))))
+ '(org-headline-done ((t (:foreground "RosyBrown" :weight bold))))
  '(org-inlinetask ((t (:inherit font-lock-function-name-face))))
  '(org-level-1 ((t (:inherit outline-1 :extend nil :weight bold :family "CharterSpacedAbove"))))
  '(org-level-2 ((t (:inherit outline-2 :extend nil :weight bold :family "CharterSpacedAbove"))))
