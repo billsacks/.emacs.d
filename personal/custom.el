@@ -321,6 +321,7 @@
  '(org-special-keyword ((t (:inherit font-lock-keyword-face :height 0.8))))
  '(org-todo ((t (:foreground "Red1" :underline "gray75" :weight bold))))
  '(org-variable-pitch-fixed-face ((t (:height 0.8 :family "Hack"))))
+ '(org-verbatim ((t (:inherit font-lock-constant-face))))
  '(outline-1 ((t (:foreground "#005000"))))
  '(outline-2 ((t (:foreground "blue4"))))
  '(outline-3 ((t (:foreground "firebrick4"))))

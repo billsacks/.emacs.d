@@ -112,15 +112,22 @@
 ;; mnemonic: o for "outline" (this is similar to org-get-outline-path)
 (define-key org-mode-map (kbd "C-c o") 'my-org-show-position-in-text)
 
-;; highlight the inline code block under cursor
-(defun my-org-highlight-inline-code ()
-  (interactive)
-  (search-backward "~")
+;; Functions to highlight the inline code under cursor
+(defun my-org-highlight-delineated-text (markup_char)
+  "Highlight block of text containing point, delineated by markup_char"
+  (search-backward markup_char)
   (forward-char 1)
   (set-mark (point))
-  (search-forward "~")
+  (search-forward markup_char)
   (backward-char 1))
-(define-key org-mode-map (kbd "C-c h") 'my-org-highlight-inline-code)
+(defun my-org-highlight-verbatim ()
+  (interactive)
+  (my-org-highlight-delineated-text "="))
+(define-key org-mode-map (kbd "C-c h") 'my-org-highlight-verbatim)
+(defun my-org-highlight-inline-code ()
+  (interactive)
+  (my-org-highlight-delineated-text "~"))
+(define-key org-mode-map (kbd "C-c H") 'my-org-highlight-inline-code)
 
 ;; allow navigation to next / previous todos
 (defun my-org-next-visible-todo ()
@@ -397,8 +404,14 @@ Note: the force-heading piece of this is untested."
 ;; (2021-08-10) I commonly need to type a tilde in org mode; it's a bit difficult, and my
 ;; left pinky has been hurting recently, so I'm adding this alternative (mnemonic: c for
 ;; code).
+;;
+;; (2021-08-16) I may remove this, if I start using verbatim for the most part instead of
+;; inline code.
 (defun my-org-insert-tilde ()
   "Insert a tilde"
   (interactive)
   (insert "~"))
+;; I may change the following keybinding to A-[, to have a rule that only keys on the
+;; periphery should generate symbols when used with A (e.g., I use A-- for an n-dash),
+;; reserving A-(normal characters) for other kinds of actions.
 (define-key org-mode-map (kbd "A-c") 'my-org-insert-tilde)
