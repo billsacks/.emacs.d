@@ -274,6 +274,14 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c <up>") 'my-org-move-subtree-to-top)
 (define-key org-mode-map (kbd "C-c <down>") 'my-org-move-subtree-to-bottom)
 
+(defun my-org-tree-to-indirect-buffer ()
+  "My version of org-tree-to-indirect-buffer"
+  (interactive)
+  ;; Call org-tree-to-indirect-buffer with a prefix argument: this causes it to create a
+  ;; new buffer rather than reusing an existing buffer.
+  (org-tree-to-indirect-buffer '(4)))
+(define-key org-mode-map (kbd "C-c i") 'my-org-tree-to-indirect-buffer)
+
 (defun my-org-goto-project-planner ()
   "Go to the entry in the project planning doc corresponding to the current file"
   (interactive)
