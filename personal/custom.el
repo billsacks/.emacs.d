@@ -177,6 +177,7 @@
      ("ctsm")
      ("ncar")))
  '(org-use-fast-todo-selection 'expert)
+ '(org-use-speed-commands t)
  '(org-use-sub-superscripts '{})
  '(org-variable-pitch-fixed-faces
    '(org-block org-code org-document-info-keyword org-done org-formula org-indent org-meta-line org-special-keyword org-table org-todo org-verbatim org-date org-drawer))
