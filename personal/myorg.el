@@ -370,6 +370,23 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c m s") 'my-org-move-to-someday)
 (define-key org-mode-map (kbd "C-c m t") 'my-org-move-to-todo)
 
+;; Facilitate pasting screen shots into org documents
+;; From https://stackoverflow.com/questions/17435995/paste-an-image-on-clipboard-to-emacs-org-mode-file-without-saving-it
+(defun my-org-insert-clipboard-image ()
+  (interactive)
+  (let ((filename (concat
+                   (make-temp-name
+                    (concat (file-name-nondirectory (buffer-file-name (buffer-base-buffer)))
+                            "_imgs/"
+                            (format-time-string "%Y%m%d_%H%M%S_")) ) ".png")))
+    (unless (file-exists-p (file-name-directory filename))
+      (make-directory (file-name-directory filename)))
+    (shell-command (concat "pngpaste " filename))
+    (insert (concat "[[file:" filename "]]"))
+    (org-display-inline-images)
+    )
+  )
+
 ;; Allow using Deft for all of these different directories
 ;;
 ;; Based on https://www.emacswiki.org/emacs/DeftMode and
