@@ -227,3 +227,9 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
         (set-visited-file-name newname)
         (set-buffer-modified-p nil)
         t))))
+
+;; From https://stackoverflow.com/a/43017001
+(defun my-show-in-finder ()
+  "Show the current file in the Finder"
+  (interactive)
+  (shell-command (concat "open -R " buffer-file-name)))
