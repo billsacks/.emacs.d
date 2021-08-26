@@ -233,3 +233,14 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   "Show the current file in the Finder"
   (interactive)
   (shell-command (concat "open -R " buffer-file-name)))
+
+(defun my-goto-base-buffer ()
+  "Open the base buffer connected with the current indirect buffer"
+  (interactive)
+  (switch-to-buffer (buffer-base-buffer)))
+(defun my-kill-buffer-and-goto-base-buffer ()
+  "Kill the current indirect buffer and go to its base buffer"
+  (interactive)
+  (let ((basebuffer (buffer-base-buffer)))
+    (kill-buffer)
+    (switch-to-buffer basebuffer)))

@@ -186,6 +186,9 @@
 ;; rename-uniquely is especially helpful in grep buffers
 (global-set-key (kbd "H-u") 'rename-uniquely)
 
+(global-set-key (kbd "H-b") 'my-goto-base-buffer)
+(global-set-key (kbd "H-B") 'my-kill-buffer-and-goto-base-buffer)
+
 ;; I'm thinking I'll try to use jump-to-register more for going to some important place in
 ;; a buffer. But "C-x r j" is a lot to type, especially followed by one more character for
 ;; the register name. So I'm going to try an easier key binding to encourage myself to use
