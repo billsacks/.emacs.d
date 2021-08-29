@@ -246,6 +246,9 @@
 ;; key binding:
 (global-set-key (kbd "C-S-v") 'scroll-down-command)
 
+;; (2021-08-29) I may want to make plain page up / down scroll by 3, requiring M to scroll
+;; by a whole page: it may be that I more commonly scroll by 3 than a whole page... I want
+;; to give that some thought.
 (global-set-key (kbd "<M-next>") 'scroll-up-by-3)
 (global-set-key (kbd "<M-prior>") 'scroll-down-by-3)
 (global-set-key (kbd "<A-M-next>") 'scroll-up-by-10)
