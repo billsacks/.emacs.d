@@ -75,15 +75,15 @@
 ;; instead use M-U (similar to M-u, upcase-word, which I now use for upcase-dwim).
 (global-set-key (kbd "M-U") 'capitalize-dwim)
 
-;; These default key bindings aren't very useful, and it would be more useful to use the
-;; Mac's built-in keybindings to cycle windows
-;;
-;; by default, M-` is tmm-menubar
-(global-unset-key (kbd "M-`"))
-(global-set-key (kbd "M-`") 'other-frame)
-;; by default, M-~ is not-modified
-(global-unset-key (kbd "M-~"))
-(global-set-key (kbd "M-~") 'my-other-frame-reverse)
+;; Use a key binding for cycling frames that mimics what I use elsewhere on my Mac.
+(global-unset-key (kbd "C-,"))
+(require 'flyspell)
+(require 'org)
+(define-key flyspell-mode-map (kbd "C-,") nil)
+(define-key org-mode-map (kbd "C-,") nil)
+(global-unset-key (kbd "C-<"))
+(global-set-key (kbd "C-,") 'other-frame)
+(global-set-key (kbd "C-<") 'my-other-frame-reverse)
 
 ;; This isn't mnemonic, but it's easy to press repeatedly.
 (global-set-key (kbd "A-h") 'repeat)
