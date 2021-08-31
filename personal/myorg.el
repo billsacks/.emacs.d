@@ -440,3 +440,7 @@ Note: the force-heading piece of this is untested."
 ;; periphery should generate symbols when used with A (e.g., I use A-- for an n-dash),
 ;; reserving A-(normal characters) for other kinds of actions.
 (define-key org-mode-map (kbd "A-c") 'my-org-insert-tilde)
+
+;; Follow my remapping from M-h to M-i in the global map
+(define-key org-mode-map (kbd "M-h") nil)
+(define-key org-mode-map (kbd "M-i") 'org-mark-element)

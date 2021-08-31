@@ -24,6 +24,21 @@
 
 (require 'macros)
 
+;; Use M-h for hyper, C-h for super. I had been using home and esc for hyper and end for
+;; super, but I think these reaches were contributing to thumb pain, so I'm trying these
+;; alternate bindings instead.
+;;
+;; First I need to reassign what is typically assigned to M-h:
+(global-unset-key (kbd "M-h")) ;; M-h is mark-paragraph: I'll put it on M-i
+(global-unset-key (kbd "M-i")) ;; M-i is tab-to-tab-stop, which I don't find useful
+(global-set-key (kbd "M-i") 'mark-paragraph)
+;; and stop using C-h as help; can still get help with f1:
+(global-unset-key (kbd "C-h"))
+(setq help-char nil)
+;; Now set M-h and C-h to do what I want:
+(define-key function-key-map (kbd "M-h") 'event-apply-hyper-modifier)
+(define-key function-key-map (kbd "C-h") 'event-apply-super-modifier)
+
 ;; With command acting as meta, escape is more useful as hyper rather than meta. But keep
 ;; ability to get escape with shift-escape if I really need it. Also bind "home" and "end"
 ;; to modifiers because home and end aren't very useful in emacs. Note that esc and home
