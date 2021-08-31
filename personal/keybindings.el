@@ -140,7 +140,7 @@
 ;; 'f' isn't mnemonic here, but it is easy to press after M-g
 (global-set-key (kbd "M-g f") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "M-g M-f") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "A-s") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "C-M-g") 'avy-goto-word-or-subword-1)
 
 ;; Shortcuts to some Projectile things
 (global-set-key (kbd "H-g") 'projectile-grep)
