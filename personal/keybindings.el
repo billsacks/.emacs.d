@@ -252,9 +252,6 @@
 ;; key binding:
 (global-set-key (kbd "C-S-v") 'scroll-down-command)
 
-;; (2021-08-29) I may want to make plain page up / down scroll by 3, requiring M to scroll
-;; by a whole page: it may be that I more commonly scroll by 3 than a whole page... I want
-;; to give that some thought.
 (global-set-key (kbd "<M-next>") 'scroll-up-by-3)
 (global-set-key (kbd "<M-prior>") 'scroll-down-by-3)
 (global-set-key (kbd "<A-M-next>") 'scroll-up-by-10)
@@ -266,6 +263,11 @@
 (global-set-key (kbd "<S-M-prior>") 'my-scroll-other-window-down-by-3)
 (global-set-key (kbd "<S-A-M-next>") 'my-scroll-other-window-up-by-10)
 (global-set-key (kbd "<S-A-M-prior>") 'my-scroll-other-window-down-by-10)
+
+(global-set-key (kbd "<end>") 'scroll-up-by-3)
+(global-set-key (kbd "<home>") 'scroll-down-by-3)
+(global-set-key (kbd "<S-end>") 'my-scroll-other-window-up-by-3)
+(global-set-key (kbd "<S-home>") 'my-scroll-other-window-down-by-3)
 
 ;; (2021-08-31) I'd like to consider replacing these bindings with something more
 ;; ergonomic, avoiding Alt when possible
