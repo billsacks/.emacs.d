@@ -8,6 +8,8 @@
 ;;   - Update: but for these commands that I want to do multiple times in succession, I
 ;;     can also use the 'repeat' command (which I'm binding to A-h), so I can do it the
 ;;     first time using some other command that's hard to repeat, then repeat it with A-h.
+;; - But I'm trying not to have too many A-* keybindings, because they involve an
+;;   unergonomic stretch of my thumb.
 ;;
 ;; I'm using H-* keybindings (where I have bound the home and ESC keys to H) for commands
 ;; where I want a simple, one-key binding (grep, switching frames, etc.).
@@ -76,19 +78,24 @@
 (global-set-key (kbd "M-U") 'capitalize-dwim)
 
 ;; Use a key binding for cycling frames that mimics what I use elsewhere on my Mac.
-(global-unset-key (kbd "C-,"))
-(require 'flyspell)
+(global-unset-key (kbd "C-'"))
 (require 'org)
-(define-key flyspell-mode-map (kbd "C-,") nil)
-(define-key org-mode-map (kbd "C-,") nil)
-(global-unset-key (kbd "C-<"))
-(global-set-key (kbd "C-,") 'other-frame)
-(global-set-key (kbd "C-<") 'my-other-frame-reverse)
+(define-key org-mode-map (kbd "C-'") nil)
+(global-unset-key (kbd "C-\""))
+(global-set-key (kbd "C-'") 'other-frame)
+(global-set-key (kbd "C-\"") 'my-other-frame-reverse)
 
 ;; This isn't mnemonic, but it's easy to press repeatedly.
 (global-set-key (kbd "A-h") 'repeat)
 
-(global-set-key (kbd "A-<left>") 'my-pop-local-mark-ring)
+;; Make an easier way to return to the last place in the buffer (easier than C-u C-SPC)
+;; This binding (C-,) is similar to the M-, binding that pops from an xref location
+(require 'flyspell)
+(require 'org)
+(global-unset-key (kbd "C-,"))
+(define-key flyspell-mode-map (kbd "C-,") nil)
+(define-key org-mode-map (kbd "C-,") nil)
+(global-set-key (kbd "C-,") 'my-pop-local-mark-ring)
 
 ;; The main motivation for this key binding is to have an easier way to recenter during
 ;; isearch, which is something I frequently want to do. This shift-return keybinding works
@@ -276,6 +283,8 @@
 (global-set-key (kbd "<S-A-M-next>") 'my-scroll-other-window-up-by-10)
 (global-set-key (kbd "<S-A-M-prior>") 'my-scroll-other-window-down-by-10)
 
+;; (2021-08-31) I'd like to consider replacing these bindings with something more
+;; ergonomic, avoiding Alt when possible
 (global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)
 (global-set-key (kbd "A-t") 'indent-relative)
 (global-set-key (kbd "A-SPC") 'cycle-spacing)
