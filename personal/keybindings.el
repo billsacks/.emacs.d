@@ -11,15 +11,18 @@
 ;; - But I'm trying not to have too many A-* keybindings, because they involve an
 ;;   unergonomic stretch of my thumb.
 ;;
-;; I'm using H-* keybindings (where I have bound the home and ESC keys to H) for commands
-;; where I want a simple, one-key binding (grep, switching frames, etc.).
+;; I'm using H-* keybindings for commands where I want a simple, one-key binding (grep,
+;; switching frames, etc.). I feel like the most ergonomic way to access H, though, is to
+;; define an easy keybinding that acts like H (currently M-h).
 ;;
 ;; I'm also defining some C-x * keybindings (particularly things that are similar to other
 ;; C-x keybindings) as well as C-c * keybindings (so far for mode-specific things, defined
 ;; elsewhere).
 ;;
 ;; I also have some super (s-*) keybindings. These are generally used to group together
-;; similar commands. For example, s-w groups together some window-related commands.
+;; similar commands. For example, s-w groups together some window-related commands. (As
+;; with hyper, I currently activate super key bindings through a separate key binding,
+;; C-h.)
 ;;
 ;; In the future I could see adding C-return or M-return as a prefix for some commands
 ;; (though note that these conflict with default key bindings in org mode).
@@ -40,25 +43,6 @@
 ;; Now set M-h and C-h to do what I want:
 (define-key function-key-map (kbd "M-h") 'event-apply-hyper-modifier)
 (define-key function-key-map (kbd "C-h") 'event-apply-super-modifier)
-
-;; With command acting as meta, escape is more useful as hyper rather than meta. But keep
-;; ability to get escape with shift-escape if I really need it. Also bind "home" and "end"
-;; to modifiers because home and end aren't very useful in emacs. Note that esc and home
-;; are symmetrical, which is why I have bound them both to hyper. It would probably be
-;; okay to just have one hyper, but I think there is more benefit than harm in assigning
-;; both of these keys to hyper.
-;;
-;; Note about my choice of having hyper be the symmetrical one rather than super: With
-;; super being mainly used for things where I'll hit a few keys in a row, I've found it
-;; doesn't feel intuitive to have it on both sides of the keyboard: my brain thinks about
-;; the two or three letters I want to type for the command, and so then it isn't automatic
-;; which side to use for the super key. So I'm putting hyper in the place that is slightly
-;; harder to reach but symmetrical, and super in the place that is slightly easier to
-;; reach and asymmetrical.
-(define-key key-translation-map (kbd "ESC") #'event-apply-hyper-modifier)
-(define-key key-translation-map (kbd "S-<escape>") (kbd "ESC"))
-(define-key key-translation-map (kbd "<home>") #'event-apply-hyper-modifier)
-(define-key key-translation-map (kbd "<end>") #'event-apply-super-modifier)
 
 ;; Allow use of standard Mac keybindings to copy & paste. This makes it easier to copy
 ;; text back and forth between emacs and other applications.
