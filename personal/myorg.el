@@ -445,3 +445,10 @@ Note: the force-heading piece of this is untested."
 ;; Follow my remapping from M-h to M-i in the global map
 (define-key org-mode-map (kbd "M-h") nil)
 (define-key org-mode-map (kbd "M-i") 'org-mark-element)
+
+(require 'org-keys)
+(setq org-speed-commands-user
+      '(("N" org-speed-move-safe 'my-org-next-visible-todo)
+        ("P" org-speed-move-safe 'my-org-previous-visible-todo)
+        ("F" org-speed-move-safe 'my-org-forward-todo-same-level)
+        ("B" org-speed-move-safe 'my-org-backward-todo-same-level)))
