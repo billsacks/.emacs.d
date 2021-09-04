@@ -62,8 +62,12 @@
 (global-set-key (kbd "M-U") 'capitalize-dwim)
 
 ;; Use a key binding for cycling frames that mimics what I use elsewhere on my Mac.
-(global-set-key (kbd "C-`") 'other-frame)
-(global-set-key (kbd "C-~") 'my-other-frame-reverse)
+(global-unset-key (kbd "C-'"))
+(require 'org)
+(define-key org-mode-map (kbd "C-'") nil)
+(global-unset-key (kbd "C-\""))
+(global-set-key (kbd "C-'") 'other-frame)
+(global-set-key (kbd "C-\"") 'my-other-frame-reverse)
 
 ;; This isn't mnemonic, but it's easy to press repeatedly.
 (global-set-key (kbd "A-h") 'repeat)
