@@ -250,7 +250,10 @@
 ;; I have rebound M-v to paste. For the most part I'll use page up / page down, but in
 ;; case I want to use 'v' for paging (which is sometimes more convenient), I'm adding this
 ;; key binding:
-(global-set-key (kbd "C-S-v") 'scroll-down-command)
+(global-unset-key (kbd "C-M-v"))
+(global-set-key (kbd "C-M-v") 'scroll-down-command)
+(global-set-key (kbd "C-S-v") 'scroll-other-window)
+(global-set-key (kbd "C-M-S-v") 'scroll-other-window-down)
 
 (global-set-key (kbd "<M-next>") 'scroll-up-by-3)
 (global-set-key (kbd "<M-prior>") 'scroll-down-by-3)
