@@ -44,22 +44,9 @@
 (define-key function-key-map (kbd "M-h") 'event-apply-hyper-modifier)
 (define-key function-key-map (kbd "C-h") 'event-apply-super-modifier)
 
-;; Allow use of standard Mac keybindings to copy & paste. This makes it easier to copy
-;; text back and forth between emacs and other applications.
-(global-unset-key (kbd "M-c"))
-(global-set-key (kbd "M-c") 'easy-kill)
-(global-unset-key (kbd "M-v"))
-(global-set-key (kbd "M-v") 'yank)
-;; Now that I have rebound M-v, I'll just use PageUp (i.e., <prior>) for
-;; scroll-down-command; I like that this makes it easier to apply various variants (see
-;; below).
-
 ;; Use dwim versions of upcase and downcase
 (global-set-key [remap upcase-word] 'upcase-dwim)
 (global-set-key [remap downcase-word] 'downcase-dwim)
-;; Above, I rebound M-c to easy-kill. By default, M-c is bound to capitalize-word; I'll
-;; instead use M-U (similar to M-u, upcase-word, which I now use for upcase-dwim).
-(global-set-key (kbd "M-U") 'capitalize-dwim)
 
 ;; Use a key binding for cycling frames that mimics what I use elsewhere on my Mac.
 (global-unset-key (kbd "C-'"))
@@ -247,13 +234,12 @@
 (global-set-key (kbd "A-n") 'next-logical-line)
 (global-set-key (kbd "A-p") 'previous-logical-line)
 
-;; I have rebound M-v to paste. For the most part I'll use page up / page down, but in
-;; case I want to use 'v' for paging (which is sometimes more convenient), I'm adding this
-;; key binding:
+;; use more mnemonic keybindings for scrolling the other window: simply add shift to the
+;; bindings for scrolling the current window
 (global-unset-key (kbd "C-M-v"))
-(global-set-key (kbd "C-M-v") 'scroll-down-command)
+(global-unset-key (kbd "C-M-S-v"))
 (global-set-key (kbd "C-S-v") 'scroll-other-window)
-(global-set-key (kbd "C-M-S-v") 'scroll-other-window-down)
+(global-set-key (kbd "M-V") 'scroll-other-window-down)
 
 (global-set-key (kbd "<M-next>") 'scroll-up-by-3)
 (global-set-key (kbd "<M-prior>") 'scroll-down-by-3)
