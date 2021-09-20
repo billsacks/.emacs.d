@@ -198,10 +198,18 @@
 (global-set-key (kbd "s-2 3") 'my-line-spacing-one-point-five)
 (global-set-key (kbd "s-2 4") 'my-line-spacing-double)
 
-;; these are convenient ways to cycle through tabs in the tab line
-(global-set-key (kbd "<M-A-left>") 'previous-buffer)
-(global-set-key (kbd "<M-A-right>") 'next-buffer)
-;; these are slightly more ergonomic key bindings for the frequently-used forward-paragraph and backward-paragraph
+;; These are convenient ways to cycle through tabs in the tab line. I chose these based on
+;; ease of pressing and the fact that they seem okay to replace the default bindings
+;; (rather than anything mnemonic). Also, I like the symmetry with windmove: now both
+;; changing windows and prev/next buffer uses Ctrl on the left and middle finger / pinky
+;; on the right (with windmove using Ctrl-left/right arrows). I don't need C-p because I
+;; use the up arrow for this; C-. seems not to be bound by default, but with flyspell
+;; loaded, it autocorrects the current word; but that's also bound to C-M-i, and there is
+;; also C-; which seems similar.
+(define-key flyspell-mode-map (kbd "C-.") nil)
+(global-set-key (kbd "C-.") 'previous-buffer)
+(global-set-key (kbd "C-p") 'next-buffer)
+
 (global-set-key (kbd "<M-A-up>") 'backward-paragraph)
 (global-set-key (kbd "<M-A-down>") 'forward-paragraph)
 ;; But it's also helpful to have a right-hand-only key binding for forward and backward
