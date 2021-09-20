@@ -77,6 +77,7 @@
 (global-set-key (kbd "<S-return>") 'recenter-top-bottom)
 (define-key org-mode-map (kbd "<S-return>") nil)
 
+(global-set-key (kbd "C-S-l") 'my-recenter-to-bottom)
 (global-set-key (kbd "M-R") 'my-move-cursor-to-bottom)
 
 ;; handy keybindings for one-handed scrolling through code (similar to the built-in C-up

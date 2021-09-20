@@ -27,6 +27,11 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; normally this would take three applications of C-l
+(defun my-recenter-to-bottom()
+  (interactive)
+  (recenter-top-bottom -1))
+
 ;; normally this would take three applications of M-r
 (defun my-move-cursor-to-bottom()
   (interactive)
