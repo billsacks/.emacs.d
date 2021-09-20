@@ -210,12 +210,11 @@
 (global-set-key (kbd "C-.") 'previous-buffer)
 (global-set-key (kbd "C-p") 'next-buffer)
 
-(global-set-key (kbd "<M-A-up>") 'backward-paragraph)
-(global-set-key (kbd "<M-A-down>") 'forward-paragraph)
-;; But it's also helpful to have a right-hand-only key binding for forward and backward
-;; paragraph, for when I'm browsing through code and don't want to bother having my left
-;; hand on the keyboard; I'm using C-f and C-b for these because of their nice placement
-;; in the Dvorak layout and because I use arrow keys rather than C-f and C-b for movement.
+;; These are more ergonomic key bindings for the frequently-used forward-paragraph and
+;; backward-paragraph. It's helpful to have these be one-handed bindings, for when I'm
+;; browsing through code and don't want to bother having my left hand on the keyboard; I'm
+;; using C-f and C-b for these because of their nice placement in the Dvorak layout and
+;; because I use arrow keys rather than C-f and C-b for movement.
 (global-unset-key (kbd "C-b"))
 (global-unset-key (kbd "C-f"))
 (global-set-key (kbd "C-b") 'backward-paragraph)
