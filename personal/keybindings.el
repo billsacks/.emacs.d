@@ -147,8 +147,8 @@
 
 ;; The following two are similar, but the crux version puts the cursor on the new line
 ;; (above), whereas my version does not.
-(global-set-key (kbd "M-O") 'crux-smart-open-line-above)
-(global-set-key (kbd "C-M-O") 'my-insert-line-above)
+(global-set-key (kbd "C-M-o") 'crux-smart-open-line-above)
+(global-set-key (kbd "C-M-S-o") 'my-insert-line-above)
 
 ;; some shortcuts related to ediff
 (global-set-key (kbd "H-d") 'eregistry)
