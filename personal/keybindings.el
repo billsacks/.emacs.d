@@ -259,6 +259,11 @@
 (global-set-key (kbd "<S-end>") 'my-scroll-other-window-up-by-3)
 (global-set-key (kbd "<S-home>") 'my-scroll-other-window-down-by-3)
 
+(global-set-key (kbd "C-M-<up>") 'scroll-down-by-3)
+(global-set-key (kbd "C-M-<down>") 'scroll-up-by-3)
+(global-set-key (kbd "C-M-S-<up>") 'my-scroll-other-window-down-by-3)
+(global-set-key (kbd "C-M-S-<down>") 'my-scroll-other-window-up-by-3)
+
 ;; (2021-08-31) I'd like to consider replacing these bindings with something more
 ;; ergonomic, avoiding Alt when possible
 (global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)

@@ -155,19 +155,6 @@
 (define-key org-mode-map (kbd "C-c C-S-f") 'my-org-forward-todo-same-level)
 (define-key org-mode-map (kbd "C-c C-S-b") 'my-org-backward-todo-same-level)
 
-;; Allow modified arrow keys for navigation between headings, too
-(define-key org-mode-map (kbd "C-M-<up>") 'org-previous-visible-heading)
-(define-key org-mode-map (kbd "C-M-<down>") 'org-next-visible-heading)
-(define-key org-mode-map (kbd "C-M-<left>") 'org-backward-heading-same-level)
-(define-key org-mode-map (kbd "C-M-<right>") 'org-forward-heading-same-level)
-(define-key org-mode-map (kbd "C-M-S-<up>") 'my-org-previous-visible-todo)
-(define-key org-mode-map (kbd "C-M-S-<down>") 'my-org-next-visible-todo)
-(define-key org-mode-map (kbd "C-M-S-<left>") 'my-org-backward-todo-same-level)
-(define-key org-mode-map (kbd "C-M-S-<right>") 'my-org-forward-todo-same-level)
-;; C-A-up feels a bit more intuitive for outline-up-heading, but C-A-left is a bit easier
-;; on my hands
-(define-key org-mode-map (kbd "C-A-<left>") 'outline-up-heading)
-
 (defun my-org-insert-todo-heading (arg &optional force-heading)
   "Like org-insert-todo-heading but use the first state.
 
