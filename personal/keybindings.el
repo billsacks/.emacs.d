@@ -242,12 +242,10 @@
 (global-set-key (kbd "A-n") 'next-logical-line)
 (global-set-key (kbd "A-p") 'previous-logical-line)
 
-;; use more mnemonic keybindings for scrolling the other window: simply add shift to the
-;; bindings for scrolling the current window
-(global-unset-key (kbd "C-M-v"))
+;; more ergonomic binding for scrolling other window down (note that C-M-v is the built-in
+;; keybinding for scrolling up; A-M-v is somewhat similar to this)
 (global-unset-key (kbd "C-M-S-v"))
-(global-set-key (kbd "C-S-v") 'scroll-other-window)
-(global-set-key (kbd "M-V") 'scroll-other-window-down)
+(global-set-key (kbd "A-M-v") 'scroll-other-window-down)
 
 (global-set-key (kbd "<M-next>") 'scroll-up-by-3)
 (global-set-key (kbd "<M-prior>") 'scroll-down-by-3)
@@ -268,8 +266,8 @@
 
 (global-set-key (kbd "C-M-<up>") 'scroll-down-by-3)
 (global-set-key (kbd "C-M-<down>") 'scroll-up-by-3)
-(global-set-key (kbd "C-M-S-<up>") 'my-scroll-other-window-down-by-3)
-(global-set-key (kbd "C-M-S-<down>") 'my-scroll-other-window-up-by-3)
+(global-set-key (kbd "A-M-<up>") 'my-scroll-other-window-down-by-3)
+(global-set-key (kbd "A-M-<down>") 'my-scroll-other-window-up-by-3)
 
 ;; (2021-08-31) I'd like to consider replacing these bindings with something more
 ;; ergonomic, avoiding Alt when possible
