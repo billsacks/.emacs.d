@@ -13,7 +13,7 @@
 ;;
 ;; I'm using H-* keybindings for commands where I want a simple, one-key binding (grep,
 ;; switching frames, etc.). I feel like the most ergonomic way to access H, though, is to
-;; define an easy keybinding that acts like H (currently C-n).
+;; define an easy keybinding that acts like H (currently M-c).
 ;;
 ;; I'm also defining some C-x * keybindings (particularly things that are similar to other
 ;; C-x keybindings) as well as C-c * keybindings (so far for mode-specific things, defined
@@ -28,9 +28,11 @@
 
 (require 'macros)
 
-;; Use C-n for hyper and <end> for super.
-(global-unset-key (kbd "C-n"))
-(define-key function-key-map (kbd "C-n") 'event-apply-hyper-modifier)
+;; Use M-c for hyper and <end> for super
+;; (M-c is pretty easy and has a nice parallel with the C-c bindings)
+(global-unset-key (kbd "M-c")) ;; first reassign M-c to M-U
+(global-set-key (kbd "M-U") 'capitalize-word)
+(define-key function-key-map (kbd "M-c") 'event-apply-hyper-modifier)
 (global-unset-key (kbd "<end>"))
 (define-key function-key-map (kbd "<end>") 'event-apply-super-modifier)
 
