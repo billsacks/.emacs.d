@@ -155,6 +155,10 @@
 (define-key org-mode-map (kbd "C-c C-S-f") 'my-org-forward-todo-same-level)
 (define-key org-mode-map (kbd "C-c C-S-b") 'my-org-backward-todo-same-level)
 
+;; Use modified arrow keys for some common navigation
+(define-key org-mode-map (kbd "C-M-<up>") 'org-previous-visible-heading)
+(define-key org-mode-map (kbd "C-M-<down>") 'org-next-visible-heading)
+
 (defun my-org-insert-todo-heading (arg &optional force-heading)
   "Like org-insert-todo-heading but use the first state.
 
