@@ -13,36 +13,26 @@
 ;;
 ;; I'm using H-* keybindings for commands where I want a simple, one-key binding (grep,
 ;; switching frames, etc.). I feel like the most ergonomic way to access H, though, is to
-;; define an easy keybinding that acts like H (currently M-h).
+;; define an easy keybinding that acts like H (currently C-n).
 ;;
 ;; I'm also defining some C-x * keybindings (particularly things that are similar to other
 ;; C-x keybindings) as well as C-c * keybindings (so far for mode-specific things, defined
 ;; elsewhere).
 ;;
 ;; I also have some super (s-*) keybindings. These are generally used to group together
-;; similar commands. For example, s-w groups together some window-related commands. (As
-;; with hyper, I currently activate super key bindings through a separate key binding,
-;; C-h.)
+;; similar commands. For example, s-w groups together some window-related commands. I am
+;; currently using <end> as super.
 ;;
 ;; In the future I could see adding C-return or M-return as a prefix for some commands
 ;; (though note that these conflict with default key bindings in org mode).
 
 (require 'macros)
 
-;; Use M-h for hyper, C-h for super. I had been using home and esc for hyper and end for
-;; super, but I think these reaches were contributing to thumb pain, so I'm trying these
-;; alternate bindings instead.
-;;
-;; First I need to reassign what is typically assigned to M-h:
-(global-unset-key (kbd "M-h")) ;; M-h is mark-paragraph: I'll put it on M-i
-(global-unset-key (kbd "M-i")) ;; M-i is tab-to-tab-stop, which I don't find useful
-(global-set-key (kbd "M-i") 'mark-paragraph)
-;; and stop using C-h as help; can still get help with f1:
-(global-unset-key (kbd "C-h"))
-(setq help-char nil)
-;; Now set M-h and C-h to do what I want:
-(define-key function-key-map (kbd "M-h") 'event-apply-hyper-modifier)
-(define-key function-key-map (kbd "C-h") 'event-apply-super-modifier)
+;; Use C-n for hyper and <end> for super.
+(global-unset-key (kbd "C-n"))
+(define-key function-key-map (kbd "C-n") 'event-apply-hyper-modifier)
+(global-unset-key (kbd "<end>"))
+(define-key function-key-map (kbd "<end>") 'event-apply-super-modifier)
 
 ;; Use dwim versions of upcase and downcase
 (global-set-key [remap upcase-word] 'upcase-dwim)
@@ -250,10 +240,24 @@
 (global-set-key (kbd "<S-next>") 'scroll-other-window)
 (global-set-key (kbd "<S-prior>") 'scroll-other-window-down)
 
-(global-set-key (kbd "C-M-<up>") 'scroll-down-by-3)
-(global-set-key (kbd "C-M-<down>") 'scroll-up-by-3)
-(global-set-key (kbd "A-M-<up>") 'my-scroll-other-window-down-by-3)
-(global-set-key (kbd "A-M-<down>") 'my-scroll-other-window-up-by-3)
+;; Use C/M-h for scrolling by 3; note that these bindings mimic the bindings on C/M-v
+;;
+;; First I need to reassign what is typically assigned to C-h, M-h and C-M-h; I am using
+;; 'i' for highlighting-related bindings that used to be on 'h':
+(global-unset-key (kbd "C-h")) ;; stop using C-h as help; can still get help with f1
+(setq help-char nil)
+(global-unset-key (kbd "M-h")) ;; M-h is mark-paragraph: I'll put it on M-i
+(global-unset-key (kbd "M-i")) ;; M-i is tab-to-tab-stop, which I don't find useful
+(global-set-key (kbd "M-i") 'mark-paragraph)
+(global-unset-key (kbd "C-M-h")) ;; C-M-h is mark-defun; I'll put it on C-M-i
+(define-key flyspell-mode-map (kbd "C-M-i") nil) ;; but first I need to assign flyspell's C-M-i (flyspell-auto-correct-word )to something else
+(define-key flyspell-mode-map (kbd "C-M-;") 'flyspell-auto-correct-word)
+(global-set-key (kbd "C-M-i") 'mark-defun)
+;; Now, finally, I can do the assignments for scrolling
+(global-set-key (kbd "C-h") 'scroll-up-by-3)
+(global-set-key (kbd "M-h") 'scroll-down-by-3)
+(global-set-key (kbd "C-M-h") 'my-scroll-other-window-up-by-3)
+(global-set-key (kbd "A-M-h") 'my-scroll-other-window-down-by-3)
 
 ;; (2021-08-31) I'd like to consider replacing these bindings with something more
 ;; ergonomic, avoiding Alt when possible
