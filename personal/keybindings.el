@@ -32,6 +32,7 @@
 ;; (M-c is pretty easy and has a nice parallel with the C-c bindings)
 (global-unset-key (kbd "M-c")) ;; first reassign M-c to M-U
 (global-set-key (kbd "M-U") 'capitalize-word)
+(define-key isearch-mode-map (kbd "M-c") nil) ;; this toggles case-sensitivity, which can also be done via M-s c
 (define-key function-key-map (kbd "M-c") 'event-apply-hyper-modifier)
 (global-unset-key (kbd "<end>"))
 (define-key function-key-map (kbd "<end>") 'event-apply-super-modifier)
