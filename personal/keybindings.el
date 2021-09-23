@@ -37,6 +37,10 @@
 (global-unset-key (kbd "<end>"))
 (define-key function-key-map (kbd "<end>") 'event-apply-super-modifier)
 
+;; Slightly more ergonomic binding for the common save-buffer (C-x C-s involves an awkward
+;; stretch if I try to use Ctrl on the same hand for both the x and s with Dvorak)
+(global-set-key (kbd "H-s") 'save-buffer)
+
 ;; Use dwim versions of upcase and downcase
 (global-set-key [remap upcase-word] 'upcase-dwim)
 (global-set-key [remap downcase-word] 'downcase-dwim)
