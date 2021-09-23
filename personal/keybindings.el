@@ -248,7 +248,6 @@
 ;; First I need to reassign what is typically assigned to C-h, M-h and C-M-h; I am using
 ;; 'i' for highlighting-related bindings that used to be on 'h':
 (global-unset-key (kbd "C-h")) ;; stop using C-h as help; can still get help with f1
-(setq help-char nil)
 (global-unset-key (kbd "M-h")) ;; M-h is mark-paragraph: I'll put it on M-i
 (global-unset-key (kbd "M-i")) ;; M-i is tab-to-tab-stop, which I don't find useful
 (global-set-key (kbd "M-i") 'mark-paragraph)
