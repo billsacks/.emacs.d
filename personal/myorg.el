@@ -265,6 +265,16 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c <up>") 'my-org-move-subtree-to-top)
 (define-key org-mode-map (kbd "C-c <down>") 'my-org-move-subtree-to-bottom)
 
+(defun my-org-store-link-to-file ()
+  "Store a link to the current org file - not a subtree"
+  (interactive)
+  ;; set org-id-link-to-org-use-id to nil for this command to avoid creating an unnecessary id property
+  (let ((org-id-link-to-org-use-id nil))
+    ;; in the following, the arg of '(4) prevents storing the context, so just stores a
+    ;; link to the file; the arg of t acts as if this is called interactively, which seems
+    ;; important for some reason
+    (org-store-link '(4) t)))
+
 (defun my-org-tree-to-indirect-buffer ()
   "My version of org-tree-to-indirect-buffer"
   (interactive)

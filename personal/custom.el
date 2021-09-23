@@ -163,6 +163,8 @@
  '(org-fontify-quote-and-verse-blocks t)
  '(org-hide-emphasis-markers t)
  '(org-hierarchical-todo-statistics nil)
+ '(org-id-locations-file "~/org/.org-id-locations")
+ '(org-id-locations-file-relative t)
  '(org-image-actual-width '(400))
  '(org-imenu-depth 3)
  '(org-inlinetask-default-state "TODO")
