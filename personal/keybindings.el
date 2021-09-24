@@ -28,6 +28,19 @@
 
 (require 'macros)
 
+;; Function to remap the binding for a key in a local map (from https://emacs.stackexchange.com/questions/58317/how-to-change-keybinding-for-all-similar-functions-across-all-modes)
+;; This can be run for all modes by adding a specific function to after-change-major-mode-hook
+(defun my-remap-in-local-bindings (orig_keys new_keys)
+  "Remap whatever command is locally bound to orig_keys to new_keys
+
+orig_keys and new_keys are strings like 'M-h' that can be read by the kbd function"
+  (let* ((map (current-local-map))
+         ;; in the following, I'm not sure if it's right to have the 't' final argument to lookup-key
+         (local-binding (lookup-key map (kbd orig_keys) t)))
+    (when local-binding
+      (define-key map (kbd orig_keys) nil)
+      (define-key map (kbd new_keys) local-binding))))
+
 ;; Use M-c for hyper and <end> for super
 ;; (M-c is pretty easy and has a nice parallel with the C-c bindings)
 (global-unset-key (kbd "M-c")) ;; first reassign M-c to M-U
@@ -255,10 +268,18 @@
 (global-unset-key (kbd "M-h")) ;; M-h is mark-paragraph: I'll put it on M-i
 (global-unset-key (kbd "M-i")) ;; M-i is tab-to-tab-stop, which I don't find useful
 (global-set-key (kbd "M-i") 'mark-paragraph)
+(defun my-remap-M-h-to-M-i ()
+  "Remap whatever command is locally bound to `M-h` to `M-i`"
+  (my-remap-in-local-bindings "M-h" "M-i"))
+(add-hook 'after-change-major-mode-hook #'my-remap-M-h-to-M-i)
 (global-unset-key (kbd "C-M-h")) ;; C-M-h is mark-defun; I'll put it on C-M-i
 (define-key flyspell-mode-map (kbd "C-M-i") nil) ;; but first I need to assign flyspell's C-M-i (flyspell-auto-correct-word )to something else
 (define-key flyspell-mode-map (kbd "C-M-;") 'flyspell-auto-correct-word)
 (global-set-key (kbd "C-M-i") 'mark-defun)
+(defun my-remap-C-M-h-to-C-M-i ()
+  "Remap whatever command is locally bound to `C-M-h` to `C-M-i`"
+  (my-remap-in-local-bindings "C-M-h" "C-M-i"))
+(add-hook 'after-change-major-mode-hook #'my-remap-C-M-h-to-C-M-i)
 ;; Now, finally, I can do the assignments for scrolling
 (global-set-key (kbd "C-h") 'scroll-up-by-3)
 (global-set-key (kbd "M-h") 'scroll-down-by-3)

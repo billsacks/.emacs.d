@@ -443,10 +443,6 @@ Note: the force-heading piece of this is untested."
 ;; reserving A-(normal characters) for other kinds of actions.
 (define-key org-mode-map (kbd "A-c") 'my-org-insert-tilde)
 
-;; Follow my remapping from M-h to M-i in the global map
-(define-key org-mode-map (kbd "M-h") nil)
-(define-key org-mode-map (kbd "M-i") 'org-mark-element)
-
 (require 'org-keys)
 (setq org-speed-commands-user
       '(("N" org-speed-move-safe 'my-org-next-visible-todo)
