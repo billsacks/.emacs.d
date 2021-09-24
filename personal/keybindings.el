@@ -108,9 +108,6 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; key map: it seems I need to add it to isearch-mode-map as well.)
 (define-key isearch-mode-map (kbd "<S-return>")
   'recenter-top-bottom)
-;; I have bound M-v to yank. This is useful in isearch, too - and I want it to yank into
-;; the search string, not the buffer (just like C-y yanks into the search string):
-(define-key isearch-mode-map (kbd "M-v") 'isearch-yank-kill)
 
 ;; ivy/swiper key-bindings
 (global-set-key (kbd "C-S-s") 'swiper)
