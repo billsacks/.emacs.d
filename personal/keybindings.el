@@ -213,6 +213,10 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; use the up arrow for this; C-. seems not to be bound by default, but with flyspell
 ;; loaded, it autocorrects the current word; but that's also bound to C-M-i, and there is
 ;; also C-; which seems similar.
+;;
+;; If these bindings become problematic (due to conflicts with other bindings), I could
+;; consider changing them to C-M-left/right, now that I can do the C-M combo entirely on
+;; my right hand.
 (define-key flyspell-mode-map (kbd "C-.") nil)
 (global-set-key (kbd "C-.") 'previous-buffer)
 (global-set-key (kbd "C-p") 'next-buffer)
