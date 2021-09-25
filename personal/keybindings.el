@@ -78,15 +78,6 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (define-key org-mode-map (kbd "C-,") nil)
 (global-set-key (kbd "C-,") 'my-pop-local-mark-ring)
 
-;; The main motivation for this key binding is to have an easier way to recenter during
-;; isearch, which is something I frequently want to do. This shift-return keybinding works
-;; well when I'm going through isearch with the arrow keys (which I have customized to go
-;; through the isearch results). So I initially thought I'd just do this binding in the
-;; isearch mode map. However, I think I'll try just doing it globally: it might be nice in
-;; other contexts, too.
-(global-set-key (kbd "<S-return>") 'recenter-top-bottom)
-(define-key org-mode-map (kbd "<S-return>") nil)
-
 (global-set-key (kbd "C-S-l") 'my-recenter-to-bottom)
 (global-set-key (kbd "M-R") 'my-move-cursor-to-bottom)
 
@@ -101,12 +92,8 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (define-key isearch-mode-map [up]
   'isearch-repeat-backward)
 ;; I often want to recenter during isearch. When using up & down to scroll through
-;; results, it's awkward to hit C-l. This Shift-Return binding is easier. (S-SPC is even
-;; easier. However, I'm going to try also having this available in the global key map, and
-;; S-SPC is something I too often type by accident while typing a space after a capital
-;; letter.) (Note: I does *not* seem sufficient to define this in the global
-;; key map: it seems I need to add it to isearch-mode-map as well.)
-(define-key isearch-mode-map (kbd "<S-return>")
+;; results, it's awkward to hit C-l. This Shift-Space binding is easier.
+(define-key isearch-mode-map (kbd "<S-SPC>")
   'recenter-top-bottom)
 
 ;; ivy/swiper key-bindings
