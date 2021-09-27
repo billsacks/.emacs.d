@@ -44,7 +44,6 @@
     (define-key map (kbd "C-c n") 'crux-cleanup-buffer-or-region)
     (define-key map (kbd "C-M-z") 'crux-indent-defun)
     (define-key map (kbd "C-c u") 'crux-view-url)
-    (define-key map (kbd "C-c e") 'crux-eval-and-replace)
     (define-key map (kbd "C-c r") 'crux-rename-buffer-and-file)
     (define-key map (kbd "C-c S") 'crux-find-shell-init-file)
     ;; extra prefix for projectile

@@ -123,11 +123,14 @@
 (defun my-org-highlight-verbatim ()
   (interactive)
   (my-org-highlight-delineated-text "="))
-(define-key org-mode-map (kbd "C-c h") 'my-org-highlight-verbatim)
+;; Use C-c i similarly to how I use various I keybindings for highlighting (these are
+;; bound to H by default, but I use H for scrolling, so I have rebound H bindings to I
+;; instead)
+(define-key org-mode-map (kbd "C-c i") 'my-org-highlight-verbatim)
 (defun my-org-highlight-inline-code ()
   (interactive)
   (my-org-highlight-delineated-text "~"))
-(define-key org-mode-map (kbd "C-c H") 'my-org-highlight-inline-code)
+(define-key org-mode-map (kbd "C-c I") 'my-org-highlight-inline-code)
 
 ;; allow navigation to next / previous todos
 (defun my-org-next-visible-todo ()
@@ -281,7 +284,7 @@ Note: the force-heading piece of this is untested."
   ;; Call org-tree-to-indirect-buffer with a prefix argument: this causes it to create a
   ;; new buffer rather than reusing an existing buffer.
   (org-tree-to-indirect-buffer '(4)))
-(define-key org-mode-map (kbd "C-c i") 'my-org-tree-to-indirect-buffer)
+(define-key org-mode-map (kbd "C-c b") 'my-org-tree-to-indirect-buffer)
 
 (defun my-org-goto-project-planner ()
   "Go to the entry in the project planning doc corresponding to the current file"
@@ -337,8 +340,8 @@ Note: the force-heading piece of this is untested."
 ;; Hide / show body text. If there is a lot of body text before subheadings (children) it
 ;; can be helpful sometimes to hide the body text of an entry. Conversely, body text often
 ;; starts out hidden, so it can be helpful to show it.
-(define-key org-mode-map (kbd "C-c b") 'org-show-entry)
-(define-key org-mode-map (kbd "C-c B") 'org-hide-entry)
+(define-key org-mode-map (kbd "C-c e") 'org-show-entry)
+(define-key org-mode-map (kbd "C-c E") 'org-hide-entry)
 
 (defun my-org-open-projects ()
   "Open my _projects.org file"
