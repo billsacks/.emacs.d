@@ -6,8 +6,8 @@
 ;; - things that I might want to do multiple times in succession (because it's more
 ;;   convenient to do that with a modifier key than with a prefix key)
 ;;   - Update: but for these commands that I want to do multiple times in succession, I
-;;     can also use the 'repeat' command (which I'm binding to A-h), so I can do it the
-;;     first time using some other command that's hard to repeat, then repeat it with A-h.
+;;     can also use the 'repeat' command (which I'm binding to C-M-c), so I can do it the
+;;     first time using some other command that's hard to repeat, then repeat it with C-M-c.
 ;; - But I'm trying not to have too many A-* keybindings, because they involve an
 ;;   unergonomic stretch of my thumb.
 ;;
@@ -66,8 +66,17 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "C-'") 'other-frame)
 (global-set-key (kbd "C-\"") 'my-other-frame-reverse)
 
-;; This isn't mnemonic, but it's easy to press repeatedly.
-(global-set-key (kbd "A-h") 'repeat)
+;; Add a binding for repeating the last command that is easy to press repeatedly.
+;;
+;; This binding is vaguely similar to the use of C-c and M-c for custom bindings. The
+;; important thing is that it's easy to press repeatedly.
+;;
+;; But first rebind what is normally bound to C-M-c: exit-recursive-edit (I'm not sure if
+;; it's actually important to have a key binding for this, but I'll make one anyway; I'm
+;; putting it on A-g since it seems somewhat similar to C-g).
+(global-unset-key (kbd "C-M-c"))
+(global-set-key (kbd "A-g") 'exit-recursive-edit)
+(global-set-key (kbd "C-M-c") 'repeat)
 
 ;; Make an easier way to return to the last place in the buffer (easier than C-u C-SPC)
 ;; This binding (C-,) is similar to the M-, binding that pops from an xref location
