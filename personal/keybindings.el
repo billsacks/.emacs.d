@@ -283,6 +283,10 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "C-M-h") 'my-scroll-other-window-up-by-3)
 (global-set-key (kbd "A-M-h") 'my-scroll-other-window-down-by-3)
 
+;; This can be useful during one-handed scrolling
+(global-set-key (kbd "<C-next>") 'scroll-up-by-3)
+(global-set-key (kbd "<C-prior>") 'scroll-down-by-3)
+
 ;; (2021-08-31) I'd like to consider replacing these bindings with something more
 ;; ergonomic, avoiding Alt when possible
 (global-set-key (kbd "A-d") 'crux-duplicate-current-line-or-region)
