@@ -113,6 +113,7 @@
 (define-key org-mode-map (kbd "C-c o") 'my-org-show-position-in-text)
 
 ;; Functions to highlight the inline code under cursor
+;; Consider replacing with a more general solution: see https://emacspeak.blogspot.com/2021/09/generalize-snarf-tool-how-general-can.html
 (defun my-org-highlight-delineated-text (markup_char)
   "Highlight block of text containing point, delineated by markup_char"
   (search-backward markup_char)
