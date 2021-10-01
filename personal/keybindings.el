@@ -226,6 +226,16 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-unset-key (kbd "C-f"))
 (global-set-key (kbd "C-b") 'backward-paragraph)
 (global-set-key (kbd "C-f") 'forward-paragraph)
+;; Also use C-b and C-f in other modes that rebind M-{ and M-} (e.g., grep for navigating between files)
+(defun my-remap-M-curly-open-to-C-b ()
+  "Remap whatever command is locally bound to `M-{' to `C-b'"
+  (my-remap-in-local-bindings "M-{" "C-b"))
+(add-hook 'after-change-major-mode-hook #'my-remap-M-curly-open-to-C-b)
+(defun my-remap-M-curly-close-to-C-f ()
+  "Remap whatever command is locally bound to `M-}' to `C-f'"
+  (my-remap-in-local-bindings "M-}" "C-f"))
+(add-hook 'after-change-major-mode-hook #'my-remap-M-curly-close-to-C-f)
+
 ;; it might be helpful to have a way to move up and down faster
 (global-set-key (kbd "<A-up>") 'my-previous-line-3)
 (global-set-key (kbd "<A-down>") 'my-next-line-3)
@@ -266,7 +276,7 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-unset-key (kbd "M-i")) ;; M-i is tab-to-tab-stop, which I don't find useful
 (global-set-key (kbd "M-i") 'mark-paragraph)
 (defun my-remap-M-h-to-M-i ()
-  "Remap whatever command is locally bound to `M-h` to `M-i`"
+  "Remap whatever command is locally bound to `M-h' to `M-i'"
   (my-remap-in-local-bindings "M-h" "M-i"))
 (add-hook 'after-change-major-mode-hook #'my-remap-M-h-to-M-i)
 (global-unset-key (kbd "C-M-h")) ;; C-M-h is mark-defun; I'll put it on C-M-i
@@ -274,7 +284,7 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (define-key flyspell-mode-map (kbd "C-M-;") 'flyspell-auto-correct-word)
 (global-set-key (kbd "C-M-i") 'mark-defun)
 (defun my-remap-C-M-h-to-C-M-i ()
-  "Remap whatever command is locally bound to `C-M-h` to `C-M-i`"
+  "Remap whatever command is locally bound to `C-M-h' to `C-M-i'"
   (my-remap-in-local-bindings "C-M-h" "C-M-i"))
 (add-hook 'after-change-major-mode-hook #'my-remap-C-M-h-to-C-M-i)
 ;; Now, finally, I can do the assignments for scrolling
