@@ -54,6 +54,13 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; stretch if I try to use Ctrl on the same hand for both the x and s with Dvorak)
 (global-set-key (kbd "H-s") 'save-buffer)
 
+;; Allow option-c and option-v for copy and paste: I'm going to enable these bindings in
+;; other applications, so I can consistently use these to copy and paste between emacs,
+;; iterm2 (where I have swapped cmd and opt), and other applications.
+(global-set-key (kbd "A-c") 'easy-kill)
+(global-set-key (kbd "A-v") 'yank)
+(define-key isearch-mode-map (kbd "A-v") 'isearch-yank-kill)
+
 ;; Use dwim versions of upcase and downcase
 (global-set-key [remap upcase-word] 'upcase-dwim)
 (global-set-key [remap downcase-word] 'downcase-dwim)
