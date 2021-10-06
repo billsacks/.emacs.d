@@ -70,10 +70,6 @@
 
 (define-key 'help-command (kbd "C-i") 'info-display-manual)
 
-;; replace zap-to-char functionality with the more powerful zop-to-char
-(global-set-key (kbd "M-z") 'zop-up-to-char)
-(global-set-key (kbd "M-Z") 'zop-to-char)
-
 ;; kill lines backward
 (global-set-key (kbd "S-<backspace>") 'crux-kill-line-backwards)
 

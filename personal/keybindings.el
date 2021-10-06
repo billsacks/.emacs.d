@@ -54,13 +54,6 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; stretch if I try to use Ctrl on the same hand for both the x and s with Dvorak)
 (global-set-key (kbd "H-s") 'save-buffer)
 
-;; Allow option-c and option-v for copy and paste: I'm going to enable these bindings in
-;; other applications, so I can consistently use these to copy and paste between emacs,
-;; iterm2 (where I have swapped cmd and opt), and other applications.
-(global-set-key (kbd "A-c") 'easy-kill)
-(global-set-key (kbd "A-v") 'yank)
-(define-key isearch-mode-map (kbd "A-v") 'isearch-yank-kill)
-
 ;; Use dwim versions of upcase and downcase
 (global-set-key [remap upcase-word] 'upcase-dwim)
 (global-set-key [remap downcase-word] 'downcase-dwim)
@@ -185,7 +178,7 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 
 ;; bury buffer is a convenient way to remove a buffer from the tab line of one frame
 ;; without completely killing the buffer
-(global-set-key (kbd "H-w") 'bury-buffer)
+(global-set-key (kbd "A-w") 'bury-buffer)
 
 ;; rename-uniquely is especially helpful in grep buffers
 (global-set-key (kbd "H-u") 'rename-uniquely)
@@ -266,15 +259,65 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "A-n") 'next-logical-line)
 (global-set-key (kbd "A-p") 'previous-logical-line)
 
-;; more ergonomic binding for scrolling other window down (note that C-M-v is the built-in
-;; keybinding for scrolling up; A-M-v is somewhat similar to this)
-(global-unset-key (kbd "C-M-S-v"))
-(global-set-key (kbd "A-M-v") 'scroll-other-window-down)
+;; I am moving some key bindings so that I can (1) (the primary motivation) maintain the
+;; use of Cmd-v for pasting (I am especially inspired to do this so that I can continue to
+;; use Cmd-v in iterm2 with the physical command key, despite swapping Cmd and Opt in
+;; iterm2 preferences); and (2) have more ergonomic bindings for the common scroll
+;; commands (since 't' is an easier key than 'v'):
+;; - I am putting yank on M-v (in addition to the normal C-y)
+;; - I am putting the scrolling commands on t instead of v
+;; - I am putting the transpose bindings on z instead of t
+;; - I am moving the bindings on z to elsewhere, or removing them
+;;
+;; First move the important bindings on z to elsewhere:
+;;
+;; replace zap-to-char functionality with the more powerful zop-to-char; use H-w and H-W
+;; (instead of M-z, which we want for other purposes) to mimic C-w and M-w functionality
+(global-set-key (kbd "H-w") 'zop-up-to-char)
+(global-set-key (kbd "H-W") 'zop-to-char)
+;;
+;; Now move the transpose bindings to z instead of t:
+(global-set-key (kbd "C-z") 'transpose-chars)
+(defun my-remap-C-t-to-C-z ()
+  "Remap whatever command is locally bound to `C-t' to `C-z'"
+  (my-remap-in-local-bindings "C-t" "C-z"))
+(add-hook 'after-change-major-mode-hook #'my-remap-C-t-to-C-z)
+(global-set-key (kbd "M-z") 'transpose-words)
+(defun my-remap-M-t-to-M-z ()
+  "Remap whatever command is locally bound to `M-t' to `M-z'"
+  (my-remap-in-local-bindings "M-t" "M-z"))
+(add-hook 'after-change-major-mode-hook #'my-remap-M-t-to-M-z)
+(global-set-key (kbd "C-M-z") 'transpose-sexps)
+(defun my-remap-C-M-t-to-C-M-z ()
+  "Remap whatever command is locally bound to `C-M-t' to `C-M-z'"
+  (my-remap-in-local-bindings "C-M-t" "C-M-z"))
+(add-hook 'after-change-major-mode-hook #'my-remap-C-M-t-to-C-M-z)
+;;
+;; Now put the scrolling commands on t instead of v
+(global-set-key (kbd "C-t") 'scroll-up-command)
+(defun my-remap-C-v-to-C-t ()
+  "Remap whatever command is locally bound to `C-v' to `C-t'"
+  (my-remap-in-local-bindings "C-v" "C-t"))
+(add-hook 'after-change-major-mode-hook #'my-remap-C-v-to-C-t)
+(global-set-key (kbd "M-t") 'scroll-down-command)
+(defun my-remap-M-v-to-M-t ()
+  "Remap whatever command is locally bound to `M-v' to `M-t'"
+  (my-remap-in-local-bindings "M-v" "M-t"))
+(add-hook 'after-change-major-mode-hook #'my-remap-M-v-to-M-t)
+(global-set-key (kbd "C-M-t") 'scroll-other-window)
+;; The built-in key binding for scrolling other window down is C-M-S-v; A-M is more
+;; ergonomic than C-M-S, so I'm using that instead
+(global-set-key (kbd "A-M-t") 'scroll-other-window-down)
+;;
+;; Finally, M-v is free to use as yank
+(global-set-key (kbd "M-v") 'yank)
+(define-key isearch-mode-map (kbd "M-v") 'isearch-yank-kill)
 
 (global-set-key (kbd "<S-next>") 'scroll-other-window)
 (global-set-key (kbd "<S-prior>") 'scroll-other-window-down)
 
-;; Use C/M-h for scrolling by 3; note that these bindings mimic the bindings on C/M-v
+;; Use C/M-h for scrolling by 3; note that these bindings mimic the bindings on C/M-t
+;; (i.e., what is C/M-v by default, but I have moved to C/M-t).
 ;;
 ;; First I need to reassign what is typically assigned to C-h, M-h and C-M-h; I am using
 ;; 'i' for highlighting-related bindings that used to be on 'h':
