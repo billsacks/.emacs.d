@@ -266,7 +266,7 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; commands (since 't' is an easier key than 'v'):
 ;; - I am putting yank on M-v (in addition to the normal C-y)
 ;; - I am putting the scrolling commands on t instead of v
-;; - I am putting the transpose bindings on z instead of t
+;; - I am putting the transpose bindings on z instead of t (mnemonic: "transpoZe")
 ;; - I am moving the bindings on z to elsewhere, or removing them
 ;;
 ;; First move the important bindings on z to elsewhere:
