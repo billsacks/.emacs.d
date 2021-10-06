@@ -434,21 +434,6 @@ Note: the force-heading piece of this is untested."
 (global-set-key (kbd "s-o l l") 'org-store-link)
 (global-set-key (kbd "s-o p") 'my-org-open-projects)
 
-;; (2021-08-10) I commonly need to type a tilde in org mode; it's a bit difficult, and my
-;; left pinky has been hurting recently, so I'm adding this alternative (mnemonic: c for
-;; code).
-;;
-;; (2021-08-16) I may remove this, if I start using verbatim for the most part instead of
-;; inline code.
-(defun my-org-insert-tilde ()
-  "Insert a tilde"
-  (interactive)
-  (insert "~"))
-;; I may change the following keybinding to A-[, to have a rule that only keys on the
-;; periphery should generate symbols when used with A (e.g., I use A-- for an n-dash),
-;; reserving A-(normal characters) for other kinds of actions.
-(define-key org-mode-map (kbd "A-c") 'my-org-insert-tilde)
-
 (require 'org-keys)
 (setq org-speed-commands-user
       '(("N" org-speed-move-safe 'my-org-next-visible-todo)
