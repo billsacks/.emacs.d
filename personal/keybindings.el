@@ -250,14 +250,14 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "<M-up>") 'move-text-up)
 (global-set-key (kbd "<M-down>") 'move-text-down)
 
-(global-set-key (kbd "M-A-f") 'forward-symbol)
-(global-set-key (kbd "M-A-b") 'my-backward-symbol)
+(global-set-key (kbd "A-M-f") 'forward-symbol)
+(global-set-key (kbd "A-M-b") 'my-backward-symbol)
 (global-set-key (kbd "A-f") 'my-forward-to-whitespace)
 (global-set-key (kbd "A-b") 'my-backward-to-whitespace)
 
 ;; helpful when a line is wrapped
-(global-set-key (kbd "A-n") 'next-logical-line)
-(global-set-key (kbd "A-p") 'previous-logical-line)
+(global-set-key (kbd "<A-M-down>") 'next-logical-line)
+(global-set-key (kbd "<A-M-up>") 'previous-logical-line)
 
 ;; I am moving some key bindings so that I can (1) (the primary motivation) maintain the
 ;; use of Cmd-v for pasting (I am especially inspired to do this so that I can continue to
