@@ -74,7 +74,7 @@
  '(ivy-virtual-abbreviate 'abbreviate)
  '(line-move-visual nil)
  '(lsp-auto-execute-action nil)
- '(lsp-clients-fortls-args '("--lowercase_intrinsics"))
+ '(lsp-clients-fortls-args '("--lowercase_intrinsics" "--variable_hover"))
  '(lsp-diagnostics-attributes
    '((unnecessary :foreground "gray40")
      (deprecated :strike-through t)))
