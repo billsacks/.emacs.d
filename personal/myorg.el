@@ -335,6 +335,9 @@ Note: the force-heading piece of this is untested."
 ;; Allow exporting as Github-flavored markdown
 (eval-after-load "org"
   '(require 'ox-gfm nil t))
+;; Allow exporting as rst
+(eval-after-load "org"
+  '(require 'ox-rst nil t))
 
 ;; This is available as C-c C-t, but I often do C-c t by accident, and since this is a
 ;; common thing I want to do, I'll make it a key binding
