@@ -154,7 +154,7 @@
  '(org-blank-before-new-entry '((heading) (plain-list-item . auto)))
  '(org-cycle-emulate-tab nil)
  '(org-edit-src-content-indentation 0)
- '(org-ellipsis " ▼")
+ '(org-ellipsis "..▼")
  '(org-enforce-todo-checkbox-dependencies t)
  '(org-enforce-todo-dependencies t)
  '(org-export-backends '(ascii html icalendar latex md odt))
