@@ -342,6 +342,11 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "M-h") 'scroll-down-by-3)
 (global-set-key (kbd "C-M-h") 'my-scroll-other-window-up-by-3)
 (global-set-key (kbd "A-M-h") 'my-scroll-other-window-down-by-3)
+;; I also want C-h to scroll-up-by-3 during isearch, rather than pulling up help; I think
+;; another way to accomplish this would be to do a global setting of the help char to nil,
+;; but I think I ran into other issues when I tried to do that (specifically, which-key
+;; stopped working).
+(define-key isearch-mode-map (kbd "C-h") 'scroll-up-by-3)
 
 ;; This can be useful during one-handed scrolling
 (global-set-key (kbd "<C-next>") 'scroll-up-by-3)
