@@ -71,9 +71,9 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; This binding is vaguely similar to the use of C-c and M-c for custom bindings. The
 ;; important thing is that it's easy to press repeatedly.
 ;;
-;; But first rebind what is normally bound to C-M-c: exit-recursive-edit (I'm not sure if
-;; it's actually important to have a key binding for this, but I'll make one anyway; I'm
-;; putting it on A-g since it seems somewhat similar to C-g).
+;; But first rebind what is normally bound to C-M-c: exit-recursive-edit (this is used for
+;; things like ediff-regions; I'm putting it on A-g since it seems somewhat similar to
+;; C-g).
 (global-unset-key (kbd "C-M-c"))
 (global-set-key (kbd "A-g") 'exit-recursive-edit)
 (global-set-key (kbd "C-M-c") 'repeat)
