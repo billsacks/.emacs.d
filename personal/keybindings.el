@@ -345,7 +345,9 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; I also want C-h to scroll-up-by-3 during isearch, rather than pulling up help; I think
 ;; another way to accomplish this would be to do a global setting of the help char to nil,
 ;; but I think I ran into other issues when I tried to do that (specifically, which-key
-;; stopped working).
+;; stopped working). If I'm finding that I need to do the following for a number of modes,
+;; another workaround could be defining the help char to something I would never use
+;; (e.g., "`").
 (define-key isearch-mode-map (kbd "C-h") 'scroll-up-by-3)
 
 ;; This can be useful during one-handed scrolling
