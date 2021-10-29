@@ -10,6 +10,9 @@
 ;; lines give less common states
 (setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
                           (sequence "|" "CANC(c)")
+                          ;; CANP = canceling just because I'm canceling the parent (so if
+                          ;; I restore the parent, I'll want to restore this)
+                          (sequence "|" "CANP(C)")
                           ;; MBCN = maybe canceled
                           (sequence "MBCN(b)" "MAYB(m)" "COND(o)" "HOLD(h)" "WAIT(w)" "DPND(e)" "|")
                           ;; the following are for projects, both in my top-level projects
@@ -31,6 +34,7 @@
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
         ("DONE" . (:inherit org-done :foreground "RosyBrown"))
         ("CANC" . (:inherit org-done :foreground "RosyBrown" :strike-through t))
+        ("CANP" . (:inherit org-done :foreground "RosyBrown" :strike-through t))
         ;; For the PR-# states: I want a distinct color for PR-1, since that is the stuff
         ;; I should pay attention to this week. For the other three, I am using DarkBlue
         ;; for 2, LightBlue3 for 4, and an intermediate color (from
