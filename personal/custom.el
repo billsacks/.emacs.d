@@ -27,6 +27,7 @@
  '(deft-org-mode-title-prefix nil)
  '(deft-use-filter-string-for-filename t)
  '(ediff-split-window-function 'split-window-horizontally)
+ '(edit-server-done-hook '((lambda nil (kill-ring-save (point-min) (point-max)))))
  '(edit-server-new-frame nil)
  '(edit-server-new-frame-alist
    '((name . "Edit with Emacs FRAME")
