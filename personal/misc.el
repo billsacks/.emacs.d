@@ -27,6 +27,18 @@
 
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
+;; Add imenu to menu bar whenever font-lock-mode is enabled
+;; Note that font lock mode is enabled for any major mode,
+;; so this means try to add imenu for every major mode
+;; (from http://www.emacswiki.org/cgi-bin/wiki/ImenuMode)
+;;
+;; Note (2021-11-16) This seems to cause typing lag, at least if imenu-auto-rescan is t;
+;; for now I'm setting imenu-auto-rescan to nil (the default) to avoid this lag, because I
+;; would like to have this in the menu bar.
+(defun try-to-add-imenu ()
+  (condition-case nil (imenu-add-to-menubar "imenu") (error nil)))
+(add-hook 'font-lock-mode-hook 'try-to-add-imenu)
+
 ;; normally this would take three applications of C-l
 (defun my-recenter-to-bottom()
   (interactive)
