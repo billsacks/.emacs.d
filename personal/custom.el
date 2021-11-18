@@ -190,7 +190,7 @@
  '(org-variable-pitch-fixed-faces
    '(org-block org-code org-document-info-keyword org-done org-formula org-indent org-meta-line org-special-keyword org-table org-todo org-verbatim org-date org-drawer))
  '(package-selected-packages
-   '(ox-rst org-sidebar org-variable-pitch org-appear edit-server flycheck-color-mode-line smart-mode-line lsp-pyright realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
+   '(vdiff ox-rst org-sidebar org-variable-pitch org-appear edit-server flycheck-color-mode-line smart-mode-line lsp-pyright realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
  '(prelude-guru nil)
  '(prelude-whitespace nil)
@@ -232,6 +232,7 @@
  '(tool-bar-mode nil)
  '(vc-git-grep-template
    "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
+ '(vdiff-auto-refine t)
  '(visual-fill-column-fringes-outside-margins nil)
  '(whitespace-style '(face trailing tabs empty))
  '(yas-also-auto-indent-first-line t))
@@ -361,5 +362,6 @@
  '(tab-line ((t (:background "grey85" :foreground "black" :height 0.85 :family "Lucida Grande"))))
  '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
  '(variable-pitch ((t (:height 1.25 :family "Charter"))))
+ '(vdiff-change-face ((t (:inherit diff-changed :background "#e8e8ff"))))
  '(whitespace-empty ((t (:background "LightYellow" :foreground "firebrick"))))
  '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold)))))

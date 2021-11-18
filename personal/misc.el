@@ -141,6 +141,9 @@
       (setq highlight-indent-guides-responsive nil)
     (setq highlight-indent-guides-responsive 'top)))
 
+(require 'vdiff)
+(define-key vdiff-mode-map (kbd "C-c") vdiff-mode-prefix-map)
+
 ;; This is useful when I have grep results (or similar) displayed in a window that is
 ;; taking up much of the screen: it prevents the grep results from being split left-right.
 ;; This is also useful to avoid having the ediff control window be split horizontally, and
