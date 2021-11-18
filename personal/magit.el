@@ -33,3 +33,11 @@
   (kill-new (magit-git-string "merge-base" "HEAD"
                               ;; in the following, note that we default to the name of the main branch
                               (magit-read-branch-or-commit "Get merge base of HEAD and commit" (magit-main-branch)))))
+
+;; Add some options to the transient commands
+(with-eval-after-load 'magit
+  ;; add --merge-base after the -s option to git diff:
+  (transient-append-suffix 'magit-diff "-s"
+    '("-B" "Merge base" "--merge-base"))
+  (transient-append-suffix 'magit-diff-refresh "-s"
+    '("-B" "Merge base" "--merge-base")))
