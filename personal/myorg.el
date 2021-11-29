@@ -110,7 +110,15 @@
          ((todo "PROG" nil)
           (agenda "" nil))
          nil)
-        ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)))
+        ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)
+
+        ;; this combines PR-1 with the SOON search; mnemonic: "w" = "week"
+        ("w" "PR-1 & SOON"
+         ((todo "PR-1" nil)
+          (todo "SOON|NEXT|PROG" nil)
+          (agenda "" nil))
+         nil)
+        ))
 
 ;; the following is modified from the built-in outline-path: the first line is the same,
 ;; but I have replaced the s-join expression with one that only uses the first 2 levels,
