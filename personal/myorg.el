@@ -68,55 +68,55 @@
          nil)
 
         ("1" "PR-1"
-         ((todo "PR-1" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "PR-1" nil))
          nil)
         ("2" "PR-2"
-         ((todo "PR-2" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "PR-2" nil))
          nil)
         ;; Note that '@' is shift-2; I'm using that key because this is like 2, but a
         ;; variant where it includes any projects with priority equal to or greater than 2
         ("@" "PR-1/2"
-         ((todo "PR-1|PR-2" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "PR-1|PR-2" nil))
          nil)
         ("3" "PR-3"
-         ((todo "PR-3" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "PR-3" nil))
          nil)
         ("4" "PR-4"
-         ((todo "PR-4" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "PR-4" nil))
          nil)
         ("p" "Projects"
-         ((todo "PR-1|PR-2|PR-3|PR-4" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "PR-1|PR-2|PR-3|PR-4" nil))
          nil)
 
         ("x" "SOON"
-         ((todo "SOON|NEXT|PROG" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "SOON|NEXT|PROG" nil))
          nil)
         ("X" "SOON tree" tags-tree "TODO=\"SOON\"|TODO=\"NEXT\"|TODO=\"PROG\"" nil)
 
         ("y" "NEXT"
-         ((todo "NEXT|PROG" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "NEXT|PROG" nil))
          nil)
         ("Y" "NEXT tree" tags-tree "TODO=\"NEXT\"|TODO=\"PROG\"" nil)
 
         ("z" "PROG"
-         ((todo "PROG" nil)
-          (agenda "" nil))
+         ((agenda "" nil)
+          (todo "PROG" nil))
          nil)
         ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)
 
         ;; this combines PR-1 with the SOON search; mnemonic: "w" = "week"
         ("w" "PR-1 & SOON"
-         ((todo "PR-1" nil)
+         ((agenda "" nil)
           (todo "SOON|NEXT|PROG" nil)
-          (agenda "" nil))
+          (todo "PR-1" nil))
          nil)
         ))
 
