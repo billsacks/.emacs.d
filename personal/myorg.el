@@ -22,7 +22,11 @@
                           ;; - PR-2 is for relatively high priority, but not quite yet
                           ;; - PR-3 is normal priority
                           ;; - PR-4 is sometime in the more distant future
-                          (sequence "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|")))
+                          ;; - PR-0 is for projects that I'm helping with, so I'm not in
+                          ;;   control of the timeline or priority, but need to just
+                          ;;   respond whenever I'm needed (these can shift to some other
+                          ;;   priority when it comes time for me to deal with them)
+                          (sequence "PR-0(0)" "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|")))
 
 (setq org-todo-keyword-faces
       '(("TODO" . "SteelBlue3")
@@ -42,7 +46,8 @@
         ("PR-1" . (:inherit org-todo :foreground "DarkRed" :background "#d1eaff"))
         ("PR-2" . (:inherit org-todo :foreground "DarkBlue" :background "#d1eaff"))
         ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "#d1eaff"))
-        ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "#d1eaff"))))
+        ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "#d1eaff"))
+        ("PR-0" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))))
 
 ;; It seems that customizing the face for an org-tag like this loses the feature that a
 ;; tag is colored according to its heading level - so these tags end up with the color of
@@ -89,9 +94,13 @@
          ((agenda "" nil)
           (todo "PR-4" nil))
          nil)
+        ("0" "PR-0"
+         ((agenda "" nil)
+          (todo "PR-0" nil))
+         nil)
         ("p" "Projects"
          ((agenda "" nil)
-          (todo "PR-1|PR-2|PR-3|PR-4" nil))
+          (todo "PR-1|PR-2|PR-3|PR-4|PR-0" nil))
          nil)
 
         ("x" "SOON"
