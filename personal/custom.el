@@ -149,6 +149,7 @@
      (todo . " %i %l%l")
      (tags . " %i %l%l")
      (search . " %i %l%l")))
+ '(org-agenda-sticky t)
  '(org-agenda-todo-list-sublevels t)
  '(org-agenda-window-setup 'current-window)
  '(org-babel-load-languages '((emacs-lisp . t) (python . t)))
