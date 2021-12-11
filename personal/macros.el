@@ -207,6 +207,22 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (edit-server-save))
 (define-key edit-server-edit-mode-map (kbd "C-x C-s") 'my-edit-server-save)
 
+;; This is a total hack to prevent the edit-server from deleting the current window when
+;; finishing. Otherwise, when edit-server-new-frame is nil, when finished editing, the
+;; edit server's window is deleted, which I don't like. Ideally the edit-server code
+;; wouldn't do that, but this function is a hacky workaround to prevent it. (See also
+;; https://github.com/stsquad/emacs_chrome/issues/172)
+(defun my-edit-server-done ()
+  (interactive)
+  ;; Here is the total hack: we temporarily set edit-server-new-frame to t to trick
+  ;; edit-server-done into not calling delete-window. This works for now because the only
+  ;; use of edit-server-new-frame is in a conditional to decide whether to call
+  ;; delete-window, but if it were used for anything else, this might break.
+  (let ((edit-server-new-frame t))
+    (edit-server-done)))
+(define-key edit-server-edit-mode-map (kbd "C-c C-c") 'my-edit-server-done)
+(define-key edit-server-edit-mode-map (kbd "C-x #") 'my-edit-server-done)
+
 ;; From https://sites.google.com/site/steveyegge2/my-dot-emacs-file (found from
 ;; https://stackoverflow.com/questions/384284/how-do-i-rename-an-open-file-in-emacs)
 (defun my-move-buffer-file (dir)
