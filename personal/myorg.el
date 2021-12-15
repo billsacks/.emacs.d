@@ -226,8 +226,14 @@ Note: the force-heading piece of this is untested."
       (org-insert-todo-heading '(16) force-heading)
     (org-insert-todo-heading '(4) force-heading)))
 (define-key org-mode-map (kbd "<M-S-return>") 'my-org-insert-todo-heading)
+
+(defun my-org-insert-todo-heading-respect-content ()
+  "Like org-insert-todo-heading-respect-content but use the first state"
+  (interactive)
+  (org-insert-todo-heading-respect-content '(4)))
+(define-key org-mode-map (kbd "<C-S-return>") 'my-org-insert-todo-heading-respect-content)
 ;; and here is a more ergonomic way to do this (mnemonic: n = "New todo"):
-(define-key org-mode-map (kbd "C-c n") 'my-org-insert-todo-heading)
+(define-key org-mode-map (kbd "C-c n") 'my-org-insert-todo-heading-respect-content)
 
 ;; The following is useful for marking a bunch of things soon in quick succession: do this
 ;; once then do the key binding to repeat the last command as often as wanted
