@@ -293,21 +293,21 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
   (my-remap-in-local-bindings "C-M-t" "C-M-z"))
 (add-hook 'after-change-major-mode-hook #'my-remap-C-M-t-to-C-M-z)
 ;;
-;; Now put the scrolling commands on t instead of v
-(global-set-key (kbd "C-t") 'scroll-up-command)
-(defun my-remap-C-v-to-C-t ()
-  "Remap whatever command is locally bound to `C-v' to `C-t'"
-  (my-remap-in-local-bindings "C-v" "C-t"))
-(add-hook 'after-change-major-mode-hook #'my-remap-C-v-to-C-t)
-(global-set-key (kbd "M-t") 'scroll-down-command)
-(defun my-remap-M-v-to-M-t ()
-  "Remap whatever command is locally bound to `M-v' to `M-t'"
-  (my-remap-in-local-bindings "M-v" "M-t"))
-(add-hook 'after-change-major-mode-hook #'my-remap-M-v-to-M-t)
-(global-set-key (kbd "C-M-t") 'scroll-other-window)
-;; The built-in key binding for scrolling other window down is C-M-S-v; A-M is more
-;; ergonomic than C-M-S, so I'm using that instead
-(global-set-key (kbd "A-M-t") 'scroll-other-window-down)
+;; Now put the scrolling commands on t instead of v; also switch the meaning of C and M:
+;; because of my positioning of Meta on my Kinesis keyboard, it is both more mnemonic (up
+;; = up, down = down) and more ergonomic to use M for scroll-up and C for scroll-down.
+(global-set-key (kbd "M-t") 'scroll-up-command)
+(defun my-remap-C-v-to-M-t ()
+  "Remap whatever command is locally bound to `C-v' to `M-t'"
+  (my-remap-in-local-bindings "C-v" "M-t"))
+(add-hook 'after-change-major-mode-hook #'my-remap-C-v-to-M-t)
+(global-set-key (kbd "C-t") 'scroll-down-command)
+(defun my-remap-M-v-to-C-t ()
+  "Remap whatever command is locally bound to `M-v' to `C-t'"
+  (my-remap-in-local-bindings "M-v" "C-t"))
+(add-hook 'after-change-major-mode-hook #'my-remap-M-v-to-C-t)
+(global-set-key (kbd "A-M-t") 'scroll-other-window)
+(global-set-key (kbd "C-M-t") 'scroll-other-window-down)
 ;;
 ;; Finally, M-v is free to use as yank
 (global-set-key (kbd "M-v") 'yank)
@@ -338,17 +338,17 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
   (my-remap-in-local-bindings "C-M-h" "C-M-i"))
 (add-hook 'after-change-major-mode-hook #'my-remap-C-M-h-to-C-M-i)
 ;; Now, finally, I can do the assignments for scrolling
-(global-set-key (kbd "C-h") 'scroll-up-by-3)
-(global-set-key (kbd "M-h") 'scroll-down-by-3)
-(global-set-key (kbd "C-M-h") 'my-scroll-other-window-up-by-3)
-(global-set-key (kbd "A-M-h") 'my-scroll-other-window-down-by-3)
-;; I also want C-h to scroll-up-by-3 during isearch, rather than pulling up help; I think
+(global-set-key (kbd "M-h") 'scroll-up-by-3)
+(global-set-key (kbd "C-h") 'scroll-down-by-3)
+(global-set-key (kbd "A-M-h") 'my-scroll-other-window-up-by-3)
+(global-set-key (kbd "C-M-h") 'my-scroll-other-window-down-by-3)
+;; I also want C-h to scroll-down-by-3 during isearch, rather than pulling up help; I think
 ;; another way to accomplish this would be to do a global setting of the help char to nil,
 ;; but I think I ran into other issues when I tried to do that (specifically, which-key
 ;; stopped working). If I'm finding that I need to do the following for a number of modes,
 ;; another workaround could be defining the help char to something I would never use
 ;; (e.g., "`").
-(define-key isearch-mode-map (kbd "C-h") 'scroll-up-by-3)
+(define-key isearch-mode-map (kbd "C-h") 'scroll-down-by-3)
 
 ;; This can be useful during one-handed scrolling
 (global-set-key (kbd "<C-next>") 'scroll-up-by-3)
