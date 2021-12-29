@@ -407,6 +407,8 @@ Note: the force-heading piece of this is untested."
   "Open my _projects.org file"
   (interactive)
   (find-file "~/org/_projects.org"))
+
+;; my-org-show-agenda isn't very useful now that I have org-agenda-sticky set to t
 (defun my-org-show-agenda ()
   "Show the existing *Org Agenda* buffer"
   (interactive)
@@ -480,8 +482,7 @@ Note: the force-heading piece of this is untested."
 
 ;; s-o keybindings: Org-related commands that can be run from anywhere (not just an org-mode buffer)
 (global-unset-key (kbd "s-o"))
-(global-set-key (kbd "s-o a") 'my-org-show-agenda)
-(global-set-key (kbd "s-o A") 'org-agenda)
+(global-set-key (kbd "s-o a") 'org-agenda)
 (global-set-key (kbd "s-o b") 'org-switchb)
 (global-set-key (kbd "s-o d a") 'my-deft-in-archive)
 (global-set-key (kbd "s-o d n") 'my-deft-in-notes)
