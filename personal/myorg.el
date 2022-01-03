@@ -408,6 +408,13 @@ Note: the force-heading piece of this is untested."
   (interactive)
   (find-file "~/org/_projects.org"))
 
+;; This is useful for jotting down some quick notes / tasks
+(defun my-org-open-scratch ()
+  "Open scratch buffer in other window, with cursor positioned at end"
+  (interactive)
+  (switch-to-buffer-other-window "*scratch*")
+  (goto-char (point-max)))
+
 ;; my-org-show-agenda isn't very useful now that I have org-agenda-sticky set to t
 (defun my-org-show-agenda ()
   "Show the existing *Org Agenda* buffer"
@@ -491,6 +498,7 @@ Note: the force-heading piece of this is untested."
 (global-set-key (kbd "s-o l f") 'my-org-store-link-to-file)
 (global-set-key (kbd "s-o l l") 'org-store-link)
 (global-set-key (kbd "s-o p") 'my-org-open-projects)
+(global-set-key (kbd "s-o s") 'my-org-open-scratch)
 
 (require 'org-keys)
 (setq org-speed-commands-user
