@@ -416,6 +416,12 @@ Note: the force-heading piece of this is untested."
   (interactive)
   (find-file "~/org/_projects.org"))
 
+(defun my-org-open-inbox ()
+  "Open the inbox with point positioned at start"
+  (interactive)
+  (find-file-other-window "~/org/todo/inbox.org")
+  (goto-char (point-min)))
+
 ;; This is useful for jotting down some quick notes / tasks
 (defun my-org-open-scratch ()
   "Open scratch buffer in other window, with cursor positioned at end"
@@ -503,6 +509,7 @@ Note: the force-heading piece of this is untested."
 (global-set-key (kbd "s-o d n") 'my-deft-in-notes)
 (global-set-key (kbd "s-o d s") 'my-deft-in-someday)
 (global-set-key (kbd "s-o d t") 'my-deft-in-todo)
+(global-set-key (kbd "s-o i") 'my-org-open-inbox)
 (global-set-key (kbd "s-o l f") 'my-org-store-link-to-file)
 (global-set-key (kbd "s-o l l") 'org-store-link)
 (global-set-key (kbd "s-o p") 'my-org-open-projects)
