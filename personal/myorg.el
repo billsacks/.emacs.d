@@ -505,4 +505,9 @@ Note: the force-heading piece of this is untested."
       '(("N" org-speed-move-safe 'my-org-next-visible-todo)
         ("P" org-speed-move-safe 'my-org-previous-visible-todo)
         ("F" org-speed-move-safe 'my-org-forward-todo-same-level)
-        ("B" org-speed-move-safe 'my-org-backward-todo-same-level)))
+        ("B" org-speed-move-safe 'my-org-backward-todo-same-level)
+        ;; by default, space does org-display-outline-path, but I want to use space to
+        ;; insert a new todo; "o" by default does org-open-at-point, but that isn't very
+        ;; useful, so I'll use that for org-display-outline-path
+        ("o" . org-display-outline-path)
+        (" " . my-org-insert-todo-heading-respect-content)))
