@@ -420,7 +420,8 @@ Note: the force-heading piece of this is untested."
   "Open the inbox with point positioned at start"
   (interactive)
   (find-file-other-window "~/org/todo/inbox.org")
-  (goto-char (point-min)))
+  (goto-char (point-min))
+  (org-next-visible-heading 1))
 
 ;; This is useful for jotting down some quick notes / tasks
 (defun my-org-open-scratch ()
