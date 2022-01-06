@@ -76,7 +76,7 @@
           (alltodo "" nil))
          nil)
 
-        ("A" "Areas (Level 1 headings)"
+        (" " "Areas (Level 1 headings)"
          ((tags "+LEVEL=1" ((org-agenda-sorting-strategy '(alpha-up)))))
          nil)
 
