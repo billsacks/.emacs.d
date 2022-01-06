@@ -443,6 +443,14 @@ Note: the force-heading piece of this is untested."
   (switch-to-buffer-other-window "*scratch*")
   (goto-char (point-max)))
 
+(defun my-org-last-buffer-in-other-window ()
+  "Open the last org buffer in the other window on this frame"
+  (interactive)
+  (other-window 1)
+  ;; For some reason the following works without even needing to send kbd Return to select
+  ;; the first option:
+  (execute-kbd-macro (kbd "M-x org-switchb")))
+
 ;; my-org-show-agenda isn't very useful now that I have org-agenda-sticky set to t
 (defun my-org-show-agenda ()
   "Show the existing *Org Agenda* buffer"
@@ -519,6 +527,7 @@ Note: the force-heading piece of this is untested."
 (global-unset-key (kbd "s-o"))
 (global-set-key (kbd "s-o a") 'org-agenda)
 (global-set-key (kbd "s-o b") 'org-switchb)
+(global-set-key (kbd "s-o B") 'my-org-last-buffer-in-other-window)
 (global-set-key (kbd "s-o d a") 'my-deft-in-archive)
 (global-set-key (kbd "s-o d n") 'my-deft-in-notes)
 (global-set-key (kbd "s-o d s") 'my-deft-in-someday)
