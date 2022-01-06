@@ -247,8 +247,10 @@ Note: the force-heading piece of this is untested."
   (org-insert-todo-heading-respect-content '(4))
   (my-org-maybe-set-todo-state))
 (define-key org-mode-map (kbd "<C-S-return>") 'my-org-insert-todo-heading-respect-content)
-;; and here is a more ergonomic way to do this (mnemonic: n = "New todo"):
-(define-key org-mode-map (kbd "C-c n") 'my-org-insert-todo-heading-respect-content)
+;; and here is a more ergonomic way to do this:
+;; first we need to redefine C-c C-spc to do what C-c spc does by default:
+(define-key org-mode-map (kbd "C-c C-SPC") 'org-table-blank-field)
+(define-key org-mode-map (kbd "C-c SPC") 'my-org-insert-todo-heading-respect-content)
 
 ;; The following is useful for marking a bunch of things soon in quick succession: do this
 ;; once then do the key binding to repeat the last command as often as wanted
