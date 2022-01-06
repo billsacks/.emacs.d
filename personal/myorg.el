@@ -219,6 +219,11 @@
 (define-key org-mode-map (kbd "C-M-<up>") 'org-previous-visible-heading)
 (define-key org-mode-map (kbd "C-M-<down>") 'org-next-visible-heading)
 
+(defun my-org-maybe-set-todo-state ()
+  "Possibly change the todo state of the current heading"
+  (if (equal (org-current-level) 2)
+      (org-todo "PR-1")))
+
 (defun my-org-insert-todo-heading (arg &optional force-heading)
   "Like org-insert-todo-heading but use the first state.
 
@@ -232,13 +237,15 @@ Note: the force-heading piece of this is untested."
   (interactive "P")
   (if (equal arg '(4))
       (org-insert-todo-heading '(16) force-heading)
-    (org-insert-todo-heading '(4) force-heading)))
+    (org-insert-todo-heading '(4) force-heading))
+  (my-org-maybe-set-todo-state))
 (define-key org-mode-map (kbd "<M-S-return>") 'my-org-insert-todo-heading)
 
 (defun my-org-insert-todo-heading-respect-content ()
   "Like org-insert-todo-heading-respect-content but use the first state"
   (interactive)
-  (org-insert-todo-heading-respect-content '(4)))
+  (org-insert-todo-heading-respect-content '(4))
+  (my-org-maybe-set-todo-state))
 (define-key org-mode-map (kbd "<C-S-return>") 'my-org-insert-todo-heading-respect-content)
 ;; and here is a more ergonomic way to do this (mnemonic: n = "New todo"):
 (define-key org-mode-map (kbd "C-c n") 'my-org-insert-todo-heading-respect-content)
