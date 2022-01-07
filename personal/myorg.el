@@ -264,6 +264,10 @@ If not, return to the original position."
   (if (equal (org-current-level) 2)
       (org-todo "PR-1")))
 
+(defun my-org-insert-todo-heading-helper (arg &optional force-heading)
+  (if (equal arg '(4))
+      (org-insert-todo-heading '(16) force-heading)
+    (org-insert-todo-heading '(4) force-heading)))
 (defun my-org-insert-todo-heading (arg &optional force-heading)
   "Like org-insert-todo-heading but use the first state.
 
@@ -275,16 +279,16 @@ With one prefix arg, force inserting at the end of the parent subtree
 
 Note: the force-heading piece of this is untested."
   (interactive "P")
-  (if (equal arg '(4))
-      (org-insert-todo-heading '(16) force-heading)
-    (org-insert-todo-heading '(4) force-heading))
+  (my-org-insert-todo-heading-helper arg force-heading)
   (my-org-maybe-set-todo-state))
 (define-key org-mode-map (kbd "<M-S-return>") 'my-org-insert-todo-heading)
 
+(defun my-org-insert-todo-heading-respect-content-helper ()
+  (org-insert-todo-heading-respect-content '(4)))
 (defun my-org-insert-todo-heading-respect-content ()
   "Like org-insert-todo-heading-respect-content but use the first state"
   (interactive)
-  (org-insert-todo-heading-respect-content '(4))
+  (my-org-insert-todo-heading-respect-content-helper)
   (my-org-maybe-set-todo-state))
 (define-key org-mode-map (kbd "<C-S-return>") 'my-org-insert-todo-heading-respect-content)
 ;; and here is a more ergonomic way to do this:
@@ -297,9 +301,9 @@ Note: the force-heading piece of this is untested."
   (my-org-goto-last-heading-in-subtree)
   (if (string-equal (org-get-heading t) "Archive")
       ;; Put the todo before the Archive
-      (my-org-insert-todo-heading 0)
+      (my-org-insert-todo-heading-helper 0)
     ;; Put the todo after this last headline
-    (my-org-insert-todo-heading-respect-content)))
+    (my-org-insert-todo-heading-respect-content-helper)))
 
 ;; The following is useful for marking a bunch of things soon in quick succession: do this
 ;; once then do the key binding to repeat the last command as often as wanted
