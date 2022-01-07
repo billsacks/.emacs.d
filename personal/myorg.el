@@ -292,6 +292,15 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c C-SPC") 'org-table-blank-field)
 (define-key org-mode-map (kbd "C-c SPC") 'my-org-insert-todo-heading-respect-content)
 
+(defun my-org-insert-todo-heading-at-end-of-subtree ()
+  "Insert a todo heading at the end of the current subtree, but above a possible 'Archive' heading"
+  (my-org-goto-last-heading-in-subtree)
+  (if (string-equal (org-get-heading t) "Archive")
+      ;; Put the todo before the Archive
+      (my-org-insert-todo-heading 0)
+    ;; Put the todo after this last headline
+    (my-org-insert-todo-heading-respect-content)))
+
 ;; The following is useful for marking a bunch of things soon in quick succession: do this
 ;; once then do the key binding to repeat the last command as often as wanted
 (defun my-org-soon-and-forward ()
