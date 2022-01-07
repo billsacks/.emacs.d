@@ -193,6 +193,21 @@
   (my-org-highlight-delineated-text "~"))
 (define-key org-mode-map (kbd "C-c I") 'my-org-highlight-inline-code)
 
+;; like org-forward-heading-same-level but returns t if it moved, nil if not
+(defun my-org-forward-heading-same-level ()
+  (let ((pos (point)))
+    (org-forward-heading-same-level 1)
+    (if (eq pos (point))
+        nil
+      t)))
+;; like org-backward-heading-same-level but returns t if it moved, nil if not
+(defun my-org-backward-heading-same-level ()
+  (let ((pos (point)))
+    (org-backward-heading-same-level 1)
+    (if (eq pos (point))
+        nil
+      t)))
+
 ;; allow navigation to next / previous todos
 (defun my-org-next-visible-todo ()
   (interactive)
