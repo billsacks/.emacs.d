@@ -250,6 +250,11 @@ If not, return to the original position."
 (define-key org-mode-map (kbd "C-c C-S-f") 'my-org-forward-todo-same-level)
 (define-key org-mode-map (kbd "C-c C-S-b") 'my-org-backward-todo-same-level)
 
+(defun my-org-goto-last-heading-in-subtree ()
+  (let ((moved (my-org-forward-heading-same-level)))
+    (while moved
+      (setq moved (my-org-forward-heading-same-level)))))
+
 ;; Use modified arrow keys for some common navigation
 (define-key org-mode-map (kbd "C-M-<up>") 'org-previous-visible-heading)
 (define-key org-mode-map (kbd "C-M-<down>") 'org-next-visible-heading)
