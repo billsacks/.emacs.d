@@ -151,17 +151,7 @@
 ;; single window on the frame. I could probably figure out other solutions to those
 ;; specific problems, but in general, I don't want emacs splitting my window left-right
 ;; for me: I want to be in control of that.
-;; (setq split-width-threshold nil)
-;;
-;; Actually, I'm going to go for something more extreme: preventing emacs from popping up
-;; any new windows. Rationale: I'm finding that the above still has the problem of
-;; splitting the window top-bottom when I don't already have a left-right split, and I
-;; don't like that. (This typically arises when I am using a single-window frame that
-;; spans just half of my monitor.) This still splits the window in some circumstances (the
-;; one I have found is where I have a grep buffer open in the single window on the frame,
-;; then go to one of the grep results: my window is still split in this situation), but
-;; it's better.
-(setq pop-up-windows nil)
+(setq split-width-threshold nil)
 
 ;; I came across these settings while looking up information on how to improve performance
 ;; with long lines in emacs, wondering if long lines in visual-line-mode was contributing
