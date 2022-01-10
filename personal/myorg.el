@@ -36,7 +36,7 @@
                           (sequence "PR-0(0)" "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|")
                           ;; this is kind of like a project, but is to just collect misc
                           ;; tasks; it is never expected that this will be marked as done
-                          (sequence "PR-~(~)" "|")))
+                          (sequence "PR--(-)" "|")))
 
 (setq org-todo-keyword-faces
       '(("TODO" . "SteelBlue3")
@@ -58,7 +58,7 @@
         ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "#d1eaff"))
         ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "#d1eaff"))
         ("PR-0" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))
-        ("PR-~" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))))
+        ("PR--" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))))
 
 ;; It seems that customizing the face for an org-tag like this loses the feature that a
 ;; tag is colored according to its heading level - so these tags end up with the color of
@@ -113,13 +113,13 @@
          ((agenda "" nil)
           (todo "PR-0" nil))
          nil)
-        ("~" "PR-~"
+        ("-" "PR--"
          ((agenda "" nil)
-          (todo "PR-~" nil))
+          (todo "PR--" nil))
          nil)
         ("p" "Projects"
          ((agenda "" nil)
-          (todo "PR-1|PR-2|PR-3|PR-4|PR-0|PR-~" nil))
+          (todo "PR-1|PR-2|PR-3|PR-4|PR-0|PR--" nil))
          nil)
 
         ("x" "SOON"
