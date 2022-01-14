@@ -141,8 +141,18 @@
         ("Z" "PROG tree" tags-tree "TODO=\"PROG\"" nil)
 
         ;; this combines PR-1 with the SOON search; mnemonic: "w" = "week"
+        ;;
+        ;; I am also including the inbox here because I often want to deal with things in
+        ;; the inbox when viewing this week's todos
         ("w" "PR-1 & SOON"
          ((agenda "" nil)
+          ;; To show things in the inbox, I have added an "inbox" tag to the top-level
+          ;; heading (there may be some other way to accomplish this, but adding this tag
+          ;; seemed easiest). This tags-todo search will include any projects added to the
+          ;; inbox in addition to any tasks under my "inbox misc" PR-- heading. For some
+          ;; reason that I can't figure out, it doesn't list the "inbox misc" PR-- heading
+          ;; itself, but that turns out to be the behavior I want anyway.
+          (tags-todo "inbox" nil)
           (todo "SOON|NEXT|PROG" nil)
           (todo "PR-1" nil))
          nil)
