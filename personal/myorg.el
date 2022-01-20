@@ -173,6 +173,15 @@
 (global-set-key [remap org-set-tags-command] #'counsel-org-tag)
 (define-key deft-mode-map (kbd "<C-backspace>") 'deft-filter-decrement-word)
 
+;; compensate for my muscle memory of using backticks for inline code (from
+;; https://lists.gnu.org/archive/html/emacs-orgmode/2021-03/msg00499.html) (if I want a
+;; backtick, I can get it with C-q)
+;;
+;; see also
+;; https://archive.casouri.cat/note/2020/better-looking-verbatim-markup-in-org-mode/index.html
+;; for if I wanted this to actually appear as a backtick
+(define-key org-mode-map (kbd "`") (kbd "~"))
+
 (define-key org-mode-map (kbd "C-c k") 'org-cut-special)
 (define-key org-mode-map (kbd "C-c w") 'org-copy-special)
 (define-key org-mode-map (kbd "C-c y") 'org-paste-special)
@@ -204,11 +213,11 @@
 ;; Use C-c i similarly to how I use various I keybindings for highlighting (these are
 ;; bound to H by default, but I use H for scrolling, so I have rebound H bindings to I
 ;; instead)
-(define-key org-mode-map (kbd "C-c i") 'my-org-highlight-verbatim)
+(define-key org-mode-map (kbd "C-c I") 'my-org-highlight-verbatim)
 (defun my-org-highlight-inline-code ()
   (interactive)
   (my-org-highlight-delineated-text "~"))
-(define-key org-mode-map (kbd "C-c I") 'my-org-highlight-inline-code)
+(define-key org-mode-map (kbd "C-c i") 'my-org-highlight-inline-code)
 
 ;; like org-forward-heading-same-level but returns t if it moved, nil if not
 (defun my-org-forward-heading-same-level ()
