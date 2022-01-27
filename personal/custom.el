@@ -98,6 +98,8 @@
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position 'at-point)
  '(mac-option-modifier 'alt)
+ '(mac-pass-command-to-system nil)
+ '(mac-pass-control-to-system nil)
  '(magit-diff-refine-hunk 'all)
  '(magit-ediff-dwim-show-on-hunks t)
  '(magit-git-executable "/usr/local/bin/git")
