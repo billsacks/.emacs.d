@@ -97,6 +97,7 @@
  '(lsp-signature-auto-activate '(:on-server-request))
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position 'at-point)
+ '(mac-option-modifier 'alt)
  '(magit-diff-refine-hunk 'all)
  '(magit-ediff-dwim-show-on-hunks t)
  '(magit-git-executable "/usr/local/bin/git")
