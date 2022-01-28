@@ -25,7 +25,36 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
+;; With the railwaycat / Yamamoto emacs on Mac OS 12 (Monterey), the following prevents
+;; further resizing of the frame via the mouse or Divvy:
+;; (add-to-list 'default-frame-alist '(fullscreen . maximized))
+;;
+;; So instead I hoped to use this slightly kludgey function; but it doesn't seem to work:
+;; it seems like toggle-frame-maximized doesn't actually lead to the frame being maximized
+;; at the point where we're trying to get frame-text-width and frame-text-height (or maybe
+;; there is some other bug):
+;; (defun my-maximize-frame (theframe)
+;;   (interactive)
+;;   ;; Start by making the frame maximized and getting its size
+;;   (toggle-frame-maximized theframe)
+;;   (let ((mywidth (frame-text-width theframe))
+;;         (myheight (frame-text-height theframe)))
+;;     ;; But then de-maximize it in order to allow it to be resized with the mouse or
+;;     ;; similar means, including Divvy. (With the railwaycat / Yamamoto emacs, it doesn't
+;;     ;; work to resize a frame that has been set to maximized.) Then manually set its
+;;     ;; position and size according to the maximized values that we obtained.
+;;     ;;
+;;     ;; The end result is a frame whose size is the same as a maximized frame, but without
+;;     ;; the maximized property.
+;;     (toggle-frame-maximized theframe)
+;;     (set-frame-position theframe 0 0)
+;;     (set-frame-size theframe mywidth myheight t)
+;;     ))
+;; (add-hook 'after-make-frame-functions #'my-maximize-frame)
+;;
+;; So instead I'm just using these hard-coded values:
+;; (see https://emacs.stackexchange.com/questions/2269/how-do-i-get-my-initial-frame-to-be-the-desired-size for some ideas on how to make this depend on screen resolution)
+(setq default-frame-alist '((left . 0) (top . 0) (width . (text-pixels . 1889)) (height . (text-pixels . 1027))))
 
 ;; Add imenu to menu bar whenever font-lock-mode is enabled
 ;; Note that font lock mode is enabled for any major mode,
