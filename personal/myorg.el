@@ -33,7 +33,15 @@
                           ;;   control of the timeline or priority, but need to just
                           ;;   respond whenever I'm needed (these can shift to some other
                           ;;   priority when it comes time for me to deal with them)
-                          (sequence "PR-0(0)" "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|")
+                          ;; - PR-D is for done projects (so that I can separately search
+                          ;;   for done projects, separate from done tasks) (I'm using a
+                          ;;   key of '.' because a period signifies the end of something,
+                          ;;   and this keeps with a rule that PR states are marked with
+                          ;;   numbers and symbols)
+                          ;; - PR-C is for canceled projects (with a key of ',', similar
+                          ;;   to the '.' for PR-D)
+                          (sequence "PR-0(0)" "PR-4(4)" "PR-3(3)" "PR-2(2)" "PR-1(1)" "|" "PR-D(.)")
+                          (sequence "|" "PR-C(,)")
                           ;; this is kind of like a project, but is to just collect misc
                           ;; tasks; it is never expected that this will be marked as done
                           (sequence "PR--(-)" "|")))
@@ -58,7 +66,9 @@
         ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "#d1eaff"))
         ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "#d1eaff"))
         ("PR-0" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))
-        ("PR--" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))))
+        ("PR--" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))
+        ("PR-D" . (:inherit org-done :foreground "RosyBrown" :background "#d1eaff"))
+        ("PR-C" . (:inherit org-done :foreground "RosyBrown" :strike-through t :background "#d1eaff"))))
 
 ;; It seems that customizing the face for an org-tag like this loses the feature that a
 ;; tag is colored according to its heading level - so these tags end up with the color of
