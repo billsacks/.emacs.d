@@ -97,7 +97,6 @@
  '(lsp-signature-auto-activate '(:on-server-request))
  '(lsp-ui-doc-enable nil)
  '(lsp-ui-doc-position 'at-point)
- '(mac-option-modifier 'alt)
  '(mac-pass-command-to-system nil)
  '(mac-pass-control-to-system nil)
  '(magit-diff-refine-hunk 'all)
