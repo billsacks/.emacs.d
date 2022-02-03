@@ -436,5 +436,7 @@
  '(tab-line-tab-current ((t (:inherit tab-line-tab :background "wheat"))))
  '(variable-pitch ((t (:height 1.25 :family "Charter"))))
  '(vdiff-change-face ((t (:inherit diff-changed :background "#e8e8ff"))))
+ '(wgrep-face ((t (:background "PaleGreen1"))))
+ '(wgrep-file-face ((t (:background "PaleGreen1"))))
  '(whitespace-empty ((t (:background "LightYellow" :foreground "firebrick"))))
  '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold)))))
