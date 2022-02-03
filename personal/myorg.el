@@ -54,9 +54,9 @@
         ("MBCN" . (:inherit org-todo :foreground "LightSteelBlue3" :strike-through t))
         ("MAYB" . "LightSteelBlue3") ("COND" . "LightSteelBlue3")
         ("HOLD" . "purple") ("WAIT" . "purple") ("DPND" . "purple")
-        ("DONE" . (:inherit org-done :foreground "RosyBrown"))
-        ("CANC" . (:inherit org-done :foreground "RosyBrown" :strike-through t))
-        ("PCAN" . (:inherit org-done :foreground "RosyBrown" :strike-through t))
+        ("DONE" . (:inherit org-done :foreground "gray40"))
+        ("CANC" . (:inherit org-done :foreground "gray40" :strike-through t))
+        ("PCAN" . (:inherit org-done :foreground "gray40" :strike-through t))
         ;; For the PR-# states: I want a distinct color for PR-1, since that is the stuff
         ;; I should pay attention to this week. For the other three, I am using DarkBlue
         ;; for 2, LightBlue3 for 4, and an intermediate color (from
@@ -67,8 +67,8 @@
         ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "#d1eaff"))
         ("PR-0" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))
         ("PR--" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))
-        ("PR-D" . (:inherit org-done :foreground "RosyBrown" :background "#d1eaff"))
-        ("PR-C" . (:inherit org-done :foreground "RosyBrown" :strike-through t :background "#d1eaff"))))
+        ("PR-D" . (:inherit org-done :foreground "gray40" :background "#d1eaff"))
+        ("PR-C" . (:inherit org-done :foreground "gray40" :strike-through t :background "#d1eaff"))))
 
 ;; It seems that customizing the face for an org-tag like this loses the feature that a
 ;; tag is colored according to its heading level - so these tags end up with the color of
