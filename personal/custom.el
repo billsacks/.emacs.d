@@ -166,6 +166,9 @@
  '(org-export-with-section-numbers nil)
  '(org-export-with-sub-superscripts '{})
  '(org-fontify-quote-and-verse-blocks t)
+ '(org-format-latex-options
+   '(:foreground default :background default :scale 1.4 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+                 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-hide-emphasis-markers t)
  '(org-hierarchical-todo-statistics nil)
  '(org-id-locations-file "~/org/.org-id-locations")
