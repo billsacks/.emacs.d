@@ -35,9 +35,29 @@
 ;; Note (2021-11-16) This seems to cause typing lag, at least if imenu-auto-rescan is t;
 ;; for now I'm setting imenu-auto-rescan to nil (the default) to avoid this lag, because I
 ;; would like to have this in the menu bar.
-(defun try-to-add-imenu ()
+(defun my-add-imenu ()
+  (interactive)
   (condition-case nil (imenu-add-to-menubar "imenu") (error nil)))
-(add-hook 'font-lock-mode-hook 'try-to-add-imenu)
+;; (add-hook 'font-lock-mode-hook 'my-add-imenu)
+;;
+;; Note (2022-02-16) which-func and imenu cause magit to hang in some situations (the
+;; entire emacs instance hangs, and the fan spins, suggesting that there is an infinite
+;; loop trying to do something). I specifically notice this when trying to view a
+;; particular commit (via magit-show-commit, or hitting return on a line when viewing a
+;; git blame) - for example commit 90741806a in CTSM. To work around this until this is
+;; fixed in magit, I am (1) commenting out the above add-hook, (2) making my-add-imenu
+;; interactive so I can still get it when I want it, and (3) explicitly listing modes for
+;; which I want which-func enabled, rather than letting it be enabled in all modes. This
+;; is a pain, but having emacs hang and needing to force quit it is a bigger pain.
+;; (Ideally there would be a way to say: enable which-func for all modes EXCEPT magit, but
+;; I don't see a way to do that.) (Also, ideally, I could call my-add-imenu whenever I'm
+;; in a mode where which-function is enabled, or something like that; but since I don't
+;; care that much about having imenu in the menubar, I haven't tried to figure out how to
+;; do that.) However, maybe I'll decide that it isn't such a bad thing to explicitly list
+;; the modes in which which-function-mode is enabled: maybe it will speed things up in
+;; other modes.
+(require 'which-func)
+(setq which-func-modes '(c-mode c++-mode emacs-lisp-mode f90-mode org-mode perl-mode python-mode))
 
 ;; normally this would take three applications of C-l
 (defun my-recenter-to-bottom()
