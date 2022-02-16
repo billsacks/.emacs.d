@@ -57,7 +57,7 @@
 ;; the modes in which which-function-mode is enabled: maybe it will speed things up in
 ;; other modes.
 (require 'which-func)
-(setq which-func-modes '(c-mode c++-mode emacs-lisp-mode f90-mode org-mode perl-mode python-mode))
+(setq which-func-modes '(c-mode c++-mode emacs-lisp-mode f90-mode perl-mode python-mode))
 
 ;; normally this would take three applications of C-l
 (defun my-recenter-to-bottom()
