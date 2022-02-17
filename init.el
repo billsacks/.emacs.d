@@ -93,11 +93,7 @@ by Prelude.")
 
 ;; reduce the frequency of garbage collection by making it happen on
 ;; each 50MB of allocated data (the default is on every 0.76MB)
-;;
-;; WJS: reducing this to 32MB in hopes that it will reduce the pauses I sometimes
-;; experience while typing. (This is the value recommended by
-;; https://github.com/hlissner/doom-emacs/issues/3108).
-(setq gc-cons-threshold 33554432)
+(setq gc-cons-threshold 50000000)
 
 ;; warn when opening files bigger than 100MB
 (setq large-file-warning-threshold 100000000)
