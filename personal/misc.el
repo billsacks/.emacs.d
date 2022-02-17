@@ -183,6 +183,21 @@
 ;; https://emacs.stackexchange.com/questions/598/how-do-i-prevent-extremely-long-lines-making-emacs-slow)
 (setq-default bidi-paragraph-direction 'left-to-right)
 (setq bidi-inhibit-bpa t)
+;; and from Doom Emacs:
+(setq-default bidi-display-reordering 'left-to-right)
+
+;; From Doom Emacs
+;;
+;; Rationale from Doom Emacs is:
+;;
+;; Resizing the Emacs frame can be a terribly expensive part of changing the
+;; font. By inhibiting this, we halve startup times, particularly when we use
+;; fonts that are larger than the system default (which would resize the frame).
+;;
+;; But I wonder if this will be better in general for some other reasons, too
+(setq frame-inhibit-implied-resize t)
+
+;;
 
 ;; Fix for A-m sometimes making a Greek mu rather than A-m (from
 ;; https://emacs.stackexchange.com/questions/17508/how-can-i-prevent-override-key-translation-behavior-such-as-%C2%B5-translated-from),
