@@ -197,11 +197,6 @@
 ;; But I wonder if this will be better in general for some other reasons, too
 (setq frame-inhibit-implied-resize t)
 
-;; Using desktop-save-mode, we end up with too-small fixed-pitch face in org mode for org
-;; buffers that were open when the session was saved and now restored. I think the problem
-;; is that org-variable-pitch-mode ends up applying the relative height scaling twice.
-(add-to-list 'desktop-minor-mode-table '(org-variable-pitch-minor-mode nil))
-
 ;;
 
 ;; Fix for A-m sometimes making a Greek mu rather than A-m (from
