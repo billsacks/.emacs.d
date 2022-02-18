@@ -68,7 +68,6 @@
     epl
     expand-region
     flycheck
-    gist
     git-timemachine
     git-modes
     guru-mode

@@ -48,7 +48,6 @@
         (flycheck . "melpa-stable")
         (flycheck-ocaml . "melpa-stable")
         (geiser . "melpa-stable")
-        (gh . "melpa-stable")
         (gist . "melpa-stable")
         (git-commit . "melpa-stable")
         (git-timemachine . "melpa-stable")
