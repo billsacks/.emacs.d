@@ -139,6 +139,7 @@
  '(mouse-drag-copy-region t)
  '(mouse-wheel-progressive-speed nil)
  '(mouse-wheel-scroll-amount '(1 ((shift) . 1) ((meta)) ((control) . text-scale)))
+ '(native-comp-async-report-warnings-errors 'silent)
  '(next-screen-context-lines 3)
  '(ns-alternate-modifier 'alt)
  '(ns-command-modifier 'meta)

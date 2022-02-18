@@ -29,3 +29,4 @@ transient/history.el
 var/
 .cache/
 .lsp-session*
+/eln-cache/

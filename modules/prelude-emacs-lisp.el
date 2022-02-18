@@ -30,6 +30,7 @@
 
 ;;; Code:
 
+(require 'prelude-packages)
 (require 'prelude-lisp)
 (require 'crux)
 
