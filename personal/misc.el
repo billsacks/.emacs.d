@@ -56,6 +56,12 @@
 ;; do that.) However, maybe I'll decide that it isn't such a bad thing to explicitly list
 ;; the modes in which which-function-mode is enabled: maybe it will speed things up in
 ;; other modes.
+;;
+;; (2022-02-22) This should be fixed by
+;; https://github.com/magit/magit/commit/e479739688a501b1ff9a964484fd80a0c1b8ba52 (which
+;; fixed my issue: https://github.com/magit/magit/issues/4602). However, I'm leaving this
+;; change in place, because explicitly listing which-func-modes seems more helpful than
+;; harmful anyway.
 (require 'which-func)
 (setq which-func-modes '(c-mode c++-mode emacs-lisp-mode f90-mode perl-mode python-mode))
 
