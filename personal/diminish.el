@@ -9,6 +9,7 @@
 (diminish 'buffer-face-mode)
 (diminish 'projectile-mode)
 (diminish 'lsp-mode)
+(diminish 'gcmh-mode)
 
 ;; this one needs to be diminished after being loaded
 (add-hook 'ws-butler-mode-hook (lambda () (diminish 'ws-butler-mode)))

@@ -6,3 +6,6 @@
 ;; this needs to be set before the (require 'tramp) done in prelude
 (add-to-list 'password-word-equivalents "Token_Response")
 (add-to-list 'password-word-equivalents "TokenResponse")
+
+;; Doing this early allows startup time to benefit from it
+(gcmh-mode 1)
