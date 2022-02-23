@@ -255,9 +255,17 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "A-f") 'my-forward-to-whitespace)
 (global-set-key (kbd "A-b") 'my-backward-to-whitespace)
 
-;; helpful when a line is wrapped
+;; helpful when a line is wrapped, and in visual-line-mode
 (global-set-key (kbd "<A-M-down>") 'next-logical-line)
 (global-set-key (kbd "<A-M-up>") 'previous-logical-line)
+;; the following are meant for when we're in visual-line-mode, as a way to force these
+;; commands to work on logical lines (since C-a and C-e are rebound in visual-line-mode)
+;; (normally C-a and C-e send move-beginning-of-line and move-end-of-line; these commands
+;; are slightly different, but I'm using these versions because it appears that
+;; visual-line-mode rebinds anything that is bound to move-beginning-of-line and
+;; move-end-of-line):
+(global-set-key (kbd "A-M-a") 'beginning-of-line)
+(global-set-key (kbd "A-M-e") 'end-of-line)
 
 ;; I am moving some key bindings so that I can (1) (the primary motivation) maintain the
 ;; use of Cmd-v for pasting (I am especially inspired to do this so that I can continue to
