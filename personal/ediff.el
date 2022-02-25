@@ -20,23 +20,6 @@
 (defun add-upperd-to-ediff-mode-map () (define-key ediff-mode-map (kbd "C-c D") 'ediff-copy-B-and-A-to-C))
 (add-hook 'ediff-keymap-setup-hook 'add-upperd-to-ediff-mode-map)
 
-;; This can be useful to give simplified diffs when there are whitespace changes I want to
-;; ignore. However, I want the default to be showing whitespace changes in diffs. So I
-;; will have a separate key binding to explicitly open a magit-ediff session using this
-;; function to ignore whitespace differences in diffs. I believe this is set up properly
-;; so that subsequent invocations of ediff (without this function) will go back to
-;; including whitespace differences, though there may be some edge cases where this
-;; doesn't work right.
-;;
-;; Note that there is also a variable ediff-actual-diff3-options, but I don't currently
-;; set that; I can add a setting of that if I find it's needed in some cases.
-(defun my-magit-ediff-no-whitespace ()
-  "Invoke magit-ediff-dwim, but ignoring whitespace"
-  (interactive)
-  (let ((ediff-diff-options (concat ediff-diff-options " -w"))
-        (ediff-actual-diff-options (concat ediff-actual-diff-options " -w")))
-    (magit-ediff-dwim)))
-
 ;; similar to the above, but for comparing regions within ediff
 (defun my-ediff-compare-regions-no-whitespace ()
   "Invoke ediff-inferior-compare-regions, but ignoring whitespace"
