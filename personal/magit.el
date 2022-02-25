@@ -51,6 +51,7 @@
   (let ((ediff-diff-options (concat ediff-diff-options " -w"))
         (ediff-actual-diff-options (concat ediff-actual-diff-options " -w")))
     (magit-ediff-dwim)))
+(define-key magit-mode-map (kbd "C-c e") #'my-magit-ediff-no-whitespace)
 
 ;; Add some options to the transient commands
 (with-eval-after-load 'magit
