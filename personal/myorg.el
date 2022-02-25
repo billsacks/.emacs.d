@@ -168,13 +168,23 @@
          nil)
         ))
 
+(defun my-osa-outline-path-length (outline-path)
+  ;; Return the number of elements of the outline path to display for org-super-agenda ("osa")
+  ;;
+  ;; If the second element of the path is "Archive" then we display an extra element in
+  ;; order to display the project within the Archive.
+  (if (equal (nth 1 outline-path) "Archive")
+      3
+    2)
+  )
+
 ;; the following is modified from the built-in outline-path: the first line is the same,
 ;; but I have replaced the s-join expression with one that only uses the first 2 levels,
 ;; and am using a different separator for the 2 elements of the path (" | ")
 (org-super-agenda--def-auto-group outline-path-2 "their outline paths, first 2 levels"
   :key-form (org-super-agenda--when-with-marker-buffer (org-super-agenda--get-marker item)
               (let ((outline-path (org-get-outline-path)))
-                (s-join " | " (butlast outline-path (- (length outline-path) 2))))
+                (s-join " | " (butlast outline-path (- (length outline-path) (my-osa-outline-path-length outline-path)))))
               ))
 
 (setq org-super-agenda-groups
