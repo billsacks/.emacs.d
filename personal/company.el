@@ -7,7 +7,15 @@
 ;;
 ;; (2021-03-08) Now that I am no longer using a delay after all, I could consider making
 ;; this harder to press, instead making my-company-complete-with-dabbrev easier.
-(global-set-key (kbd "M-SPC") 'company-complete)
+;;
+;; (2022-03-01) Switching to company-manual-begin instead of company-complete because the
+;; latter meant that some hard-to-predict amount of text would get filled in, which I
+;; think may slow me down rather than speeding me up. Another nice advantage of using
+;; company-manual-begin is that I can use it to confirm that something I just typed is a
+;; valid symbol: with company-manual-begin, if it's valid, I'll see a clear indication of
+;; that; with company-complete, nothing happens if point is at the end of a complete
+;; symbol.
+(global-set-key (kbd "M-SPC") 'company-manual-begin)
 
 ;; When LSP is enabled, completion is done via the language server. This is often nice,
 ;; but sometimes I just want to be able to do dumb completion using available symbols. So
@@ -24,7 +32,7 @@
   ;; azure), to make it more visually obvious that I am doing something different, but I
   ;; can't see an easy way to accomplish that: it sounds like you can't let-bind a face.
   (let ((company-backends '(company-dabbrev-code company-dabbrev)))
-    (company-complete))
+    (company-manual-begin))
   )
 (global-set-key (kbd "A-M-SPC") 'my-company-complete-with-dabbrev)
 
