@@ -58,7 +58,7 @@
  '(fortran-structure-indent 2)
  '(frame-resize-pixelwise t)
  '(gcmh-auto-idle-delay-factor 10)
- '(gcmh-high-cons-threshold 134217728)
+ '(gcmh-high-cons-threshold 268435456)
  '(gcmh-idle-delay 'auto)
  '(global-tab-line-mode t)
  '(gnutls-algorithm-priority "normal:-vers-tls1.3")
