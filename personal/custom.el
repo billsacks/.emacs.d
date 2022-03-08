@@ -410,7 +410,7 @@
  '(org-todo ((t (:foreground "Red1" :underline "gray75" :weight bold))))
  '(org-variable-pitch-fixed-face ((t (:height 0.8 :family "Hack"))))
  '(org-verbatim ((t (:inherit font-lock-constant-face))))
- '(outline-1 ((t (:foreground "#6b1261"))))
+ '(outline-1 ((t (:foreground "#6a0e7c"))))
  '(outline-2 ((t (:foreground "#005000"))))
  '(outline-3 ((t (:foreground "blue4"))))
  '(outline-4 ((t (:foreground "firebrick4"))))
