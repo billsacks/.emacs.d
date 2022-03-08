@@ -411,7 +411,7 @@
  '(org-variable-pitch-fixed-face ((t (:height 0.8 :family "Hack"))))
  '(org-verbatim ((t (:inherit font-lock-constant-face))))
  '(outline-1 ((t (:foreground "purple4"))))
- '(outline-2 ((t (:foreground "sienna4"))))
+ '(outline-2 ((t (:foreground "#005000"))))
  '(outline-3 ((t (:foreground "blue4"))))
  '(outline-4 ((t (:foreground "firebrick4"))))
  '(outline-5 ((t (:inherit outline-1))))
