@@ -65,8 +65,8 @@
         ("PR-2" . (:inherit org-todo :foreground "DarkBlue" :background "#d1eaff"))
         ("PR-3" . (:inherit org-todo :foreground "#4D60AC" :background "#d1eaff"))
         ("PR-4" . (:inherit org-todo :foreground "LightBlue3" :background "#d1eaff"))
-        ("PR-0" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))
-        ("PR--" . (:inherit org-todo :foreground "gray50" :background "#d1eaff"))
+        ("PR-0" . (:inherit org-todo :foreground "gray25" :background "#d1eaff"))
+        ("PR--" . (:inherit org-todo :foreground "gray25" :background "#d1eaff"))
         ("PR-D" . (:inherit org-done :foreground "gray40" :background "#d1eaff"))
         ("PR-C" . (:inherit org-done :foreground "gray40" :strike-through t :background "#d1eaff"))))
 
