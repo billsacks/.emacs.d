@@ -407,11 +407,16 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "s-w e") 'balance-windows)
 ;; mnemonic for the following: wider
 (global-set-key (kbd "s-w w") 'enlarge-window-50)
-(global-set-key (kbd "s-w <left>") 'winner-undo)
-(global-set-key (kbd "s-w <right>") 'winner-redo)
+;; winner-undo and redo mirror standard C-/ and C-? for undo/redo
+(global-set-key (kbd "s-w /") 'winner-undo)
+(global-set-key (kbd "s-w ?") 'winner-redo)
 (global-set-key (kbd "s-w -") 'text-scale-decrease)
 (global-set-key (kbd "s-w +") 'text-scale-increase)
 (global-set-key (kbd "s-w z") 'text-scale-adjust)
+;; like Divvy, but with the added bonus of creating or removing window splits
+(global-set-key (kbd "s-w <left>") 'my-make-frame-half-left)
+(global-set-key (kbd "s-w <right>") 'my-make-frame-half-right)
+(global-set-key (kbd "s-w SPC") 'my-make-frame-full-and-split)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
