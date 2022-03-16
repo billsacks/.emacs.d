@@ -17,6 +17,13 @@
   (set-frame-width (selected-frame) (my-frame-full-width) nil t)
   (split-window-right))
 
+(defun my-make-frame-full-and-transpose ()
+  "Make the current frame full-width then transpose-frame"
+  (interactive)
+  (set-frame-position (selected-frame) 0 0)
+  (set-frame-width (selected-frame) (my-frame-full-width) nil t)
+  (transpose-frame))
+
 (defun my-make-frame-half-left ()
   "Make the current frame half-width on the left, with a single window"
   (interactive)

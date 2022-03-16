@@ -417,6 +417,9 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "s-w <left>") 'my-make-frame-half-left)
 (global-set-key (kbd "s-w <right>") 'my-make-frame-half-right)
 (global-set-key (kbd "s-w SPC") 'my-make-frame-full-and-split)
+;; transposing frame
+(global-set-key (kbd "s-w t") 'transpose-frame)
+(global-set-key (kbd "s-w T") 'my-make-frame-full-and-transpose)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
