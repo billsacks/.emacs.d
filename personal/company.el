@@ -66,6 +66,9 @@
   ;; already there.
   (define-key company-active-map (kbd "M-SPC") 'company-complete-selection)
   (define-key company-active-map (kbd "A-M-SPC") 'company-complete-selection)
+  ;; Also allow Tab for company-complete-selection. This can be more ergonomic so that I'm
+  ;; not encouraged to hold down M or A-M for a second, which can tire my thumb.
+  (define-key company-active-map (kbd "TAB") 'company-complete-selection)
   (define-key company-active-map (kbd "A-SPC") 'company-complete-common)
 
   ;; Also allow A-M-# for completing a given candidate - as above, because I often have my
