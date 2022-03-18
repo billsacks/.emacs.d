@@ -1,14 +1,22 @@
+(defun my-this-display-pixel-width ()
+  "Get the width in pixels of the current monitor
+
+This is like display-pixel-width, but when using dual displays just includes the current monitor
+
+Credit: https://emacs.stackexchange.com/questions/60707/how-to-get-the-display-dimensions-of-the-display-emacs-is-in"
+  (nth 3 (assq 'geometry (frame-monitor-attributes))))
+
 (defun my-frame-non-text-width ()
   "Get the width of the non-text portion of a frame"
   (- (frame-outer-width) (frame-text-width)))
 
 (defun my-frame-full-width ()
   "Get the text area width of a frame that takes up the entire screen"
-  (- (display-pixel-width) (my-frame-non-text-width)))
+  (- (my-this-display-pixel-width) (my-frame-non-text-width)))
 
 (defun my-frame-half-width ()
   "Get the text area width of a frame that takes up half the screen"
-  (- (/ (display-pixel-width) 2) (my-frame-non-text-width)))
+  (- (/ (my-this-display-pixel-width) 2) (my-frame-non-text-width)))
 
 (defun my-make-frame-full-and-split ()
   "Make the current frame full-width and split left-right"
@@ -34,6 +42,6 @@
 (defun my-make-frame-half-right ()
   "Make the current frame half-width on the right, with a single window"
   (interactive)
-  (set-frame-position (selected-frame) (/ (display-pixel-width) 2) 0)
+  (set-frame-position (selected-frame) (/ (my-this-display-pixel-width) 2) 0)
   (delete-other-windows)
   (set-frame-width (selected-frame) (my-frame-half-width) nil t))
