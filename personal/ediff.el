@@ -29,3 +29,10 @@
     (ediff-inferior-compare-regions)))
 (defun my-add-equals-to-ediff-mode-map () (define-key ediff-mode-map (kbd "C-c =") 'my-ediff-compare-regions-no-whitespace))
 (add-hook 'ediff-keymap-setup-hook 'my-add-equals-to-ediff-mode-map)
+
+(defun my-ediff-buffers-no-whitespace()
+  "Invoke ediff-buffers, but ignoring whitespace"
+  (interactive)
+  (let ((ediff-diff-options (concat ediff-diff-options " -w"))
+        (ediff-actual-diff-options (concat ediff-actual-diff-options " -w")))
+    (call-interactively 'ediff-buffers)))
