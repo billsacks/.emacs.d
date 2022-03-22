@@ -310,7 +310,7 @@
  '(vc-git-grep-template
    "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
  '(vdiff-auto-refine t)
- '(vdiff-subtraction-style 'single)
+ '(vdiff-subtraction-style 'full)
  '(visual-fill-column-fringes-outside-margins nil)
  '(whitespace-style '(face trailing tabs empty))
  '(yas-also-auto-indent-first-line t))
