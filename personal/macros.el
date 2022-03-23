@@ -130,9 +130,37 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
   (interactive)
   (scroll-lock-previous-line 3))
 
+(defun my-vdiff-scroll-up-command (arg)
+  "Version of scroll-up-command for use in vdiff-mode
+
+This generally works the same as scroll-up-command, but if we
+can't scroll the current window, then we switch to the other
+window before scrolling up.
+
+This is needed in vdiff mode when the top of a buffer contains
+virtual removed lines: trying to scroll that buffer by small
+amounts doesn't work.
+
+Note that this can lead to the other window becoming active."
+  (let ((orig-window-start (window-start)))
+    (scroll-up-command arg)
+    (when (eq (window-start) orig-window-start)
+      ;; the scroll was unsuccessful; switch to the other window and try scrolling there
+
+      ;; this assumes that (other-window 1) gives the other window associated with
+      ;; this vdiff session
+      (other-window 1)
+      (scroll-up-command arg))))
+(defun my-maybe-vdiff-scroll-up-command (arg)
+  "Generally works the same as scroll-up-command, but in vdiff mode
+this might switch to the other buffer before scrolling up."
+  (if (bound-and-true-p vdiff-mode)
+      (my-vdiff-scroll-up-command arg)
+    (scroll-up-command arg)))
+
 (defun scroll-up-by-3 ()
   (interactive)
-  (scroll-up-command 3))
+  (my-maybe-vdiff-scroll-up-command 3))
 (put 'scroll-up-by-3 'isearch-scroll t)
 
 (defun scroll-down-by-3 ()
@@ -142,7 +170,7 @@ The same result can also be be achieved by \\[universal-argument] \\[unhighlight
 
 (defun scroll-up-by-10 ()
   (interactive)
-  (scroll-up-command 10))
+  (my-maybe-vdiff-scroll-up-command 10))
 (put 'scroll-up-by-10 'isearch-scroll t)
 
 (defun scroll-down-by-10 ()

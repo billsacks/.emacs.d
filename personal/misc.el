@@ -169,6 +169,20 @@
 
 (require 'vdiff)
 (define-key vdiff-mode-map (kbd "C-c") vdiff-mode-prefix-map)
+(require 'mwheel)
+;; In vdiff-mode, the synchronized scrolling doesn't work if you try to scroll the
+;; non-currently-active window (see also
+;; https://github.com/justbur/emacs-vdiff/issues/29). So force mouse-based scrolling to
+;; always scroll the active window in vdiff-mode. (I thought we would be able to do this
+;; by setting mouse-wheel-follow-mouse, but that doesn't seem to have any effect - maybe a
+;; bug?)
+(defun my-vdiff-mouse-wheel--get-scroll-window (orig-fun &rest args)
+  (if (bound-and-true-p vdiff-mode)
+      (selected-window)
+    (apply orig-fun args)))
+(advice-add 'mouse-wheel--get-scroll-window :around #'my-vdiff-mouse-wheel--get-scroll-window)
+;; And also switch the cursor back and forth to whichever window is actually scrollable:
+(setq mwheel-scroll-up-function 'my-maybe-vdiff-scroll-up-command)
 
 ;; This is useful when I have grep results (or similar) displayed in a window that is
 ;; taking up much of the screen: it prevents the grep results from being split left-right.
