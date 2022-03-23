@@ -310,6 +310,16 @@
  '(vc-git-grep-template
    "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
  '(vdiff-auto-refine t)
+ '(vdiff-diff-algorithm 'custom)
+ '(vdiff-diff-algorithms
+   '((diff . "diff -u")
+     (diff-minimal . "diff -u --minimal")
+     (git-diff . "git --no-pager diff --no-index --no-color")
+     (git-diff-myers . "git --no-pager diff --myers --no-index --no-color")
+     (git-diff-minimal . "git --no-pager diff --minimal --no-index --no-color")
+     (git-diff-patience . "git --no-pager diff --patience --no-index --no-color")
+     (git-diff-histogram . "git --no-pager diff --histogram --no-index --no-color")
+     (custom . "diff -u -w")))
  '(vdiff-subtraction-style 'full)
  '(visual-fill-column-fringes-outside-margins nil)
  '(whitespace-style '(face trailing tabs empty))
