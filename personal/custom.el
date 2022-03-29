@@ -267,7 +267,7 @@
  '(org-variable-pitch-fixed-faces
    '(org-block org-code org-document-info-keyword org-done org-formula org-indent org-meta-line org-special-keyword org-table org-todo org-verbatim org-date org-drawer))
  '(package-selected-packages
-   '(gcmh debbugs lsp-ivy transpose-frame blacken vdiff ox-rst org-sidebar org-variable-pitch org-appear edit-server flycheck-color-mode-line smart-mode-line lsp-pyright realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
+   '(yafolding gcmh debbugs lsp-ivy transpose-frame blacken vdiff ox-rst org-sidebar org-variable-pitch org-appear edit-server flycheck-color-mode-line smart-mode-line lsp-pyright realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
  '(prelude-guru nil)
  '(prelude-whitespace nil)
@@ -323,6 +323,7 @@
  '(vdiff-subtraction-style 'full)
  '(visual-fill-column-fringes-outside-margins nil)
  '(whitespace-style '(face trailing tabs empty))
+ '(yafolding-ellipsis-content "..▼")
  '(yas-also-auto-indent-first-line t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -454,4 +455,5 @@
  '(wgrep-face ((t (:background "PaleGreen1"))))
  '(wgrep-file-face ((t (:background "PaleGreen1"))))
  '(whitespace-empty ((t (:background "LightYellow" :foreground "firebrick"))))
- '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold)))))
+ '(whitespace-trailing ((t (:background "LightYellow" :foreground "lightgray" :weight bold))))
+ '(yafolding-ellipsis-face ((t (:background "yellow"))) t))

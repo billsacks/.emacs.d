@@ -71,6 +71,7 @@
   (rainbow-delimiters-mode +1)
   (smartparens-mode +1)
   (show-paren-mode +1)
+  (yafolding-mode +1)
   (prelude-enable-whitespace)
   (prelude-local-comment-auto-fill))
 

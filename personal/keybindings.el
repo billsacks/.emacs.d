@@ -420,18 +420,6 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; transposing frame
 (global-set-key (kbd "s-w t") 'transpose-frame)
 (global-set-key (kbd "s-w T") 'my-make-frame-full-and-transpose)
-;; Outline minor mode (and maybe I'll add other hiding / showing things).
-;;
-;; (2022-03-28) Note that I include a keybinding for turning outline-minor-mode on/off. My
-;; plan is to generally keep it off, and just turn it on as needed. That way, I can see
-;; from the mode line if there is a possibility that things are hidden due to
-;; outline-minor-mode (and conversely, if I don't see Outl in the mode line, then I can be
-;; confident that nothing is hidden due to it). (I could put the mode enabling/disabling
-;; with my other mode enabling/disabling keybindings - i.e., on s-x - but I think it's
-;; better to keep it with the other outline-related keybindings.)
-(global-set-key (kbd "s-@ o") 'outline-minor-mode)
-(global-set-key (kbd "s-@ s") 'outline-hide-subtree)
-(global-set-key (kbd "s-@ S") 'outline-show-subtree)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
