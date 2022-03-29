@@ -55,7 +55,17 @@
 (defun prelude-f90-mode-defaults ()
   "Defaults for Fortran programming"
   (auto-fill-mode 1)
-  (flycheck-mode -1))
+  (flycheck-mode -1)
+
+  ;; from https://emacs.stackexchange.com/questions/20900/navigate-by-indentation/20965#20965
+  ;;
+  ;; then we can hide the body of blocks with outline-hide-subtree
+  ;;
+  ;; I may want to change this regex to give a full list of Fortran keywords that can
+  ;; start a block, as is done in python mode (see also
+  ;; https://www.reddit.com/r/emacs/comments/e2u5n9/code_folding_with_outlineminormode/)
+  (setq-local outline-regexp "\\`\\|\\s-+\\S-")
+  (outline-minor-mode 1))
 (setq prelude-f90-mode-hook 'prelude-f90-mode-defaults)
 (add-hook 'f90-mode-hook (lambda ()
                            (run-hooks 'prelude-f90-mode-hook)))
