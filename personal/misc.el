@@ -193,6 +193,14 @@
 ;; for me: I want to be in control of that.
 (setq split-width-threshold nil)
 
+;; Customize the look of ellipses used in outline mode: I want them to stand out a lot
+;; more than they do by default. The motivation is my use of outline-minor-mode in
+;; programming modes: I want to make it obvious when some code is hidden. (Changing the
+;; face might be better, but I can't figure out how to do that.)
+(set-display-table-slot standard-display-table
+                        'selective-display
+                        (string-to-vector ".▼.▼.▼"))
+
 ;; I came across these settings while looking up information on how to improve performance
 ;; with long lines in emacs, wondering if long lines in visual-line-mode was contributing
 ;; to typing lags when editing markdown files. It sounds like these are unlikely to make
