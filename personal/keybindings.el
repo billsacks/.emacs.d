@@ -420,6 +420,9 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; transposing frame
 (global-set-key (kbd "s-w t") 'transpose-frame)
 (global-set-key (kbd "s-w T") 'my-make-frame-full-and-transpose)
+;; outline minor mode (and maybe I'll add other hiding / showing things)
+(global-set-key (kbd "s-@ s") 'outline-hide-subtree)
+(global-set-key (kbd "s-@ S") 'outline-show-subtree)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
