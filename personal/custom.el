@@ -155,6 +155,8 @@
      (todo . " %i %l%l")
      (tags . " %i %l%l")
      (search . " %i %l%l")))
+ '(org-agenda-skip-deadline-if-done t)
+ '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-sticky t)
  '(org-agenda-todo-list-sublevels t)
  '(org-agenda-window-setup 'current-window)
