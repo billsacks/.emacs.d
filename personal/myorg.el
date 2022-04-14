@@ -3,6 +3,7 @@
 (require 'org)
 (require 'deft)
 (require 'org-super-agenda)
+(require 'org-id)
 
 (org-super-agenda-mode +1)
 
