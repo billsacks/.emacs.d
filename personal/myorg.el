@@ -4,8 +4,11 @@
 (require 'deft)
 (require 'org-super-agenda)
 (require 'org-id)
+(require 'org-latex-impatient)
 
 (org-super-agenda-mode +1)
+
+(add-hook 'org-mode-hook #'org-latex-impatient-mode)
 
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()

@@ -177,6 +177,7 @@
                  ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-hide-emphasis-markers t)
  '(org-hierarchical-todo-statistics nil)
+ '(org-highlight-latex-and-related '(native))
  '(org-id-link-to-org-use-id t)
  '(org-id-locations-file "~/org/.org-id-locations")
  '(org-id-locations-file-relative t)
@@ -184,6 +185,7 @@
  '(org-imenu-depth 3)
  '(org-inlinetask-default-state "TODO")
  '(org-inlinetask-show-first-star t)
+ '(org-latex-impatient-tex2svg-bin "~/node_modules/mathjax-node-cli/bin/tex2svg")
  '(org-list-indent-offset 2)
  '(org-preview-latex-default-process 'dvisvgm)
  '(org-refile-targets '((nil :maxlevel . 8)))
@@ -271,7 +273,7 @@
  '(org-variable-pitch-fixed-faces
    '(org-block org-code org-document-info-keyword org-done org-formula org-indent org-meta-line org-special-keyword org-table org-todo org-verbatim org-date org-drawer))
  '(package-selected-packages
-   '(vdiff-magit gcmh debbugs lsp-ivy transpose-frame blacken vdiff ox-rst org-sidebar org-variable-pitch org-appear edit-server flycheck-color-mode-line smart-mode-line lsp-pyright realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
+   '(org-latex-impatient auctex vdiff-magit gcmh debbugs lsp-ivy transpose-frame blacken vdiff ox-rst org-sidebar org-variable-pitch org-appear edit-server flycheck-color-mode-line smart-mode-line lsp-pyright realgud ox-gfm deft lsp-treemacs highlight-indent-guides helm-projectile helm ws-butler use-package browse-at-remote ibuffer-vc adaptive-wrap rg visual-fill-column yasnippet cmake-mode projectile-ripgrep yaml-mode web-mode lsp-ui json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company counsel swiper ivy exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree super-save smartrep smartparens operate-on-number nlinum move-text magit projectile imenu-anywhere hl-todo guru-mode gitignore-mode gitconfig-mode git-timemachine flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major crux browse-kill-ring anzu ag ace-window))
  '(prelude-clean-whitespace-on-save nil)
  '(prelude-guru nil)
  '(prelude-whitespace nil)
