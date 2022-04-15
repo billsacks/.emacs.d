@@ -185,6 +185,7 @@
  '(org-inlinetask-default-state "TODO")
  '(org-inlinetask-show-first-star t)
  '(org-list-indent-offset 2)
+ '(org-preview-latex-default-process 'dvisvgm)
  '(org-refile-targets '((nil :maxlevel . 8)))
  '(org-speed-commands
    '(("Outline Navigation")
