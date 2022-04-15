@@ -8,8 +8,6 @@
 
 (org-super-agenda-mode +1)
 
-(add-hook 'org-mode-hook #'org-latex-impatient-mode)
-
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()
   "Do not search invisible text in this buffer"
@@ -594,6 +592,18 @@ Note: the force-heading piece of this is untested."
     (org-display-inline-images)
     )
   )
+
+;; Enable org-latex-impatient-mode
+(add-hook 'org-mode-hook #'org-latex-impatient-mode)
+;; But I only want it to be triggered manually, not automatically. This is partly to avoid
+;; a theoretical performance hit (that may or may not be an actual problem, and probably
+;; isn't) with periodically checking whether we're in a latex region; and moreover to
+;; prevent it from trying to render before we're ready for it.
+(defun org-latex-impatient--prepare-timer (&rest _)
+  ;; do nothing
+  )
+(define-key org-mode-map (kbd "C-c l") 'org-latex-impatient-start)
+(define-key org-mode-map (kbd "C-c L") 'org-latex-impatient-stop)
 
 ;; Allow using Deft for all of these different directories
 ;;
