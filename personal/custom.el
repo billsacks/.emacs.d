@@ -188,6 +188,7 @@
  '(org-latex-impatient-tex2svg-bin "~/node_modules/mathjax-node-cli/bin/tex2svg")
  '(org-list-indent-offset 2)
  '(org-preview-latex-default-process 'dvisvgm)
+ '(org-preview-latex-image-directory "~/temporary/ltximg/")
  '(org-refile-targets '((nil :maxlevel . 8)))
  '(org-speed-commands
    '(("Outline Navigation")
