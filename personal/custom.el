@@ -177,7 +177,6 @@
                  ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-hide-emphasis-markers t)
  '(org-hierarchical-todo-statistics nil)
- '(org-highlight-latex-and-related '(native))
  '(org-id-link-to-org-use-id t)
  '(org-id-locations-file "~/org/.org-id-locations")
  '(org-id-locations-file-relative t)

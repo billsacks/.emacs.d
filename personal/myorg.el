@@ -594,7 +594,7 @@ Note: the force-heading piece of this is untested."
   )
 
 ;; Enable org-latex-impatient-mode
-(add-hook 'org-mode-hook #'org-latex-impatient-mode)
+;;
 ;; But I only want it to be triggered manually, not automatically. This is partly to avoid
 ;; a theoretical performance hit (that may or may not be an actual problem, and probably
 ;; isn't) with periodically checking whether we're in a latex region; and moreover to
@@ -604,6 +604,15 @@ Note: the force-heading piece of this is untested."
   )
 (define-key org-mode-map (kbd "C-c l") 'org-latex-impatient-start)
 (define-key org-mode-map (kbd "C-c L") 'org-latex-impatient-stop)
+;; (2022-04-18) Actually, not enabling this for now: I'm not sure whether I'm going to use
+;; org-latex-impatient-mode in org-mode, or generally just edit latex in a separate latex
+;; buffer (with C-c '), in which case I would turn on this org-latex-impatient-mode (or
+;; something similar) there. But I'm keeping the above in place, so that if/when I do
+;; enable org-latex-impatient, it is set up to just work manually, rather than being
+;; triggered based on a timer.
+;;
+;; (add-hook 'org-mode-hook #'org-latex-impatient-mode)
+
 
 ;; Allow using Deft for all of these different directories
 ;;
