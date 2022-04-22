@@ -43,8 +43,9 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 
 ;; Use M-c for hyper and <end> for super
 ;; (M-c is pretty easy and has a nice parallel with the C-c bindings)
-(global-unset-key (kbd "M-c")) ;; first reassign M-c to M-U
-(global-set-key (kbd "M-U") 'capitalize-word)
+(global-unset-key (kbd "M-c")) ;; first reassign M-c to M-u
+(global-set-key (kbd "M-u") 'capitalize-word)
+(global-set-key (kbd "M-U") 'upcase-dwim) ;; then use M-U instead of M-u for upcase-dwim
 (define-key isearch-mode-map (kbd "M-c") nil) ;; this toggles case-sensitivity, which can also be done via M-s c
 (define-key function-key-map (kbd "M-c") 'event-apply-hyper-modifier)
 (global-unset-key (kbd "<end>"))
