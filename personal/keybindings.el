@@ -400,6 +400,8 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "H-M-m") 'copy-buffer-to-other-window)
 (global-set-key (kbd "H-M") 'crux-swap-windows)
 
+(global-set-key (kbd "A-M-w") 'my-remove-from-tab-line)
+
 ;; s-w is originally set to the same thing as C-x o: ace-window
 (global-unset-key (kbd "s-w"))
 (global-set-key (kbd "s-w x") 'maximize-window)

@@ -95,6 +95,18 @@
   (other-window 1) ;;swap cursor to new buffer
   )
 
+;; Sometimes I want to remove a buffer from the tab line of this window but I don't
+;; actually want to bury the buffer (because burying the buffer puts it at the bottom of
+;; the buffer list... I want the buffer to stay at the top of the list, but just not
+;; clutter up the tab line in this window). This function accomplishes that.
+(defun my-remove-from-tab-line ()
+  (interactive)
+  ;; I'm not sure what the difference is between setting BURY-OR-KILL to 'append vs.
+  ;; simply t, but I'm concerned that telling it that BURY-OR-KILL is t when this buffer
+  ;; really isn't about to be buried/killed might have unintended consequences, so 'append
+  ;; seems maybe safer.
+  (switch-to-prev-buffer (selected-window) 'append))
+
 ;; I often want to make a new frame but don't want the current buffer appearing there
 (defun new-frame-with-scratch-buffer ()
   "Open a new frame with the scratch buffer"
