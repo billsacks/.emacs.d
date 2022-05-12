@@ -101,11 +101,15 @@
 ;; clutter up the tab line in this window). This function accomplishes that.
 (defun my-remove-from-tab-line ()
   (interactive)
-  ;; I'm a little worried that setting BURY-OR-KILL to t when thi buffer really is NOT
-  ;; about to be buried/killed might have unintended consequences. I considered using the
-  ;; special value of 'append, but that leads to the tab just migrating to the far left of
-  ;; the tab line rather than disappearing entirely, and I usually want it to disappear
-  ;; entirely when calling this function.
+  ;; This is a bit of a hack: we set BURY-OR-KILL to t to make switch-to-prev-buffer act
+  ;; as it would when burying the current buffer - i.e., removing it from the lists of
+  ;; previous/next buffers in this window - even though we're not actually burying this
+  ;; buffer. I'm a little worried that setting BURY-OR-KILL to t when this buffer really
+  ;; is NOT about to be buried/killed might have unintended consequences. I considered
+  ;; using the special value of 'append, but that leads to the tab just migrating to the
+  ;; far left of the tab line rather than disappearing entirely, and I usually want it to
+  ;; disappear entirely when calling this function. So I'll try this hack unless I notice
+  ;; issues with it.
   (switch-to-prev-buffer (selected-window) t))
 
 ;; I often want to make a new frame but don't want the current buffer appearing there
