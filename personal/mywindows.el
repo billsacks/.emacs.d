@@ -45,3 +45,15 @@ Credit: https://emacs.stackexchange.com/questions/60707/how-to-get-the-display-d
   (set-frame-position (selected-frame) (/ (my-this-display-pixel-width) 2) 0)
   (delete-other-windows)
   (set-frame-width (selected-frame) (my-frame-half-width) nil t))
+
+(defun my-set-window-dedicated ()
+  "Make the current window dedicated to its current buffer"
+  (interactive)
+  ;; Use a flag of 'yes instead of t, because t makes it strongly dedicated, which is more
+  ;; than we want
+  (set-window-dedicated-p (selected-window) 'yes))
+
+(defun my-set-window-undedicated ()
+  "Make the current window no longer dedicated to its current buffer"
+  (interactive)
+  (set-window-dedicated-p (selected-window) nil))

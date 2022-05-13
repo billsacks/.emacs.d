@@ -423,6 +423,9 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 ;; transposing frame
 (global-set-key (kbd "s-w t") 'transpose-frame)
 (global-set-key (kbd "s-w T") 'my-make-frame-full-and-transpose)
+;; making a window dedicated to a buffer
+(global-set-key (kbd "s-w d") 'my-set-window-dedicated)
+(global-set-key (kbd "s-w D") 'my-set-window-undedicated)
 
 ;; Some workarounds for issues (at least with emacsformacosx)
 
