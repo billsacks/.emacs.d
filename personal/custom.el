@@ -332,6 +332,7 @@
  '(vdiff-subtraction-style 'full)
  '(visual-fill-column-fringes-outside-margins nil)
  '(whitespace-style '(face trailing tabs empty))
+ '(windmove-wrap-around t)
  '(yafolding-ellipsis-content "..▼")
  '(yas-also-auto-indent-first-line t))
 (custom-set-faces
