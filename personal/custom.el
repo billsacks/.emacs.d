@@ -173,6 +173,7 @@
  '(org-export-backends '(ascii html icalendar latex md odt))
  '(org-export-with-section-numbers nil)
  '(org-export-with-sub-superscripts '{})
+ '(org-export-with-toc nil)
  '(org-fontify-quote-and-verse-blocks t)
  '(org-format-latex-options
    '(:foreground default :background default :scale 1.4 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
