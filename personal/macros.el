@@ -1,5 +1,13 @@
 ;; general-purpose macros
 
+;; From https://www.masteringemacs.org/article/fixing-mark-commands-transient-mark-mode
+(defun my-push-mark-no-activate ()
+  "Pushes `point' to `mark-ring' and does not activate the region
+   Equivalent to \\[set-mark-command] when \\[transient-mark-mode] is disabled"
+  (interactive)
+  (push-mark (point) t nil)
+  (message "Pushed mark to ring"))
+
 (defun my-pop-local-mark-ring ()
   "Move cursor to last mark position of current buffer"
   (interactive)

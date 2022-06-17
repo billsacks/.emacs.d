@@ -87,6 +87,11 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (define-key flyspell-mode-map (kbd "C-,") nil)
 (define-key org-mode-map (kbd "C-,") nil)
 (global-set-key (kbd "C-,") 'my-pop-local-mark-ring)
+;; And a slightly easier way to push to the mark ring than C-SPC C-SPC. This binding of
+;; `C-M-,' is unused, fits in nicely with `C-,' being to jump to the last mark, and is
+;; easy to do just before `C-M-u', which is a common time I'll want to do it. I may decide
+;; to swap `C-,' with `C-M-,'.
+(global-set-key (kbd "C-M-,") 'my-push-mark-no-activate)
 
 (global-set-key (kbd "C-S-l") 'my-recenter-to-bottom)
 (global-set-key (kbd "M-R") 'my-move-cursor-to-bottom)
