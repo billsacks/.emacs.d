@@ -106,7 +106,7 @@
  '(mac-pass-control-to-system nil)
  '(magit-diff-refine-hunk 'all)
  '(magit-ediff-dwim-show-on-hunks t)
- '(magit-git-executable "/usr/local/bin/git")
+ '(magit-git-executable "/opt/homebrew/bin/git")
  '(magit-log-margin '(t "%Y-%m-%d %H:%M " magit-log-margin-width t 10))
  '(magit-refs-margin '(t age-abbreviated magit-log-margin-width t 10))
  '(magit-section-initial-visibility-alist
