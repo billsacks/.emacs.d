@@ -26,6 +26,7 @@
  '(deft-extensions '("org"))
  '(deft-file-naming-rules '((noslash . "-") (nospace . "-") (case-fn . downcase)))
  '(deft-org-mode-title-prefix nil)
+ '(deft-recursive t)
  '(deft-use-filter-string-for-filename t)
  '(ediff-split-window-function 'split-window-horizontally)
  '(edit-server-done-hook '((lambda nil (kill-ring-save (point-min) (point-max)))))
