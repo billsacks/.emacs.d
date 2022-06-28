@@ -443,6 +443,21 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c <up>") 'my-org-move-subtree-to-top)
 (define-key org-mode-map (kbd "C-c <down>") 'my-org-move-subtree-to-bottom)
 
+;; With my current org file organization, my org-based notes are NOT in my list of
+;; org-agenda files. By default, org-id-update-id-locations only looks in agenda files and
+;; related files. So, in order for org-id-update-id-locations to fix links to my notes
+;; files if I rename or move these files, we need to tell org-id about all of them.
+;;
+;; I am making this an interactive function so that I can rerun it to update
+;; org-id-extra-files without restarting my emacs session.
+(defun my-org-set-org-id-extra-files ()
+  "Update org-id-extra-files to contain all of my org files"
+  (interactive)
+  ;; Note that the out-of-the-box value is org-agenda-text-search-extra-files
+  (setq org-id-extra-files (directory-files-recursively "~/org" "\.org$")))
+;; And run this function when starting emacs
+(my-org-set-org-id-extra-files)
+
 (defun my-org-store-link-to-file ()
   "Store a link to the current org file - not a subtree"
   (interactive)
