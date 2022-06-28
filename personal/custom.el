@@ -318,6 +318,7 @@
  '(sp-highlight-pair-overlay nil)
  '(tab-line-exclude-modes '(completion-list-mode ediff-mode))
  '(tool-bar-mode nil)
+ '(undo-tree-enable-undo-in-region t)
  '(vc-git-grep-template
    "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
  '(vdiff-auto-refine t)
