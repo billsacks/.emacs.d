@@ -187,6 +187,7 @@
  '(org-id-locations-file-relative t)
  '(org-image-actual-width '(400))
  '(org-imenu-depth 3)
+ '(org-indirect-buffer-display 'current-window)
  '(org-inlinetask-default-state "TODO")
  '(org-inlinetask-show-first-star t)
  '(org-latex-impatient-tex2svg-bin "~/node_modules/mathjax-node-cli/bin/tex2svg")
