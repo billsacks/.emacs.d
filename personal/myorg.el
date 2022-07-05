@@ -5,8 +5,16 @@
 (require 'org-super-agenda)
 (require 'org-id)
 (require 'org-latex-impatient)
+(require 'real-auto-save)
 
 (org-super-agenda-mode +1)
+
+;; Auto-save org buffers
+;; (From the suggested hook in https://github.com/alphapapa/salv.el)
+(add-hook 'org-mode-hook
+          (lambda ()
+            (when (file-in-directory-p (buffer-file-name) "~/org")
+              (real-auto-save-mode))))
 
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()
