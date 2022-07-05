@@ -13,7 +13,9 @@
 ;; (From the suggested hook in https://github.com/alphapapa/salv.el)
 (add-hook 'org-mode-hook
           (lambda ()
-            (when (file-in-directory-p (buffer-file-name) "~/org")
+            ;; the first condition (buffer-file-name) checks if this is a file-visiting
+            ;; buffer, because file-in-directory-p will fail on a non-file-visiting buffer
+            (when (and (buffer-file-name) (file-in-directory-p (buffer-file-name) "~/org"))
               (real-auto-save-mode))))
 
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
@@ -598,6 +600,20 @@ Note: the force-heading piece of this is untested."
 (define-key org-mode-map (kbd "C-c m n") 'my-org-move-to-notes)
 (define-key org-mode-map (kbd "C-c m s") 'my-org-move-to-someday)
 (define-key org-mode-map (kbd "C-c m t") 'my-org-move-to-todo)
+
+;; Copy region from org as markdown
+;; From http://mbork.pl/2021-05-02_Org-mode_to_Markdown_via_the_clipboard
+(defun my-org-copy-region-as-markdown ()
+  "Copy the region (in Org) to the system clipboard as Markdown."
+  (interactive)
+  (if (use-region-p)
+      (let* ((region
+	      (buffer-substring-no-properties
+	       (region-beginning)
+	       (region-end)))
+	     (markdown
+	      (org-export-string-as region 'md t '(:with-toc nil))))
+	(gui-set-selection 'CLIPBOARD markdown))))
 
 ;; Facilitate pasting screen shots into org documents
 ;; From https://stackoverflow.com/questions/17435995/paste-an-image-on-clipboard-to-emacs-org-mode-file-without-saving-it
