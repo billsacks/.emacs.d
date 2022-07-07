@@ -339,7 +339,11 @@ Note: the force-heading piece of this is untested."
   (interactive "P")
   (my-org-insert-todo-heading-helper arg force-heading)
   (my-org-maybe-set-todo-state))
-(define-key org-mode-map (kbd "<M-S-return>") 'my-org-insert-todo-heading)
+;; (2022-07-06) Disabling this key binding for now because it overrides the standard
+;; M-S-return binding. That was intentional but I am finding that this is particularly
+;; problematic when inserting a new checklist item ('- [ ]'), in which case, if it is
+;; under a level-2 heading in my notes, that heading gets the PR-1 state.
+;; (define-key org-mode-map (kbd "<M-S-return>") 'my-org-insert-todo-heading)
 
 (defun my-org-insert-todo-heading-respect-content-helper ()
   (org-insert-todo-heading-respect-content '(4)))
