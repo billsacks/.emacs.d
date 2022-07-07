@@ -227,7 +227,7 @@
       (call-interactively 'org-insert-heading-respect-content))
      ("^" . org-sort)
      ("w" . org-refile)
-     ("a" . org-archive-to-archive-sibling)
+     ("a" . my-org-archive-to-archive-sibling-if-okay)
      ("A" . org-toggle-archive-tag)
      ("@" . org-mark-subtree)
      ("#" . org-toggle-comment)

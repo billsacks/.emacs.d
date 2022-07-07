@@ -218,7 +218,17 @@
 (define-key org-mode-map (kbd "C-c w") 'org-copy-special)
 (define-key org-mode-map (kbd "C-c y") 'org-paste-special)
 
-(define-key org-mode-map (kbd "C-c a") 'org-archive-to-archive-sibling)
+(defun my-org-archive-to-archive-sibling-if-okay ()
+  "Archive the current heading to an archive sibling if we deem it okay to do so"
+  (interactive)
+  (if (or (string-equal (org-get-todo-state) "DONE")
+          (string-equal (org-get-todo-state) "CANC")
+          (string-equal (org-get-todo-state) "PR-D")
+          (string-equal (org-get-todo-state) "PR-C"))
+      (org-archive-to-archive-sibling)
+    (message "Refusing to archive heading that isn't in a done / canceled state")))
+
+(define-key org-mode-map (kbd "C-c a") 'my-org-archive-to-archive-sibling-if-okay)
 (define-key org-mode-map (kbd "C-c A") 'org-toggle-archive-tag)
 
 ;; org-display-outline-text doesn't show the last level; fix that with this function
