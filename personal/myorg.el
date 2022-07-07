@@ -218,8 +218,8 @@
 (define-key org-mode-map (kbd "C-c w") 'org-copy-special)
 (define-key org-mode-map (kbd "C-c y") 'org-paste-special)
 
-(define-key org-mode-map (kbd "C-c a") 'org-toggle-archive-tag)
-(define-key org-mode-map (kbd "C-c A") 'org-archive-to-archive-sibling)
+(define-key org-mode-map (kbd "C-c a") 'org-archive-to-archive-sibling)
+(define-key org-mode-map (kbd "C-c A") 'org-toggle-archive-tag)
 
 ;; org-display-outline-text doesn't show the last level; fix that with this function
 (defun my-org-show-position-in-text () ;; display outline path of hierarchical headings
