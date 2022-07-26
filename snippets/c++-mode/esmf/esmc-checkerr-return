@@ -1,0 +1,6 @@
+# -*- mode: c++ -*-
+# name: Add logic to check the localrc from an ESMF call; if error, return result via rc int variable
+# key: esmc-checkerr-return
+# --
+if (ESMC_LogDefault.MsgFoundError(localrc, ESMCI_ERR_PASSTHRU, ESMC_CONTEXT, &rc))
+  return rc;
