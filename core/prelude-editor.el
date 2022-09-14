@@ -250,7 +250,9 @@
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 
 ;; clean up obsolete buffers automatically
-(require 'midnight)
+;; (2022-09-14) WJS: I am finding that midnight (I think) is killing buffers I don't want
+;; it to kill, so I am disabling it for now
+;; (require 'midnight)
 
 ;; smarter kill-ring navigation
 (require 'browse-kill-ring)
