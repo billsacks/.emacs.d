@@ -417,7 +417,14 @@ Note: the force-heading piece of this is untested."
   (interactive)
   (my-org-canceled)
   (org-archive-to-archive-sibling))
-(define-key org-mode-map (kbd "C-c C") 'my-org-canceled-and-archive)
+;; I'm going to use C-c C for my-org-parent-canceled-and-forward instead, since that's more useful
+;; (define-key org-mode-map (kbd "C-c C") 'my-org-canceled-and-archive)
+(defun my-org-parent-canceled-and-forward ()
+  "Change current heading's state to PCAN then go forward to the next todo at the same level"
+  (interactive)
+  (org-todo "PCAN")
+  (my-org-forward-todo-same-level))
+(define-key org-mode-map (kbd "C-c C") 'my-org-parent-canceled-and-forward)
 
 (defun my-org-after-todo-state-change-hook ()
   "Function to run after todo state change"
