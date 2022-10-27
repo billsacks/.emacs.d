@@ -223,6 +223,7 @@
   (interactive)
   (if (or (string-equal (org-get-todo-state) "DONE")
           (string-equal (org-get-todo-state) "CANC")
+          (string-equal (org-get-todo-state) "PCAN")
           (string-equal (org-get-todo-state) "PR-D")
           (string-equal (org-get-todo-state) "PR-C"))
       (org-archive-to-archive-sibling)
