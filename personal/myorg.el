@@ -18,13 +18,6 @@
             (when (and (buffer-file-name) (file-in-directory-p (buffer-file-name) "~/org"))
               (real-auto-save-mode))))
 
-;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
-(defun my-org-do-not-search-invisible ()
-  "Do not search invisible text in this buffer"
-  (make-local-variable 'search-invisible)
-  (setq search-invisible nil))
-(add-hook 'org-mode-hook #'my-org-do-not-search-invisible)
-
 ;; in org-todo-keywords, the first line gives a typical progression of states; following
 ;; lines give less common states
 (setq org-todo-keywords '((sequence "TODO(t)" "SOON(s)" "NEXT(n)" "PROG(p)" "|" "DONE(d)")
