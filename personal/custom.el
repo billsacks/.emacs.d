@@ -28,6 +28,7 @@
  '(deft-org-mode-title-prefix nil)
  '(deft-recursive t)
  '(deft-use-filter-string-for-filename t)
+ '(display-line-numbers-widen t)
  '(ediff-split-window-function 'split-window-horizontally)
  '(edit-server-done-hook '((lambda nil (kill-ring-save (point-min) (point-max)))))
  '(edit-server-new-frame nil)
