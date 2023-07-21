@@ -436,7 +436,7 @@
  '(org-property-value ((t (:height 0.8 :family "Hack"))) t)
  '(org-quote ((t (:inherit default :foreground "dark blue"))))
  '(org-special-keyword ((t (:inherit font-lock-keyword-face :height 0.8))))
- '(org-tag ((t (:background "gray90" :weight bold))))
+ '(org-tag ((t (:box (:line-width (1 . 1) :color "grey85") :weight bold))))
  '(org-todo ((t (:foreground "Red1" :underline "gray75" :weight bold))))
  '(org-variable-pitch-fixed-face ((t (:height 0.8 :family "Hack"))))
  '(org-verbatim ((t (:inherit font-lock-constant-face))))
