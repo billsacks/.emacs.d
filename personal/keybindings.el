@@ -393,8 +393,8 @@ orig_keys and new_keys are strings like 'M-h' that can be read by the kbd functi
 (global-set-key (kbd "H-M-i") 'lsp-ui-imenu)
 (global-set-key (kbd "H-A-i") 'imenu-anywhere)
 
-(global-set-key (kbd "H-f") 'select-frame-by-name)
-(global-set-key (kbd "H-F") 'new-frame-with-scratch-buffer)
+(global-set-key (kbd "H-f") 'new-frame-with-scratch-buffer)
+(global-set-key (kbd "H-F") 'select-frame-by-name)
 ;; The following should probably just be enabled in ediff mode; its purpose is for
 ;; avoiding the highlighting of an ediff session contaminating my view elsewhere -
 ;; particularly if I have the same buffer open in two ediff sessions (in two different
