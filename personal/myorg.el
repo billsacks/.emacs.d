@@ -536,6 +536,12 @@ Note: the force-heading piece of this is untested."
     (kill-buffer project-buffer)))
 (define-key org-mode-map (kbd "C-c p a") 'my-org-archive-project)
 
+(defun my-org-insert-checkbox ()
+  "Insert a checkbox at point"
+  (interactive)
+  (insert "- [ ] "))
+(define-key org-mode-map (kbd "C-c [") 'my-org-insert-checkbox)
+
 (defun my-deft-mode-hook ()
   (hl-line-mode +1))
 (add-hook 'deft-mode-hook #'my-deft-mode-hook)
