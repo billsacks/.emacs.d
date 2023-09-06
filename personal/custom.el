@@ -324,7 +324,7 @@
  '(tool-bar-mode nil)
  '(undo-tree-enable-undo-in-region t)
  '(vc-git-grep-template
-   "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F>")
+   "git --no-pager grep --show-function --ignore-case --color -n <C> -e <R> -- <F> ':!*.eps'")
  '(vdiff-auto-refine t)
  '(vdiff-diff-algorithm 'custom)
  '(vdiff-diff-algorithms
