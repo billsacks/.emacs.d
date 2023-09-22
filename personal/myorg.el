@@ -669,6 +669,11 @@ Note: the force-heading piece of this is untested."
 ;;
 ;; (add-hook 'org-mode-hook #'org-latex-impatient-mode)
 
+;; In source code blocks, I still want to be able to use tab to indent... it seems that,
+;; with my org settings (particularly, I think, setting org-cycle-emulate-tab to nil) tab
+;; will always cycle the heading, so I need to provide an alternative way to do it. Note
+;; that this doesn't work totally correctly, but it's better than nothing.
+(define-key org-mode-map (kbd "C-<tab>") 'indent-for-tab-command)
 
 ;; Allow using Deft for all of these different directories
 ;;
