@@ -673,6 +673,10 @@ Note: the force-heading piece of this is untested."
 ;; with my org settings (particularly, I think, setting org-cycle-emulate-tab to nil) tab
 ;; will always cycle the heading, so I need to provide an alternative way to do it. Note
 ;; that this doesn't work totally correctly, but it's better than nothing.
+;;
+;; An alternative might be: in org mode, map tab to a function that checks if we're inside
+;; a source block (is there an org function for that?); if so, calls
+;; indent-for-tab-command; if not, does whatever tab normally does (org-cycle?).
 (define-key org-mode-map (kbd "C-<tab>") 'indent-for-tab-command)
 
 ;; Allow using Deft for all of these different directories
