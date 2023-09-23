@@ -677,6 +677,9 @@ Note: the force-heading piece of this is untested."
 ;; An alternative might be: in org mode, map tab to a function that checks if we're inside
 ;; a source block (is there an org function for that?); if so, calls
 ;; indent-for-tab-command; if not, does whatever tab normally does (org-cycle?).
+;;
+;; Another possible solution may be polymode / poly-org (which says it prevents the need
+;; for popping open a separate buffer for editing source blocks with C-c ').
 (define-key org-mode-map (kbd "C-<tab>") 'indent-for-tab-command)
 
 ;; Allow using Deft for all of these different directories
