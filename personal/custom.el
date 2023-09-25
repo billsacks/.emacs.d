@@ -263,7 +263,7 @@
      ("P" org-speed-move-safe 'my-org-previous-visible-todo)
      ("F" org-speed-move-safe 'my-org-forward-todo-same-level)
      ("B" org-speed-move-safe 'my-org-backward-todo-same-level)))
- '(org-src-window-setup 'current-window)
+ '(org-src-window-setup 'split-window-below)
  '(org-startup-folded 'content)
  '(org-startup-indented t)
  '(org-tag-alist
