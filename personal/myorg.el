@@ -129,8 +129,7 @@
           (todo "PR--" nil))
          nil)
         ("p" "Projects"
-         ((agenda "" nil)
-          (todo "PR-1|PR-2|PR-3|PR-4|PR-0|PR--" nil))
+         ((todo "PR-1|PR-2|PR-3|PR-4|PR-0|PR--" nil))
          nil)
 
         ("x" "SOON"
