@@ -48,7 +48,7 @@
   (select-frame-by-name "capture")
   (setq word-wrap 1)
   (setq truncate-lines nil)
-  (org-capture))
+  (org-capture nil "t"))
 
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()
