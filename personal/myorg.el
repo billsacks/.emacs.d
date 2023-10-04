@@ -39,7 +39,7 @@
 ;; splits the window.
 (add-hook 'org-capture-mode-hook
           'delete-other-windows)
-(defun make-capture-frame ()
+(defun my-org-make-capture-frame ()
   "Create a new frame and run org-capture."
   (interactive)
   ;; It doesn't work to set frame parameters in the make-frame call; doing it afterwards
@@ -744,10 +744,10 @@ Note: the force-heading piece of this is untested."
 
 ;; s-o keybindings: Org-related commands that can be run from anywhere (not just an org-mode buffer)
 (global-unset-key (kbd "s-o"))
+(global-set-key (kbd "s-o SPC") 'my-org-make-capture-frame)
 (global-set-key (kbd "s-o a") 'org-agenda)
 (global-set-key (kbd "s-o b") 'org-switchb)
 (global-set-key (kbd "s-o B") 'my-org-last-buffer-in-other-window)
-(global-set-key (kbd "s-o SPC") 'org-capture)
 (global-set-key (kbd "s-o d a") 'my-deft-in-archive)
 (global-set-key (kbd "s-o d n") 'my-deft-in-notes)
 (global-set-key (kbd "s-o d s") 'my-deft-in-someday)
