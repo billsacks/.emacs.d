@@ -42,13 +42,12 @@
 (defun make-capture-frame ()
   "Create a new frame and run org-capture."
   (interactive)
-  (make-frame '((name . "capture")))
+  ;; It doesn't work to set frame parameters in the make-frame call; doing it afterwards
+  ;; with set-frame stuff leads to a flash; a work-around is to temporarily change
+  ;; default-frame-alist as follows:
+  (let ((default-frame-alist '((width . 0.3) (height . 0.3) (left . 0.4))))
+    (make-frame '((name . "capture"))))
   (select-frame-by-name "capture")
-  ;; It doesn't work to set frame parameters in the make-frame call, so I'm forced to do
-  ;; it afterwards; this leads to a quick flash
-  (set-frame-width (selected-frame) 600 nil t)
-  (set-frame-height (selected-frame) 400 nil t)
-  (set-frame-position (selected-frame) (- (/ (my-this-display-pixel-width) 2) 300) 0)
   (setq word-wrap 1)
   (setq truncate-lines nil)
   (org-capture nil "t"))
