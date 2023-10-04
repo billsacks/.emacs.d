@@ -18,6 +18,11 @@
             (when (and (buffer-file-name) (file-in-directory-p (buffer-file-name) "~/org"))
               (real-auto-save-mode))))
 
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+olp "~/org/todo/inbox.org" "-Inbox" "PR-- -inbox misc")
+         "* TODO %?\n"
+         :prepend t)))
+
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()
   "Do not search invisible text in this buffer"
@@ -713,6 +718,7 @@ Note: the force-heading piece of this is untested."
 (global-set-key (kbd "s-o a") 'org-agenda)
 (global-set-key (kbd "s-o b") 'org-switchb)
 (global-set-key (kbd "s-o B") 'my-org-last-buffer-in-other-window)
+(global-set-key (kbd "s-o SPC") 'org-capture)
 (global-set-key (kbd "s-o d a") 'my-deft-in-archive)
 (global-set-key (kbd "s-o d n") 'my-deft-in-notes)
 (global-set-key (kbd "s-o d s") 'my-deft-in-someday)
