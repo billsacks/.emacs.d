@@ -23,6 +23,28 @@
          "* TODO %?\n"
          :prepend t)))
 
+(defvar my-org-capture-prev-frame nil "Active frame before org-capture")
+(defvar my-org-capture-frame nil "The org capture frame")
+
+(add-hook 'org-capture-mode-hook
+          'delete-other-windows)
+(defun my-org-capture-task ()
+  "Call org-capture giving it the key to create a new task and doing some other stuff I want"
+  (interactive)
+  (setq my-org-capture-prev-frame (selected-frame))
+  (let ((default-frame-alist '((width . 0.3) (height . 0.3) (left . 0.4))))
+    (make-frame '((name . "capture"))))
+  (setq my-org-capture-frame (selected-frame))
+  (org-capture nil "t")
+  )
+
+(defun my-org-capture-finalize ()
+  "Do some wrapup after org-capture"
+  (select-frame-set-input-focus my-org-capture-prev-frame)
+  (delete-frame my-org-capture-frame))
+(add-hook 'org-capture-after-finalize-hook
+          'my-org-capture-finalize)
+
 ;; From https://emacs.stackexchange.com/questions/26119/org-mode-adding-a-properties-drawer-to-a-capture-template
 (defun add-property-with-date-captured ()
   "Add DATE_CAPTURED property to the current item."
@@ -734,3 +756,4 @@ Note: the force-heading piece of this is untested."
 (global-set-key (kbd "s-o l l") 'org-store-link)
 (global-set-key (kbd "s-o p") 'my-org-open-projects)
 (global-set-key (kbd "s-o s") 'my-org-open-scratch)
+(global-set-key (kbd "s-o SPC") 'my-org-capture-task)
