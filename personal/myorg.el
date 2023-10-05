@@ -23,34 +23,72 @@
          "* TODO %?\n"
          :prepend t)))
 
+;; From https://emacs.stackexchange.com/questions/26119/org-mode-adding-a-properties-drawer-to-a-capture-template
+(defun add-property-with-date-captured ()
+  "Add DATE_CAPTURED property to the current item."
+  (interactive)
+  (org-set-property "DATE_CAPTURED" (format-time-string "%F %T")))
+(add-hook 'org-capture-before-finalize-hook 'add-property-with-date-captured)
+
+(defvar my-org-capture-last-application ""
+  "Name of active application before my-org-global-capture")
+
+(defun my-delete-capture-frame ()
+  "Delete the current frame if it's the capture frame"
+  (if (equal "capture" (frame-parameter nil 'name))
+      (suspend-frame)
+    )
+  )
+
+(defun my-finalize-capture ()
+  "Do some cleanup after doing an org capture"
+  (if (string-empty-p my-org-capture-last-application)
+      ;; no last application, so simply delete the frame
+      (my-delete-capture-frame)
+    ;; if there is a last application, then switch to it before deleting the frame
+    (let ((application-to-switch-to my-org-capture-last-application))
+      (setq my-org-capture-last-application "")
+      (shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate' -e 'do shell script \"/opt/homebrew/bin/emacsclient -e \\\"(suspend-frame)\\\"\"'"))
+      )
+    )
+  )
+
 ;; Use a separate frame for org-capture
-;; From https://www.windley.com/archives/2010/12/capture_mode_and_emacs.shtml
+;; Adapted from https://www.windley.com/archives/2010/12/capture_mode_and_emacs.shtml
 (defadvice org-capture-finalize
     (after delete-capture-frame activate)
-  "Advise capture-finalize to close the frame"
-  (if (equal "capture" (frame-parameter nil 'name))
-      (delete-frame)))
+  "Advise capture-finalize to do some final cleanup"
+  (my-finalize-capture)
+  )
 (defadvice org-capture-destroy
     (after delete-capture-frame activate)
-  "Advise capture-destroy to close the frame"
-  (if (equal "capture" (frame-parameter nil 'name))
-      (delete-frame)))
+  "Advise capture-destroy to do some final cleanup"
+  (my-finalize-capture)
+  )
 ;; make the frame contain a single window. by default org-capture
 ;; splits the window.
 (add-hook 'org-capture-mode-hook
           'delete-other-windows)
 (defun my-org-make-capture-frame ()
+  "Make an initial capture frame"
+  (let ((default-frame-alist '((width . 0.3) (height . 0.3) (left . 0.4))))
+    (make-frame '((name . "capture"))))
+  (iconify-frame)
+  )
+(my-org-make-capture-frame)
+(defun my-org-show-capture-frame ()
   "Create a new frame and run org-capture."
   (interactive)
   ;; It doesn't work to set frame parameters in the make-frame call; doing it afterwards
   ;; with set-frame stuff leads to a flash; a work-around is to temporarily change
   ;; default-frame-alist as follows:
-  (let ((default-frame-alist '((width . 0.3) (height . 0.3) (left . 0.4))))
-    (make-frame '((name . "capture"))))
   (select-frame-by-name "capture")
-  (setq word-wrap 1)
-  (setq truncate-lines nil)
   (org-capture nil "t"))
+(defun my-org-show-capture-frame-global (last-application)
+  "Create a new frame and run org-capture, from outside emacs"
+  (interactive)
+  (setq my-org-capture-last-application last-application)
+  (my-org-show-capture-frame))
 
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()
@@ -744,7 +782,7 @@ Note: the force-heading piece of this is untested."
 
 ;; s-o keybindings: Org-related commands that can be run from anywhere (not just an org-mode buffer)
 (global-unset-key (kbd "s-o"))
-(global-set-key (kbd "s-o SPC") 'my-org-make-capture-frame)
+(global-set-key (kbd "s-o SPC") 'my-org-show-capture-frame)
 (global-set-key (kbd "s-o a") 'org-agenda)
 (global-set-key (kbd "s-o b") 'org-switchb)
 (global-set-key (kbd "s-o B") 'my-org-last-buffer-in-other-window)

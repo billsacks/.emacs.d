@@ -124,7 +124,8 @@
 (defun new-frame-with-scratch-buffer ()
   "Open a new frame with the scratch buffer"
   (interactive)
-  (switch-to-buffer-other-frame "*scratch*"))
+  (make-frame)
+  (switch-to-buffer "*scratch*"))
 
 ;; workaround for scroll bars disappearing when resizing a frame
 (defun fix-scroll-bars ()
