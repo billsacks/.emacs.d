@@ -33,9 +33,18 @@
   "Call org-capture giving it the key to create a new task and doing some other stuff I want"
   (interactive)
   (setq my-org-capture-prev-frame (selected-frame))
-  (let ((default-frame-alist '((width . 0.3) (height . 0.3) (left . 0.4))))
-    (make-frame '((name . "capture"))))
-  (setq my-org-capture-frame (selected-frame))
+  (if (frame-live-p my-org-capture-frame)
+      ;; If a capture frame already exists, use it
+      ;;
+      ;; (This will often arise because we have minimized the capture frame rather than deleted it)
+      (select-frame-set-input-focus my-org-capture-frame)
+    ;; Otherwise, create a new capture frame
+    (progn
+      (let ((default-frame-alist '((width . 0.3) (height . 0.3) (left . 0.4))))
+        (make-frame '((name . "capture"))))
+      (setq my-org-capture-frame (selected-frame))
+      )
+    )
   (org-capture nil "t")
   )
 (defun my-org-capture-task-external (last-application)
@@ -53,13 +62,24 @@
 (defun my-org-capture-finalize ()
   "Do some wrapup after org-capture"
   (if (string-empty-p my-org-capture-last-application)
-      ;; no last application, so simply delete the frame
+      ;; No last application, probably because we invoked this from emacs; so simply
+      ;; delete the frame
+      ;;
+      ;; I may decide to always minimize (i.e., suspend / iconify) the capture frame
+      ;; rather than deleting it - i.e., using code more like what happens in the else
+      ;; block below. (I think I like the deletion behavior better from within emacs - it
+      ;; avoids having this extra minimized frame, and it avoids the flash of text
+      ;; clearing that I see when restoring the existing minimized frame - but I may
+      ;; decide that consistency is best.)
       (my-org-delete-capture-frame)
-    ;; if there is a last application, then switch to it before deleting the frame
+    ;; If there is a last application, then switch to it before minimizing the frame
+    ;;
+    ;; Note that we minimize the frame in this situation, because if we delete the frame,
+    ;; then some other emacs window comes to the front, potentially obscuring other
+    ;; windows from the active application that used to be in front of emacs.
     (let ((application-to-switch-to my-org-capture-last-application))
       (setq my-org-capture-last-application "")
-      (shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate'"))
-      (my-org-delete-capture-frame)
+      (shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate' -e 'tell application \"Emacs\" to set miniaturized of its front window to true'"))
       )
     )
   )
