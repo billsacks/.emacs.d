@@ -88,6 +88,11 @@
     (let ((application-to-switch-to my-org-capture-last-application))
       (setq my-org-capture-last-application "")
       ;; First move the window to out of the way to make the following delay less annoying
+      ;;
+      ;; I might decide to get rid of it, since it can sometimes have its own issue, in
+      ;; that I could start doing something in another application before the applescript
+      ;; finishes; if that proves to be problematic, then I could remove this (and remove
+      ;; the associated set-frame-position in my-org-capture-task).
       (set-frame-position (selected-frame) (my-this-display-pixel-width) (my-this-display-pixel-height))
       ;; There is a slightly annoying delay here - both in switching to the previous
       ;; application and then in minimizing the window. It's possible that we could reduce
