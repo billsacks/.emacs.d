@@ -40,8 +40,8 @@
       (select-frame-set-input-focus my-org-capture-frame)
     ;; Otherwise, create a new capture frame
     (progn
-      (let ((default-frame-alist '((width . 0.3) (height . 0.3) (left . 0.4))))
-        (make-frame '((name . "capture"))))
+      (let ((default-frame-alist '((width . 0.3) (height . 0.2) (left . 0.5) (top . 0.3))))
+        (make-frame '((name . "capture") (alpha . 0.95))))
       (setq my-org-capture-frame (selected-frame))
       )
     )
