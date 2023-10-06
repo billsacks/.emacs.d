@@ -6,6 +6,12 @@ This is like display-pixel-width, but when using dual displays just includes the
 Credit: https://emacs.stackexchange.com/questions/60707/how-to-get-the-display-dimensions-of-the-display-emacs-is-in"
   (nth 3 (assq 'geometry (frame-monitor-attributes))))
 
+(defun my-this-display-pixel-height ()
+  "Get the height in pixels of the current monitor
+
+See my-this-display-pixel-width for notes"
+  (nth 4 (assq 'geometry (frame-monitor-attributes))))
+
 (defun my-frame-non-text-width ()
   "Get the width of the non-text portion of a frame"
   (- (frame-outer-width) (frame-text-width)))

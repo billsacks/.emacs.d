@@ -37,7 +37,15 @@
       ;; If a capture frame already exists, use it
       ;;
       ;; (This will often arise because we have minimized the capture frame rather than deleted it)
-      (select-frame-set-input-focus my-org-capture-frame)
+      (progn
+        (select-frame-set-input-focus my-org-capture-frame)
+        ;; Because we change the position in my-org-capture-finalize, we need to restore
+        ;; the right position here; note that this position roughly corresponds to the
+        ;; position set in the initial frame creation.
+        (set-frame-position (selected-frame)
+                            (round (* (my-this-display-pixel-width) 0.35))
+                            (round (* (my-this-display-pixel-height) 0.26)))
+        )
     ;; Otherwise, create a new capture frame
     (progn
       (let ((default-frame-alist '((width . 0.3) (height . 0.2) (left . 0.5) (top . 0.3))))
@@ -79,6 +87,8 @@
     ;; windows from the active application that used to be in front of emacs.
     (let ((application-to-switch-to my-org-capture-last-application))
       (setq my-org-capture-last-application "")
+      ;; First move the window to out of the way to make the following delay less annoying
+      (set-frame-position (selected-frame) (my-this-display-pixel-width) (my-this-display-pixel-height))
       ;; There is a slightly annoying delay here - both in switching to the previous
       ;; application and then in minimizing the window. It's possible that we could reduce
       ;; the first part of the delay by doing an 'open -a APPLICATION' - so the whole
