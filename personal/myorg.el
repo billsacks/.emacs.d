@@ -79,6 +79,11 @@
     ;; windows from the active application that used to be in front of emacs.
     (let ((application-to-switch-to my-org-capture-last-application))
       (setq my-org-capture-last-application "")
+      ;; There is a slightly annoying delay here - both in switching to the previous
+      ;; application and then in minimizing the window. It's possible that we could reduce
+      ;; the first part of the delay by doing an 'open -a APPLICATION' - so the whole
+      ;; thing would be 'open -a APPLICATION && osascript -e (set Emacs window to
+      ;; miniaturized)' - but I don't think that would make a big difference.
       (shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate' -e 'tell application \"Emacs\" to set miniaturized of its front window to true'"))
       )
     )
