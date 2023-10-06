@@ -113,6 +113,13 @@
   (org-set-property "DATE_CAPTURED" (format-time-string "%F %T")))
 (add-hook 'org-capture-before-finalize-hook 'add-property-with-date-captured)
 
+(defun my-org-remove-date-captured ()
+  "Remove the date captured property from the current item
+
+Useful to run when moving an item out of the inbox"
+  (interactive)
+  (org-delete-property "DATE_CAPTURED"))
+
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()
   "Do not search invisible text in this buffer"
