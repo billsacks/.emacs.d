@@ -25,6 +25,7 @@
 
 (defvar my-org-capture-prev-frame nil "Active frame before org-capture")
 (defvar my-org-capture-frame nil "The org capture frame")
+(defvar my-org-capture-last-application "" "Name of active application before my-org-capture-task-external")
 
 (add-hook 'org-capture-mode-hook
           'delete-other-windows)
@@ -37,11 +38,31 @@
   (setq my-org-capture-frame (selected-frame))
   (org-capture nil "t")
   )
+(defun my-org-capture-task-external (last-application)
+  "Like my-org-capture-task but meant to be called from another application that we will return to"
+  (interactive)
+  (setq my-org-capture-last-application last-application)
+  (my-org-capture-task))
+
+(defun my-org-delete-capture-frame ()
+  "Delete the capture frame"
+  (select-frame-set-input-focus my-org-capture-prev-frame)
+  (delete-frame my-org-capture-frame)
+  )
 
 (defun my-org-capture-finalize ()
   "Do some wrapup after org-capture"
-  (select-frame-set-input-focus my-org-capture-prev-frame)
-  (delete-frame my-org-capture-frame))
+  (if (string-empty-p my-org-capture-last-application)
+      ;; no last application, so simply delete the frame
+      (my-org-delete-capture-frame)
+    ;; if there is a last application, then switch to it before deleting the frame
+    (let ((application-to-switch-to my-org-capture-last-application))
+      (setq my-org-capture-last-application "")
+      (shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate'"))
+      (my-org-delete-capture-frame)
+      )
+    )
+  )
 (add-hook 'org-capture-after-finalize-hook
           'my-org-capture-finalize)
 
