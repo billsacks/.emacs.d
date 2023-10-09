@@ -125,7 +125,9 @@
   "Open a new frame with the scratch buffer"
   (interactive)
   (make-frame)
-  (switch-to-buffer "*scratch*"))
+  ;; A bit of a hack to avoid having a tab in the tab line with the previous buffer
+  (switch-to-buffer-other-window "*scratch*")
+  (delete-other-windows))
 
 ;; workaround for scroll bars disappearing when resizing a frame
 (defun fix-scroll-bars ()
