@@ -87,19 +87,21 @@
     ;; windows from the active application that used to be in front of emacs.
     (let ((application-to-switch-to my-org-capture-last-application))
       (setq my-org-capture-last-application "")
-      ;; First move the window to out of the way to make the following delay less annoying
+      ;; First move the window to out of the way.
       ;;
-      ;; I might decide to get rid of it, since it can sometimes have its own issue, in
+      ;; This started as an attempt to make the delay in the shell-command less annoying.
+      ;; However, I realized that it serves an additional purpose, even when this delay
+      ;; isn't a problem: By moving the window out of the way, and then back into sight
+      ;; when I recall the window, this makes it so that the flash from one buffer to
+      ;; another in the capture window isn't visible. So I think it's worth keeping for
+      ;; that reason.
+      ;;
+      ;; If I decide to get rid of this window moving (due to having its own issue, in
       ;; that I could start doing something in another application before the applescript
-      ;; finishes; if that proves to be problematic, then I could remove this (and remove
-      ;; the associated set-frame-position in my-org-capture-task).
+      ;; finishes), then I could remove this (and remove the associated set-frame-position
+      ;; in my-org-capture-task).
       (set-frame-position (selected-frame) (my-this-display-pixel-width) (my-this-display-pixel-height))
-      ;; There is a slightly annoying delay here - both in switching to the previous
-      ;; application and then in minimizing the window. It's possible that we could reduce
-      ;; the first part of the delay by doing an 'open -a APPLICATION' - so the whole
-      ;; thing would be 'open -a APPLICATION && osascript -e (set Emacs window to
-      ;; miniaturized)' - but I don't think that would make a big difference.
-      (shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate' -e 'tell application \"Emacs\" to set miniaturized of its front window to true'"))
+      (async-shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate' -e 'tell application \"Emacs\" to set miniaturized of its front window to true'"))
       )
     )
   )
