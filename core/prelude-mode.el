@@ -42,7 +42,6 @@
     (define-key map (kbd "C-c C-/ d") 'prelude-duckduckgo)
     (define-key map (kbd "M-o") 'crux-smart-open-line)
     (define-key map (kbd "C-c u") 'crux-view-url)
-    (define-key map (kbd "C-c r") 'crux-rename-buffer-and-file)
     (define-key map (kbd "C-c S") 'crux-find-shell-init-file)
     ;; extra prefix for projectile
     (when prelude-super-keybindings

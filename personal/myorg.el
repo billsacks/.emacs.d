@@ -107,18 +107,21 @@
           'my-org-capture-finalize)
 
 ;; From https://emacs.stackexchange.com/questions/26119/org-mode-adding-a-properties-drawer-to-a-capture-template
-(defun add-property-with-date-captured ()
-  "Add DATE_CAPTURED property to the current item."
+(defun my-org-add-creation-date-property ()
+  "Add CREATION_DATE property to the current item."
   (interactive)
-  (org-set-property "DATE_CAPTURED" (format-time-string "%F %T")))
-(add-hook 'org-capture-before-finalize-hook 'add-property-with-date-captured)
+  (org-set-property "CREATION_DATE" (format-time-string "%F %T")))
+(add-hook 'org-capture-before-finalize-hook 'my-org-add-creation-date-property)
+;; mnemonic: CReation
+(define-key org-mode-map (kbd "C-c r") 'my-org-add-creation-date-property)
 
-(defun my-org-remove-date-captured ()
-  "Remove the date captured property from the current item
+(defun my-org-remove-creation-date-property ()
+  "Remove the CREATION_DATE property from the current item
 
 Useful to run when moving an item out of the inbox"
   (interactive)
-  (org-delete-property "DATE_CAPTURED"))
+  (org-delete-property "CREATION_DATE"))
+(define-key org-mode-map (kbd "C-c R") 'my-org-remove-creation-date-property)
 
 ;; From https://emacs.stackexchange.com/questions/3929/make-isearch-skip-folded-content-in-org-mode
 (defun my-org-do-not-search-invisible ()
