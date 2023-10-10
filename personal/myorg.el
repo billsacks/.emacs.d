@@ -107,6 +107,19 @@
       ;; that I could start doing something in another application before the applescript
       ;; finishes), then I could remove this (and remove the associated set-frame-position
       ;; in my-org-capture-task).
+      ;;
+      ;; This move to the bottom-right is problematic if I have a second monitor set up to
+      ;; the right of my main display: in that case, I see a bit of the window appear on
+      ;; the second monitor before it is minimized. I tried playing with this a bit
+      ;; (though not extensively) and couldn't find a satisfactory solution, so for now
+      ;; I'm just setting things up with my laptop to the left of my main display rather
+      ;; than to the right. (I tried moving the capture window to bottom center instead of
+      ;; bottom right, but didn't like that. I also tried laying out the dual monitors so
+      ;; that the laptop was directly to the right rather than below and to the right...
+      ;; that was slightly better but I still saw the title bar of the window on my
+      ;; laptop. It does work to have the dual monitor position set as above and to the
+      ;; right, but for now I'll just try having my laptop set up to the left, which is
+      ;; how I have it at work.)
       (set-frame-position (selected-frame) (my-this-display-pixel-width) (my-this-display-pixel-height))
       (async-shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate' -e 'tell application \"Emacs\" to set miniaturized of its front window to true'"))
       )
