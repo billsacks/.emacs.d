@@ -50,6 +50,8 @@
     (progn
       ;; If I have multiple monitors, this can lead to the new frame being created on the
       ;; wrong monitor. I haven't figured out the right solution yet, but possibilities are:
+      ;; - it seems like the set-frame-position call works right... so use that, unless the move is too distracting
+      ;; - is the issue setting left/top as fractions rather than whole numbers? if so, change these to use whole numbers
       ;; - make-frame-on-current-monitor (but if I just use that without any other changes, it appears in the top left)
       ;; - make-frame-on-display / make-frame-on-monitor
       ;; - https://stackoverflow.com/questions/11457317/on-mac-open-an-emacs-frame-in-a-specific-monitor
