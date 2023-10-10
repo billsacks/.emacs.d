@@ -119,7 +119,9 @@
       ;; that was slightly better but I still saw the title bar of the window on my
       ;; laptop. It does work to have the dual monitor position set as above and to the
       ;; right, but for now I'll just try having my laptop set up to the left, which is
-      ;; how I have it at work.)
+      ;; how I have it at work.) (Maybe it would help somewhat to make the window as small
+      ;; as possible when I move it to the bottom right, and then restore its size when I
+      ;; restore its position??)
       (set-frame-position (selected-frame) (my-this-display-pixel-width) (my-this-display-pixel-height))
       (async-shell-command (concat "osascript -e 'tell application \"" application-to-switch-to "\" to activate' -e 'tell application \"Emacs\" to set miniaturized of its front window to true'"))
       )
